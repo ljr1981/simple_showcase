@@ -3,6 +3,10 @@
 	"port": 8080,
 	"base_url": "http://localhost:8080",
 	"contact_email": "rix.larry@gmail.com",
+	"smtp_endpoints": [
+		{"host": "smtp.gmail.com", "port": 465, "protocol": "smtps"},
+		{"host": "smtp.gmail.com", "port": 587, "protocol": "smtp", "ssl_reqd": true}
+	],
 	"db_path": "showcase_dev.db",
 	"log_level": "debug",
 	"verbose_logging": true

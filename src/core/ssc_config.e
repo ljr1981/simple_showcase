@@ -82,6 +82,12 @@ feature -- Access
 	contact_email: STRING
 			-- Email address for contact form submissions
 
+	smtp_password: STRING
+			-- Gmail app password for sending emails
+
+	smtp_endpoints: ARRAYED_LIST [TUPLE [host: STRING; port: INTEGER; protocol: STRING; ssl_reqd: BOOLEAN]]
+			-- List of SMTP endpoints to try in order
+
 	db_path: STRING
 			-- Path to SQLite database file
 
@@ -114,6 +120,8 @@ feature {NONE} -- Implementation
 			port := 8080
 			base_url := "http://localhost:8080"
 			contact_email := ""
+			smtp_password := ""
+			set_default_smtp_endpoints
 			db_path := "showcase_dev.db"
 			log_level := "debug"
 			verbose_logging := True
@@ -121,6 +129,19 @@ feature {NONE} -- Implementation
 		ensure
 			development_mode: is_development
 			default_port: port = 8080
+			has_smtp_endpoints: not smtp_endpoints.is_empty
+		end
+
+	set_default_smtp_endpoints
+			-- Set default SMTP endpoints (Gmail)
+		do
+			create smtp_endpoints.make (2)
+			-- Port 465 (SMTPS) - direct SSL, usually works
+			smtp_endpoints.extend (["smtp.gmail.com", 465, "smtps", False])
+			-- Port 587 (STARTTLS) - fallback
+			smtp_endpoints.extend (["smtp.gmail.com", 587, "smtp", True])
+		ensure
+			not_empty: not smtp_endpoints.is_empty
 		end
 
 	load_from_json (a_obj: SIMPLE_JSON_OBJECT)
@@ -154,6 +175,17 @@ feature {NONE} -- Implementation
 				contact_email := ""
 			end
 
+			-- SMTP password (prefer environment variable for security)
+			if attached (create {EXECUTION_ENVIRONMENT}).item ("SSC_SMTP_PASSWORD") as l_env_pwd then
+				smtp_password := l_env_pwd.to_string_8
+				log_info ("config", "SMTP password loaded from SSC_SMTP_PASSWORD environment variable")
+			elseif attached a_obj.item ("smtp_password") as l_smtp and then l_smtp.is_string then
+				smtp_password := l_smtp.as_string_32.to_string_8
+				log_info ("config", "SMTP password loaded from config file (consider using SSC_SMTP_PASSWORD env var)")
+			else
+				smtp_password := ""
+			end
+
 			-- Database path
 			if attached a_obj.item ("db_path") as l_db and then l_db.is_string then
 				db_path := l_db.as_string_32.to_string_8
@@ -175,7 +207,88 @@ feature {NONE} -- Implementation
 				verbose_logging := is_development
 			end
 
+			-- SMTP endpoints
+			if attached a_obj.item ("smtp_endpoints") as l_endpoints and then l_endpoints.is_array then
+				load_smtp_endpoints (l_endpoints.as_array)
+			else
+				set_default_smtp_endpoints
+			end
+
 			log_debug ("config", "mode=" + mode + ", port=" + port.out + ", base_url=" + base_url)
+			log_debug ("config", "smtp_endpoints: " + smtp_endpoints.count.out + " configured")
+		end
+
+	load_smtp_endpoints (a_array: SIMPLE_JSON_ARRAY)
+			-- Load SMTP endpoints from JSON array
+		local
+			i: INTEGER
+			l_item: SIMPLE_JSON_VALUE
+			l_obj: detachable SIMPLE_JSON_OBJECT
+			l_host, l_protocol: STRING
+			l_port: INTEGER
+			l_ssl_reqd: BOOLEAN
+		do
+			create smtp_endpoints.make (a_array.count.to_integer_32.max (2))
+
+			from
+				i := 1
+			until
+				i > a_array.count.to_integer_32
+			loop
+				l_item := a_array.item (i)
+				if l_item.is_object then
+					l_obj := l_item.as_object
+				else
+					l_obj := Void
+				end
+
+				if attached l_obj as l_o then
+					-- Host (required)
+					if attached l_o.item ("host") as l_h and then l_h.is_string then
+						l_host := l_h.as_string_32.to_string_8
+					else
+						l_host := ""
+					end
+
+					-- Port (required)
+					if attached l_o.item ("port") as l_p and then l_p.is_number then
+						l_port := l_p.as_integer.to_integer_32
+					else
+						l_port := 0
+					end
+
+					-- Protocol (default based on port)
+					if attached l_o.item ("protocol") as l_pr and then l_pr.is_string then
+						l_protocol := l_pr.as_string_32.to_string_8
+					elseif l_port = 465 then
+						l_protocol := "smtps"
+					else
+						l_protocol := "smtp"
+					end
+
+					-- SSL required (default based on port)
+					if attached l_o.item ("ssl_reqd") as l_ssl and then l_ssl.is_boolean then
+						l_ssl_reqd := l_ssl.as_boolean
+					else
+						l_ssl_reqd := (l_port = 587)
+					end
+
+					-- Only add if we have valid host and port
+					if not l_host.is_empty and l_port > 0 then
+						smtp_endpoints.extend ([l_host, l_port, l_protocol, l_ssl_reqd])
+						log_debug ("config", "  SMTP endpoint: " + l_protocol + "://" + l_host + ":" + l_port.out)
+					end
+				end
+				i := i + 1
+			end
+
+			-- Fall back to defaults if no valid endpoints were parsed
+			if smtp_endpoints.is_empty then
+				log_info ("config", "No valid smtp_endpoints in config, using defaults")
+				set_default_smtp_endpoints
+			end
+		ensure
+			not_empty: not smtp_endpoints.is_empty
 		end
 
 invariant
@@ -184,5 +297,6 @@ invariant
 	base_url_not_empty: not base_url.is_empty
 	db_path_not_empty: not db_path.is_empty
 	log_level_not_empty: not log_level.is_empty
+	smtp_endpoints_exist: smtp_endpoints /= Void and then not smtp_endpoints.is_empty
 
 end
