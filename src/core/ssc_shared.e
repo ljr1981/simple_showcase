@@ -35,10 +35,10 @@ feature -- Color Palette
 
 feature -- Typography Classes
 
-	font_hero_headline: STRING = "text-4xl sm:text-5xl md:text-[6vw] lg:text-[8vw] font-light tracking-[-0.02em]"
+	font_hero_headline: STRING = "text-4xl sm:text-5xl md:text-[6vw] lg:text-[8vw] font-light tracking-[-0.02em] leading-tight"
 			-- Responsive hero headline: 4xl on mobile, scales up to 8vw on desktop
 
-	font_section_headline: STRING = "text-2xl sm:text-3xl md:text-[4vw] lg:text-[5vw] font-medium"
+	font_section_headline: STRING = "text-2xl sm:text-3xl md:text-[4vw] lg:text-[5vw] font-medium leading-tight"
 			-- Responsive section headline: 2xl on mobile, scales up to 5vw on desktop
 
 	font_body: STRING = "text-base sm:text-lg leading-relaxed"
