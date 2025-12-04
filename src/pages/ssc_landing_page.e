@@ -201,6 +201,10 @@ feature {NONE} -- HTML Generation
 			Result.append ("  " + base_tag + "%N")
 			Result.append ("  <title>" + title + "</title>%N")
 			Result.append ("  <meta name=%"description%" content=%"" + description + "%">%N")
+			-- PWA support
+			Result.append ("  <link rel=%"manifest%" href=%"" + base_url + "/manifest.json%">%N")
+			Result.append ("  <meta name=%"theme-color%" content=%"" + color_primary_dark + "%">%N")
+			Result.append ("  <link rel=%"apple-touch-icon%" href=%"" + base_url + "/icon-192.png%">%N")
 			Result.append ("  <script src=%"" + tailwind_cdn + "%"></script>%N")
 			Result.append ("  <script defer src=%"" + alpine_intersect_cdn + "%"></script>%N")
 			Result.append ("  <script defer src=%"" + alpine_cdn + "%"></script>%N")
@@ -252,6 +256,14 @@ feature {NONE} -- HTML Generation
 			Result.append ("      }%N")
 			Result.append ("    }));%N")
 			Result.append ("  });%N")
+			Result.append ("</script>%N")
+			-- Service worker registration for PWA
+			Result.append ("<script>%N")
+			Result.append ("  if ('serviceWorker' in navigator) {%N")
+			Result.append ("    navigator.serviceWorker.register('" + base_url + "/sw.js')%N")
+			Result.append ("      .then(reg => console.log('SW registered'))%N")
+			Result.append ("      .catch(err => console.log('SW failed:', err));%N")
+			Result.append ("  }%N")
 			Result.append ("</script>%N")
 		ensure
 			not_empty: not Result.is_empty

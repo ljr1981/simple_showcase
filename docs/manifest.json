@@ -1,0 +1,25 @@
+{
+  "name": "Simple Showcase",
+  "short_name": "Showcase",
+  "description": "12 libraries. 900+ tests. 10 days. AI-assisted, contract-verified development.",
+  "start_url": "/simple_showcase/",
+  "scope": "/simple_showcase/",
+  "display": "standalone",
+  "background_color": "#0c0b0b",
+  "theme_color": "#0c0b0b",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

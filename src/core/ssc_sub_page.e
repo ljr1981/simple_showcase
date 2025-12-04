@@ -70,6 +70,10 @@ feature {NONE} -- HTML Structure
 			Result.append ("  " + base_tag + "%N")
 			Result.append ("  <title>" + page_title + " | Simple Showcase</title>%N")
 			Result.append ("  <meta name=%"description%" content=%"" + page_subtitle + "%">%N")
+			-- PWA support
+			Result.append ("  <link rel=%"manifest%" href=%"" + base_url + "/manifest.json%">%N")
+			Result.append ("  <meta name=%"theme-color%" content=%"" + color_primary_dark + "%">%N")
+			Result.append ("  <link rel=%"apple-touch-icon%" href=%"" + base_url + "/icon-192.png%">%N")
 			Result.append ("  <script src=%"" + tailwind_cdn + "%"></script>%N")
 			Result.append ("  <script defer src=%"" + alpine_cdn + "%"></script>%N")
 			Result.append (page_styles)
@@ -90,6 +94,14 @@ feature {NONE} -- HTML Structure
 			Result.append (page_content)
 			Result.append (page_footer_nav)
 			Result.append ("</main>%N")
+			-- Service worker registration for PWA
+			Result.append ("<script>%N")
+			Result.append ("  if ('serviceWorker' in navigator) {%N")
+			Result.append ("    navigator.serviceWorker.register('" + base_url + "/sw.js')%N")
+			Result.append ("      .then(reg => console.log('SW registered'))%N")
+			Result.append ("      .catch(err => console.log('SW failed:', err));%N")
+			Result.append ("  }%N")
+			Result.append ("</script>%N")
 			Result.append ("</body>%N</html>")
 		ensure
 			not_empty: not Result.is_empty

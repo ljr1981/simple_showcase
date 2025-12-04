@@ -6,6 +6,9 @@
   <base href="/simple_showcase/">
   <title>The Competitive Analysis | Simple Showcase</title>
   <meta name="description" content="Eiffel + AI: Challenging Conventional Wisdom About Language Choice">
+  <link rel="manifest" href="/simple_showcase/manifest.json">
+  <meta name="theme-color" content="#0c0b0b">
+  <link rel="apple-touch-icon" href="/simple_showcase/icon-192.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <style>
@@ -218,5 +221,12 @@
 </div>
 </footer>
 </main>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/simple_showcase/sw.js')
+      .then(reg => console.log('SW registered'))
+      .catch(err => console.log('SW failed:', err));
+  }
+</script>
 </body>
 </html>
