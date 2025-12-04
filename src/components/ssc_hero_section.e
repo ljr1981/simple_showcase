@@ -52,25 +52,25 @@ feature {NONE} -- Content
 			l_headline_wrap := alpine.div
 			l_headline_wrap.class_ ("mb-12").do_nothing
 
-			-- Line 1: "While others satisficed,"
+			-- Line 1: "While others satisficed," - stagger 1
 			l_line1 := alpine.p
-			l_line1.class_ (font_hero_headline)
+			l_line1.class_ (font_hero_headline + " hero-stagger hero-stagger-1")
 				.text ("While others satisficed,")
 				.do_nothing
 			l_headline_wrap.raw_html (l_line1.to_html).do_nothing
 
-			-- Line 2: "we were building."
+			-- Line 2: "we were building." - stagger 2, brighter
 			l_line2 := alpine.p
-			l_line2.class_ (font_hero_headline + " text-white/90")
+			l_line2.class_ (font_hero_headline + " text-white hero-stagger hero-stagger-2")
 				.text ("we were building.")
 				.do_nothing
 			l_headline_wrap.raw_html (l_line2.to_html).do_nothing
 
 			l_container.raw_html (l_headline_wrap.to_html).do_nothing
 
-			-- Subhead with stats
+			-- Subhead with stats - stagger 3
 			l_subhead := alpine.div
-			l_subhead.class_ ("space-y-4").do_nothing
+			l_subhead.class_ ("space-y-4 hero-stagger hero-stagger-3").do_nothing
 
 			l_stats := alpine.p
 			l_stats.class_ (font_body + " " + font_stats)
@@ -89,9 +89,9 @@ feature {NONE} -- Content
 
 			l_container.raw_html (l_subhead.to_html).do_nothing
 
-			-- Scroll indicator
+			-- Scroll indicator - stagger 4
 			l_scroll_indicator := alpine.div
-			l_scroll_indicator.class_ ("absolute bottom-12 left-1/2 -translate-x-1/2 cursor-pointer opacity-60")
+			l_scroll_indicator.class_ ("absolute bottom-12 left-1/2 -translate-x-1/2 cursor-pointer opacity-60 hero-stagger hero-stagger-4")
 				.attr_raw ("@click", "document.getElementById('recognition').scrollIntoView({ behavior: 'smooth' })")
 				.do_nothing
 

@@ -90,14 +90,14 @@ feature {NONE} -- Form Generation
 			-- Name field
 			Result.append ("  <div>%N")
 			Result.append ("    <label for=%"name%" class=%"block text-sm font-medium mb-2%">Name</label>%N")
-			Result.append ("    <input type=%"text%" id=%"name%" name=%"name%" x-model=%"name%" required")
+			Result.append ("    <input type=%"text%" id=%"name%" name=%"name%" x-model=%"name%" required maxlength=%"100%"")
 			Result.append (" class=%"w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-blue-400 transition-colors%">%N")
 			Result.append ("  </div>%N")
 
 			-- Email field
 			Result.append ("  <div>%N")
 			Result.append ("    <label for=%"email%" class=%"block text-sm font-medium mb-2%">Email</label>%N")
-			Result.append ("    <input type=%"email%" id=%"email%" name=%"email%" x-model=%"email%" required")
+			Result.append ("    <input type=%"email%" id=%"email%" name=%"email%" x-model=%"email%" required maxlength=%"254%"")
 			Result.append (" class=%"w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-blue-400 transition-colors%">%N")
 			Result.append ("  </div>%N")
 
@@ -116,7 +116,7 @@ feature {NONE} -- Form Generation
 			-- Message field
 			Result.append ("  <div>%N")
 			Result.append ("    <label for=%"message%" class=%"block text-sm font-medium mb-2%">Message</label>%N")
-			Result.append ("    <textarea id=%"message%" name=%"message%" x-model=%"message%" rows=%"6%" required")
+			Result.append ("    <textarea id=%"message%" name=%"message%" x-model=%"message%" rows=%"6%" required maxlength=%"5000%"")
 			Result.append (" class=%"w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-blue-400 transition-colors resize-none%"></textarea>%N")
 			Result.append ("  </div>%N")
 

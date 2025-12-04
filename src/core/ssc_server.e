@@ -344,7 +344,10 @@ feature {NONE} -- Redirect Handlers
 feature {NONE} -- API Handlers
 
 	handle_contact_submit (req: SIMPLE_WEB_SERVER_REQUEST; res: SIMPLE_WEB_SERVER_RESPONSE)
-			-- Handle contact form submission
+			-- Handle contact form submission.
+			-- TODO: Add rate limiting for production deployment to prevent spam/DoS.
+			-- Consider: IP-based throttling (e.g., 5 requests per minute per IP)
+			-- or CAPTCHA integration for high-traffic scenarios.
 		local
 			l_json: SIMPLE_JSON
 			l_body: detachable SIMPLE_JSON_VALUE
@@ -353,7 +356,7 @@ feature {NONE} -- API Handlers
 		do
 			log_info ("api", "Contact form submission received")
 			log_debug ("api", "Body length: " + req.body.count.out)
-			log_debug ("api", "Body: " + req.body)
+			-- Note: Not logging full body to avoid exposing user PII in logs
 
 			if req.body.is_empty then
 				log_info ("api", "Empty request body")
@@ -387,10 +390,22 @@ feature {NONE} -- API Handlers
 							l_message := ""
 						end
 
-						-- Log the submission
-						log_info ("contact", "From: " + l_name + " <" + l_email + ">")
-						log_info ("contact", "Subject: " + l_subject)
-						log_info ("contact", "Message: " + l_message)
+						-- Server-side length validation (defense in depth)
+						if l_name.count > 100 then
+							l_name := l_name.substring (1, 100)
+						end
+						if l_email.count > 254 then
+							l_email := l_email.substring (1, 254)
+						end
+						if l_subject.count > 100 then
+							l_subject := l_subject.substring (1, 100)
+						end
+						if l_message.count > 5000 then
+							l_message := l_message.substring (1, 5000)
+						end
+
+						-- Log the submission (minimal info to avoid PII in logs)
+						log_info ("contact", "Submission received, subject: " + l_subject)
 
 						-- Send email notification
 						if send_contact_email (l_name, l_email, l_subject, l_message) then
@@ -514,7 +529,8 @@ feature {NONE} -- Email
 			l_cmd.append ("--user '" + config.contact_email + ":" + config.smtp_password + "' ")
 			l_cmd.append ("-T -%"")
 
-			log_debug ("email", "Command: " + l_cmd.to_string_8)
+			-- Note: Not logging full command to avoid exposing SMTP password
+			log_debug ("email", "Executing curl to " + l_url)
 
 			create l_process
 			l_output := l_process.output_of_command (l_cmd, Void)

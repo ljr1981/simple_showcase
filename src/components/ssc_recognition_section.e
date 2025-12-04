@@ -89,12 +89,16 @@ feature {NONE} -- Content
 		end
 
 	pain_card (a_title, a_desc: STRING; a_index: INTEGER): STRING
-			-- Generate a pain point card HTML
+			-- Generate a pain point card HTML with entrance animation
 		local
 			l_card: ALPINE_DIV
+			l_delay_class: STRING
 		do
+			l_delay_class := "card-delay-" + ((a_index - 1) \\ 4 + 1).out
+
 			l_card := alpine.div
-			l_card.class_ ("p-6 rounded-lg bg-white/5")
+			l_card.class_ ("p-6 rounded-lg bg-white/5 hover-lift card-animate " + l_delay_class)
+				.x_intersect ("$el.classList.add('entered')")
 				.raw_html ("<h3 class=%"text-xl font-medium mb-2%">" + a_title + "</h3>")
 				.raw_html ("<p class=%"opacity-70%">" + a_desc + "</p>")
 				.do_nothing

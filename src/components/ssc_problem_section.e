@@ -97,7 +97,7 @@ feature {NONE} -- Content
 		end
 
 	stat_card (a_number, a_label, a_source, a_url: STRING; a_index: INTEGER): STRING
-			-- Generate a stat card HTML with linked source
+			-- Generate a stat card HTML with linked source and entrance animation
 		require
 			number_not_empty: not a_number.is_empty
 			label_not_empty: not a_label.is_empty
@@ -106,9 +106,13 @@ feature {NONE} -- Content
 			index_positive: a_index > 0
 		local
 			l_card: ALPINE_DIV
+			l_delay_class: STRING
 		do
+			l_delay_class := "card-delay-" + ((a_index - 1) \\ 4 + 1).out
+
 			l_card := alpine.div
-			l_card.class_ ("p-6 rounded-lg bg-white/10 text-center")
+			l_card.class_ ("p-6 rounded-lg bg-white/10 text-center hover-lift card-animate " + l_delay_class)
+				.x_intersect ("$el.classList.add('entered')")
 				.raw_html ("<p class=%"text-5xl font-bold mb-2 stat-number%">" + a_number + "</p>")
 				.raw_html ("<p class=%"text-sm opacity-80 mb-1%">" + a_label + "</p>")
 				.raw_html ("<a href=%"" + a_url + "%" target=%"_blank%" class=%"text-xs text-blue-400 hover:underline%">" + a_source + " ↗</a>")

@@ -78,6 +78,9 @@ feature {NONE} -- Content
 
 			-- Human column
 			l_col := alpine.div
+			l_col.class_ ("card-animate card-delay-1")
+				.x_intersect ("$el.classList.add('entered')")
+				.do_nothing
 
 			l_col.raw_html ("<h3 class=%"text-2xl font-medium mb-6 text-center%">Human Brings</h3>")
 				.raw_html (role_item ("✓", "text-emerald-400", "Vision & direction"))
@@ -91,6 +94,9 @@ feature {NONE} -- Content
 
 			-- AI column
 			l_col := alpine.div
+			l_col.class_ ("card-animate card-delay-2")
+				.x_intersect ("$el.classList.add('entered')")
+				.do_nothing
 
 			l_col.raw_html ("<h3 class=%"text-2xl font-medium mb-6 text-center%">AI Brings</h3>")
 				.raw_html (role_item ("⚡", "text-blue-400", "Code generation at scale"))
@@ -104,6 +110,9 @@ feature {NONE} -- Content
 
 			-- DBC/Eiffel column (the airplane)
 			l_col := alpine.div
+			l_col.class_ ("card-animate card-delay-3")
+				.x_intersect ("$el.classList.add('entered')")
+				.do_nothing
 
 			l_col.raw_html ("<h3 class=%"text-2xl font-medium mb-6 text-center%">DBC/Eiffel Provides</h3>")
 				.raw_html (role_item ("✈", "text-amber-400", "The aircraft itself"))

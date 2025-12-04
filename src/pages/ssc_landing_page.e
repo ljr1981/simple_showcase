@@ -263,13 +263,36 @@ feature {NONE} -- HTML Generation
 	custom_styles: STRING
 			-- Custom CSS for scroll snap, animations, and tooltips
 		do
-			create Result.make (2000)
+			create Result.make (3000)
 			Result.append ("<style>%N")
+			-- Scroll container
 			Result.append ("  .snap-container { height: 100vh; overflow-y: scroll; scroll-behavior: smooth; }%N")
 			Result.append ("  .snap-section { }%N")
-			Result.append ("  .section-content { transition: opacity 0.15s ease-out, transform 0.15s ease-out; }%N")
+			Result.append ("  .section-content { transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); }%N")
+			-- Noise overlay
 			Result.append ("  .noise-overlay { opacity: 0.03; background: repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 3px); }%N")
+			-- Stats
 			Result.append ("  .stat-number { font-variant-numeric: tabular-nums; }%N")
+			-- Hero stagger animation
+			Result.append ("  @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }%N")
+			Result.append ("  .hero-stagger { opacity: 0; animation: fadeInUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }%N")
+			Result.append ("  .hero-stagger-1 { animation-delay: 0.2s; }%N")
+			Result.append ("  .hero-stagger-2 { animation-delay: 0.5s; }%N")
+			Result.append ("  .hero-stagger-3 { animation-delay: 0.9s; }%N")
+			Result.append ("  .hero-stagger-4 { animation-delay: 1.2s; }%N")
+			Result.append ("  .hero-stagger-5 { animation-delay: 1.6s; }%N")
+			-- Card entrance animation (for x-intersect)
+			Result.append ("  @keyframes cardEntrance { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }%N")
+			Result.append ("  .card-animate { opacity: 0; }%N")
+			Result.append ("  .card-animate.entered { animation: cardEntrance 0.5s ease-out forwards; }%N")
+			-- Staggered card delays
+			Result.append ("  .card-delay-1 { animation-delay: 0.1s; }%N")
+			Result.append ("  .card-delay-2 { animation-delay: 0.2s; }%N")
+			Result.append ("  .card-delay-3 { animation-delay: 0.3s; }%N")
+			Result.append ("  .card-delay-4 { animation-delay: 0.4s; }%N")
+			-- Hover enhancement
+			Result.append ("  .hover-lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }%N")
+			Result.append ("  .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }%N")
 			Result.append (tooltip_css)
 			Result.append ("</style>%N")
 		ensure
@@ -277,6 +300,7 @@ feature {NONE} -- HTML Generation
 			has_style_tags: Result.has_substring ("<style>") and Result.has_substring ("</style>")
 			has_snap_container: Result.has_substring (".snap-container")
 			has_tooltip_styles: Result.has_substring (".tooltip-term")
+			has_hero_stagger: Result.has_substring (".hero-stagger")
 		end
 
 feature {NONE} -- Factory

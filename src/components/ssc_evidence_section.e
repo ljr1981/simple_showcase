@@ -113,7 +113,7 @@ feature {NONE} -- Content
 		end
 
 	project_card (a_name, a_lines, a_tests, a_desc: STRING; a_index: INTEGER): STRING
-			-- Generate a project card HTML with GitHub link
+			-- Generate a project card HTML with GitHub link and entrance animation
 		require
 			name_not_empty: not a_name.is_empty
 			desc_not_empty: not a_desc.is_empty
@@ -121,11 +121,16 @@ feature {NONE} -- Content
 		local
 			l_card: ALPINE_DIV
 			l_github_url: STRING
+			l_delay_class: STRING
 		do
 			l_github_url := github_url (a_name)
+			-- Stagger animation by cycling through delay classes
+			l_delay_class := "card-delay-" + ((a_index - 1) \\ 4 + 1).out
 
 			l_card := alpine.div
-			l_card.class_ ("p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-colors").do_nothing
+			l_card.class_ ("p-4 rounded-lg bg-white/5 hover:bg-white/10 hover-lift card-animate " + l_delay_class)
+				.x_intersect ("$el.classList.add('entered')")
+				.do_nothing
 
 			l_card.raw_html ("<h3 class=%"font-mono text-sm font-medium mb-1%"><a href=%"" + l_github_url + "%" target=%"_blank%" class=%"hover:text-blue-400 transition-colors%">" + a_name + " ↗</a></h3>").do_nothing
 			l_card.raw_html ("<p class=%"text-xs opacity-60 mb-2%">" + a_desc + "</p>").do_nothing

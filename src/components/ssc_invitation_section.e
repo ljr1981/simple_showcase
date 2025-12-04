@@ -98,7 +98,7 @@ feature {NONE} -- Content
 		end
 
 	path_card (a_title, a_desc, a_cta, a_link: STRING; a_index: INTEGER): STRING
-			-- Generate a path card HTML
+			-- Generate a path card HTML with entrance animation
 		require
 			title_not_empty: not a_title.is_empty
 			desc_not_empty: not a_desc.is_empty
@@ -107,9 +107,13 @@ feature {NONE} -- Content
 			index_positive: a_index > 0
 		local
 			l_path: ALPINE_DIV
+			l_delay_class: STRING
 		do
+			l_delay_class := "card-delay-" + ((a_index - 1) \\ 4 + 1).out
+
 			l_path := alpine.div
-			l_path.class_ ("p-8 rounded-lg bg-white/5 hover:bg-white/10 transition-all text-center group")
+			l_path.class_ ("p-8 rounded-lg bg-white/5 hover:bg-white/10 transition-all text-center group hover-lift card-animate " + l_delay_class)
+				.x_intersect ("$el.classList.add('entered')")
 				.raw_html ("<h3 class=%"text-xl font-medium mb-4%">" + a_title + "</h3>")
 				.raw_html ("<p class=%"opacity-70 mb-6%">" + a_desc + "</p>")
 				.raw_html ("<a href=%"" + a_link + "%" class=%"inline-block px-6 py-3 bg-white/10 group-hover:bg-white/20 rounded-full text-sm transition-colors%">" + a_cta + " →</a>")

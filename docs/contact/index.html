@@ -105,11 +105,11 @@
 <form id="contact-form" class="space-y-6" x-data="contactForm()">
   <div>
     <label for="name" class="block text-sm font-medium mb-2">Name</label>
-    <input type="text" id="name" name="name" x-model="name" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-blue-400 transition-colors">
+    <input type="text" id="name" name="name" x-model="name" required maxlength="100" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-blue-400 transition-colors">
   </div>
   <div>
     <label for="email" class="block text-sm font-medium mb-2">Email</label>
-    <input type="email" id="email" name="email" x-model="email" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-blue-400 transition-colors">
+    <input type="email" id="email" name="email" x-model="email" required maxlength="254" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-blue-400 transition-colors">
   </div>
   <div>
     <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
@@ -122,7 +122,7 @@
   </div>
   <div>
     <label for="message" class="block text-sm font-medium mb-2">Message</label>
-    <textarea id="message" name="message" x-model="message" rows="6" required class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-blue-400 transition-colors resize-none"></textarea>
+    <textarea id="message" name="message" x-model="message" rows="6" required maxlength="5000" class="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-blue-400 transition-colors resize-none"></textarea>
   </div>
   <div>
     <button type="submit" @click.prevent="submitForm()" :disabled="submitting" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 disabled:bg-blue-500/50 rounded-lg font-medium transition-colors">

@@ -88,16 +88,20 @@ feature {NONE} -- Content
 		end
 
 	timeline_item (a_year, a_event: STRING; a_index: INTEGER): STRING
-			-- Generate a timeline item HTML
+			-- Generate a timeline item HTML with entrance animation
 		require
 			year_not_empty: not a_year.is_empty
 			event_not_empty: not a_event.is_empty
 			index_positive: a_index > 0
 		local
 			l_item: ALPINE_DIV
+			l_delay_class: STRING
 		do
+			l_delay_class := "card-delay-" + ((a_index - 1) \\ 4 + 1).out
+
 			l_item := alpine.div
-			l_item.class_ ("text-center")
+			l_item.class_ ("text-center card-animate " + l_delay_class)
+				.x_intersect ("$el.classList.add('entered')")
 				.raw_html ("<p class=%"text-3xl font-bold mb-1%">" + a_year + "</p>")
 				.raw_html ("<p class=%"text-sm opacity-70%">" + a_event + "</p>")
 				.do_nothing
