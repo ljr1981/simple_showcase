@@ -114,8 +114,8 @@ feature -- Content
 
 			-- CTA
 			Result.append ("<div class=%"mt-8 flex gap-4%">%N")
-			Result.append (cta_button ("See What Got Built", "/portfolio"))
-			Result.append (cta_button ("Get Started", "/get-started"))
+			Result.append (cta_button ("See What Got Built", "portfolio"))
+			Result.append (cta_button ("Get Started", "get-started"))
 			Result.append ("</div>%N")
 		ensure then
 			has_pain_points: Result.has_substring ("Dependency Hell")
@@ -127,8 +127,8 @@ feature {NONE} -- Related Pages
 			-- Related pages for footer
 		do
 			create Result.make (3)
-			Result.put ("Portfolio", "/portfolio")
-			Result.put ("What AI Changes", "/ai-changes")
+			Result.put ("Portfolio", "portfolio")
+			Result.put ("What AI Changes", "ai-changes")
 		end
 
 feature {NONE} -- Content Helpers

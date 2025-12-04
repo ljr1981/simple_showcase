@@ -123,9 +123,9 @@ feature -- Content
 			-- Next Steps
 			Result.append (section_heading ("Next Steps"))
 			Result.append ("<div class=%"space-y-4%">%N")
-			Result.append (next_step ("1", "Read the full competitive analysis", "/analysis"))
-			Result.append (next_step ("2", "Review the project portfolio", "/portfolio"))
-			Result.append (next_step ("3", "Try it yourself", "/get-started"))
+			Result.append (next_step ("1", "Read the full competitive analysis", "analysis"))
+			Result.append (next_step ("2", "Review the project portfolio", "portfolio"))
+			Result.append (next_step ("3", "Try it yourself", "get-started"))
 			Result.append ("</div>%N")
 		ensure then
 			has_roi: Result.has_substring ("ROI")
@@ -137,8 +137,8 @@ feature {NONE} -- Related Pages
 			-- Related pages for footer
 		do
 			create Result.make (3)
-			Result.put ("Competitive Analysis", "/analysis")
-			Result.put ("Portfolio", "/portfolio")
+			Result.put ("Competitive Analysis", "analysis")
+			Result.put ("Portfolio", "portfolio")
 		end
 
 feature {NONE} -- Content Helpers

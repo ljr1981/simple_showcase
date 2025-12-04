@@ -141,8 +141,8 @@ feature {NONE} -- Related Pages
 			-- Related pages for footer
 		do
 			create Result.make (3)
-			Result.put ("Portfolio", "/portfolio")
-			Result.put ("How DBC Works", "/design-by-contract")
+			Result.put ("Portfolio", "portfolio")
+			Result.put ("How DBC Works", "design-by-contract")
 		end
 
 feature {NONE} -- Content Helpers

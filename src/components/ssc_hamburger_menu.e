@@ -50,10 +50,10 @@ feature -- Access
 		end
 
 	page_urls: ARRAY [STRING]
-			-- Page URLs
+			-- Page URLs (relative for base tag compatibility)
 		once
-			Result := <<"/", "/get-started", "/portfolio", "/design-by-contract", "/workflow",
-				"/analysis", "/business-case", "/why-eiffel", "/probable-to-provable", "/old-way", "/ai-changes">>
+			Result := <<".", "get-started", "portfolio", "design-by-contract", "workflow",
+				"analysis", "business-case", "why-eiffel", "probable-to-provable", "old-way", "ai-changes">>
 		end
 
 	page_descriptions: ARRAY [STRING]

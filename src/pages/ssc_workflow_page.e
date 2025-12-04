@@ -135,7 +135,7 @@ feature -- Content
 
 			-- CTA
 			Result.append ("<div class=%"mt-8%">%N")
-			Result.append (cta_button ("See the Competitive Analysis", "/analysis"))
+			Result.append (cta_button ("See the Competitive Analysis", "analysis"))
 			Result.append ("</div>%N")
 		ensure then
 			has_metaphor: Result.has_substring ("airplane")
@@ -147,8 +147,8 @@ feature {NONE} -- Related Pages
 			-- Related pages for footer
 		do
 			create Result.make (3)
-			Result.put ("Get Started", "/get-started")
-			Result.put ("Competitive Analysis", "/analysis")
+			Result.put ("Get Started", "get-started")
+			Result.put ("Competitive Analysis", "analysis")
 		end
 
 feature {NONE} -- Content Helpers

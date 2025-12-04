@@ -104,7 +104,7 @@ feature {NONE} -- Content
 			-- CTA
 			l_cta := alpine.div
 			l_cta.class_ ("mt-12 text-center")
-				.raw_html ("<a href=%"/portfolio%" class=%"inline-block px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors%">Explore the full portfolio →</a>")
+				.raw_html ("<a href=%"portfolio%" class=%"inline-block px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors%">Explore the full portfolio →</a>")
 				.do_nothing
 
 			l_container.raw_html (l_cta.to_html).do_nothing

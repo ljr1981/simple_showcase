@@ -145,7 +145,7 @@ feature {NONE} -- HTML Structure
 			l_pages := related_pages
 			Result.append ("<footer class=%"mt-16 pt-8 border-t border-white/10%">%N")
 			Result.append ("  <div class=%"flex flex-wrap gap-4 mb-8%">%N")
-			Result.append ("    <a href=%"/%" class=%"text-sm opacity-60 hover:opacity-100 transition-opacity%">Back to home</a>%N")
+			Result.append ("    <a href=%".%" class=%"text-sm opacity-60 hover:opacity-100 transition-opacity%">Back to home</a>%N")
 			from l_pages.start until l_pages.after loop
 				Result.append ("    <a href=%"" + l_pages.key_for_iteration + "%" class=%"text-sm opacity-60 hover:opacity-100 transition-opacity%">" + l_pages.item_for_iteration + "</a>%N")
 				l_pages.forth

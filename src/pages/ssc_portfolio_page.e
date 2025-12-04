@@ -164,8 +164,8 @@ feature {NONE} -- Related Pages
 			-- Related pages for footer
 		do
 			create Result.make (3)
-			Result.put ("Get Started", "/get-started")
-			Result.put ("Business Case", "/business-case")
+			Result.put ("Get Started", "get-started")
+			Result.put ("Business Case", "business-case")
 		end
 
 feature {NONE} -- Content Helpers
