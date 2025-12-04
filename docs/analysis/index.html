@@ -34,7 +34,7 @@
       <span class="block w-5 h-0.5 bg-white/80 transition-all" :class="menuOpen ? '-rotate-45 -translate-y-2' : ''"></span>
     </div>
   </button>
-  <div x-show="menuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-x-4" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-4" @click.outside="menuOpen = false" class="absolute top-14 left-0 w-72 bg-[#0c0b0b]/95 backdrop-blur-md rounded-lg border border-white/10 shadow-2xl overflow-hidden">
+  <div x-show="menuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-x-4" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-4" @click.outside="menuOpen = false" class="absolute top-14 left-0 w-[calc(100vw-2rem)] sm:w-72 max-w-72 bg-[#0c0b0b]/95 backdrop-blur-md rounded-lg border border-white/10 shadow-2xl overflow-hidden">
     <div class="px-4 py-3 border-b border-white/10">
       <span class="text-sm font-medium opacity-60">Navigate</span>
     </div>
@@ -93,15 +93,15 @@
     </div>
   </div>
 </div>
-<main class="max-w-4xl mx-auto px-6 py-16">
-<header class="mb-16 pt-8">
+<main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
+<header class="mb-8 sm:mb-16 pt-4 sm:pt-8">
   <p class="text-xs uppercase tracking-widest opacity-60 mb-4">ANALYSIS</p>
-  <h1 class="text-4xl md:text-5xl font-light mb-6">The Competitive Analysis</h1>
-  <p class="text-xl opacity-80 max-w-2xl">Eiffel + AI: Challenging Conventional Wisdom About Language Choice</p>
+  <h1 class="text-3xl sm:text-4xl md:text-5xl font-light mb-4 sm:mb-6">The Competitive Analysis</h1>
+  <p class="text-lg sm:text-xl opacity-80 max-w-2xl">Eiffel + AI: Challenging Conventional Wisdom About Language Choice</p>
 </header>
 <p class="text-sm opacity-60 mb-8">December 2025 | Larry Rix and Claude (Anthropic)</p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">Executive Summary</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">Executive Summary</h2>
 <p class="mb-4 opacity-90 leading-relaxed">This analysis examines how AI-assisted development combined with Design by Contract challenges traditional assumptions about language choice in software development.</p>
 <p class="mb-4 opacity-90 leading-relaxed">Key findings:</p>
 <ul class="list-disc list-inside space-y-2 mb-6 opacity-90">
@@ -111,7 +111,7 @@
   <li><strong>Runtime contract verification</strong> catches AI errors before production</li>
 </ul>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">The Developer Reality</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">The Developer Reality</h2>
 <p class="mb-4 opacity-90 leading-relaxed">The conventional wisdom: "You can't hire Eiffel developers."</p>
 <p class="mb-4 opacity-90 leading-relaxed">The reality:</p>
 <ul class="list-disc list-inside space-y-2 mb-6 opacity-90">
@@ -122,7 +122,7 @@
 </ul>
 <p class="mb-4 opacity-90 leading-relaxed">Not millions like Java or JavaScript—but you don't need millions. You need the right few.</p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">The Library Reality</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">The Library Reality</h2>
 <p class="mb-4 opacity-90 leading-relaxed">The conventional wisdom: "There's no library ecosystem."</p>
 <p class="mb-4 opacity-90 leading-relaxed">The reality—a tiered approach:</p>
 <ul class="list-disc list-inside space-y-2 mb-6 opacity-90">
@@ -133,7 +133,7 @@
 <p class="mb-4 opacity-90 leading-relaxed">Stale community library? Clone it and fix it yourself with AI help—like we did with eiffel_sqlite.</p>
 <p class="mb-4 opacity-90 leading-relaxed"><strong>The real shift:</strong> From dependency to optionality. You <em>can</em> use external libraries—but you don't <em>have to</em>. See value in a market trend? Capture it yourself in hours, not months.</p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">The Cost Analysis</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">The Cost Analysis</h2>
 <p class="mb-4 opacity-90 leading-relaxed">Traditional estimate for equivalent functionality:</p>
 <div class="grid md:grid-cols-2 gap-6 mb-8">
 <div class="card">
@@ -157,7 +157,7 @@
 </div>
 <p class="mb-4 opacity-90 leading-relaxed"><strong>ROI: 6,133% - 10,100%</strong></p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">The Quality Factor</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">The Quality Factor</h2>
 <p class="mb-4 opacity-90 leading-relaxed">Industry data on AI-generated code:</p>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
 <div class="stat-box">
@@ -183,7 +183,7 @@
 </div>
 <p class="mb-4 opacity-90 leading-relaxed">With Design by Contract, AI errors are caught at compile-time or first execution—not in production.</p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">The Methodology</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">The Methodology</h2>
 <p class="mb-4 opacity-90 leading-relaxed">How results were measured:</p>
 <ul class="list-disc list-inside space-y-2 mb-6 opacity-90">
   <li>Lines of code counted via standard tooling</li>
@@ -193,7 +193,7 @@
 </ul>
 <p class="mb-4 opacity-90 leading-relaxed">All claims are verifiable. Clone the repos. Run the tests.</p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">Implications for Decision Makers</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">Implications for Decision Makers</h2>
 <p class="mb-4 opacity-90 leading-relaxed">For CTOs and technical leaders evaluating language choices:</p>
 <ul class="list-disc list-inside space-y-2 mb-6 opacity-90">
   <li>The "safe choice" may be the riskier choice</li>

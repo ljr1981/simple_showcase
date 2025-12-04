@@ -116,7 +116,7 @@ feature -- Generation
 			Result.append ("x-transition:leave-start=%"opacity-100 translate-x-0%" ")
 			Result.append ("x-transition:leave-end=%"opacity-0 -translate-x-4%" ")
 			Result.append ("@click.outside=%"menuOpen = false%" ")
-			Result.append ("class=%"absolute top-14 left-0 w-72 bg-[" + color_primary_dark + "]/95 backdrop-blur-md ")
+			Result.append ("class=%"absolute top-14 left-0 w-[calc(100vw-2rem)] sm:w-72 max-w-72 bg-[" + color_primary_dark + "]/95 backdrop-blur-md ")
 			Result.append ("rounded-lg border border-white/10 shadow-2xl overflow-hidden%">%N")
 
 			-- Menu header

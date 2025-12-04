@@ -35,15 +35,19 @@ feature -- Color Palette
 
 feature -- Typography Classes
 
-	font_hero_headline: STRING = "text-[8vw] font-light tracking-[-0.02em]"
+	font_hero_headline: STRING = "text-4xl sm:text-5xl md:text-[6vw] lg:text-[8vw] font-light tracking-[-0.02em]"
+			-- Responsive hero headline: 4xl on mobile, scales up to 8vw on desktop
 
-	font_section_headline: STRING = "text-[5vw] font-medium"
+	font_section_headline: STRING = "text-2xl sm:text-3xl md:text-[4vw] lg:text-[5vw] font-medium"
+			-- Responsive section headline: 2xl on mobile, scales up to 5vw on desktop
 
-	font_body: STRING = "text-lg leading-relaxed"
+	font_body: STRING = "text-base sm:text-lg leading-relaxed"
+			-- Responsive body text: base on mobile, lg on larger screens
 
 	font_section_label: STRING = "text-xs uppercase tracking-widest opacity-60"
 
-	font_code: STRING = "font-mono text-sm leading-relaxed"
+	font_code: STRING = "font-mono text-xs sm:text-sm leading-relaxed"
+			-- Responsive code: smaller on mobile
 
 	font_stats: STRING = "font-bold tabular-nums"
 
@@ -59,24 +63,45 @@ feature -- Animation Classes
 
 feature -- Common Classes
 
-	section_full_viewport: STRING = "min-h-screen w-full snap-start flex flex-col justify-center items-center px-8"
+	section_full_viewport: STRING = "min-h-screen w-full snap-start flex flex-col justify-center items-center px-4 sm:px-6 md:px-8"
+			-- Responsive padding: tighter on mobile
 
-	container_centered: STRING = "max-w-4xl mx-auto text-center"
+	container_centered: STRING = "max-w-4xl mx-auto text-center px-4 sm:px-0"
+			-- Centered container with mobile padding
 
-	container_wide: STRING = "max-w-6xl mx-auto"
+	container_wide: STRING = "max-w-6xl mx-auto px-4 sm:px-0"
+			-- Wide container with mobile padding
 
 feature -- Base URL (for GitHub Pages)
 
-	base_url: STRING = "/simple_showcase"
-			-- Base URL path for GitHub Pages deployment
-			-- Use empty string for localhost, "/simple_showcase" for GitHub Pages
+	base_url: STRING
+			-- Base URL path - empty for localhost, "/simple_showcase" for GitHub Pages
+			-- Set via shared_base_url cell
+		do
+			Result := shared_base_url.item
+		end
+
+	shared_base_url: CELL [STRING]
+			-- Shared base URL cell - set once for all pages
+			-- Default is empty (for local development)
+		once
+			create Result.put ("")
+		end
+
+	set_base_url_for_github_pages
+			-- Set base URL for GitHub Pages deployment
+		do
+			shared_base_url.put ("/simple_showcase")
+		end
 
 	base_tag: STRING
 			-- HTML base tag for proper link resolution
 		do
-			Result := "<base href=%"" + base_url + "/%">"
-		ensure
-			not_empty: not Result.is_empty
+			if base_url.is_empty then
+				Result := ""
+			else
+				Result := "<base href=%"" + base_url + "/%">"
+			end
 		end
 
 feature -- CDN URLs

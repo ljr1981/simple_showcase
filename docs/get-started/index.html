@@ -34,7 +34,7 @@
       <span class="block w-5 h-0.5 bg-white/80 transition-all" :class="menuOpen ? '-rotate-45 -translate-y-2' : ''"></span>
     </div>
   </button>
-  <div x-show="menuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-x-4" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-4" @click.outside="menuOpen = false" class="absolute top-14 left-0 w-72 bg-[#0c0b0b]/95 backdrop-blur-md rounded-lg border border-white/10 shadow-2xl overflow-hidden">
+  <div x-show="menuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-x-4" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-4" @click.outside="menuOpen = false" class="absolute top-14 left-0 w-[calc(100vw-2rem)] sm:w-72 max-w-72 bg-[#0c0b0b]/95 backdrop-blur-md rounded-lg border border-white/10 shadow-2xl overflow-hidden">
     <div class="px-4 py-3 border-b border-white/10">
       <span class="text-sm font-medium opacity-60">Navigate</span>
     </div>
@@ -93,13 +93,13 @@
     </div>
   </div>
 </div>
-<main class="max-w-4xl mx-auto px-6 py-16">
-<header class="mb-16 pt-8">
+<main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
+<header class="mb-8 sm:mb-16 pt-4 sm:pt-8">
   <p class="text-xs uppercase tracking-widest opacity-60 mb-4">GET STARTED</p>
-  <h1 class="text-4xl md:text-5xl font-light mb-6">Get Started</h1>
-  <p class="text-xl opacity-80 max-w-2xl">Start building with Eiffel + AI in under an hour.</p>
+  <h1 class="text-3xl sm:text-4xl md:text-5xl font-light mb-4 sm:mb-6">Get Started</h1>
+  <p class="text-lg sm:text-xl opacity-80 max-w-2xl">Start building with Eiffel + AI in under an hour.</p>
 </header>
-<h2 class="text-2xl font-medium mb-6">What You'll Need</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">What You'll Need</h2>
 <ul class="list-disc list-inside space-y-2 mb-6 opacity-90">
   <li>A computer (Windows, macOS, or Linux)</li>
   <li>About 45 minutes</li>
@@ -170,7 +170,7 @@ It should have add, subtract, multiply, divide.
 Each feature should have preconditions and postconditions.</pre></code></div>
 <p class="mb-4 opacity-90 leading-relaxed">Paste this to your AI assistant along with the reference docs. Watch what happens.</p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">What to Expect</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">What to Expect</h2>
 <div class="mb-6">
   <h4 class="font-medium mb-2">First hour</h4>
 <ul class="list-disc list-inside space-y-2 mb-6 opacity-90">
@@ -196,7 +196,7 @@ Each feature should have preconditions and postconditions.</pre></code></div>
 </ul>
 </div>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">Explore the Libraries</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">Explore the Libraries</h2>
 <p class="mb-4 opacity-90 leading-relaxed">Want to see real code? Clone any of our libraries:</p>
 <ul class="list-disc list-inside space-y-2 mb-6 opacity-90">
   <li><a href="https://github.com/ljr1981/simple_json" target="_blank" class="text-blue-400 hover:underline">simple_json ↗</a> — Good starting point, clear patterns</li>
@@ -205,7 +205,7 @@ Each feature should have preconditions and postconditions.</pre></code></div>
 </ul>
 <p class="mb-4 opacity-90 leading-relaxed">All have tests you can run to see contracts in action.</p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">Need Help?</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">Need Help?</h2>
 <ul class="list-disc list-inside space-y-2 mb-6 opacity-90">
   <li>Eiffel community: <a href="https://www.eiffel.org/community" target="_blank" class="text-blue-400 hover:underline">eiffel.org/community ↗</a></li>
   <li>Our repos: Issues welcome on GitHub</li>

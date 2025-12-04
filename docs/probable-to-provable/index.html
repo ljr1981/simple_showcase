@@ -34,7 +34,7 @@
       <span class="block w-5 h-0.5 bg-white/80 transition-all" :class="menuOpen ? '-rotate-45 -translate-y-2' : ''"></span>
     </div>
   </button>
-  <div x-show="menuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-x-4" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-4" @click.outside="menuOpen = false" class="absolute top-14 left-0 w-72 bg-[#0c0b0b]/95 backdrop-blur-md rounded-lg border border-white/10 shadow-2xl overflow-hidden">
+  <div x-show="menuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-x-4" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-4" @click.outside="menuOpen = false" class="absolute top-14 left-0 w-[calc(100vw-2rem)] sm:w-72 max-w-72 bg-[#0c0b0b]/95 backdrop-blur-md rounded-lg border border-white/10 shadow-2xl overflow-hidden">
     <div class="px-4 py-3 border-b border-white/10">
       <span class="text-sm font-medium opacity-60">Navigate</span>
     </div>
@@ -93,19 +93,19 @@
     </div>
   </div>
 </div>
-<main class="max-w-4xl mx-auto px-6 py-16">
-<header class="mb-16 pt-8">
+<main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
+<header class="mb-8 sm:mb-16 pt-4 sm:pt-8">
   <p class="text-xs uppercase tracking-widest opacity-60 mb-4">PROBABLE TO PROVABLE</p>
-  <h1 class="text-4xl md:text-5xl font-light mb-6">From Probable to Provable</h1>
-  <p class="text-xl opacity-80 max-w-2xl">The framework for AI-assisted development that actually works.</p>
+  <h1 class="text-3xl sm:text-4xl md:text-5xl font-light mb-4 sm:mb-6">From Probable to Provable</h1>
+  <p class="text-lg sm:text-xl opacity-80 max-w-2xl">The framework for AI-assisted development that actually works.</p>
 </header>
 <p class="mb-4 opacity-90 leading-relaxed"><em>Inspired by Bertrand Meyer's work on Design by Contract and software verification.</em></p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">The Core Insight</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">The Core Insight</h2>
 <p class="mb-4 opacity-90 leading-relaxed">AI produces statistically likely code. Not proven correct code. <strong>Likely code.</strong></p>
 <p class="mb-4 opacity-90 leading-relaxed">"Likely" works for one module. "Likely" fails at scale.</p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">The Math</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">The Math</h2>
 <p class="mb-4 opacity-90 leading-relaxed">If each module is 99.9% correct:</p>
 <div class="bg-[#1a1a1a] rounded-lg p-6 mb-8 font-mono text-sm">
   <div class="grid grid-cols-2 gap-4">
@@ -121,7 +121,7 @@
 </div>
 <p class="mb-4 opacity-90 leading-relaxed">Real systems have thousands of modules. "Probably correct" becomes "probably broken."</p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">The Solution</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">The Solution</h2>
 <p class="mb-4 opacity-90 leading-relaxed">Combine AI generation with formal verification.</p>
 <div class="grid md:grid-cols-2 gap-6 mb-8">
 <div class="card">
@@ -135,7 +135,7 @@
 </div>
 <p class="mb-4 opacity-90 leading-relaxed"><strong>Probable + Verification = Provable</strong></p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">The Process</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">The Process</h2>
 <div class="mb-6 flex gap-4">
   <div class="text-3xl font-bold opacity-20">1</div>
   <div>
@@ -165,7 +165,7 @@
   </div>
 </div>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">The "True But Incomplete" Trap</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">The "True But Incomplete" Trap</h2>
 <p class="mb-4 opacity-90 leading-relaxed">AI often generates contracts that are true but miss guarantees:</p>
 <div class="grid md:grid-cols-2 gap-6 mb-8">
 <div class="card">
@@ -183,7 +183,7 @@
 </div>
 <p class="mb-4 opacity-90 leading-relaxed"><strong>Always ask: "What ELSE is guaranteed?"</strong></p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">The Implication</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">The Implication</h2>
 <p class="mb-4 opacity-90 leading-relaxed">AI without verification: <strong>Faster bugs at scale.</strong></p>
 <p class="mb-4 opacity-90 leading-relaxed">AI with verification: <strong>Faster correctness at scale.</strong></p>
 <p class="mb-4 opacity-90 leading-relaxed">The technology for verification exists. It's called Design by Contract. It's built into Eiffel.</p>

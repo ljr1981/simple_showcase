@@ -97,7 +97,7 @@ feature -- Content
 			Result.append (section_heading ("The Combination That Works"))
 			Result.append ("<div class=%"bg-[#1a1a1a] rounded-lg p-8 text-center mb-8%">%N")
 			Result.append ("  <div class=%"text-xl mb-4%">AI + Human judgment + Verification</div>%N")
-			Result.append ("  <div class=%"grid grid-cols-3 gap-4 text-sm%">%N")
+			Result.append ("  <div class=%"grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm%">%N")
 			Result.append ("    <div><div class=%"text-blue-400 font-medium%">AI</div><div class=%"opacity-70%">generates fast</div></div>%N")
 			Result.append ("    <div><div class=%"text-emerald-400 font-medium%">Humans</div><div class=%"opacity-70%">direct and decide</div></div>%N")
 			Result.append ("    <div><div class=%"text-purple-400 font-medium%">Contracts</div><div class=%"opacity-70%">verify automatically</div></div>%N")

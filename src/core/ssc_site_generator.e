@@ -19,6 +19,8 @@ class
 inherit
 	SSC_LOGGER
 
+	SSC_SHARED
+
 create
 	make
 
@@ -30,6 +32,10 @@ feature {NONE} -- Initialization
 			print ("%N========================================%N")
 			print ("   SSC STATIC SITE GENERATOR%N")
 			print ("========================================%N%N")
+
+			-- Set base URL for GitHub Pages
+			set_base_url_for_github_pages
+			print ("Base URL set to: " + base_url + "%N%N")
 
 			create_output_directories
 			generate_all_pages

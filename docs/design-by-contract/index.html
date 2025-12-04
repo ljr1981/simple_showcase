@@ -34,7 +34,7 @@
       <span class="block w-5 h-0.5 bg-white/80 transition-all" :class="menuOpen ? '-rotate-45 -translate-y-2' : ''"></span>
     </div>
   </button>
-  <div x-show="menuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-x-4" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-4" @click.outside="menuOpen = false" class="absolute top-14 left-0 w-72 bg-[#0c0b0b]/95 backdrop-blur-md rounded-lg border border-white/10 shadow-2xl overflow-hidden">
+  <div x-show="menuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-x-4" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-4" @click.outside="menuOpen = false" class="absolute top-14 left-0 w-[calc(100vw-2rem)] sm:w-72 max-w-72 bg-[#0c0b0b]/95 backdrop-blur-md rounded-lg border border-white/10 shadow-2xl overflow-hidden">
     <div class="px-4 py-3 border-b border-white/10">
       <span class="text-sm font-medium opacity-60">Navigate</span>
     </div>
@@ -93,13 +93,13 @@
     </div>
   </div>
 </div>
-<main class="max-w-4xl mx-auto px-6 py-16">
-<header class="mb-16 pt-8">
+<main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
+<header class="mb-8 sm:mb-16 pt-4 sm:pt-8">
   <p class="text-xs uppercase tracking-widest opacity-60 mb-4">DESIGN BY CONTRACT</p>
-  <h1 class="text-4xl md:text-5xl font-light mb-6">How Design by Contract Works</h1>
-  <p class="text-xl opacity-80 max-w-2xl">The code tells you what it guarantees. The runtime enforces those guarantees. Automatically.</p>
+  <h1 class="text-3xl sm:text-4xl md:text-5xl font-light mb-4 sm:mb-6">How Design by Contract Works</h1>
+  <p class="text-lg sm:text-xl opacity-80 max-w-2xl">The code tells you what it guarantees. The runtime enforces those guarantees. Automatically.</p>
 </header>
-<h2 class="text-2xl font-medium mb-6">The Core Idea</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">The Core Idea</h2>
 <p class="mb-4 opacity-90 leading-relaxed">Every feature (method) is a contract between caller and implementation:</p>
 <div class="space-y-4 mb-8">
 <div class="card">
@@ -119,7 +119,7 @@
 </div>
 </div>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">A Real Example</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">A Real Example</h2>
 <p class="mb-4 opacity-90 leading-relaxed">Let's build a bank account:</p>
 <div class="code-block mb-6"><code><pre>class BANK_ACCOUNT
 
@@ -154,7 +154,7 @@ end</pre></code></div>
 </ul>
 <p class="mb-4 opacity-90 leading-relaxed"><strong>Try to violate any of these?</strong> Runtime exception with exact location.</p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">What Happens When AI Writes Code</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">What Happens When AI Writes Code</h2>
 <div class="grid md:grid-cols-2 gap-6 mb-8">
 <div class="card">
   <h4 class="font-medium mb-4 text-red-400">Without Contracts</h4>
@@ -177,7 +177,7 @@ end</pre></code></div>
 </div>
 <p class="mb-4 opacity-90 leading-relaxed">The contracts are the specification. The runtime is the verifier. AI mistakes don't reach production.</p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">Types of Contracts</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">Types of Contracts</h2>
 <div class="mb-6">
   <h4 class="font-medium mb-2">Preconditions (require)</h4>
   <p class="text-sm opacity-80 mb-3">Guard inputs before execution. The caller's responsibility.</p>
@@ -207,13 +207,13 @@ end</pre></code></div>
 end</pre></code></div>
 </div>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">The "old" Keyword</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">The "old" Keyword</h2>
 <p class="mb-4 opacity-90 leading-relaxed">One of the most powerful features: comparing before and after.</p>
 <div class="code-block mb-6"><code><pre>ensure
     count_increased: items.count = old items.count + 1</pre></code></div>
 <p class="mb-4 opacity-90 leading-relaxed"><code>old items.count</code> captures the value BEFORE the feature ran. This lets you specify exactly how state should change.</p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">Contracts vs. Tests</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">Contracts vs. Tests</h2>
 <div class="grid md:grid-cols-2 gap-6 mb-8">
 <div class="card">
   <h4 class="font-medium mb-2">Tests</h4>
@@ -228,7 +228,7 @@ end</pre></code></div>
 </div>
 <p class="mb-4 opacity-90 leading-relaxed">Tests are valuable. Contracts are comprehensive. Use both. But contracts catch what tests miss.</p>
 <div class="section-divider"></div>
-<h2 class="text-2xl font-medium mb-6">Why This Matters for AI</h2>
+<h2 class="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">Why This Matters for AI</h2>
 <p class="mb-4 opacity-90 leading-relaxed">AI generates statistically likely code. "Likely" isn't "correct."</p>
 <p class="mb-4 opacity-90 leading-relaxed">Contracts turn "I hope this works" into "This is proven to work."</p>
 <p class="mb-4 opacity-90 leading-relaxed"><strong>That's the unlock.</strong></p>

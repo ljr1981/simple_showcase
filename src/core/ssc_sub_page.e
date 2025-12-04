@@ -85,7 +85,7 @@ feature {NONE} -- HTML Structure
 			create Result.make (40000)
 			Result.append ("<body class=%"bg-[" + color_primary_dark + "] text-[" + color_primary_light + "] antialiased min-h-screen%">%N")
 			Result.append (page_nav)
-			Result.append ("<main class=%"max-w-4xl mx-auto px-6 py-16%">%N")
+			Result.append ("<main class=%"max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-16%">%N")
 			Result.append (page_header)
 			Result.append (page_content)
 			Result.append (page_footer_nav)
@@ -110,10 +110,10 @@ feature {NONE} -- HTML Structure
 			-- Page header with title and subtitle
 		do
 			create Result.make (500)
-			Result.append ("<header class=%"mb-16 pt-8%">%N")
+			Result.append ("<header class=%"mb-8 sm:mb-16 pt-4 sm:pt-8%">%N")
 			Result.append ("  <p class=%"text-xs uppercase tracking-widest opacity-60 mb-4%">" + page_label + "</p>%N")
-			Result.append ("  <h1 class=%"text-4xl md:text-5xl font-light mb-6%">" + page_title + "</h1>%N")
-			Result.append ("  <p class=%"text-xl opacity-80 max-w-2xl%">" + page_subtitle + "</p>%N")
+			Result.append ("  <h1 class=%"text-3xl sm:text-4xl md:text-5xl font-light mb-4 sm:mb-6%">" + page_title + "</h1>%N")
+			Result.append ("  <p class=%"text-lg sm:text-xl opacity-80 max-w-2xl%">" + page_subtitle + "</p>%N")
 			Result.append ("</header>%N")
 		ensure
 			not_empty: not Result.is_empty
@@ -203,7 +203,7 @@ feature {NONE} -- Content Helpers
 		require
 			title_not_empty: not a_title.is_empty
 		do
-			Result := "<h2 class=%"text-2xl font-medium mb-6%">" + a_title + "</h2>%N"
+			Result := "<h2 class=%"text-xl sm:text-2xl font-medium mb-4 sm:mb-6%">" + a_title + "</h2>%N"
 		ensure
 			not_empty: not Result.is_empty
 			has_title: Result.has_substring (a_title)
