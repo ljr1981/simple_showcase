@@ -1,0 +1,5 @@
+Compiler version: 25.02.9.8732 - win64
+Type: Quick_melt
+batch mode: True
+new session: True
+starting date: 12/04/2025 7:37:01.332 AM

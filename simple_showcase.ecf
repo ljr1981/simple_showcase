@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-22-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-22-0 http://www.eiffel.com/developers/xml/configuration-1-22-0.xsd" name="simple_showcase" uuid="C3D4E5F6-A7B8-9012-CDEF-123456789012" library_target="simple_showcase">
+	<description>Simple Showcase - Eiffel+AI paradigm showcase website served via simple_web</description>
+	<target name="simple_showcase">
+		<root all_classes="true"/>
+		<option warning="warning" syntax="provisional" manifest_array_type="mismatch_warning">
+			<assertions precondition="true" postcondition="true" check="true" invariant="true" loop="true" supplier_precondition="true"/>
+		</option>
+		<setting name="console_application" value="true"/>
+		<setting name="dead_code_removal" value="feature"/>
+		<capability>
+			<concurrency support="thread"/>
+			<void_safety support="all"/>
+		</capability>
+		<library name="base" location="$ISE_LIBRARY\library\base\base.ecf"/>
+		<library name="simple_htmx" location="$SIMPLE_HTMX\simple_htmx.ecf"/>
+		<library name="simple_alpine" location="$SIMPLE_ALPINE\simple_alpine.ecf"/>
+		<library name="simple_web" location="$SIMPLE_WEB\simple_web.ecf"/>
+		<cluster name="core" location=".\src\core\" recursive="true"/>
+		<cluster name="pages" location=".\src\pages\" recursive="true"/>
+		<cluster name="components" location=".\src\components\" recursive="true"/>
+	</target>
+	<target name="simple_showcase_tests" extends="simple_showcase">
+		<root class="APPLICATION" feature="make"/>
+		<library name="testing" location="$ISE_LIBRARY\library\testing\testing.ecf"/>
+		<library name="testing_ext" location="$TESTING_EXT\testing_ext.ecf"/>
+		<cluster name="tests" location=".\tests\" recursive="true"/>
+	</target>
+	<target name="run_server" extends="simple_showcase">
+		<root class="SSC_SERVER" feature="make"/>
+	</target>
+</system>
