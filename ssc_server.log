@@ -1,0 +1,2131 @@
+[10:27:59.151] [1] [INFO ] [server  ] === Simple Showcase Server Starting ===
+[10:27:59.153] [2] [INFO ] [server  ] Server created on port 8080
+[10:27:59.154] [3] [DEBUG] [routes  ] Registering page routes...
+[10:27:59.155] [4] [DEBUG] [routes  ]   GET / -> handle_landing
+[10:27:59.157] [5] [DEBUG] [routes  ]   Registered 10 sub-page routes
+[10:27:59.159] [6] [DEBUG] [routes  ]   Registered .html redirect routes
+[10:27:59.160] [7] [INFO ] [server  ] Routes registered
+[10:27:59.161] [8] [INFO ] [server  ] Logging middleware enabled
+[10:27:59.162] [9] [INFO ] [server  ] Calling server.start (blocking)...
+[10:28:16.858] [1] [TRACE] [enter   ] >>> handle_landing
+[10:28:16.859] [2] [INFO ] [handler ]   Request for landing page from /
+[10:28:16.860] [3] [DEBUG] [handler ]   Creating SSC_LANDING_PAGE...
+[10:28:16.861] [4] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.make
+[10:28:16.862] [5] [INFO ] [page    ]     Creating landing page sections...
+[10:28:16.863] [6] [DEBUG] [page    ]       Creating hero_section...
+[10:28:16.864] [7] [DEBUG] [page    ]       Creating recognition_section...
+[10:28:16.865] [8] [DEBUG] [page    ]       Creating shift_section...
+[10:28:16.866] [9] [DEBUG] [page    ]       Creating problem_section...
+[10:28:16.868] [10] [DEBUG] [page    ]       Creating unlock_section...
+[10:28:16.869] [11] [DEBUG] [page    ]       Creating evidence_section...
+[10:28:16.870] [12] [DEBUG] [page    ]       Creating revelation_section...
+[10:28:16.871] [13] [DEBUG] [page    ]       Creating workflow_section...
+[10:28:16.872] [14] [DEBUG] [page    ]       Creating invitation_section...
+[10:28:16.873] [15] [DEBUG] [page    ]       Creating nav_overlay...
+[10:28:16.874] [16] [INFO ] [page    ]     All 9 sections + nav overlay created
+[10:28:16.875] [17] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.make
+[10:28:16.876] [18] [DEBUG] [handler ]   SSC_LANDING_PAGE created, calling to_html...
+[10:28:16.877] [19] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.to_html
+[10:28:16.878] [20] [INFO ] [page    ]     Generating full HTML page...
+[10:28:16.879] [21] [TRACE] [enter   ]     >>> SSC_LANDING_PAGE.body_content
+[10:28:16.879] [22] [DEBUG] [page    ]       Creating scroll snap container...
+[10:28:16.880] [23] [INFO ] [page    ]       Adding 9 sections to page...
+[10:28:16.881] [24] [DEBUG] [page    ]         Adding hero_section...
+[10:28:16.882] [25] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[hero]
+[10:28:16.883] [26] [INFO ] [section ]         Generating section #0 (hero)
+[10:28:16.884] [27] [DEBUG] [build   ]         Building section wrapper for: hero
+[10:28:16.886] [28] [DEBUG] [build   ]         Calling section_content for: hero
+[10:28:16.887] [29] [DEBUG] [html    ]         section_content[hero] generated 954 chars
+[10:28:16.888] [30] [DEBUG] [build   ]         Section wrapper complete for: hero
+[10:28:16.955] [31] [DEBUG] [html    ]         Section[hero] generated 1152 chars
+[10:28:16.956] [32] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[hero]
+[10:28:16.957] [33] [DEBUG] [page    ]         Adding recognition_section...
+[10:28:16.957] [34] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[recognition]
+[10:28:16.958] [35] [INFO ] [section ]         Generating section #1 (recognition)
+[10:28:16.959] [36] [DEBUG] [build   ]         Building section wrapper for: recognition
+[10:28:16.960] [37] [DEBUG] [build   ]         Calling section_content for: recognition
+[10:28:16.961] [38] [DEBUG] [html    ]         section_content[recognition] generated 1064 chars
+[10:28:16.962] [39] [DEBUG] [build   ]         Section wrapper complete for: recognition
+[10:28:16.962] [40] [DEBUG] [html    ]         Section[recognition] generated 1269 chars
+[10:28:16.963] [41] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[recognition]
+[10:28:16.964] [42] [DEBUG] [page    ]         Adding shift_section...
+[10:28:16.965] [43] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[shift]
+[10:28:16.965] [44] [INFO ] [section ]         Generating section #2 (shift)
+[10:28:16.966] [45] [DEBUG] [build   ]         Building section wrapper for: shift
+[10:28:16.967] [46] [DEBUG] [build   ]         Calling section_content for: shift
+[10:28:16.969] [47] [DEBUG] [html    ]         section_content[shift] generated 458 chars
+[10:28:16.970] [48] [DEBUG] [build   ]         Section wrapper complete for: shift
+[10:28:16.971] [49] [DEBUG] [html    ]         Section[shift] generated 657 chars
+[10:28:16.972] [50] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[shift]
+[10:28:16.973] [51] [DEBUG] [page    ]         Adding problem_section...
+[10:28:16.974] [52] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[problem]
+[10:28:16.975] [53] [INFO ] [section ]         Generating section #3 (problem)
+[10:28:16.977] [54] [DEBUG] [build   ]         Building section wrapper for: problem
+[10:28:16.985] [55] [DEBUG] [build   ]         Calling section_content for: problem
+[10:28:16.987] [56] [DEBUG] [html    ]         section_content[problem] generated 1346 chars
+[10:28:16.988] [57] [DEBUG] [build   ]         Section wrapper complete for: problem
+[10:28:16.988] [58] [DEBUG] [html    ]         Section[problem] generated 1547 chars
+[10:28:16.990] [59] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[problem]
+[10:28:16.991] [60] [DEBUG] [page    ]         Adding unlock_section...
+[10:28:16.991] [61] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[unlock]
+[10:28:16.992] [62] [INFO ] [section ]         Generating section #4 (unlock)
+[10:28:16.993] [63] [DEBUG] [build   ]         Building section wrapper for: unlock
+[10:28:16.994] [64] [DEBUG] [build   ]         Calling section_content for: unlock
+[10:28:16.995] [65] [DEBUG] [html    ]         section_content[unlock] generated 2191 chars
+[10:28:16.996] [66] [DEBUG] [build   ]         Section wrapper complete for: unlock
+[10:28:16.997] [67] [DEBUG] [html    ]         Section[unlock] generated 2391 chars
+[10:28:16.998] [68] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[unlock]
+[10:28:16.998] [69] [DEBUG] [page    ]         Adding evidence_section...
+[10:28:16.999] [70] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[evidence]
+[10:28:17.0] [71] [INFO ] [section ]         Generating section #5 (evidence)
+[10:28:17.1] [72] [DEBUG] [build   ]         Building section wrapper for: evidence
+[10:28:17.2] [73] [DEBUG] [build   ]         Calling section_content for: evidence
+[10:28:17.4] [74] [DEBUG] [html    ]         section_content[evidence] generated 6498 chars
+[10:28:17.6] [75] [DEBUG] [build   ]         Section wrapper complete for: evidence
+[10:28:17.7] [76] [DEBUG] [html    ]         Section[evidence] generated 6700 chars
+[10:28:17.8] [77] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[evidence]
+[10:28:17.9] [78] [DEBUG] [page    ]         Adding revelation_section...
+[10:28:17.9] [79] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[revelation]
+[10:28:17.10] [80] [INFO ] [section ]         Generating section #6 (revelation)
+[10:28:17.11] [81] [DEBUG] [build   ]         Building section wrapper for: revelation
+[10:28:17.12] [82] [DEBUG] [build   ]         Calling section_content for: revelation
+[10:28:17.13] [83] [DEBUG] [html    ]         section_content[revelation] generated 1054 chars
+[10:28:17.14] [84] [DEBUG] [build   ]         Section wrapper complete for: revelation
+[10:28:17.14] [85] [DEBUG] [html    ]         Section[revelation] generated 1258 chars
+[10:28:17.15] [86] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[revelation]
+[10:28:17.17] [87] [DEBUG] [page    ]         Adding workflow_section...
+[10:28:17.18] [88] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[workflow]
+[10:28:17.19] [89] [INFO ] [section ]         Generating section #7 (workflow)
+[10:28:17.20] [90] [DEBUG] [build   ]         Building section wrapper for: workflow
+[10:28:17.21] [91] [DEBUG] [build   ]         Calling section_content for: workflow
+[10:28:17.22] [92] [DEBUG] [html    ]         section_content[workflow] generated 2494 chars
+[10:28:17.23] [93] [DEBUG] [build   ]         Section wrapper complete for: workflow
+[10:28:17.24] [94] [DEBUG] [html    ]         Section[workflow] generated 2696 chars
+[10:28:17.25] [95] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[workflow]
+[10:28:17.26] [96] [DEBUG] [page    ]         Adding invitation_section...
+[10:28:17.27] [97] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[invitation]
+[10:28:17.28] [98] [INFO ] [section ]         Generating section #8 (invitation)
+[10:28:17.28] [99] [DEBUG] [build   ]         Building section wrapper for: invitation
+[10:28:17.29] [100] [DEBUG] [build   ]         Calling section_content for: invitation
+[10:28:17.31] [101] [DEBUG] [html    ]         section_content[invitation] generated 1716 chars
+[10:28:17.32] [102] [DEBUG] [build   ]         Section wrapper complete for: invitation
+[10:28:17.33] [103] [DEBUG] [html    ]         Section[invitation] generated 1920 chars
+[10:28:17.34] [104] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[invitation]
+[10:28:17.36] [105] [INFO ] [page    ]       All sections added
+[10:28:17.38] [106] [DEBUG] [page    ]       Adding nav overlay...
+[10:28:17.39] [107] [DEBUG] [html    ]       body_content generated 22359 chars
+[10:28:17.39] [108] [TRACE] [exit    ]     <<< SSC_LANDING_PAGE.body_content
+[10:28:17.40] [109] [DEBUG] [html    ]     Building HTML wrapper...
+[10:28:17.41] [110] [DEBUG] [html    ]     Building <head>...
+[10:28:17.43] [111] [DEBUG] [html    ]     HTML wrapper complete
+[10:28:17.45] [112] [INFO ] [page    ]     Full page generated: 26805 bytes
+[10:28:17.46] [113] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.to_html
+[10:28:17.46] [114] [INFO ] [handler ]   Landing page generated: 26805 bytes
+[10:28:17.47] [115] [DEBUG] [handler ]   Sending HTML response...
+[10:28:17.49] [116] [TRACE] [exit    ] <<< handle_landing
+[10:28:37.633] [117] [INFO ] [handler ] Request for /portfolio
+[10:28:46.766] [118] [TRACE] [enter   ] >>> handle_landing
+[10:28:46.768] [119] [INFO ] [handler ]   Request for landing page from /
+[10:28:46.769] [120] [DEBUG] [handler ]   Creating SSC_LANDING_PAGE...
+[10:28:46.770] [121] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.make
+[10:28:46.771] [122] [INFO ] [page    ]     Creating landing page sections...
+[10:28:46.773] [123] [DEBUG] [page    ]       Creating hero_section...
+[10:28:46.774] [124] [DEBUG] [page    ]       Creating recognition_section...
+[10:28:46.774] [125] [DEBUG] [page    ]       Creating shift_section...
+[10:28:46.775] [126] [DEBUG] [page    ]       Creating problem_section...
+[10:28:46.776] [127] [DEBUG] [page    ]       Creating unlock_section...
+[10:28:46.777] [128] [DEBUG] [page    ]       Creating evidence_section...
+[10:28:46.778] [129] [DEBUG] [page    ]       Creating revelation_section...
+[10:28:46.779] [130] [DEBUG] [page    ]       Creating workflow_section...
+[10:28:46.780] [131] [DEBUG] [page    ]       Creating invitation_section...
+[10:28:46.781] [132] [DEBUG] [page    ]       Creating nav_overlay...
+[10:28:46.781] [133] [INFO ] [page    ]     All 9 sections + nav overlay created
+[10:28:46.783] [134] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.make
+[10:28:46.783] [135] [DEBUG] [handler ]   SSC_LANDING_PAGE created, calling to_html...
+[10:28:46.785] [136] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.to_html
+[10:28:46.785] [137] [INFO ] [page    ]     Generating full HTML page...
+[10:28:46.787] [138] [TRACE] [enter   ]     >>> SSC_LANDING_PAGE.body_content
+[10:28:46.788] [139] [DEBUG] [page    ]       Creating scroll snap container...
+[10:28:46.789] [140] [INFO ] [page    ]       Adding 9 sections to page...
+[10:28:46.790] [141] [DEBUG] [page    ]         Adding hero_section...
+[10:28:46.791] [142] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[hero]
+[10:28:46.792] [143] [INFO ] [section ]         Generating section #0 (hero)
+[10:28:46.793] [144] [DEBUG] [build   ]         Building section wrapper for: hero
+[10:28:46.794] [145] [DEBUG] [build   ]         Calling section_content for: hero
+[10:28:46.795] [146] [DEBUG] [html    ]         section_content[hero] generated 954 chars
+[10:28:46.796] [147] [DEBUG] [build   ]         Section wrapper complete for: hero
+[10:28:46.797] [148] [DEBUG] [html    ]         Section[hero] generated 1152 chars
+[10:28:46.895] [149] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[hero]
+[10:28:46.896] [150] [DEBUG] [page    ]         Adding recognition_section...
+[10:28:46.896] [151] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[recognition]
+[10:28:46.897] [152] [INFO ] [section ]         Generating section #1 (recognition)
+[10:28:46.898] [153] [DEBUG] [build   ]         Building section wrapper for: recognition
+[10:28:46.899] [154] [DEBUG] [build   ]         Calling section_content for: recognition
+[10:28:46.900] [155] [DEBUG] [html    ]         section_content[recognition] generated 1064 chars
+[10:28:46.901] [156] [DEBUG] [build   ]         Section wrapper complete for: recognition
+[10:28:46.902] [157] [DEBUG] [html    ]         Section[recognition] generated 1269 chars
+[10:28:46.903] [158] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[recognition]
+[10:28:46.903] [159] [DEBUG] [page    ]         Adding shift_section...
+[10:28:46.904] [160] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[shift]
+[10:28:46.905] [161] [INFO ] [section ]         Generating section #2 (shift)
+[10:28:46.905] [162] [DEBUG] [build   ]         Building section wrapper for: shift
+[10:28:46.906] [163] [DEBUG] [build   ]         Calling section_content for: shift
+[10:28:46.907] [164] [DEBUG] [html    ]         section_content[shift] generated 458 chars
+[10:28:46.908] [165] [DEBUG] [build   ]         Section wrapper complete for: shift
+[10:28:46.908] [166] [DEBUG] [html    ]         Section[shift] generated 657 chars
+[10:28:46.909] [167] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[shift]
+[10:28:46.910] [168] [DEBUG] [page    ]         Adding problem_section...
+[10:28:46.910] [169] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[problem]
+[10:28:46.912] [170] [INFO ] [section ]         Generating section #3 (problem)
+[10:28:46.913] [171] [DEBUG] [build   ]         Building section wrapper for: problem
+[10:28:46.914] [172] [DEBUG] [build   ]         Calling section_content for: problem
+[10:28:46.915] [173] [DEBUG] [html    ]         section_content[problem] generated 1346 chars
+[10:28:46.916] [174] [DEBUG] [build   ]         Section wrapper complete for: problem
+[10:28:46.916] [175] [DEBUG] [html    ]         Section[problem] generated 1547 chars
+[10:28:46.917] [176] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[problem]
+[10:28:46.918] [177] [DEBUG] [page    ]         Adding unlock_section...
+[10:28:46.919] [178] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[unlock]
+[10:28:46.920] [179] [INFO ] [section ]         Generating section #4 (unlock)
+[10:28:46.920] [180] [DEBUG] [build   ]         Building section wrapper for: unlock
+[10:28:46.921] [181] [DEBUG] [build   ]         Calling section_content for: unlock
+[10:28:46.922] [182] [DEBUG] [html    ]         section_content[unlock] generated 2191 chars
+[10:28:46.924] [183] [DEBUG] [build   ]         Section wrapper complete for: unlock
+[10:28:46.925] [184] [DEBUG] [html    ]         Section[unlock] generated 2391 chars
+[10:28:46.926] [185] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[unlock]
+[10:28:46.926] [186] [DEBUG] [page    ]         Adding evidence_section...
+[10:28:46.928] [187] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[evidence]
+[10:28:46.928] [188] [INFO ] [section ]         Generating section #5 (evidence)
+[10:28:46.929] [189] [DEBUG] [build   ]         Building section wrapper for: evidence
+[10:28:46.930] [190] [DEBUG] [build   ]         Calling section_content for: evidence
+[10:28:46.932] [191] [DEBUG] [html    ]         section_content[evidence] generated 6498 chars
+[10:28:46.934] [192] [DEBUG] [build   ]         Section wrapper complete for: evidence
+[10:28:46.936] [193] [DEBUG] [html    ]         Section[evidence] generated 6700 chars
+[10:28:46.936] [194] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[evidence]
+[10:28:46.937] [195] [DEBUG] [page    ]         Adding revelation_section...
+[10:28:46.938] [196] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[revelation]
+[10:28:46.939] [197] [INFO ] [section ]         Generating section #6 (revelation)
+[10:28:46.940] [198] [DEBUG] [build   ]         Building section wrapper for: revelation
+[10:28:46.940] [199] [DEBUG] [build   ]         Calling section_content for: revelation
+[10:28:46.941] [200] [DEBUG] [html    ]         section_content[revelation] generated 1054 chars
+[10:28:46.942] [201] [DEBUG] [build   ]         Section wrapper complete for: revelation
+[10:28:46.944] [202] [DEBUG] [html    ]         Section[revelation] generated 1258 chars
+[10:28:46.944] [203] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[revelation]
+[10:28:46.945] [204] [DEBUG] [page    ]         Adding workflow_section...
+[10:28:46.946] [205] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[workflow]
+[10:28:46.947] [206] [INFO ] [section ]         Generating section #7 (workflow)
+[10:28:46.948] [207] [DEBUG] [build   ]         Building section wrapper for: workflow
+[10:28:46.949] [208] [DEBUG] [build   ]         Calling section_content for: workflow
+[10:28:46.950] [209] [DEBUG] [html    ]         section_content[workflow] generated 2494 chars
+[10:28:46.952] [210] [DEBUG] [build   ]         Section wrapper complete for: workflow
+[10:28:46.953] [211] [DEBUG] [html    ]         Section[workflow] generated 2696 chars
+[10:28:46.954] [212] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[workflow]
+[10:28:46.954] [213] [DEBUG] [page    ]         Adding invitation_section...
+[10:28:46.955] [214] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[invitation]
+[10:28:46.956] [215] [INFO ] [section ]         Generating section #8 (invitation)
+[10:28:46.957] [216] [DEBUG] [build   ]         Building section wrapper for: invitation
+[10:28:46.959] [217] [DEBUG] [build   ]         Calling section_content for: invitation
+[10:28:46.960] [218] [DEBUG] [html    ]         section_content[invitation] generated 1716 chars
+[10:28:46.962] [219] [DEBUG] [build   ]         Section wrapper complete for: invitation
+[10:28:46.962] [220] [DEBUG] [html    ]         Section[invitation] generated 1920 chars
+[10:28:46.963] [221] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[invitation]
+[10:28:46.964] [222] [INFO ] [page    ]       All sections added
+[10:28:46.966] [223] [DEBUG] [page    ]       Adding nav overlay...
+[10:28:46.966] [224] [DEBUG] [html    ]       body_content generated 22359 chars
+[10:28:46.967] [225] [TRACE] [exit    ]     <<< SSC_LANDING_PAGE.body_content
+[10:28:46.970] [226] [DEBUG] [html    ]     Building HTML wrapper...
+[10:28:46.970] [227] [DEBUG] [html    ]     Building <head>...
+[10:28:46.971] [228] [DEBUG] [html    ]     HTML wrapper complete
+[10:28:46.973] [229] [INFO ] [page    ]     Full page generated: 26805 bytes
+[10:28:46.974] [230] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.to_html
+[10:28:46.974] [231] [INFO ] [handler ]   Landing page generated: 26805 bytes
+[10:28:46.975] [232] [DEBUG] [handler ]   Sending HTML response...
+[10:28:46.976] [233] [TRACE] [exit    ] <<< handle_landing
+[10:29:21.460] [234] [INFO ] [handler ] Request for /get-started
+[10:30:02.141] [235] [INFO ] [handler ] Request for /get-started
+[10:30:06.358] [236] [TRACE] [enter   ] >>> handle_landing
+[10:30:06.359] [237] [INFO ] [handler ]   Request for landing page from /
+[10:30:06.360] [238] [DEBUG] [handler ]   Creating SSC_LANDING_PAGE...
+[10:30:06.363] [239] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.make
+[10:30:06.364] [240] [INFO ] [page    ]     Creating landing page sections...
+[10:30:06.364] [241] [DEBUG] [page    ]       Creating hero_section...
+[10:30:06.365] [242] [DEBUG] [page    ]       Creating recognition_section...
+[10:30:06.366] [243] [DEBUG] [page    ]       Creating shift_section...
+[10:30:06.367] [244] [DEBUG] [page    ]       Creating problem_section...
+[10:30:06.368] [245] [DEBUG] [page    ]       Creating unlock_section...
+[10:30:06.369] [246] [DEBUG] [page    ]       Creating evidence_section...
+[10:30:06.370] [247] [DEBUG] [page    ]       Creating revelation_section...
+[10:30:06.371] [248] [DEBUG] [page    ]       Creating workflow_section...
+[10:30:06.372] [249] [DEBUG] [page    ]       Creating invitation_section...
+[10:30:06.373] [250] [DEBUG] [page    ]       Creating nav_overlay...
+[10:30:06.374] [251] [INFO ] [page    ]     All 9 sections + nav overlay created
+[10:30:06.375] [252] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.make
+[10:30:06.375] [253] [DEBUG] [handler ]   SSC_LANDING_PAGE created, calling to_html...
+[10:30:06.377] [254] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.to_html
+[10:30:06.378] [255] [INFO ] [page    ]     Generating full HTML page...
+[10:30:06.379] [256] [TRACE] [enter   ]     >>> SSC_LANDING_PAGE.body_content
+[10:30:06.380] [257] [DEBUG] [page    ]       Creating scroll snap container...
+[10:30:06.380] [258] [INFO ] [page    ]       Adding 9 sections to page...
+[10:30:06.382] [259] [DEBUG] [page    ]         Adding hero_section...
+[10:30:06.383] [260] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[hero]
+[10:30:06.384] [261] [INFO ] [section ]         Generating section #0 (hero)
+[10:30:06.385] [262] [DEBUG] [build   ]         Building section wrapper for: hero
+[10:30:06.386] [263] [DEBUG] [build   ]         Calling section_content for: hero
+[10:30:06.387] [264] [DEBUG] [html    ]         section_content[hero] generated 954 chars
+[10:30:06.388] [265] [DEBUG] [build   ]         Section wrapper complete for: hero
+[10:30:06.389] [266] [DEBUG] [html    ]         Section[hero] generated 1152 chars
+[10:30:06.454] [267] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[hero]
+[10:30:06.455] [268] [DEBUG] [page    ]         Adding recognition_section...
+[10:30:06.456] [269] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[recognition]
+[10:30:06.456] [270] [INFO ] [section ]         Generating section #1 (recognition)
+[10:30:06.458] [271] [DEBUG] [build   ]         Building section wrapper for: recognition
+[10:30:06.458] [272] [DEBUG] [build   ]         Calling section_content for: recognition
+[10:30:06.459] [273] [DEBUG] [html    ]         section_content[recognition] generated 1064 chars
+[10:30:06.460] [274] [DEBUG] [build   ]         Section wrapper complete for: recognition
+[10:30:06.461] [275] [DEBUG] [html    ]         Section[recognition] generated 1269 chars
+[10:30:06.461] [276] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[recognition]
+[10:30:06.462] [277] [DEBUG] [page    ]         Adding shift_section...
+[10:30:06.463] [278] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[shift]
+[10:30:06.464] [279] [INFO ] [section ]         Generating section #2 (shift)
+[10:30:06.464] [280] [DEBUG] [build   ]         Building section wrapper for: shift
+[10:30:06.465] [281] [DEBUG] [build   ]         Calling section_content for: shift
+[10:30:06.465] [282] [DEBUG] [html    ]         section_content[shift] generated 458 chars
+[10:30:06.468] [283] [DEBUG] [build   ]         Section wrapper complete for: shift
+[10:30:06.469] [284] [DEBUG] [html    ]         Section[shift] generated 657 chars
+[10:30:06.470] [285] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[shift]
+[10:30:06.470] [286] [DEBUG] [page    ]         Adding problem_section...
+[10:30:06.471] [287] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[problem]
+[10:30:06.471] [288] [INFO ] [section ]         Generating section #3 (problem)
+[10:30:06.472] [289] [DEBUG] [build   ]         Building section wrapper for: problem
+[10:30:06.474] [290] [DEBUG] [build   ]         Calling section_content for: problem
+[10:30:06.475] [291] [DEBUG] [html    ]         section_content[problem] generated 1346 chars
+[10:30:06.476] [292] [DEBUG] [build   ]         Section wrapper complete for: problem
+[10:30:06.477] [293] [DEBUG] [html    ]         Section[problem] generated 1547 chars
+[10:30:06.478] [294] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[problem]
+[10:30:06.478] [295] [DEBUG] [page    ]         Adding unlock_section...
+[10:30:06.479] [296] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[unlock]
+[10:30:06.480] [297] [INFO ] [section ]         Generating section #4 (unlock)
+[10:30:06.481] [298] [DEBUG] [build   ]         Building section wrapper for: unlock
+[10:30:06.481] [299] [DEBUG] [build   ]         Calling section_content for: unlock
+[10:30:06.483] [300] [DEBUG] [html    ]         section_content[unlock] generated 2191 chars
+[10:30:06.484] [301] [DEBUG] [build   ]         Section wrapper complete for: unlock
+[10:30:06.486] [302] [DEBUG] [html    ]         Section[unlock] generated 2391 chars
+[10:30:06.487] [303] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[unlock]
+[10:30:06.487] [304] [DEBUG] [page    ]         Adding evidence_section...
+[10:30:06.488] [305] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[evidence]
+[10:30:06.491] [306] [INFO ] [section ]         Generating section #5 (evidence)
+[10:30:06.491] [307] [DEBUG] [build   ]         Building section wrapper for: evidence
+[10:30:06.492] [308] [DEBUG] [build   ]         Calling section_content for: evidence
+[10:30:06.494] [309] [DEBUG] [html    ]         section_content[evidence] generated 6498 chars
+[10:30:06.496] [310] [DEBUG] [build   ]         Section wrapper complete for: evidence
+[10:30:06.497] [311] [DEBUG] [html    ]         Section[evidence] generated 6700 chars
+[10:30:06.497] [312] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[evidence]
+[10:30:06.498] [313] [DEBUG] [page    ]         Adding revelation_section...
+[10:30:06.499] [314] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[revelation]
+[10:30:06.500] [315] [INFO ] [section ]         Generating section #6 (revelation)
+[10:30:06.502] [316] [DEBUG] [build   ]         Building section wrapper for: revelation
+[10:30:06.503] [317] [DEBUG] [build   ]         Calling section_content for: revelation
+[10:30:06.504] [318] [DEBUG] [html    ]         section_content[revelation] generated 1054 chars
+[10:30:06.505] [319] [DEBUG] [build   ]         Section wrapper complete for: revelation
+[10:30:06.506] [320] [DEBUG] [html    ]         Section[revelation] generated 1258 chars
+[10:30:06.506] [321] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[revelation]
+[10:30:06.508] [322] [DEBUG] [page    ]         Adding workflow_section...
+[10:30:06.509] [323] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[workflow]
+[10:30:06.510] [324] [INFO ] [section ]         Generating section #7 (workflow)
+[10:30:06.510] [325] [DEBUG] [build   ]         Building section wrapper for: workflow
+[10:30:06.511] [326] [DEBUG] [build   ]         Calling section_content for: workflow
+[10:30:06.513] [327] [DEBUG] [html    ]         section_content[workflow] generated 2494 chars
+[10:30:06.514] [328] [DEBUG] [build   ]         Section wrapper complete for: workflow
+[10:30:06.515] [329] [DEBUG] [html    ]         Section[workflow] generated 2696 chars
+[10:30:06.515] [330] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[workflow]
+[10:30:06.516] [331] [DEBUG] [page    ]         Adding invitation_section...
+[10:30:06.517] [332] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[invitation]
+[10:30:06.518] [333] [INFO ] [section ]         Generating section #8 (invitation)
+[10:30:06.519] [334] [DEBUG] [build   ]         Building section wrapper for: invitation
+[10:30:06.520] [335] [DEBUG] [build   ]         Calling section_content for: invitation
+[10:30:06.522] [336] [DEBUG] [html    ]         section_content[invitation] generated 1716 chars
+[10:30:06.523] [337] [DEBUG] [build   ]         Section wrapper complete for: invitation
+[10:30:06.523] [338] [DEBUG] [html    ]         Section[invitation] generated 1920 chars
+[10:30:06.524] [339] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[invitation]
+[10:30:06.525] [340] [INFO ] [page    ]       All sections added
+[10:30:06.526] [341] [DEBUG] [page    ]       Adding nav overlay...
+[10:30:06.528] [342] [DEBUG] [html    ]       body_content generated 22359 chars
+[10:30:06.528] [343] [TRACE] [exit    ]     <<< SSC_LANDING_PAGE.body_content
+[10:30:06.529] [344] [DEBUG] [html    ]     Building HTML wrapper...
+[10:30:06.530] [345] [DEBUG] [html    ]     Building <head>...
+[10:30:06.531] [346] [DEBUG] [html    ]     HTML wrapper complete
+[10:30:06.534] [347] [INFO ] [page    ]     Full page generated: 26805 bytes
+[10:30:06.535] [348] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.to_html
+[10:30:06.536] [349] [INFO ] [handler ]   Landing page generated: 26805 bytes
+[10:30:06.537] [350] [DEBUG] [handler ]   Sending HTML response...
+[10:30:06.539] [351] [TRACE] [exit    ] <<< handle_landing
+[10:30:24.110] [352] [INFO ] [handler ] Request for /portfolio
+[10:30:54.400] [353] [INFO ] [handler ] Request for /business-case
+[10:48:22.296] [1] [TRACE] [enter   ] >>> handle_landing
+[10:48:22.297] [2] [INFO ] [handler ]   Request for landing page from /
+[10:48:22.298] [3] [DEBUG] [handler ]   Creating SSC_LANDING_PAGE...
+[10:48:22.299] [4] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.make
+[10:48:22.300] [5] [INFO ] [page    ]     Creating landing page sections...
+[10:48:22.301] [6] [DEBUG] [page    ]       Creating hero_section...
+[10:48:22.303] [7] [DEBUG] [page    ]       Creating recognition_section...
+[10:48:22.304] [8] [DEBUG] [page    ]       Creating shift_section...
+[10:48:22.305] [9] [DEBUG] [page    ]       Creating problem_section...
+[10:48:22.305] [10] [DEBUG] [page    ]       Creating unlock_section...
+[10:48:22.307] [11] [DEBUG] [page    ]       Creating evidence_section...
+[10:48:22.308] [12] [DEBUG] [page    ]       Creating revelation_section...
+[10:48:22.309] [13] [DEBUG] [page    ]       Creating workflow_section...
+[10:48:22.310] [14] [DEBUG] [page    ]       Creating invitation_section...
+[10:48:22.311] [15] [DEBUG] [page    ]       Creating nav_overlay...
+[10:48:22.312] [16] [INFO ] [page    ]     All 9 sections + nav overlay created
+[10:48:22.312] [17] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.make
+[10:48:22.313] [18] [DEBUG] [handler ]   SSC_LANDING_PAGE created, calling to_html...
+[10:48:22.314] [19] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.to_html
+[10:48:22.315] [20] [INFO ] [page    ]     Generating full HTML page...
+[10:48:22.316] [21] [TRACE] [enter   ]     >>> SSC_LANDING_PAGE.body_content
+[10:48:22.317] [22] [DEBUG] [page    ]       Creating scroll snap container...
+[10:48:22.318] [23] [INFO ] [page    ]       Adding 9 sections to page...
+[10:48:22.318] [24] [DEBUG] [page    ]         Adding hero_section...
+[10:48:22.319] [25] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[hero]
+[10:48:22.320] [26] [INFO ] [section ]         Generating section #0 (hero)
+[10:48:22.321] [27] [DEBUG] [build   ]         Building section wrapper for: hero
+[10:48:22.322] [28] [DEBUG] [build   ]         Calling section_content for: hero
+[10:48:22.324] [29] [DEBUG] [html    ]         section_content[hero] generated 954 chars
+[10:48:22.325] [30] [DEBUG] [build   ]         Section wrapper complete for: hero
+[10:48:22.326] [31] [DEBUG] [html    ]         Section[hero] generated 1152 chars
+[10:48:22.327] [32] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[hero]
+[10:48:22.393] [33] [DEBUG] [page    ]         Adding recognition_section...
+[10:48:22.395] [34] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[recognition]
+[10:48:22.395] [35] [INFO ] [section ]         Generating section #1 (recognition)
+[10:48:22.396] [36] [DEBUG] [build   ]         Building section wrapper for: recognition
+[10:48:22.397] [37] [DEBUG] [build   ]         Calling section_content for: recognition
+[10:48:22.398] [38] [DEBUG] [html    ]         section_content[recognition] generated 1064 chars
+[10:48:22.399] [39] [DEBUG] [build   ]         Section wrapper complete for: recognition
+[10:48:22.400] [40] [DEBUG] [html    ]         Section[recognition] generated 1269 chars
+[10:48:22.400] [41] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[recognition]
+[10:48:22.401] [42] [DEBUG] [page    ]         Adding shift_section...
+[10:48:22.402] [43] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[shift]
+[10:48:22.402] [44] [INFO ] [section ]         Generating section #2 (shift)
+[10:48:22.403] [45] [DEBUG] [build   ]         Building section wrapper for: shift
+[10:48:22.404] [46] [DEBUG] [build   ]         Calling section_content for: shift
+[10:48:22.404] [47] [DEBUG] [html    ]         section_content[shift] generated 458 chars
+[10:48:22.406] [48] [DEBUG] [build   ]         Section wrapper complete for: shift
+[10:48:22.406] [49] [DEBUG] [html    ]         Section[shift] generated 657 chars
+[10:48:22.408] [50] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[shift]
+[10:48:22.409] [51] [DEBUG] [page    ]         Adding problem_section...
+[10:48:22.409] [52] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[problem]
+[10:48:22.410] [53] [INFO ] [section ]         Generating section #3 (problem)
+[10:48:22.411] [54] [DEBUG] [build   ]         Building section wrapper for: problem
+[10:48:22.412] [55] [DEBUG] [build   ]         Calling section_content for: problem
+[10:48:22.413] [56] [DEBUG] [html    ]         section_content[problem] generated 1346 chars
+[10:48:22.414] [57] [DEBUG] [build   ]         Section wrapper complete for: problem
+[10:48:22.415] [58] [DEBUG] [html    ]         Section[problem] generated 1547 chars
+[10:48:22.417] [59] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[problem]
+[10:48:22.418] [60] [DEBUG] [page    ]         Adding unlock_section...
+[10:48:22.419] [61] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[unlock]
+[10:48:22.419] [62] [INFO ] [section ]         Generating section #4 (unlock)
+[10:48:22.420] [63] [DEBUG] [build   ]         Building section wrapper for: unlock
+[10:48:22.421] [64] [DEBUG] [build   ]         Calling section_content for: unlock
+[10:48:22.422] [65] [DEBUG] [html    ]         section_content[unlock] generated 2191 chars
+[10:48:22.425] [66] [DEBUG] [build   ]         Section wrapper complete for: unlock
+[10:48:22.429] [67] [DEBUG] [html    ]         Section[unlock] generated 2391 chars
+[10:48:22.429] [68] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[unlock]
+[10:48:22.430] [69] [DEBUG] [page    ]         Adding evidence_section...
+[10:48:22.431] [70] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[evidence]
+[10:48:22.432] [71] [INFO ] [section ]         Generating section #5 (evidence)
+[10:48:22.433] [72] [DEBUG] [build   ]         Building section wrapper for: evidence
+[10:48:22.434] [73] [DEBUG] [build   ]         Calling section_content for: evidence
+[10:48:22.437] [74] [DEBUG] [html    ]         section_content[evidence] generated 6498 chars
+[10:48:22.438] [75] [DEBUG] [build   ]         Section wrapper complete for: evidence
+[10:48:22.438] [76] [DEBUG] [html    ]         Section[evidence] generated 6700 chars
+[10:48:22.439] [77] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[evidence]
+[10:48:22.440] [78] [DEBUG] [page    ]         Adding revelation_section...
+[10:48:22.441] [79] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[revelation]
+[10:48:22.442] [80] [INFO ] [section ]         Generating section #6 (revelation)
+[10:48:22.442] [81] [DEBUG] [build   ]         Building section wrapper for: revelation
+[10:48:22.443] [82] [DEBUG] [build   ]         Calling section_content for: revelation
+[10:48:22.444] [83] [DEBUG] [html    ]         section_content[revelation] generated 1054 chars
+[10:48:22.445] [84] [DEBUG] [build   ]         Section wrapper complete for: revelation
+[10:48:22.446] [85] [DEBUG] [html    ]         Section[revelation] generated 1258 chars
+[10:48:22.446] [86] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[revelation]
+[10:48:22.448] [87] [DEBUG] [page    ]         Adding workflow_section...
+[10:48:22.449] [88] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[workflow]
+[10:48:22.449] [89] [INFO ] [section ]         Generating section #7 (workflow)
+[10:48:22.450] [90] [DEBUG] [build   ]         Building section wrapper for: workflow
+[10:48:22.451] [91] [DEBUG] [build   ]         Calling section_content for: workflow
+[10:48:22.452] [92] [DEBUG] [html    ]         section_content[workflow] generated 2494 chars
+[10:48:22.453] [93] [DEBUG] [build   ]         Section wrapper complete for: workflow
+[10:48:22.454] [94] [DEBUG] [html    ]         Section[workflow] generated 2696 chars
+[10:48:22.454] [95] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[workflow]
+[10:48:22.455] [96] [DEBUG] [page    ]         Adding invitation_section...
+[10:48:22.456] [97] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[invitation]
+[10:48:22.458] [98] [INFO ] [section ]         Generating section #8 (invitation)
+[10:48:22.459] [99] [DEBUG] [build   ]         Building section wrapper for: invitation
+[10:48:22.459] [100] [DEBUG] [build   ]         Calling section_content for: invitation
+[10:48:22.461] [101] [DEBUG] [html    ]         section_content[invitation] generated 1716 chars
+[10:48:22.462] [102] [DEBUG] [build   ]         Section wrapper complete for: invitation
+[10:48:22.463] [103] [DEBUG] [html    ]         Section[invitation] generated 1920 chars
+[10:48:22.463] [104] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[invitation]
+[10:48:22.464] [105] [INFO ] [page    ]       All sections added
+[10:48:22.466] [106] [DEBUG] [page    ]       Adding nav overlay...
+[10:48:22.466] [107] [DEBUG] [html    ]       body_content generated 22359 chars
+[10:48:22.468] [108] [TRACE] [exit    ]     <<< SSC_LANDING_PAGE.body_content
+[10:48:22.469] [109] [DEBUG] [html    ]     Building HTML wrapper...
+[10:48:22.469] [110] [DEBUG] [html    ]     Building <head>...
+[10:48:22.470] [111] [DEBUG] [html    ]     HTML wrapper complete
+[10:48:22.472] [112] [INFO ] [page    ]     Full page generated: 26805 bytes
+[10:48:22.472] [113] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.to_html
+[10:48:22.474] [114] [INFO ] [handler ]   Landing page generated: 26805 bytes
+[10:48:22.475] [115] [DEBUG] [handler ]   Sending HTML response...
+[10:48:22.477] [116] [TRACE] [exit    ] <<< handle_landing
+[10:49:11.428] [1] [INFO ] [server  ] === Simple Showcase Server Starting ===
+[10:49:11.429] [2] [INFO ] [server  ] Server created on port 8080
+[10:49:11.430] [3] [DEBUG] [routes  ] Registering page routes...
+[10:49:11.431] [4] [DEBUG] [routes  ]   GET / -> handle_landing
+[10:49:11.433] [5] [DEBUG] [routes  ]   Registered 10 sub-page routes
+[10:49:11.434] [6] [DEBUG] [routes  ]   Registered .html redirect routes
+[10:49:11.435] [7] [INFO ] [server  ] Routes registered
+[10:49:11.436] [8] [INFO ] [server  ] Logging middleware enabled
+[10:49:11.437] [9] [INFO ] [server  ] Calling server.start (blocking)...
+[10:49:16.658] [1] [TRACE] [enter   ] >>> handle_landing
+[10:49:16.660] [2] [INFO ] [handler ]   Request for landing page from /
+[10:49:16.660] [3] [DEBUG] [handler ]   Creating SSC_LANDING_PAGE...
+[10:49:16.662] [4] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.make
+[10:49:16.663] [5] [INFO ] [page    ]     Creating landing page sections...
+[10:49:16.663] [6] [DEBUG] [page    ]       Creating hero_section...
+[10:49:16.664] [7] [DEBUG] [page    ]       Creating recognition_section...
+[10:49:16.665] [8] [DEBUG] [page    ]       Creating shift_section...
+[10:49:16.666] [9] [DEBUG] [page    ]       Creating problem_section...
+[10:49:16.667] [10] [DEBUG] [page    ]       Creating unlock_section...
+[10:49:16.667] [11] [DEBUG] [page    ]       Creating evidence_section...
+[10:49:16.668] [12] [DEBUG] [page    ]       Creating revelation_section...
+[10:49:16.669] [13] [DEBUG] [page    ]       Creating workflow_section...
+[10:49:16.670] [14] [DEBUG] [page    ]       Creating invitation_section...
+[10:49:16.672] [15] [DEBUG] [page    ]       Creating nav_overlay...
+[10:49:16.673] [16] [INFO ] [page    ]     All 9 sections + nav overlay created
+[10:49:16.674] [17] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.make
+[10:49:16.675] [18] [DEBUG] [handler ]   SSC_LANDING_PAGE created, calling to_html...
+[10:49:16.676] [19] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.to_html
+[10:49:16.677] [20] [INFO ] [page    ]     Generating full HTML page...
+[10:49:16.678] [21] [TRACE] [enter   ]     >>> SSC_LANDING_PAGE.body_content
+[10:49:16.678] [22] [DEBUG] [page    ]       Creating scroll snap container...
+[10:49:16.679] [23] [INFO ] [page    ]       Adding 9 sections to page...
+[10:49:16.680] [24] [DEBUG] [page    ]         Adding hero_section...
+[10:49:16.681] [25] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[hero]
+[10:49:16.682] [26] [INFO ] [section ]         Generating section #0 (hero)
+[10:49:16.683] [27] [DEBUG] [build   ]         Building section wrapper for: hero
+[10:49:16.684] [28] [DEBUG] [build   ]         Calling section_content for: hero
+[10:49:16.685] [29] [DEBUG] [html    ]         section_content[hero] generated 954 chars
+[10:49:16.686] [30] [DEBUG] [build   ]         Section wrapper complete for: hero
+[10:49:16.687] [31] [DEBUG] [html    ]         Section[hero] generated 1152 chars
+[10:49:16.754] [32] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[hero]
+[10:49:16.754] [33] [DEBUG] [page    ]         Adding recognition_section...
+[10:49:16.755] [34] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[recognition]
+[10:49:16.756] [35] [INFO ] [section ]         Generating section #1 (recognition)
+[10:49:16.757] [36] [DEBUG] [build   ]         Building section wrapper for: recognition
+[10:49:16.758] [37] [DEBUG] [build   ]         Calling section_content for: recognition
+[10:49:16.759] [38] [DEBUG] [html    ]         section_content[recognition] generated 1064 chars
+[10:49:16.760] [39] [DEBUG] [build   ]         Section wrapper complete for: recognition
+[10:49:16.760] [40] [DEBUG] [html    ]         Section[recognition] generated 1269 chars
+[10:49:16.761] [41] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[recognition]
+[10:49:16.762] [42] [DEBUG] [page    ]         Adding shift_section...
+[10:49:16.763] [43] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[shift]
+[10:49:16.763] [44] [INFO ] [section ]         Generating section #2 (shift)
+[10:49:16.764] [45] [DEBUG] [build   ]         Building section wrapper for: shift
+[10:49:16.765] [46] [DEBUG] [build   ]         Calling section_content for: shift
+[10:49:16.766] [47] [DEBUG] [html    ]         section_content[shift] generated 458 chars
+[10:49:16.766] [48] [DEBUG] [build   ]         Section wrapper complete for: shift
+[10:49:16.767] [49] [DEBUG] [html    ]         Section[shift] generated 657 chars
+[10:49:16.768] [50] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[shift]
+[10:49:16.769] [51] [DEBUG] [page    ]         Adding problem_section...
+[10:49:16.769] [52] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[problem]
+[10:49:16.770] [53] [INFO ] [section ]         Generating section #3 (problem)
+[10:49:16.771] [54] [DEBUG] [build   ]         Building section wrapper for: problem
+[10:49:16.771] [55] [DEBUG] [build   ]         Calling section_content for: problem
+[10:49:16.773] [56] [DEBUG] [html    ]         section_content[problem] generated 1739 chars
+[10:49:16.774] [57] [DEBUG] [build   ]         Section wrapper complete for: problem
+[10:49:16.775] [58] [DEBUG] [html    ]         Section[problem] generated 1940 chars
+[10:49:16.775] [59] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[problem]
+[10:49:16.776] [60] [DEBUG] [page    ]         Adding unlock_section...
+[10:49:16.777] [61] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[unlock]
+[10:49:16.777] [62] [INFO ] [section ]         Generating section #4 (unlock)
+[10:49:16.778] [63] [DEBUG] [build   ]         Building section wrapper for: unlock
+[10:49:16.779] [64] [DEBUG] [build   ]         Calling section_content for: unlock
+[10:49:16.780] [65] [DEBUG] [html    ]         section_content[unlock] generated 2191 chars
+[10:49:16.781] [66] [DEBUG] [build   ]         Section wrapper complete for: unlock
+[10:49:16.783] [67] [DEBUG] [html    ]         Section[unlock] generated 2391 chars
+[10:49:16.783] [68] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[unlock]
+[10:49:16.784] [69] [DEBUG] [page    ]         Adding evidence_section...
+[10:49:16.785] [70] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[evidence]
+[10:49:16.785] [71] [INFO ] [section ]         Generating section #5 (evidence)
+[10:49:16.787] [72] [DEBUG] [build   ]         Building section wrapper for: evidence
+[10:49:16.788] [73] [DEBUG] [build   ]         Calling section_content for: evidence
+[10:49:16.789] [74] [DEBUG] [html    ]         section_content[evidence] generated 6498 chars
+[10:49:16.792] [75] [DEBUG] [build   ]         Section wrapper complete for: evidence
+[10:49:16.793] [76] [DEBUG] [html    ]         Section[evidence] generated 6700 chars
+[10:49:16.795] [77] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[evidence]
+[10:49:16.796] [78] [DEBUG] [page    ]         Adding revelation_section...
+[10:49:16.796] [79] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[revelation]
+[10:49:16.797] [80] [INFO ] [section ]         Generating section #6 (revelation)
+[10:49:16.798] [81] [DEBUG] [build   ]         Building section wrapper for: revelation
+[10:49:16.799] [82] [DEBUG] [build   ]         Calling section_content for: revelation
+[10:49:16.800] [83] [DEBUG] [html    ]         section_content[revelation] generated 1054 chars
+[10:49:16.801] [84] [DEBUG] [build   ]         Section wrapper complete for: revelation
+[10:49:16.802] [85] [DEBUG] [html    ]         Section[revelation] generated 1258 chars
+[10:49:16.802] [86] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[revelation]
+[10:49:16.803] [87] [DEBUG] [page    ]         Adding workflow_section...
+[10:49:16.803] [88] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[workflow]
+[10:49:16.805] [89] [INFO ] [section ]         Generating section #7 (workflow)
+[10:49:16.806] [90] [DEBUG] [build   ]         Building section wrapper for: workflow
+[10:49:16.807] [91] [DEBUG] [build   ]         Calling section_content for: workflow
+[10:49:16.808] [92] [DEBUG] [html    ]         section_content[workflow] generated 2494 chars
+[10:49:16.809] [93] [DEBUG] [build   ]         Section wrapper complete for: workflow
+[10:49:16.810] [94] [DEBUG] [html    ]         Section[workflow] generated 2696 chars
+[10:49:16.811] [95] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[workflow]
+[10:49:16.812] [96] [DEBUG] [page    ]         Adding invitation_section...
+[10:49:16.812] [97] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[invitation]
+[10:49:16.813] [98] [INFO ] [section ]         Generating section #8 (invitation)
+[10:49:16.814] [99] [DEBUG] [build   ]         Building section wrapper for: invitation
+[10:49:16.815] [100] [DEBUG] [build   ]         Calling section_content for: invitation
+[10:49:16.816] [101] [DEBUG] [html    ]         section_content[invitation] generated 1716 chars
+[10:49:16.817] [102] [DEBUG] [build   ]         Section wrapper complete for: invitation
+[10:49:16.818] [103] [DEBUG] [html    ]         Section[invitation] generated 1920 chars
+[10:49:16.818] [104] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[invitation]
+[10:49:16.820] [105] [INFO ] [page    ]       All sections added
+[10:49:16.822] [106] [DEBUG] [page    ]       Adding nav overlay...
+[10:49:16.823] [107] [DEBUG] [html    ]       body_content generated 22752 chars
+[10:49:16.824] [108] [TRACE] [exit    ]     <<< SSC_LANDING_PAGE.body_content
+[10:49:16.824] [109] [DEBUG] [html    ]     Building HTML wrapper...
+[10:49:16.825] [110] [DEBUG] [html    ]     Building <head>...
+[10:49:16.826] [111] [DEBUG] [html    ]     HTML wrapper complete
+[10:49:16.827] [112] [INFO ] [page    ]     Full page generated: 27198 bytes
+[10:49:16.828] [113] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.to_html
+[10:49:16.830] [114] [INFO ] [handler ]   Landing page generated: 27198 bytes
+[10:49:16.830] [115] [DEBUG] [handler ]   Sending HTML response...
+[10:49:16.832] [116] [TRACE] [exit    ] <<< handle_landing
+[10:49:31.111] [117] [INFO ] [handler ] Request for /business-case
+[10:56:12.613] [1] [INFO ] [handler ] Request for /analysis
+[11:05:42.660] [1] [INFO ] [server  ] === Simple Showcase Server Starting ===
+[11:05:42.663] [2] [INFO ] [server  ] Server created on port 8080
+[11:05:42.665] [3] [DEBUG] [routes  ] Registering page routes...
+[11:05:42.665] [4] [DEBUG] [routes  ]   GET / -> handle_landing
+[11:05:42.668] [5] [DEBUG] [routes  ]   Registered 10 sub-page routes
+[11:05:42.669] [6] [DEBUG] [routes  ]   Registered .html redirect routes
+[11:05:42.670] [7] [INFO ] [server  ] Routes registered
+[11:05:42.671] [8] [INFO ] [server  ] Logging middleware enabled
+[11:05:42.672] [9] [INFO ] [server  ] Calling server.start (blocking)...
+[11:05:55.230] [1] [TRACE] [enter   ] >>> handle_landing
+[11:05:55.231] [2] [INFO ] [handler ]   Request for landing page from /
+[11:05:55.231] [3] [DEBUG] [handler ]   Creating SSC_LANDING_PAGE...
+[11:05:55.232] [4] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.make
+[11:05:55.233] [5] [INFO ] [page    ]     Creating landing page sections...
+[11:05:55.234] [6] [DEBUG] [page    ]       Creating hero_section...
+[11:05:55.235] [7] [DEBUG] [page    ]       Creating recognition_section...
+[11:05:55.236] [8] [DEBUG] [page    ]       Creating shift_section...
+[11:05:55.237] [9] [DEBUG] [page    ]       Creating problem_section...
+[11:05:55.237] [10] [DEBUG] [page    ]       Creating unlock_section...
+[11:05:55.238] [11] [DEBUG] [page    ]       Creating evidence_section...
+[11:05:55.240] [12] [DEBUG] [page    ]       Creating revelation_section...
+[11:05:55.241] [13] [DEBUG] [page    ]       Creating workflow_section...
+[11:05:55.242] [14] [DEBUG] [page    ]       Creating invitation_section...
+[11:05:55.242] [15] [DEBUG] [page    ]       Creating nav_overlay...
+[11:05:55.243] [16] [INFO ] [page    ]     All 9 sections + nav overlay created
+[11:05:55.244] [17] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.make
+[11:05:55.245] [18] [DEBUG] [handler ]   SSC_LANDING_PAGE created, calling to_html...
+[11:05:55.246] [19] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.to_html
+[11:05:55.247] [20] [INFO ] [page    ]     Generating full HTML page...
+[11:05:55.249] [21] [TRACE] [enter   ]     >>> SSC_LANDING_PAGE.body_content
+[11:05:55.249] [22] [DEBUG] [page    ]       Creating scroll snap container...
+[11:05:55.250] [23] [INFO ] [page    ]       Adding 9 sections to page...
+[11:05:55.251] [24] [DEBUG] [page    ]         Adding hero_section...
+[11:05:55.252] [25] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[hero]
+[11:05:55.253] [26] [INFO ] [section ]         Generating section #0 (hero)
+[11:05:55.254] [27] [DEBUG] [build   ]         Building section wrapper for: hero
+[11:05:55.255] [28] [DEBUG] [build   ]         Calling section_content for: hero
+[11:05:55.257] [29] [DEBUG] [html    ]         section_content[hero] generated 954 chars
+[11:05:55.258] [30] [DEBUG] [build   ]         Section wrapper complete for: hero
+[11:05:55.259] [31] [DEBUG] [html    ]         Section[hero] generated 1152 chars
+[11:05:55.260] [32] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[hero]
+[11:05:55.326] [33] [DEBUG] [page    ]         Adding recognition_section...
+[11:05:55.327] [34] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[recognition]
+[11:05:55.328] [35] [INFO ] [section ]         Generating section #1 (recognition)
+[11:05:55.329] [36] [DEBUG] [build   ]         Building section wrapper for: recognition
+[11:05:55.330] [37] [DEBUG] [build   ]         Calling section_content for: recognition
+[11:05:55.331] [38] [DEBUG] [html    ]         section_content[recognition] generated 1093 chars
+[11:05:55.332] [39] [DEBUG] [build   ]         Section wrapper complete for: recognition
+[11:05:55.332] [40] [DEBUG] [html    ]         Section[recognition] generated 1298 chars
+[11:05:55.334] [41] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[recognition]
+[11:05:55.334] [42] [DEBUG] [page    ]         Adding shift_section...
+[11:05:55.335] [43] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[shift]
+[11:05:55.336] [44] [INFO ] [section ]         Generating section #2 (shift)
+[11:05:55.336] [45] [DEBUG] [build   ]         Building section wrapper for: shift
+[11:05:55.337] [46] [DEBUG] [build   ]         Calling section_content for: shift
+[11:05:55.338] [47] [DEBUG] [html    ]         section_content[shift] generated 458 chars
+[11:05:55.339] [48] [DEBUG] [build   ]         Section wrapper complete for: shift
+[11:05:55.339] [49] [DEBUG] [html    ]         Section[shift] generated 657 chars
+[11:05:55.341] [50] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[shift]
+[11:05:55.341] [51] [DEBUG] [page    ]         Adding problem_section...
+[11:05:55.342] [52] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[problem]
+[11:05:55.343] [53] [INFO ] [section ]         Generating section #3 (problem)
+[11:05:55.344] [54] [DEBUG] [build   ]         Building section wrapper for: problem
+[11:05:55.345] [55] [DEBUG] [build   ]         Calling section_content for: problem
+[11:05:55.347] [56] [DEBUG] [html    ]         section_content[problem] generated 1739 chars
+[11:05:55.348] [57] [DEBUG] [build   ]         Section wrapper complete for: problem
+[11:05:55.349] [58] [DEBUG] [html    ]         Section[problem] generated 1940 chars
+[11:05:55.349] [59] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[problem]
+[11:05:55.351] [60] [DEBUG] [page    ]         Adding unlock_section...
+[11:05:55.352] [61] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[unlock]
+[11:05:55.353] [62] [INFO ] [section ]         Generating section #4 (unlock)
+[11:05:55.353] [63] [DEBUG] [build   ]         Building section wrapper for: unlock
+[11:05:55.355] [64] [DEBUG] [build   ]         Calling section_content for: unlock
+[11:05:55.356] [65] [DEBUG] [html    ]         section_content[unlock] generated 2191 chars
+[11:05:55.357] [66] [DEBUG] [build   ]         Section wrapper complete for: unlock
+[11:05:55.378] [67] [DEBUG] [html    ]         Section[unlock] generated 2391 chars
+[11:05:55.379] [68] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[unlock]
+[11:05:55.380] [69] [DEBUG] [page    ]         Adding evidence_section...
+[11:05:55.381] [70] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[evidence]
+[11:05:55.381] [71] [INFO ] [section ]         Generating section #5 (evidence)
+[11:05:55.382] [72] [DEBUG] [build   ]         Building section wrapper for: evidence
+[11:05:55.383] [73] [DEBUG] [build   ]         Calling section_content for: evidence
+[11:05:55.385] [74] [DEBUG] [html    ]         section_content[evidence] generated 6498 chars
+[11:05:55.387] [75] [DEBUG] [build   ]         Section wrapper complete for: evidence
+[11:05:55.388] [76] [DEBUG] [html    ]         Section[evidence] generated 6700 chars
+[11:05:55.389] [77] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[evidence]
+[11:05:55.390] [78] [DEBUG] [page    ]         Adding revelation_section...
+[11:05:55.390] [79] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[revelation]
+[11:05:55.391] [80] [INFO ] [section ]         Generating section #6 (revelation)
+[11:05:55.392] [81] [DEBUG] [build   ]         Building section wrapper for: revelation
+[11:05:55.392] [82] [DEBUG] [build   ]         Calling section_content for: revelation
+[11:05:55.393] [83] [DEBUG] [html    ]         section_content[revelation] generated 1054 chars
+[11:05:55.394] [84] [DEBUG] [build   ]         Section wrapper complete for: revelation
+[11:05:55.395] [85] [DEBUG] [html    ]         Section[revelation] generated 1258 chars
+[11:05:55.396] [86] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[revelation]
+[11:05:55.396] [87] [DEBUG] [page    ]         Adding workflow_section...
+[11:05:55.397] [88] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[workflow]
+[11:05:55.398] [89] [INFO ] [section ]         Generating section #7 (workflow)
+[11:05:55.399] [90] [DEBUG] [build   ]         Building section wrapper for: workflow
+[11:05:55.399] [91] [DEBUG] [build   ]         Calling section_content for: workflow
+[11:05:55.400] [92] [DEBUG] [html    ]         section_content[workflow] generated 2494 chars
+[11:05:55.402] [93] [DEBUG] [build   ]         Section wrapper complete for: workflow
+[11:05:55.403] [94] [DEBUG] [html    ]         Section[workflow] generated 2696 chars
+[11:05:55.404] [95] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[workflow]
+[11:05:55.405] [96] [DEBUG] [page    ]         Adding invitation_section...
+[11:05:55.405] [97] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[invitation]
+[11:05:55.407] [98] [INFO ] [section ]         Generating section #8 (invitation)
+[11:05:55.407] [99] [DEBUG] [build   ]         Building section wrapper for: invitation
+[11:05:55.408] [100] [DEBUG] [build   ]         Calling section_content for: invitation
+[11:05:55.409] [101] [DEBUG] [html    ]         section_content[invitation] generated 2078 chars
+[11:05:55.410] [102] [DEBUG] [build   ]         Section wrapper complete for: invitation
+[11:05:55.412] [103] [DEBUG] [html    ]         Section[invitation] generated 2282 chars
+[11:05:55.413] [104] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[invitation]
+[11:05:55.414] [105] [INFO ] [page    ]       All sections added
+[11:05:55.416] [106] [DEBUG] [page    ]       Adding nav overlay...
+[11:05:55.417] [107] [DEBUG] [html    ]       body_content generated 23143 chars
+[11:05:55.417] [108] [TRACE] [exit    ]     <<< SSC_LANDING_PAGE.body_content
+[11:05:55.418] [109] [DEBUG] [html    ]     Building HTML wrapper...
+[11:05:55.419] [110] [DEBUG] [html    ]     Building <head>...
+[11:05:55.420] [111] [DEBUG] [html    ]     HTML wrapper complete
+[11:05:55.421] [112] [INFO ] [page    ]     Full page generated: 27589 bytes
+[11:05:55.424] [113] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.to_html
+[11:05:55.425] [114] [INFO ] [handler ]   Landing page generated: 27589 bytes
+[11:05:55.425] [115] [DEBUG] [handler ]   Sending HTML response...
+[11:05:55.427] [116] [TRACE] [exit    ] <<< handle_landing
+[11:06:01.657] [117] [INFO ] [handler ] Request for /get-started
+[11:08:14.206] [118] [INFO ] [handler ] Request for /portfolio
+[11:10:35.454] [119] [INFO ] [handler ] Request for /design-by-contract
+[11:12:33.298] [120] [INFO ] [handler ] Request for /workflow
+[11:15:47.783] [121] [INFO ] [handler ] Request for /analysis
+[11:17:13.581] [122] [TRACE] [enter   ] >>> handle_landing
+[11:17:13.908] [123] [INFO ] [handler ]   Request for landing page from /
+[11:17:13.910] [124] [DEBUG] [handler ]   Creating SSC_LANDING_PAGE...
+[11:17:13.910] [125] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.make
+[11:17:13.911] [126] [INFO ] [page    ]     Creating landing page sections...
+[11:17:13.912] [127] [DEBUG] [page    ]       Creating hero_section...
+[11:17:13.912] [128] [DEBUG] [page    ]       Creating recognition_section...
+[11:17:13.914] [129] [DEBUG] [page    ]       Creating shift_section...
+[11:17:13.915] [130] [DEBUG] [page    ]       Creating problem_section...
+[11:17:13.915] [131] [DEBUG] [page    ]       Creating unlock_section...
+[11:17:13.916] [132] [DEBUG] [page    ]       Creating evidence_section...
+[11:17:13.917] [133] [DEBUG] [page    ]       Creating revelation_section...
+[11:17:13.918] [134] [DEBUG] [page    ]       Creating workflow_section...
+[11:17:13.918] [135] [DEBUG] [page    ]       Creating invitation_section...
+[11:17:13.919] [136] [DEBUG] [page    ]       Creating nav_overlay...
+[11:17:13.920] [137] [INFO ] [page    ]     All 9 sections + nav overlay created
+[11:17:13.921] [138] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.make
+[11:17:13.922] [139] [DEBUG] [handler ]   SSC_LANDING_PAGE created, calling to_html...
+[11:17:13.930] [140] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.to_html
+[11:17:13.931] [141] [INFO ] [page    ]     Generating full HTML page...
+[11:17:13.932] [142] [TRACE] [enter   ]     >>> SSC_LANDING_PAGE.body_content
+[11:17:13.933] [143] [DEBUG] [page    ]       Creating scroll snap container...
+[11:17:13.933] [144] [INFO ] [page    ]       Adding 9 sections to page...
+[11:17:13.934] [145] [DEBUG] [page    ]         Adding hero_section...
+[11:17:13.935] [146] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[hero]
+[11:17:13.935] [147] [INFO ] [section ]         Generating section #0 (hero)
+[11:17:13.936] [148] [DEBUG] [build   ]         Building section wrapper for: hero
+[11:17:13.937] [149] [DEBUG] [build   ]         Calling section_content for: hero
+[11:17:13.939] [150] [DEBUG] [html    ]         section_content[hero] generated 954 chars
+[11:17:13.940] [151] [DEBUG] [build   ]         Section wrapper complete for: hero
+[11:17:14.11] [152] [DEBUG] [html    ]         Section[hero] generated 1152 chars
+[11:17:14.12] [153] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[hero]
+[11:17:14.13] [154] [DEBUG] [page    ]         Adding recognition_section...
+[11:17:14.14] [155] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[recognition]
+[11:17:14.14] [156] [INFO ] [section ]         Generating section #1 (recognition)
+[11:17:14.17] [157] [DEBUG] [build   ]         Building section wrapper for: recognition
+[11:17:14.17] [158] [DEBUG] [build   ]         Calling section_content for: recognition
+[11:17:14.18] [159] [DEBUG] [html    ]         section_content[recognition] generated 1093 chars
+[11:17:14.19] [160] [DEBUG] [build   ]         Section wrapper complete for: recognition
+[11:17:14.20] [161] [DEBUG] [html    ]         Section[recognition] generated 1298 chars
+[11:17:14.21] [162] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[recognition]
+[11:17:14.23] [163] [DEBUG] [page    ]         Adding shift_section...
+[11:17:14.24] [164] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[shift]
+[11:17:14.26] [165] [INFO ] [section ]         Generating section #2 (shift)
+[11:17:14.27] [166] [DEBUG] [build   ]         Building section wrapper for: shift
+[11:17:14.28] [167] [DEBUG] [build   ]         Calling section_content for: shift
+[11:17:14.29] [168] [DEBUG] [html    ]         section_content[shift] generated 458 chars
+[11:17:14.30] [169] [DEBUG] [build   ]         Section wrapper complete for: shift
+[11:17:14.31] [170] [DEBUG] [html    ]         Section[shift] generated 657 chars
+[11:17:14.32] [171] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[shift]
+[11:17:14.32] [172] [DEBUG] [page    ]         Adding problem_section...
+[11:17:14.34] [173] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[problem]
+[11:17:14.35] [174] [INFO ] [section ]         Generating section #3 (problem)
+[11:17:14.36] [175] [DEBUG] [build   ]         Building section wrapper for: problem
+[11:17:14.37] [176] [DEBUG] [build   ]         Calling section_content for: problem
+[11:17:14.38] [177] [DEBUG] [html    ]         section_content[problem] generated 1739 chars
+[11:17:14.39] [178] [DEBUG] [build   ]         Section wrapper complete for: problem
+[11:17:14.40] [179] [DEBUG] [html    ]         Section[problem] generated 1940 chars
+[11:17:14.41] [180] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[problem]
+[11:17:14.42] [181] [DEBUG] [page    ]         Adding unlock_section...
+[11:17:14.42] [182] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[unlock]
+[11:17:14.43] [183] [INFO ] [section ]         Generating section #4 (unlock)
+[11:17:14.46] [184] [DEBUG] [build   ]         Building section wrapper for: unlock
+[11:17:14.46] [185] [DEBUG] [build   ]         Calling section_content for: unlock
+[11:17:14.47] [186] [DEBUG] [html    ]         section_content[unlock] generated 2191 chars
+[11:17:14.48] [187] [DEBUG] [build   ]         Section wrapper complete for: unlock
+[11:17:14.49] [188] [DEBUG] [html    ]         Section[unlock] generated 2391 chars
+[11:17:14.50] [189] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[unlock]
+[11:17:14.51] [190] [DEBUG] [page    ]         Adding evidence_section...
+[11:17:14.53] [191] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[evidence]
+[11:17:14.54] [192] [INFO ] [section ]         Generating section #5 (evidence)
+[11:17:14.55] [193] [DEBUG] [build   ]         Building section wrapper for: evidence
+[11:17:14.56] [194] [DEBUG] [build   ]         Calling section_content for: evidence
+[11:17:14.60] [195] [DEBUG] [html    ]         section_content[evidence] generated 6498 chars
+[11:17:14.62] [196] [DEBUG] [build   ]         Section wrapper complete for: evidence
+[11:17:14.63] [197] [DEBUG] [html    ]         Section[evidence] generated 6700 chars
+[11:17:14.64] [198] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[evidence]
+[11:17:14.65] [199] [DEBUG] [page    ]         Adding revelation_section...
+[11:17:14.67] [200] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[revelation]
+[11:17:14.68] [201] [INFO ] [section ]         Generating section #6 (revelation)
+[11:17:14.69] [202] [DEBUG] [build   ]         Building section wrapper for: revelation
+[11:17:14.69] [203] [DEBUG] [build   ]         Calling section_content for: revelation
+[11:17:14.72] [204] [DEBUG] [html    ]         section_content[revelation] generated 1054 chars
+[11:17:14.73] [205] [DEBUG] [build   ]         Section wrapper complete for: revelation
+[11:17:14.75] [206] [DEBUG] [html    ]         Section[revelation] generated 1258 chars
+[11:17:14.76] [207] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[revelation]
+[11:17:14.76] [208] [DEBUG] [page    ]         Adding workflow_section...
+[11:17:14.77] [209] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[workflow]
+[11:17:14.78] [210] [INFO ] [section ]         Generating section #7 (workflow)
+[11:17:14.79] [211] [DEBUG] [build   ]         Building section wrapper for: workflow
+[11:17:14.80] [212] [DEBUG] [build   ]         Calling section_content for: workflow
+[11:17:14.82] [213] [DEBUG] [html    ]         section_content[workflow] generated 2494 chars
+[11:17:14.83] [214] [DEBUG] [build   ]         Section wrapper complete for: workflow
+[11:17:14.84] [215] [DEBUG] [html    ]         Section[workflow] generated 2696 chars
+[11:17:14.85] [216] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[workflow]
+[11:17:14.85] [217] [DEBUG] [page    ]         Adding invitation_section...
+[11:17:14.87] [218] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[invitation]
+[11:17:14.88] [219] [INFO ] [section ]         Generating section #8 (invitation)
+[11:17:14.89] [220] [DEBUG] [build   ]         Building section wrapper for: invitation
+[11:17:14.91] [221] [DEBUG] [build   ]         Calling section_content for: invitation
+[11:17:14.92] [222] [DEBUG] [html    ]         section_content[invitation] generated 2078 chars
+[11:17:14.94] [223] [DEBUG] [build   ]         Section wrapper complete for: invitation
+[11:17:14.94] [224] [DEBUG] [html    ]         Section[invitation] generated 2282 chars
+[11:17:14.95] [225] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[invitation]
+[11:17:14.96] [226] [INFO ] [page    ]       All sections added
+[11:17:14.99] [227] [DEBUG] [page    ]       Adding nav overlay...
+[11:17:14.100] [228] [DEBUG] [html    ]       body_content generated 23143 chars
+[11:17:14.101] [229] [TRACE] [exit    ]     <<< SSC_LANDING_PAGE.body_content
+[11:17:14.102] [230] [DEBUG] [html    ]     Building HTML wrapper...
+[11:17:14.103] [231] [DEBUG] [html    ]     Building <head>...
+[11:17:14.104] [232] [DEBUG] [html    ]     HTML wrapper complete
+[11:17:14.106] [233] [INFO ] [page    ]     Full page generated: 27589 bytes
+[11:17:14.106] [234] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.to_html
+[11:17:14.108] [235] [INFO ] [handler ]   Landing page generated: 27589 bytes
+[11:17:14.109] [236] [DEBUG] [handler ]   Sending HTML response...
+[11:17:14.111] [237] [TRACE] [exit    ] <<< handle_landing
+[11:17:25.636] [238] [INFO ] [handler ] Request for /portfolio
+[11:17:33.796] [239] [INFO ] [handler ] Request for /business-case
+[11:17:38.409] [240] [INFO ] [handler ] Request for /analysis
+[11:17:50.136] [1] [INFO ] [server  ] === Simple Showcase Server Starting ===
+[11:17:50.140] [2] [INFO ] [server  ] Server created on port 8080
+[11:17:50.142] [3] [DEBUG] [routes  ] Registering page routes...
+[11:17:50.143] [4] [DEBUG] [routes  ]   GET / -> handle_landing
+[11:17:50.144] [5] [DEBUG] [routes  ]   Registered 10 sub-page routes
+[11:17:50.145] [6] [DEBUG] [routes  ]   Registered .html redirect routes
+[11:17:50.146] [7] [INFO ] [server  ] Routes registered
+[11:17:50.149] [8] [INFO ] [server  ] Logging middleware enabled
+[11:17:50.151] [9] [INFO ] [server  ] Calling server.start (blocking)...
+[11:17:56.40] [1] [INFO ] [handler ] Request for /workflow
+[11:18:26.837] [1] [INFO ] [server  ] === Simple Showcase Server Starting ===
+[11:18:27.167] [2] [INFO ] [server  ] Server created on port 8080
+[11:18:27.167] [3] [DEBUG] [routes  ] Registering page routes...
+[11:18:27.168] [4] [DEBUG] [routes  ]   GET / -> handle_landing
+[11:18:27.169] [5] [DEBUG] [routes  ]   Registered 10 sub-page routes
+[11:18:27.171] [6] [DEBUG] [routes  ]   Registered .html redirect routes
+[11:18:27.172] [7] [INFO ] [server  ] Routes registered
+[11:18:27.172] [8] [INFO ] [server  ] Logging middleware enabled
+[11:18:27.173] [9] [INFO ] [server  ] Calling server.start (blocking)...
+[11:19:06.576] [1] [INFO ] [handler ] Request for /workflow
+[11:19:34.66] [1] [INFO ] [handler ] Request for /workflow
+[11:19:43.681] [2] [TRACE] [enter   ] >>> handle_landing
+[11:19:43.683] [3] [INFO ] [handler ]   Request for landing page from /
+[11:19:43.685] [4] [DEBUG] [handler ]   Creating SSC_LANDING_PAGE...
+[11:19:43.687] [5] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.make
+[11:19:43.688] [6] [INFO ] [page    ]     Creating landing page sections...
+[11:19:43.689] [7] [DEBUG] [page    ]       Creating hero_section...
+[11:19:43.690] [8] [DEBUG] [page    ]       Creating recognition_section...
+[11:19:43.691] [9] [DEBUG] [page    ]       Creating shift_section...
+[11:19:43.692] [10] [DEBUG] [page    ]       Creating problem_section...
+[11:19:43.694] [11] [DEBUG] [page    ]       Creating unlock_section...
+[11:19:43.695] [12] [DEBUG] [page    ]       Creating evidence_section...
+[11:19:43.696] [13] [DEBUG] [page    ]       Creating revelation_section...
+[11:19:43.697] [14] [DEBUG] [page    ]       Creating workflow_section...
+[11:19:43.699] [15] [DEBUG] [page    ]       Creating invitation_section...
+[11:19:43.700] [16] [DEBUG] [page    ]       Creating nav_overlay...
+[11:19:43.701] [17] [INFO ] [page    ]     All 9 sections + nav overlay created
+[11:19:43.702] [18] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.make
+[11:19:43.703] [19] [DEBUG] [handler ]   SSC_LANDING_PAGE created, calling to_html...
+[11:19:43.704] [20] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.to_html
+[11:19:43.705] [21] [INFO ] [page    ]     Generating full HTML page...
+[11:19:43.706] [22] [TRACE] [enter   ]     >>> SSC_LANDING_PAGE.body_content
+[11:19:43.707] [23] [DEBUG] [page    ]       Creating scroll snap container...
+[11:19:43.709] [24] [INFO ] [page    ]       Adding 9 sections to page...
+[11:19:43.710] [25] [DEBUG] [page    ]         Adding hero_section...
+[11:19:43.711] [26] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[hero]
+[11:19:43.712] [27] [INFO ] [section ]         Generating section #0 (hero)
+[11:19:43.714] [28] [DEBUG] [build   ]         Building section wrapper for: hero
+[11:19:43.715] [29] [DEBUG] [build   ]         Calling section_content for: hero
+[11:19:43.718] [30] [DEBUG] [html    ]         section_content[hero] generated 954 chars
+[11:19:43.720] [31] [DEBUG] [build   ]         Section wrapper complete for: hero
+[11:19:43.721] [32] [DEBUG] [html    ]         Section[hero] generated 1152 chars
+[11:19:43.787] [33] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[hero]
+[11:19:43.788] [34] [DEBUG] [page    ]         Adding recognition_section...
+[11:19:43.789] [35] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[recognition]
+[11:19:43.789] [36] [INFO ] [section ]         Generating section #1 (recognition)
+[11:19:43.791] [37] [DEBUG] [build   ]         Building section wrapper for: recognition
+[11:19:43.792] [38] [DEBUG] [build   ]         Calling section_content for: recognition
+[11:19:43.795] [39] [DEBUG] [html    ]         section_content[recognition] generated 1093 chars
+[11:19:43.797] [40] [DEBUG] [build   ]         Section wrapper complete for: recognition
+[11:19:43.798] [41] [DEBUG] [html    ]         Section[recognition] generated 1298 chars
+[11:19:43.799] [42] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[recognition]
+[11:19:43.800] [43] [DEBUG] [page    ]         Adding shift_section...
+[11:19:43.801] [44] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[shift]
+[11:19:43.801] [45] [INFO ] [section ]         Generating section #2 (shift)
+[11:19:43.802] [46] [DEBUG] [build   ]         Building section wrapper for: shift
+[11:19:43.803] [47] [DEBUG] [build   ]         Calling section_content for: shift
+[11:19:43.805] [48] [DEBUG] [html    ]         section_content[shift] generated 458 chars
+[11:19:43.806] [49] [DEBUG] [build   ]         Section wrapper complete for: shift
+[11:19:43.807] [50] [DEBUG] [html    ]         Section[shift] generated 657 chars
+[11:19:43.808] [51] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[shift]
+[11:19:43.809] [52] [DEBUG] [page    ]         Adding problem_section...
+[11:19:43.810] [53] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[problem]
+[11:19:43.811] [54] [INFO ] [section ]         Generating section #3 (problem)
+[11:19:43.812] [55] [DEBUG] [build   ]         Building section wrapper for: problem
+[11:19:43.813] [56] [DEBUG] [build   ]         Calling section_content for: problem
+[11:19:43.817] [57] [DEBUG] [html    ]         section_content[problem] generated 1739 chars
+[11:19:43.819] [58] [DEBUG] [build   ]         Section wrapper complete for: problem
+[11:19:43.820] [59] [DEBUG] [html    ]         Section[problem] generated 1940 chars
+[11:19:43.821] [60] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[problem]
+[11:19:43.822] [61] [DEBUG] [page    ]         Adding unlock_section...
+[11:19:43.824] [62] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[unlock]
+[11:19:43.825] [63] [INFO ] [section ]         Generating section #4 (unlock)
+[11:19:43.826] [64] [DEBUG] [build   ]         Building section wrapper for: unlock
+[11:19:43.827] [65] [DEBUG] [build   ]         Calling section_content for: unlock
+[11:19:43.831] [66] [DEBUG] [html    ]         section_content[unlock] generated 2191 chars
+[11:19:43.833] [67] [DEBUG] [build   ]         Section wrapper complete for: unlock
+[11:19:43.834] [68] [DEBUG] [html    ]         Section[unlock] generated 2391 chars
+[11:19:43.835] [69] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[unlock]
+[11:19:43.837] [70] [DEBUG] [page    ]         Adding evidence_section...
+[11:19:43.838] [71] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[evidence]
+[11:19:43.839] [72] [INFO ] [section ]         Generating section #5 (evidence)
+[11:19:43.840] [73] [DEBUG] [build   ]         Building section wrapper for: evidence
+[11:19:43.841] [74] [DEBUG] [build   ]         Calling section_content for: evidence
+[11:19:43.851] [75] [DEBUG] [html    ]         section_content[evidence] generated 6498 chars
+[11:19:43.856] [76] [DEBUG] [build   ]         Section wrapper complete for: evidence
+[11:19:43.858] [77] [DEBUG] [html    ]         Section[evidence] generated 6700 chars
+[11:19:43.859] [78] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[evidence]
+[11:19:43.861] [79] [DEBUG] [page    ]         Adding revelation_section...
+[11:19:43.862] [80] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[revelation]
+[11:19:43.863] [81] [INFO ] [section ]         Generating section #6 (revelation)
+[11:19:43.864] [82] [DEBUG] [build   ]         Building section wrapper for: revelation
+[11:19:43.865] [83] [DEBUG] [build   ]         Calling section_content for: revelation
+[11:19:43.867] [84] [DEBUG] [html    ]         section_content[revelation] generated 1054 chars
+[11:19:43.870] [85] [DEBUG] [build   ]         Section wrapper complete for: revelation
+[11:19:43.871] [86] [DEBUG] [html    ]         Section[revelation] generated 1258 chars
+[11:19:43.872] [87] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[revelation]
+[11:19:43.873] [88] [DEBUG] [page    ]         Adding workflow_section...
+[11:19:43.874] [89] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[workflow]
+[11:19:43.875] [90] [INFO ] [section ]         Generating section #7 (workflow)
+[11:19:43.876] [91] [DEBUG] [build   ]         Building section wrapper for: workflow
+[11:19:43.877] [92] [DEBUG] [build   ]         Calling section_content for: workflow
+[11:19:43.882] [93] [DEBUG] [html    ]         section_content[workflow] generated 2494 chars
+[11:19:43.885] [94] [DEBUG] [build   ]         Section wrapper complete for: workflow
+[11:19:43.886] [95] [DEBUG] [html    ]         Section[workflow] generated 2696 chars
+[11:19:43.886] [96] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[workflow]
+[11:19:43.888] [97] [DEBUG] [page    ]         Adding invitation_section...
+[11:19:43.888] [98] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[invitation]
+[11:19:43.889] [99] [INFO ] [section ]         Generating section #8 (invitation)
+[11:19:43.891] [100] [DEBUG] [build   ]         Building section wrapper for: invitation
+[11:19:43.893] [101] [DEBUG] [build   ]         Calling section_content for: invitation
+[11:19:43.896] [102] [DEBUG] [html    ]         section_content[invitation] generated 2078 chars
+[11:19:43.899] [103] [DEBUG] [build   ]         Section wrapper complete for: invitation
+[11:19:43.900] [104] [DEBUG] [html    ]         Section[invitation] generated 2282 chars
+[11:19:43.901] [105] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[invitation]
+[11:19:43.903] [106] [INFO ] [page    ]       All sections added
+[11:19:43.912] [107] [DEBUG] [page    ]       Adding nav overlay...
+[11:19:43.913] [108] [DEBUG] [html    ]       body_content generated 23143 chars
+[11:19:43.914] [109] [TRACE] [exit    ]     <<< SSC_LANDING_PAGE.body_content
+[11:19:43.915] [110] [DEBUG] [html    ]     Building HTML wrapper...
+[11:19:43.916] [111] [DEBUG] [html    ]     Building <head>...
+[11:19:43.918] [112] [DEBUG] [html    ]     HTML wrapper complete
+[11:19:43.925] [113] [INFO ] [page    ]     Full page generated: 27589 bytes
+[11:19:43.926] [114] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.to_html
+[11:19:43.928] [115] [INFO ] [handler ]   Landing page generated: 27589 bytes
+[11:19:43.930] [116] [DEBUG] [handler ]   Sending HTML response...
+[11:19:43.935] [117] [TRACE] [exit    ] <<< handle_landing
+[11:21:36.747] [1] [INFO ] [server  ] === Simple Showcase Server Starting ===
+[11:21:36.749] [2] [INFO ] [server  ] Server created on port 8080
+[11:21:36.750] [3] [DEBUG] [routes  ] Registering page routes...
+[11:21:36.751] [4] [DEBUG] [routes  ]   GET / -> handle_landing
+[11:21:36.753] [5] [DEBUG] [routes  ]   Registered 10 sub-page routes
+[11:21:36.754] [6] [DEBUG] [routes  ]   Registered .html redirect routes
+[11:21:36.755] [7] [INFO ] [server  ] Routes registered
+[11:21:36.756] [8] [INFO ] [server  ] Logging middleware enabled
+[11:21:36.756] [9] [INFO ] [server  ] Calling server.start (blocking)...
+[11:21:57.411] [1] [INFO ] [server  ] === Simple Showcase Server Starting ===
+[11:21:57.413] [2] [INFO ] [server  ] Server created on port 8080
+[11:21:57.415] [3] [DEBUG] [routes  ] Registering page routes...
+[11:21:57.416] [4] [DEBUG] [routes  ]   GET / -> handle_landing
+[11:21:57.420] [5] [DEBUG] [routes  ]   Registered 10 sub-page routes
+[11:21:57.423] [6] [DEBUG] [routes  ]   Registered .html redirect routes
+[11:21:57.424] [7] [INFO ] [server  ] Routes registered
+[11:21:57.426] [8] [INFO ] [server  ] Logging middleware enabled
+[11:21:57.428] [9] [INFO ] [server  ] Calling server.start (blocking)...
+[11:22:41.324] [1] [INFO ] [server  ] === Simple Showcase Server Starting ===
+[11:22:41.649] [2] [INFO ] [server  ] Server created on port 8080
+[11:22:41.650] [3] [DEBUG] [routes  ] Registering page routes...
+[11:22:41.651] [4] [DEBUG] [routes  ]   GET / -> handle_landing
+[11:22:41.653] [5] [DEBUG] [routes  ]   Registered 10 sub-page routes
+[11:22:41.654] [6] [DEBUG] [routes  ]   Registered .html redirect routes
+[11:22:41.655] [7] [INFO ] [server  ] Routes registered
+[11:22:41.656] [8] [INFO ] [server  ] Logging middleware enabled
+[11:22:41.657] [9] [INFO ] [server  ] Calling server.start (blocking)...
+[11:22:48.638] [1] [INFO ] [handler ] Request for /get-started
+[11:22:52.296] [2] [INFO ] [handler ] Request for /portfolio
+[11:22:55.4] [3] [INFO ] [handler ] Request for /design-by-contract
+[11:22:55.946] [4] [INFO ] [handler ] Request for /workflow
+[11:22:56.901] [5] [INFO ] [handler ] Request for /analysis
+[11:22:59.857] [6] [INFO ] [handler ] Request for /business-case
+[11:23:01.245] [7] [INFO ] [handler ] Request for /why-eiffel
+[11:23:03.894] [8] [INFO ] [handler ] Request for /probable-to-provable
+[11:23:05.540] [9] [INFO ] [handler ] Request for /old-way
+[11:23:07.173] [10] [INFO ] [handler ] Request for /ai-changes
+[11:27:21.110] [1] [INFO ] [server  ] === Simple Showcase Server Starting ===
+[11:27:21.112] [2] [INFO ] [server  ] Server created on port 8080
+[11:27:21.113] [3] [DEBUG] [routes  ] Registering page routes...
+[11:27:21.114] [4] [DEBUG] [routes  ]   GET / -> handle_landing
+[11:27:21.116] [5] [DEBUG] [routes  ]   Registered 10 sub-page routes
+[11:27:21.117] [6] [DEBUG] [routes  ]   Registered .html redirect routes
+[11:27:21.118] [7] [INFO ] [server  ] Routes registered
+[11:27:21.120] [8] [INFO ] [server  ] Logging middleware enabled
+[11:27:21.121] [9] [INFO ] [server  ] Calling server.start (blocking)...
+[11:27:26.746] [1] [TRACE] [enter   ] >>> handle_landing
+[11:27:26.747] [2] [INFO ] [handler ]   Request for landing page from /
+[11:27:26.748] [3] [DEBUG] [handler ]   Creating SSC_LANDING_PAGE...
+[11:27:26.749] [4] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.make
+[11:27:26.750] [5] [INFO ] [page    ]     Creating landing page sections...
+[11:27:26.751] [6] [DEBUG] [page    ]       Creating hero_section...
+[11:27:26.752] [7] [DEBUG] [page    ]       Creating recognition_section...
+[11:27:26.753] [8] [DEBUG] [page    ]       Creating shift_section...
+[11:27:26.754] [9] [DEBUG] [page    ]       Creating problem_section...
+[11:27:26.755] [10] [DEBUG] [page    ]       Creating unlock_section...
+[11:27:26.756] [11] [DEBUG] [page    ]       Creating evidence_section...
+[11:27:26.756] [12] [DEBUG] [page    ]       Creating revelation_section...
+[11:27:26.758] [13] [DEBUG] [page    ]       Creating workflow_section...
+[11:27:26.758] [14] [DEBUG] [page    ]       Creating invitation_section...
+[11:27:26.759] [15] [DEBUG] [page    ]       Creating nav_overlay...
+[11:27:26.760] [16] [INFO ] [page    ]     All 9 sections + nav overlay created
+[11:27:26.761] [17] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.make
+[11:27:26.762] [18] [DEBUG] [handler ]   SSC_LANDING_PAGE created, calling to_html...
+[11:27:26.763] [19] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.to_html
+[11:27:26.764] [20] [INFO ] [page    ]     Generating full HTML page...
+[11:27:26.765] [21] [TRACE] [enter   ]     >>> SSC_LANDING_PAGE.body_content
+[11:27:26.766] [22] [DEBUG] [page    ]       Creating scroll snap container...
+[11:27:26.767] [23] [INFO ] [page    ]       Adding 9 sections to page...
+[11:27:26.768] [24] [DEBUG] [page    ]         Adding hero_section...
+[11:27:26.769] [25] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[hero]
+[11:27:26.770] [26] [INFO ] [section ]         Generating section #0 (hero)
+[11:27:26.771] [27] [DEBUG] [build   ]         Building section wrapper for: hero
+[11:27:26.772] [28] [DEBUG] [build   ]         Calling section_content for: hero
+[11:27:26.774] [29] [DEBUG] [html    ]         section_content[hero] generated 954 chars
+[11:27:26.774] [30] [DEBUG] [build   ]         Section wrapper complete for: hero
+[11:27:26.842] [31] [DEBUG] [html    ]         Section[hero] generated 1152 chars
+[11:27:26.842] [32] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[hero]
+[11:27:26.843] [33] [DEBUG] [page    ]         Adding recognition_section...
+[11:27:26.843] [34] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[recognition]
+[11:27:26.844] [35] [INFO ] [section ]         Generating section #1 (recognition)
+[11:27:26.845] [36] [DEBUG] [build   ]         Building section wrapper for: recognition
+[11:27:26.845] [37] [DEBUG] [build   ]         Calling section_content for: recognition
+[11:27:26.847] [38] [DEBUG] [html    ]         section_content[recognition] generated 1093 chars
+[11:27:26.848] [39] [DEBUG] [build   ]         Section wrapper complete for: recognition
+[11:27:26.849] [40] [DEBUG] [html    ]         Section[recognition] generated 1298 chars
+[11:27:26.850] [41] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[recognition]
+[11:27:26.851] [42] [DEBUG] [page    ]         Adding shift_section...
+[11:27:26.851] [43] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[shift]
+[11:27:26.852] [44] [INFO ] [section ]         Generating section #2 (shift)
+[11:27:26.853] [45] [DEBUG] [build   ]         Building section wrapper for: shift
+[11:27:26.854] [46] [DEBUG] [build   ]         Calling section_content for: shift
+[11:27:26.854] [47] [DEBUG] [html    ]         section_content[shift] generated 458 chars
+[11:27:26.855] [48] [DEBUG] [build   ]         Section wrapper complete for: shift
+[11:27:26.857] [49] [DEBUG] [html    ]         Section[shift] generated 657 chars
+[11:27:26.858] [50] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[shift]
+[11:27:26.858] [51] [DEBUG] [page    ]         Adding problem_section...
+[11:27:26.859] [52] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[problem]
+[11:27:26.860] [53] [INFO ] [section ]         Generating section #3 (problem)
+[11:27:26.861] [54] [DEBUG] [build   ]         Building section wrapper for: problem
+[11:27:26.861] [55] [DEBUG] [build   ]         Calling section_content for: problem
+[11:27:26.863] [56] [DEBUG] [html    ]         section_content[problem] generated 1739 chars
+[11:27:26.864] [57] [DEBUG] [build   ]         Section wrapper complete for: problem
+[11:27:26.865] [58] [DEBUG] [html    ]         Section[problem] generated 1940 chars
+[11:27:26.866] [59] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[problem]
+[11:27:26.867] [60] [DEBUG] [page    ]         Adding unlock_section...
+[11:27:26.868] [61] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[unlock]
+[11:27:26.869] [62] [INFO ] [section ]         Generating section #4 (unlock)
+[11:27:26.870] [63] [DEBUG] [build   ]         Building section wrapper for: unlock
+[11:27:26.880] [64] [DEBUG] [build   ]         Calling section_content for: unlock
+[11:27:26.882] [65] [DEBUG] [html    ]         section_content[unlock] generated 2191 chars
+[11:27:26.883] [66] [DEBUG] [build   ]         Section wrapper complete for: unlock
+[11:27:26.884] [67] [DEBUG] [html    ]         Section[unlock] generated 2391 chars
+[11:27:26.884] [68] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[unlock]
+[11:27:26.885] [69] [DEBUG] [page    ]         Adding evidence_section...
+[11:27:26.886] [70] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[evidence]
+[11:27:26.887] [71] [INFO ] [section ]         Generating section #5 (evidence)
+[11:27:26.887] [72] [DEBUG] [build   ]         Building section wrapper for: evidence
+[11:27:26.889] [73] [DEBUG] [build   ]         Calling section_content for: evidence
+[11:27:26.892] [74] [DEBUG] [html    ]         section_content[evidence] generated 6498 chars
+[11:27:26.893] [75] [DEBUG] [build   ]         Section wrapper complete for: evidence
+[11:27:26.894] [76] [DEBUG] [html    ]         Section[evidence] generated 6700 chars
+[11:27:26.895] [77] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[evidence]
+[11:27:26.896] [78] [DEBUG] [page    ]         Adding revelation_section...
+[11:27:26.896] [79] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[revelation]
+[11:27:26.897] [80] [INFO ] [section ]         Generating section #6 (revelation)
+[11:27:26.898] [81] [DEBUG] [build   ]         Building section wrapper for: revelation
+[11:27:26.899] [82] [DEBUG] [build   ]         Calling section_content for: revelation
+[11:27:26.900] [83] [DEBUG] [html    ]         section_content[revelation] generated 1054 chars
+[11:27:26.900] [84] [DEBUG] [build   ]         Section wrapper complete for: revelation
+[11:27:26.901] [85] [DEBUG] [html    ]         Section[revelation] generated 1258 chars
+[11:27:26.902] [86] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[revelation]
+[11:27:26.902] [87] [DEBUG] [page    ]         Adding workflow_section...
+[11:27:26.903] [88] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[workflow]
+[11:27:26.904] [89] [INFO ] [section ]         Generating section #7 (workflow)
+[11:27:26.905] [90] [DEBUG] [build   ]         Building section wrapper for: workflow
+[11:27:26.905] [91] [DEBUG] [build   ]         Calling section_content for: workflow
+[11:27:26.906] [92] [DEBUG] [html    ]         section_content[workflow] generated 2494 chars
+[11:27:26.908] [93] [DEBUG] [build   ]         Section wrapper complete for: workflow
+[11:27:26.910] [94] [DEBUG] [html    ]         Section[workflow] generated 2696 chars
+[11:27:26.910] [95] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[workflow]
+[11:27:26.911] [96] [DEBUG] [page    ]         Adding invitation_section...
+[11:27:26.913] [97] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[invitation]
+[11:27:26.914] [98] [INFO ] [section ]         Generating section #8 (invitation)
+[11:27:26.915] [99] [DEBUG] [build   ]         Building section wrapper for: invitation
+[11:27:26.916] [100] [DEBUG] [build   ]         Calling section_content for: invitation
+[11:27:26.917] [101] [DEBUG] [html    ]         section_content[invitation] generated 2078 chars
+[11:27:26.918] [102] [DEBUG] [build   ]         Section wrapper complete for: invitation
+[11:27:26.920] [103] [DEBUG] [html    ]         Section[invitation] generated 2282 chars
+[11:27:26.924] [104] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[invitation]
+[11:27:26.926] [105] [INFO ] [page    ]       All sections added
+[11:27:26.929] [106] [DEBUG] [page    ]       Adding nav overlay...
+[11:27:26.929] [107] [DEBUG] [html    ]       body_content generated 23143 chars
+[11:27:26.930] [108] [TRACE] [exit    ]     <<< SSC_LANDING_PAGE.body_content
+[11:27:26.931] [109] [DEBUG] [html    ]     Building HTML wrapper...
+[11:27:26.931] [110] [DEBUG] [html    ]     Building <head>...
+[11:27:26.933] [111] [DEBUG] [html    ]     HTML wrapper complete
+[11:27:26.934] [112] [INFO ] [page    ]     Full page generated: 27589 bytes
+[11:27:26.935] [113] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.to_html
+[11:27:26.936] [114] [INFO ] [handler ]   Landing page generated: 27589 bytes
+[11:27:26.937] [115] [DEBUG] [handler ]   Sending HTML response...
+[11:27:26.938] [116] [TRACE] [exit    ] <<< handle_landing
+[11:27:34.165] [117] [INFO ] [handler ] Request for /get-started
+[11:27:35.211] [118] [INFO ] [handler ] Request for /portfolio
+[11:27:40.56] [119] [INFO ] [handler ] Request for /design-by-contract
+[11:27:41.81] [120] [INFO ] [handler ] Request for /workflow
+[11:27:42.312] [121] [INFO ] [handler ] Request for /analysis
+[11:27:45.149] [122] [INFO ] [handler ] Request for /business-case
+[11:27:46.711] [123] [INFO ] [handler ] Request for /why-eiffel
+[11:27:51.944] [124] [INFO ] [handler ] Request for /probable-to-provable
+[11:27:53.869] [125] [INFO ] [handler ] Request for /old-way
+[11:27:54.606] [126] [INFO ] [handler ] Request for /ai-changes
+[11:37:33.551] [1] [INFO ] [server  ] === Simple Showcase Server Starting ===
+[11:37:33.553] [2] [INFO ] [server  ] Server created on port 8080
+[11:37:33.554] [3] [DEBUG] [routes  ] Registering page routes...
+[11:37:33.555] [4] [DEBUG] [routes  ]   GET / -> handle_landing
+[11:37:33.556] [5] [DEBUG] [routes  ]   Registered 10 sub-page routes
+[11:37:33.558] [6] [DEBUG] [routes  ]   Registered .html redirect routes
+[11:37:33.559] [7] [INFO ] [server  ] Routes registered
+[11:37:33.560] [8] [INFO ] [server  ] Logging middleware enabled
+[11:37:33.561] [9] [INFO ] [server  ] Calling server.start (blocking)...
+[11:37:47.463] [1] [TRACE] [enter   ] >>> handle_landing
+[11:37:47.464] [2] [INFO ] [handler ]   Request for landing page from /
+[11:37:47.465] [3] [DEBUG] [handler ]   Creating SSC_LANDING_PAGE...
+[11:37:47.465] [4] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.make
+[11:37:47.478] [5] [INFO ] [page    ]     Creating landing page sections...
+[11:37:47.479] [6] [DEBUG] [page    ]       Creating hero_section...
+[11:37:47.480] [7] [DEBUG] [page    ]       Creating recognition_section...
+[11:37:47.480] [8] [DEBUG] [page    ]       Creating shift_section...
+[11:37:47.481] [9] [DEBUG] [page    ]       Creating problem_section...
+[11:37:47.481] [10] [DEBUG] [page    ]       Creating unlock_section...
+[11:37:47.482] [11] [DEBUG] [page    ]       Creating evidence_section...
+[11:37:47.483] [12] [DEBUG] [page    ]       Creating revelation_section...
+[11:37:47.483] [13] [DEBUG] [page    ]       Creating workflow_section...
+[11:37:47.484] [14] [DEBUG] [page    ]       Creating invitation_section...
+[11:37:47.485] [15] [DEBUG] [page    ]       Creating nav_overlay...
+[11:37:47.485] [16] [INFO ] [page    ]     All 9 sections + nav overlay created
+[11:37:47.486] [17] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.make
+[11:37:47.487] [18] [DEBUG] [handler ]   SSC_LANDING_PAGE created, calling to_html...
+[11:37:47.488] [19] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.to_html
+[11:37:47.489] [20] [INFO ] [page    ]     Generating full HTML page...
+[11:37:47.490] [21] [TRACE] [enter   ]     >>> SSC_LANDING_PAGE.body_content
+[11:37:47.491] [22] [DEBUG] [page    ]       Creating scroll snap container...
+[11:37:47.492] [23] [INFO ] [page    ]       Adding 9 sections to page...
+[11:37:47.492] [24] [DEBUG] [page    ]         Adding hero_section...
+[11:37:47.494] [25] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[hero]
+[11:37:47.495] [26] [INFO ] [section ]         Generating section #0 (hero)
+[11:37:47.496] [27] [DEBUG] [build   ]         Building section wrapper for: hero
+[11:37:47.497] [28] [DEBUG] [build   ]         Calling section_content for: hero
+[11:37:47.497] [29] [DEBUG] [html    ]         section_content[hero] generated 954 chars
+[11:37:47.498] [30] [DEBUG] [build   ]         Section wrapper complete for: hero
+[11:37:47.499] [31] [DEBUG] [html    ]         Section[hero] generated 1152 chars
+[11:37:47.507] [32] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[hero]
+[11:37:47.509] [33] [DEBUG] [page    ]         Adding recognition_section...
+[11:37:47.509] [34] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[recognition]
+[11:37:47.510] [35] [INFO ] [section ]         Generating section #1 (recognition)
+[11:37:47.511] [36] [DEBUG] [build   ]         Building section wrapper for: recognition
+[11:37:47.512] [37] [DEBUG] [build   ]         Calling section_content for: recognition
+[11:37:47.512] [38] [DEBUG] [html    ]         section_content[recognition] generated 1093 chars
+[11:37:47.514] [39] [DEBUG] [build   ]         Section wrapper complete for: recognition
+[11:37:47.515] [40] [DEBUG] [html    ]         Section[recognition] generated 1298 chars
+[11:37:47.515] [41] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[recognition]
+[11:37:47.516] [42] [DEBUG] [page    ]         Adding shift_section...
+[11:37:47.517] [43] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[shift]
+[11:37:47.518] [44] [INFO ] [section ]         Generating section #2 (shift)
+[11:37:47.518] [45] [DEBUG] [build   ]         Building section wrapper for: shift
+[11:37:47.520] [46] [DEBUG] [build   ]         Calling section_content for: shift
+[11:37:47.521] [47] [DEBUG] [html    ]         section_content[shift] generated 458 chars
+[11:37:47.522] [48] [DEBUG] [build   ]         Section wrapper complete for: shift
+[11:37:47.523] [49] [DEBUG] [html    ]         Section[shift] generated 657 chars
+[11:37:47.523] [50] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[shift]
+[11:37:47.524] [51] [DEBUG] [page    ]         Adding problem_section...
+[11:37:47.524] [52] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[problem]
+[11:37:47.526] [53] [INFO ] [section ]         Generating section #3 (problem)
+[11:37:47.526] [54] [DEBUG] [build   ]         Building section wrapper for: problem
+[11:37:47.527] [55] [DEBUG] [build   ]         Calling section_content for: problem
+[11:37:47.528] [56] [DEBUG] [html    ]         section_content[problem] generated 1737 chars
+[11:37:47.529] [57] [DEBUG] [build   ]         Section wrapper complete for: problem
+[11:37:47.530] [58] [DEBUG] [html    ]         Section[problem] generated 1938 chars
+[11:37:47.531] [59] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[problem]
+[11:37:47.532] [60] [DEBUG] [page    ]         Adding unlock_section...
+[11:37:47.533] [61] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[unlock]
+[11:37:47.533] [62] [INFO ] [section ]         Generating section #4 (unlock)
+[11:37:47.534] [63] [DEBUG] [build   ]         Building section wrapper for: unlock
+[11:37:47.536] [64] [DEBUG] [build   ]         Calling section_content for: unlock
+[11:37:47.536] [65] [DEBUG] [html    ]         section_content[unlock] generated 2191 chars
+[11:37:47.538] [66] [DEBUG] [build   ]         Section wrapper complete for: unlock
+[11:37:47.538] [67] [DEBUG] [html    ]         Section[unlock] generated 2391 chars
+[11:37:47.539] [68] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[unlock]
+[11:37:47.540] [69] [DEBUG] [page    ]         Adding evidence_section...
+[11:37:47.541] [70] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[evidence]
+[11:37:47.542] [71] [INFO ] [section ]         Generating section #5 (evidence)
+[11:37:47.543] [72] [DEBUG] [build   ]         Building section wrapper for: evidence
+[11:37:47.543] [73] [DEBUG] [build   ]         Calling section_content for: evidence
+[11:37:47.547] [74] [DEBUG] [html    ]         section_content[evidence] generated 6498 chars
+[11:37:47.548] [75] [DEBUG] [build   ]         Section wrapper complete for: evidence
+[11:37:47.549] [76] [DEBUG] [html    ]         Section[evidence] generated 6700 chars
+[11:37:47.550] [77] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[evidence]
+[11:37:47.551] [78] [DEBUG] [page    ]         Adding revelation_section...
+[11:37:47.552] [79] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[revelation]
+[11:37:47.553] [80] [INFO ] [section ]         Generating section #6 (revelation)
+[11:37:47.554] [81] [DEBUG] [build   ]         Building section wrapper for: revelation
+[11:37:47.555] [82] [DEBUG] [build   ]         Calling section_content for: revelation
+[11:37:47.556] [83] [DEBUG] [html    ]         section_content[revelation] generated 1054 chars
+[11:37:47.557] [84] [DEBUG] [build   ]         Section wrapper complete for: revelation
+[11:37:47.558] [85] [DEBUG] [html    ]         Section[revelation] generated 1258 chars
+[11:37:47.559] [86] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[revelation]
+[11:37:47.560] [87] [DEBUG] [page    ]         Adding workflow_section...
+[11:37:47.561] [88] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[workflow]
+[11:37:47.562] [89] [INFO ] [section ]         Generating section #7 (workflow)
+[11:37:47.563] [90] [DEBUG] [build   ]         Building section wrapper for: workflow
+[11:37:47.563] [91] [DEBUG] [build   ]         Calling section_content for: workflow
+[11:37:47.565] [92] [DEBUG] [html    ]         section_content[workflow] generated 2494 chars
+[11:37:47.566] [93] [DEBUG] [build   ]         Section wrapper complete for: workflow
+[11:37:47.567] [94] [DEBUG] [html    ]         Section[workflow] generated 2696 chars
+[11:37:47.567] [95] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[workflow]
+[11:37:47.568] [96] [DEBUG] [page    ]         Adding invitation_section...
+[11:37:47.569] [97] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[invitation]
+[11:37:47.570] [98] [INFO ] [section ]         Generating section #8 (invitation)
+[11:37:47.571] [99] [DEBUG] [build   ]         Building section wrapper for: invitation
+[11:37:47.571] [100] [DEBUG] [build   ]         Calling section_content for: invitation
+[11:37:47.573] [101] [DEBUG] [html    ]         section_content[invitation] generated 2078 chars
+[11:37:47.574] [102] [DEBUG] [build   ]         Section wrapper complete for: invitation
+[11:37:47.574] [103] [DEBUG] [html    ]         Section[invitation] generated 2282 chars
+[11:37:47.577] [104] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[invitation]
+[11:37:47.577] [105] [INFO ] [page    ]       All sections added
+[11:37:47.579] [106] [DEBUG] [page    ]       Adding nav overlay...
+[11:37:47.580] [107] [DEBUG] [html    ]       body_content generated 23141 chars
+[11:37:47.581] [108] [TRACE] [exit    ]     <<< SSC_LANDING_PAGE.body_content
+[11:37:47.582] [109] [DEBUG] [html    ]     Building HTML wrapper...
+[11:37:47.583] [110] [DEBUG] [html    ]     Building <head>...
+[11:37:47.584] [111] [DEBUG] [html    ]     HTML wrapper complete
+[11:37:47.586] [112] [INFO ] [page    ]     Full page generated: 27587 bytes
+[11:37:47.587] [113] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.to_html
+[11:37:47.589] [114] [INFO ] [handler ]   Landing page generated: 27587 bytes
+[11:37:47.590] [115] [DEBUG] [handler ]   Sending HTML response...
+[11:37:47.591] [116] [TRACE] [exit    ] <<< handle_landing
+[11:37:49.509] [117] [INFO ] [handler ] Request for /get-started
+[11:37:51.369] [118] [INFO ] [handler ] Request for /portfolio
+[11:37:53.153] [119] [INFO ] [handler ] Request for /design-by-contract
+[11:37:54.984] [120] [INFO ] [handler ] Request for /workflow
+[11:37:56.775] [121] [INFO ] [handler ] Request for /analysis
+[11:37:58.514] [122] [INFO ] [handler ] Request for /business-case
+[11:38:01.935] [123] [INFO ] [handler ] Request for /why-eiffel
+[11:38:04.119] [124] [INFO ] [handler ] Request for /probable-to-provable
+[11:38:05.698] [125] [INFO ] [handler ] Request for /old-way
+[11:38:07.223] [126] [INFO ] [handler ] Request for /ai-changes
+[11:39:50.550] [127] [INFO ] [handler ] Request for /portfolio
+[11:54:11.659] [1] [INFO ] [server  ] === Simple Showcase Server Starting ===
+[11:54:11.660] [2] [INFO ] [server  ] Server created on port 8080
+[11:54:11.662] [3] [DEBUG] [routes  ] Registering page routes...
+[11:54:11.663] [4] [DEBUG] [routes  ]   GET / -> handle_landing
+[11:54:11.665] [5] [DEBUG] [routes  ]   Registered 10 sub-page routes
+[11:54:11.666] [6] [DEBUG] [routes  ]   Registered .html redirect routes
+[11:54:11.667] [7] [INFO ] [server  ] Routes registered
+[11:54:11.668] [8] [INFO ] [server  ] Logging middleware enabled
+[11:54:11.669] [9] [INFO ] [server  ] Calling server.start (blocking)...
+[11:54:27.203] [1] [TRACE] [enter   ] >>> handle_landing
+[11:54:27.212] [2] [INFO ] [handler ]   Request for landing page from /
+[11:54:27.213] [3] [DEBUG] [handler ]   Creating SSC_LANDING_PAGE...
+[11:54:27.214] [4] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.make
+[11:54:27.215] [5] [INFO ] [page    ]     Creating landing page sections...
+[11:54:27.217] [6] [DEBUG] [page    ]       Creating hero_section...
+[11:54:27.218] [7] [DEBUG] [page    ]       Creating recognition_section...
+[11:54:27.218] [8] [DEBUG] [page    ]       Creating shift_section...
+[11:54:27.219] [9] [DEBUG] [page    ]       Creating problem_section...
+[11:54:27.220] [10] [DEBUG] [page    ]       Creating unlock_section...
+[11:54:27.220] [11] [DEBUG] [page    ]       Creating evidence_section...
+[11:54:27.221] [12] [DEBUG] [page    ]       Creating revelation_section...
+[11:54:27.222] [13] [DEBUG] [page    ]       Creating workflow_section...
+[11:54:27.223] [14] [DEBUG] [page    ]       Creating invitation_section...
+[11:54:27.223] [15] [DEBUG] [page    ]       Creating nav_overlay...
+[11:54:27.225] [16] [DEBUG] [page    ]       Creating hamburger_menu (hidden until scroll)...
+[11:54:27.226] [17] [INFO ] [page    ]     All 9 sections + nav overlay + hamburger menu created
+[11:54:27.227] [18] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.make
+[11:54:27.227] [19] [DEBUG] [handler ]   SSC_LANDING_PAGE created, calling to_html...
+[11:54:27.228] [20] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.to_html
+[11:54:27.229] [21] [INFO ] [page    ]     Generating full HTML page...
+[11:54:27.230] [22] [TRACE] [enter   ]     >>> SSC_LANDING_PAGE.body_content
+[11:54:27.230] [23] [DEBUG] [page    ]       Creating scroll snap container...
+[11:54:27.232] [24] [INFO ] [page    ]       Adding 9 sections to page...
+[11:54:27.233] [25] [DEBUG] [page    ]         Adding hero_section...
+[11:54:27.233] [26] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[hero]
+[11:54:27.234] [27] [INFO ] [section ]         Generating section #0 (hero)
+[11:54:27.235] [28] [DEBUG] [build   ]         Building section wrapper for: hero
+[11:54:27.236] [29] [DEBUG] [build   ]         Calling section_content for: hero
+[11:54:27.237] [30] [DEBUG] [html    ]         section_content[hero] generated 954 chars
+[11:54:27.238] [31] [DEBUG] [build   ]         Section wrapper complete for: hero
+[11:54:27.238] [32] [DEBUG] [html    ]         Section[hero] generated 1152 chars
+[11:54:27.240] [33] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[hero]
+[11:54:27.241] [34] [DEBUG] [page    ]         Adding recognition_section...
+[11:54:27.242] [35] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[recognition]
+[11:54:27.242] [36] [INFO ] [section ]         Generating section #1 (recognition)
+[11:54:27.243] [37] [DEBUG] [build   ]         Building section wrapper for: recognition
+[11:54:27.245] [38] [DEBUG] [build   ]         Calling section_content for: recognition
+[11:54:27.245] [39] [DEBUG] [html    ]         section_content[recognition] generated 1093 chars
+[11:54:27.247] [40] [DEBUG] [build   ]         Section wrapper complete for: recognition
+[11:54:27.248] [41] [DEBUG] [html    ]         Section[recognition] generated 1298 chars
+[11:54:27.250] [42] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[recognition]
+[11:54:27.250] [43] [DEBUG] [page    ]         Adding shift_section...
+[11:54:27.251] [44] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[shift]
+[11:54:27.252] [45] [INFO ] [section ]         Generating section #2 (shift)
+[11:54:27.253] [46] [DEBUG] [build   ]         Building section wrapper for: shift
+[11:54:27.254] [47] [DEBUG] [build   ]         Calling section_content for: shift
+[11:54:27.254] [48] [DEBUG] [html    ]         section_content[shift] generated 458 chars
+[11:54:27.255] [49] [DEBUG] [build   ]         Section wrapper complete for: shift
+[11:54:27.256] [50] [DEBUG] [html    ]         Section[shift] generated 657 chars
+[11:54:27.257] [51] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[shift]
+[11:54:27.258] [52] [DEBUG] [page    ]         Adding problem_section...
+[11:54:27.259] [53] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[problem]
+[11:54:27.260] [54] [INFO ] [section ]         Generating section #3 (problem)
+[11:54:27.261] [55] [DEBUG] [build   ]         Building section wrapper for: problem
+[11:54:27.262] [56] [DEBUG] [build   ]         Calling section_content for: problem
+[11:54:27.263] [57] [DEBUG] [html    ]         section_content[problem] generated 1737 chars
+[11:54:27.264] [58] [DEBUG] [build   ]         Section wrapper complete for: problem
+[11:54:27.265] [59] [DEBUG] [html    ]         Section[problem] generated 1938 chars
+[11:54:27.267] [60] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[problem]
+[11:54:27.267] [61] [DEBUG] [page    ]         Adding unlock_section...
+[11:54:27.269] [62] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[unlock]
+[11:54:27.281] [63] [INFO ] [section ]         Generating section #4 (unlock)
+[11:54:27.282] [64] [DEBUG] [build   ]         Building section wrapper for: unlock
+[11:54:27.283] [65] [DEBUG] [build   ]         Calling section_content for: unlock
+[11:54:27.284] [66] [DEBUG] [html    ]         section_content[unlock] generated 2191 chars
+[11:54:27.285] [67] [DEBUG] [build   ]         Section wrapper complete for: unlock
+[11:54:27.286] [68] [DEBUG] [html    ]         Section[unlock] generated 2391 chars
+[11:54:27.286] [69] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[unlock]
+[11:54:27.287] [70] [DEBUG] [page    ]         Adding evidence_section...
+[11:54:27.288] [71] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[evidence]
+[11:54:27.289] [72] [INFO ] [section ]         Generating section #5 (evidence)
+[11:54:27.290] [73] [DEBUG] [build   ]         Building section wrapper for: evidence
+[11:54:27.290] [74] [DEBUG] [build   ]         Calling section_content for: evidence
+[11:54:27.293] [75] [DEBUG] [html    ]         section_content[evidence] generated 6504 chars
+[11:54:27.294] [76] [DEBUG] [build   ]         Section wrapper complete for: evidence
+[11:54:27.295] [77] [DEBUG] [html    ]         Section[evidence] generated 6706 chars
+[11:54:27.295] [78] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[evidence]
+[11:54:27.297] [79] [DEBUG] [page    ]         Adding revelation_section...
+[11:54:27.298] [80] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[revelation]
+[11:54:27.299] [81] [INFO ] [section ]         Generating section #6 (revelation)
+[11:54:27.300] [82] [DEBUG] [build   ]         Building section wrapper for: revelation
+[11:54:27.301] [83] [DEBUG] [build   ]         Calling section_content for: revelation
+[11:54:27.302] [84] [DEBUG] [html    ]         section_content[revelation] generated 1054 chars
+[11:54:27.302] [85] [DEBUG] [build   ]         Section wrapper complete for: revelation
+[11:54:27.303] [86] [DEBUG] [html    ]         Section[revelation] generated 1258 chars
+[11:54:27.304] [87] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[revelation]
+[11:54:27.304] [88] [DEBUG] [page    ]         Adding workflow_section...
+[11:54:27.305] [89] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[workflow]
+[11:54:27.305] [90] [INFO ] [section ]         Generating section #7 (workflow)
+[11:54:27.307] [91] [DEBUG] [build   ]         Building section wrapper for: workflow
+[11:54:27.308] [92] [DEBUG] [build   ]         Calling section_content for: workflow
+[11:54:27.309] [93] [DEBUG] [html    ]         section_content[workflow] generated 2494 chars
+[11:54:27.311] [94] [DEBUG] [build   ]         Section wrapper complete for: workflow
+[11:54:27.312] [95] [DEBUG] [html    ]         Section[workflow] generated 2696 chars
+[11:54:27.312] [96] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[workflow]
+[11:54:27.313] [97] [DEBUG] [page    ]         Adding invitation_section...
+[11:54:27.314] [98] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[invitation]
+[11:54:27.316] [99] [INFO ] [section ]         Generating section #8 (invitation)
+[11:54:27.316] [100] [DEBUG] [build   ]         Building section wrapper for: invitation
+[11:54:27.318] [101] [DEBUG] [build   ]         Calling section_content for: invitation
+[11:54:27.319] [102] [DEBUG] [html    ]         section_content[invitation] generated 2078 chars
+[11:54:27.320] [103] [DEBUG] [build   ]         Section wrapper complete for: invitation
+[11:54:27.321] [104] [DEBUG] [html    ]         Section[invitation] generated 2282 chars
+[11:54:27.321] [105] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[invitation]
+[11:54:27.322] [106] [INFO ] [page    ]       All sections added
+[11:54:27.324] [107] [DEBUG] [page    ]       Adding nav overlay...
+[11:54:27.325] [108] [DEBUG] [page    ]       Adding hamburger menu...
+[11:54:27.327] [109] [DEBUG] [html    ]       body_content generated 27977 chars
+[11:54:27.327] [110] [TRACE] [exit    ]     <<< SSC_LANDING_PAGE.body_content
+[11:54:27.328] [111] [DEBUG] [html    ]     Building HTML wrapper...
+[11:54:27.329] [112] [DEBUG] [html    ]     Building <head>...
+[11:54:27.330] [113] [DEBUG] [html    ]     HTML wrapper complete
+[11:54:27.332] [114] [INFO ] [page    ]     Full page generated: 32423 bytes
+[11:54:27.333] [115] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.to_html
+[11:54:27.334] [116] [INFO ] [handler ]   Landing page generated: 32423 bytes
+[11:54:27.334] [117] [DEBUG] [handler ]   Sending HTML response...
+[11:54:27.336] [118] [TRACE] [exit    ] <<< handle_landing
+[11:55:20.871] [119] [INFO ] [handler ] Request for /business-case
+[11:56:26.882] [1] [INFO ] [server  ] === Simple Showcase Server Starting ===
+[11:56:26.893] [2] [INFO ] [server  ] Server created on port 8080
+[11:56:26.894] [3] [DEBUG] [routes  ] Registering page routes...
+[11:56:26.895] [4] [DEBUG] [routes  ]   GET / -> handle_landing
+[11:56:26.897] [5] [DEBUG] [routes  ]   Registered 10 sub-page routes
+[11:56:26.898] [6] [DEBUG] [routes  ]   Registered .html redirect routes
+[11:56:26.899] [7] [INFO ] [server  ] Routes registered
+[11:56:26.900] [8] [INFO ] [server  ] Logging middleware enabled
+[11:56:26.901] [9] [INFO ] [server  ] Calling server.start (blocking)...
+[11:56:33.528] [1] [INFO ] [handler ] Request for /business-case
+[11:56:42.542] [2] [TRACE] [enter   ] >>> handle_landing
+[11:56:42.544] [3] [INFO ] [handler ]   Request for landing page from /
+[11:56:42.545] [4] [DEBUG] [handler ]   Creating SSC_LANDING_PAGE...
+[11:56:42.545] [5] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.make
+[11:56:42.547] [6] [INFO ] [page    ]     Creating landing page sections...
+[11:56:42.548] [7] [DEBUG] [page    ]       Creating hero_section...
+[11:56:42.548] [8] [DEBUG] [page    ]       Creating recognition_section...
+[11:56:42.549] [9] [DEBUG] [page    ]       Creating shift_section...
+[11:56:42.549] [10] [DEBUG] [page    ]       Creating problem_section...
+[11:56:42.551] [11] [DEBUG] [page    ]       Creating unlock_section...
+[11:56:42.552] [12] [DEBUG] [page    ]       Creating evidence_section...
+[11:56:42.552] [13] [DEBUG] [page    ]       Creating revelation_section...
+[11:56:42.553] [14] [DEBUG] [page    ]       Creating workflow_section...
+[11:56:42.554] [15] [DEBUG] [page    ]       Creating invitation_section...
+[11:56:42.554] [16] [DEBUG] [page    ]       Creating nav_overlay...
+[11:56:42.555] [17] [DEBUG] [page    ]       Creating hamburger_menu (hidden until scroll)...
+[11:56:42.556] [18] [INFO ] [page    ]     All 9 sections + nav overlay + hamburger menu created
+[11:56:42.556] [19] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.make
+[11:56:42.557] [20] [DEBUG] [handler ]   SSC_LANDING_PAGE created, calling to_html...
+[11:56:42.558] [21] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.to_html
+[11:56:42.559] [22] [INFO ] [page    ]     Generating full HTML page...
+[11:56:42.559] [23] [TRACE] [enter   ]     >>> SSC_LANDING_PAGE.body_content
+[11:56:42.561] [24] [DEBUG] [page    ]       Creating scroll snap container...
+[11:56:42.562] [25] [INFO ] [page    ]       Adding 9 sections to page...
+[11:56:42.562] [26] [DEBUG] [page    ]         Adding hero_section...
+[11:56:42.564] [27] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[hero]
+[11:56:42.564] [28] [INFO ] [section ]         Generating section #0 (hero)
+[11:56:42.565] [29] [DEBUG] [build   ]         Building section wrapper for: hero
+[11:56:42.566] [30] [DEBUG] [build   ]         Calling section_content for: hero
+[11:56:42.567] [31] [DEBUG] [html    ]         section_content[hero] generated 954 chars
+[11:56:42.568] [32] [DEBUG] [build   ]         Section wrapper complete for: hero
+[11:56:42.569] [33] [DEBUG] [html    ]         Section[hero] generated 1152 chars
+[11:56:42.569] [34] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[hero]
+[11:56:42.571] [35] [DEBUG] [page    ]         Adding recognition_section...
+[11:56:42.571] [36] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[recognition]
+[11:56:42.572] [37] [INFO ] [section ]         Generating section #1 (recognition)
+[11:56:42.573] [38] [DEBUG] [build   ]         Building section wrapper for: recognition
+[11:56:42.574] [39] [DEBUG] [build   ]         Calling section_content for: recognition
+[11:56:42.575] [40] [DEBUG] [html    ]         section_content[recognition] generated 1093 chars
+[11:56:42.576] [41] [DEBUG] [build   ]         Section wrapper complete for: recognition
+[11:56:42.577] [42] [DEBUG] [html    ]         Section[recognition] generated 1298 chars
+[11:56:42.578] [43] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[recognition]
+[11:56:42.578] [44] [DEBUG] [page    ]         Adding shift_section...
+[11:56:42.579] [45] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[shift]
+[11:56:42.580] [46] [INFO ] [section ]         Generating section #2 (shift)
+[11:56:42.581] [47] [DEBUG] [build   ]         Building section wrapper for: shift
+[11:56:42.582] [48] [DEBUG] [build   ]         Calling section_content for: shift
+[11:56:42.583] [49] [DEBUG] [html    ]         section_content[shift] generated 458 chars
+[11:56:42.584] [50] [DEBUG] [build   ]         Section wrapper complete for: shift
+[11:56:42.586] [51] [DEBUG] [html    ]         Section[shift] generated 657 chars
+[11:56:42.587] [52] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[shift]
+[11:56:42.587] [53] [DEBUG] [page    ]         Adding problem_section...
+[11:56:42.588] [54] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[problem]
+[11:56:42.589] [55] [INFO ] [section ]         Generating section #3 (problem)
+[11:56:42.589] [56] [DEBUG] [build   ]         Building section wrapper for: problem
+[11:56:42.590] [57] [DEBUG] [build   ]         Calling section_content for: problem
+[11:56:42.592] [58] [DEBUG] [html    ]         section_content[problem] generated 1737 chars
+[11:56:42.593] [59] [DEBUG] [build   ]         Section wrapper complete for: problem
+[11:56:42.593] [60] [DEBUG] [html    ]         Section[problem] generated 1938 chars
+[11:56:42.594] [61] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[problem]
+[11:56:42.595] [62] [DEBUG] [page    ]         Adding unlock_section...
+[11:56:42.596] [63] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[unlock]
+[11:56:42.597] [64] [INFO ] [section ]         Generating section #4 (unlock)
+[11:56:42.598] [65] [DEBUG] [build   ]         Building section wrapper for: unlock
+[11:56:42.599] [66] [DEBUG] [build   ]         Calling section_content for: unlock
+[11:56:42.600] [67] [DEBUG] [html    ]         section_content[unlock] generated 2191 chars
+[11:56:42.608] [68] [DEBUG] [build   ]         Section wrapper complete for: unlock
+[11:56:42.609] [69] [DEBUG] [html    ]         Section[unlock] generated 2391 chars
+[11:56:42.609] [70] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[unlock]
+[11:56:42.610] [71] [DEBUG] [page    ]         Adding evidence_section...
+[11:56:42.610] [72] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[evidence]
+[11:56:42.612] [73] [INFO ] [section ]         Generating section #5 (evidence)
+[11:56:42.613] [74] [DEBUG] [build   ]         Building section wrapper for: evidence
+[11:56:42.614] [75] [DEBUG] [build   ]         Calling section_content for: evidence
+[11:56:42.616] [76] [DEBUG] [html    ]         section_content[evidence] generated 6504 chars
+[11:56:42.618] [77] [DEBUG] [build   ]         Section wrapper complete for: evidence
+[11:56:42.618] [78] [DEBUG] [html    ]         Section[evidence] generated 6706 chars
+[11:56:42.619] [79] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[evidence]
+[11:56:42.620] [80] [DEBUG] [page    ]         Adding revelation_section...
+[11:56:42.621] [81] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[revelation]
+[11:56:42.621] [82] [INFO ] [section ]         Generating section #6 (revelation)
+[11:56:42.622] [83] [DEBUG] [build   ]         Building section wrapper for: revelation
+[11:56:42.623] [84] [DEBUG] [build   ]         Calling section_content for: revelation
+[11:56:42.624] [85] [DEBUG] [html    ]         section_content[revelation] generated 1054 chars
+[11:56:42.625] [86] [DEBUG] [build   ]         Section wrapper complete for: revelation
+[11:56:42.626] [87] [DEBUG] [html    ]         Section[revelation] generated 1258 chars
+[11:56:42.627] [88] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[revelation]
+[11:56:42.627] [89] [DEBUG] [page    ]         Adding workflow_section...
+[11:56:42.628] [90] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[workflow]
+[11:56:42.629] [91] [INFO ] [section ]         Generating section #7 (workflow)
+[11:56:42.630] [92] [DEBUG] [build   ]         Building section wrapper for: workflow
+[11:56:42.630] [93] [DEBUG] [build   ]         Calling section_content for: workflow
+[11:56:42.633] [94] [DEBUG] [html    ]         section_content[workflow] generated 2494 chars
+[11:56:42.634] [95] [DEBUG] [build   ]         Section wrapper complete for: workflow
+[11:56:42.635] [96] [DEBUG] [html    ]         Section[workflow] generated 2696 chars
+[11:56:42.635] [97] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[workflow]
+[11:56:42.637] [98] [DEBUG] [page    ]         Adding invitation_section...
+[11:56:42.637] [99] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[invitation]
+[11:56:42.638] [100] [INFO ] [section ]         Generating section #8 (invitation)
+[11:56:42.639] [101] [DEBUG] [build   ]         Building section wrapper for: invitation
+[11:56:42.640] [102] [DEBUG] [build   ]         Calling section_content for: invitation
+[11:56:42.641] [103] [DEBUG] [html    ]         section_content[invitation] generated 2078 chars
+[11:56:42.641] [104] [DEBUG] [build   ]         Section wrapper complete for: invitation
+[11:56:42.642] [105] [DEBUG] [html    ]         Section[invitation] generated 2282 chars
+[11:56:42.643] [106] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[invitation]
+[11:56:42.644] [107] [INFO ] [page    ]       All sections added
+[11:56:42.646] [108] [DEBUG] [page    ]       Adding nav overlay...
+[11:56:42.647] [109] [DEBUG] [page    ]       Adding hamburger menu...
+[11:56:42.648] [110] [DEBUG] [html    ]       body_content generated 27977 chars
+[11:56:42.649] [111] [TRACE] [exit    ]     <<< SSC_LANDING_PAGE.body_content
+[11:56:42.650] [112] [DEBUG] [html    ]     Building HTML wrapper...
+[11:56:42.651] [113] [DEBUG] [html    ]     Building <head>...
+[11:56:42.652] [114] [DEBUG] [html    ]     HTML wrapper complete
+[11:56:42.654] [115] [INFO ] [page    ]     Full page generated: 32423 bytes
+[11:56:42.655] [116] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.to_html
+[11:56:42.656] [117] [INFO ] [handler ]   Landing page generated: 32423 bytes
+[11:56:42.657] [118] [DEBUG] [handler ]   Sending HTML response...
+[11:56:42.669] [119] [TRACE] [exit    ] <<< handle_landing
+[11:56:58.894] [120] [INFO ] [handler ] Request for /business-case
+[11:57:03.507] [121] [INFO ] [handler ] Request for /workflow
+[11:57:06.660] [122] [INFO ] [handler ] Request for /portfolio
+[11:57:25.730] [123] [INFO ] [handler ] Request for /get-started
+[12:00:33.280] [1] [INFO ] [server  ] === Simple Showcase Server Starting ===
+[12:00:33.282] [2] [INFO ] [server  ] Server created on port 8080
+[12:00:33.283] [3] [DEBUG] [routes  ] Registering page routes...
+[12:00:33.284] [4] [DEBUG] [routes  ]   GET / -> handle_landing
+[12:00:33.285] [5] [DEBUG] [routes  ]   Registered 10 sub-page routes
+[12:00:33.287] [6] [DEBUG] [routes  ]   Registered .html redirect routes
+[12:00:33.288] [7] [INFO ] [server  ] Routes registered
+[12:00:33.289] [8] [INFO ] [server  ] Logging middleware enabled
+[12:00:33.290] [9] [INFO ] [server  ] Calling server.start (blocking)...
+[12:00:41.861] [1] [TRACE] [enter   ] >>> handle_landing
+[12:00:41.863] [2] [INFO ] [handler ]   Request for landing page from /
+[12:00:41.864] [3] [DEBUG] [handler ]   Creating SSC_LANDING_PAGE...
+[12:00:41.864] [4] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.make
+[12:00:41.865] [5] [INFO ] [page    ]     Creating landing page sections...
+[12:00:41.866] [6] [DEBUG] [page    ]       Creating hero_section...
+[12:00:41.868] [7] [DEBUG] [page    ]       Creating recognition_section...
+[12:00:41.869] [8] [DEBUG] [page    ]       Creating shift_section...
+[12:00:41.870] [9] [DEBUG] [page    ]       Creating problem_section...
+[12:00:41.870] [10] [DEBUG] [page    ]       Creating unlock_section...
+[12:00:41.871] [11] [DEBUG] [page    ]       Creating evidence_section...
+[12:00:41.872] [12] [DEBUG] [page    ]       Creating revelation_section...
+[12:00:41.873] [13] [DEBUG] [page    ]       Creating workflow_section...
+[12:00:41.874] [14] [DEBUG] [page    ]       Creating invitation_section...
+[12:00:41.875] [15] [DEBUG] [page    ]       Creating nav_overlay...
+[12:00:41.876] [16] [DEBUG] [page    ]       Creating hamburger_menu (hidden until scroll)...
+[12:00:41.876] [17] [INFO ] [page    ]     All 9 sections + nav overlay + hamburger menu created
+[12:00:41.878] [18] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.make
+[12:00:41.879] [19] [DEBUG] [handler ]   SSC_LANDING_PAGE created, calling to_html...
+[12:00:41.880] [20] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.to_html
+[12:00:41.881] [21] [INFO ] [page    ]     Generating full HTML page...
+[12:00:41.882] [22] [TRACE] [enter   ]     >>> SSC_LANDING_PAGE.body_content
+[12:00:41.882] [23] [DEBUG] [page    ]       Creating scroll snap container...
+[12:00:41.883] [24] [INFO ] [page    ]       Adding 9 sections to page...
+[12:00:41.884] [25] [DEBUG] [page    ]         Adding hero_section...
+[12:00:41.885] [26] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[hero]
+[12:00:41.886] [27] [INFO ] [section ]         Generating section #0 (hero)
+[12:00:41.887] [28] [DEBUG] [build   ]         Building section wrapper for: hero
+[12:00:41.888] [29] [DEBUG] [build   ]         Calling section_content for: hero
+[12:00:41.890] [30] [DEBUG] [html    ]         section_content[hero] generated 954 chars
+[12:00:41.993] [31] [DEBUG] [build   ]         Section wrapper complete for: hero
+[12:00:41.993] [32] [DEBUG] [html    ]         Section[hero] generated 1152 chars
+[12:00:41.994] [33] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[hero]
+[12:00:41.995] [34] [DEBUG] [page    ]         Adding recognition_section...
+[12:00:41.996] [35] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[recognition]
+[12:00:41.997] [36] [INFO ] [section ]         Generating section #1 (recognition)
+[12:00:41.998] [37] [DEBUG] [build   ]         Building section wrapper for: recognition
+[12:00:41.999] [38] [DEBUG] [build   ]         Calling section_content for: recognition
+[12:00:42.0] [39] [DEBUG] [html    ]         section_content[recognition] generated 1093 chars
+[12:00:42.1] [40] [DEBUG] [build   ]         Section wrapper complete for: recognition
+[12:00:42.1] [41] [DEBUG] [html    ]         Section[recognition] generated 1298 chars
+[12:00:42.2] [42] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[recognition]
+[12:00:42.3] [43] [DEBUG] [page    ]         Adding shift_section...
+[12:00:42.4] [44] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[shift]
+[12:00:42.5] [45] [INFO ] [section ]         Generating section #2 (shift)
+[12:00:42.6] [46] [DEBUG] [build   ]         Building section wrapper for: shift
+[12:00:42.7] [47] [DEBUG] [build   ]         Calling section_content for: shift
+[12:00:42.8] [48] [DEBUG] [html    ]         section_content[shift] generated 458 chars
+[12:00:42.9] [49] [DEBUG] [build   ]         Section wrapper complete for: shift
+[12:00:42.10] [50] [DEBUG] [html    ]         Section[shift] generated 657 chars
+[12:00:42.12] [51] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[shift]
+[12:00:42.12] [52] [DEBUG] [page    ]         Adding problem_section...
+[12:00:42.14] [53] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[problem]
+[12:00:42.24] [54] [INFO ] [section ]         Generating section #3 (problem)
+[12:00:42.24] [55] [DEBUG] [build   ]         Building section wrapper for: problem
+[12:00:42.26] [56] [DEBUG] [build   ]         Calling section_content for: problem
+[12:00:42.27] [57] [DEBUG] [html    ]         section_content[problem] generated 1737 chars
+[12:00:42.28] [58] [DEBUG] [build   ]         Section wrapper complete for: problem
+[12:00:42.29] [59] [DEBUG] [html    ]         Section[problem] generated 1938 chars
+[12:00:42.30] [60] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[problem]
+[12:00:42.31] [61] [DEBUG] [page    ]         Adding unlock_section...
+[12:00:42.32] [62] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[unlock]
+[12:00:42.32] [63] [INFO ] [section ]         Generating section #4 (unlock)
+[12:00:42.33] [64] [DEBUG] [build   ]         Building section wrapper for: unlock
+[12:00:42.34] [65] [DEBUG] [build   ]         Calling section_content for: unlock
+[12:00:42.35] [66] [DEBUG] [html    ]         section_content[unlock] generated 2191 chars
+[12:00:42.35] [67] [DEBUG] [build   ]         Section wrapper complete for: unlock
+[12:00:42.36] [68] [DEBUG] [html    ]         Section[unlock] generated 2391 chars
+[12:00:42.37] [69] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[unlock]
+[12:00:42.38] [70] [DEBUG] [page    ]         Adding evidence_section...
+[12:00:42.39] [71] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[evidence]
+[12:00:42.39] [72] [INFO ] [section ]         Generating section #5 (evidence)
+[12:00:42.40] [73] [DEBUG] [build   ]         Building section wrapper for: evidence
+[12:00:42.40] [74] [DEBUG] [build   ]         Calling section_content for: evidence
+[12:00:42.43] [75] [DEBUG] [html    ]         section_content[evidence] generated 6504 chars
+[12:00:42.45] [76] [DEBUG] [build   ]         Section wrapper complete for: evidence
+[12:00:42.46] [77] [DEBUG] [html    ]         Section[evidence] generated 6706 chars
+[12:00:42.46] [78] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[evidence]
+[12:00:42.48] [79] [DEBUG] [page    ]         Adding revelation_section...
+[12:00:42.49] [80] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[revelation]
+[12:00:42.50] [81] [INFO ] [section ]         Generating section #6 (revelation)
+[12:00:42.50] [82] [DEBUG] [build   ]         Building section wrapper for: revelation
+[12:00:42.51] [83] [DEBUG] [build   ]         Calling section_content for: revelation
+[12:00:42.52] [84] [DEBUG] [html    ]         section_content[revelation] generated 1054 chars
+[12:00:42.54] [85] [DEBUG] [build   ]         Section wrapper complete for: revelation
+[12:00:42.54] [86] [DEBUG] [html    ]         Section[revelation] generated 1258 chars
+[12:00:42.55] [87] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[revelation]
+[12:00:42.57] [88] [DEBUG] [page    ]         Adding workflow_section...
+[12:00:42.57] [89] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[workflow]
+[12:00:42.58] [90] [INFO ] [section ]         Generating section #7 (workflow)
+[12:00:42.59] [91] [DEBUG] [build   ]         Building section wrapper for: workflow
+[12:00:42.60] [92] [DEBUG] [build   ]         Calling section_content for: workflow
+[12:00:42.69] [93] [DEBUG] [html    ]         section_content[workflow] generated 2494 chars
+[12:00:42.71] [94] [DEBUG] [build   ]         Section wrapper complete for: workflow
+[12:00:42.71] [95] [DEBUG] [html    ]         Section[workflow] generated 2696 chars
+[12:00:42.72] [96] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[workflow]
+[12:00:42.73] [97] [DEBUG] [page    ]         Adding invitation_section...
+[12:00:42.74] [98] [TRACE] [enter   ]       >>> SSC_SECTION.to_html[invitation]
+[12:00:42.75] [99] [INFO ] [section ]         Generating section #8 (invitation)
+[12:00:42.75] [100] [DEBUG] [build   ]         Building section wrapper for: invitation
+[12:00:42.76] [101] [DEBUG] [build   ]         Calling section_content for: invitation
+[12:00:42.77] [102] [DEBUG] [html    ]         section_content[invitation] generated 2078 chars
+[12:00:42.79] [103] [DEBUG] [build   ]         Section wrapper complete for: invitation
+[12:00:42.80] [104] [DEBUG] [html    ]         Section[invitation] generated 2282 chars
+[12:00:42.81] [105] [TRACE] [exit    ]       <<< SSC_SECTION.to_html[invitation]
+[12:00:42.82] [106] [INFO ] [page    ]       All sections added
+[12:00:42.84] [107] [DEBUG] [page    ]       Adding nav overlay...
+[12:00:42.85] [108] [DEBUG] [page    ]       Adding hamburger menu...
+[12:00:42.86] [109] [DEBUG] [html    ]       body_content generated 28152 chars
+[12:00:42.86] [110] [TRACE] [exit    ]     <<< SSC_LANDING_PAGE.body_content
+[12:00:42.87] [111] [DEBUG] [html    ]     Building HTML wrapper...
+[12:00:42.88] [112] [DEBUG] [html    ]     Building <head>...
+[12:00:42.89] [113] [DEBUG] [html    ]     HTML wrapper complete
+[12:00:42.91] [114] [INFO ] [page    ]     Full page generated: 32598 bytes
+[12:00:42.91] [115] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.to_html
+[12:00:42.92] [116] [INFO ] [handler ]   Landing page generated: 32598 bytes
+[12:00:42.93] [117] [DEBUG] [handler ]   Sending HTML response...
+[12:00:42.95] [118] [TRACE] [exit    ] <<< handle_landing
+[12:00:48.719] [119] [INFO ] [handler ] Request for /get-started
+[12:21:40.689] [1] [TRACE] [enter   ] >>> SSC_LANDING_PAGE.make
+[12:21:40.690] [2] [INFO ] [page    ]   Creating landing page sections...
+[12:21:40.691] [3] [DEBUG] [page    ]     Creating hero_section...
+[12:21:40.692] [4] [DEBUG] [page    ]     Creating recognition_section...
+[12:21:40.692] [5] [DEBUG] [page    ]     Creating shift_section...
+[12:21:40.693] [6] [DEBUG] [page    ]     Creating problem_section...
+[12:21:40.694] [7] [DEBUG] [page    ]     Creating unlock_section...
+[12:21:40.695] [8] [DEBUG] [page    ]     Creating evidence_section...
+[12:21:40.696] [9] [DEBUG] [page    ]     Creating revelation_section...
+[12:21:40.696] [10] [DEBUG] [page    ]     Creating workflow_section...
+[12:21:40.697] [11] [DEBUG] [page    ]     Creating invitation_section...
+[12:21:40.698] [12] [DEBUG] [page    ]     Creating nav_overlay...
+[12:21:40.698] [13] [DEBUG] [page    ]     Creating hamburger_menu (hidden until scroll)...
+[12:21:40.699] [14] [INFO ] [page    ]   All 9 sections + nav overlay + hamburger menu created
+[12:21:40.700] [15] [TRACE] [exit    ] <<< SSC_LANDING_PAGE.make
+[12:21:40.701] [16] [TRACE] [enter   ] >>> SSC_LANDING_PAGE.to_html
+[12:21:40.701] [17] [INFO ] [page    ]   Generating full HTML page...
+[12:21:40.703] [18] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.body_content
+[12:21:40.703] [19] [DEBUG] [page    ]     Creating scroll snap container...
+[12:21:40.704] [20] [INFO ] [page    ]     Adding 9 sections to page...
+[12:21:40.705] [21] [DEBUG] [page    ]       Adding hero_section...
+[12:21:40.706] [22] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[hero]
+[12:21:40.707] [23] [INFO ] [section ]       Generating section #0 (hero)
+[12:21:40.707] [24] [DEBUG] [build   ]       Building section wrapper for: hero
+[12:21:40.708] [25] [DEBUG] [build   ]       Calling section_content for: hero
+[12:21:40.710] [26] [DEBUG] [html    ]       section_content[hero] generated 954 chars
+[12:21:40.712] [27] [DEBUG] [build   ]       Section wrapper complete for: hero
+[12:21:40.713] [28] [DEBUG] [html    ]       Section[hero] generated 1152 chars
+[12:21:40.714] [29] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[hero]
+[12:21:40.715] [30] [DEBUG] [page    ]       Adding recognition_section...
+[12:21:40.715] [31] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[recognition]
+[12:21:40.716] [32] [INFO ] [section ]       Generating section #1 (recognition)
+[12:21:40.717] [33] [DEBUG] [build   ]       Building section wrapper for: recognition
+[12:21:40.718] [34] [DEBUG] [build   ]       Calling section_content for: recognition
+[12:21:40.720] [35] [DEBUG] [html    ]       section_content[recognition] generated 1093 chars
+[12:21:40.721] [36] [DEBUG] [build   ]       Section wrapper complete for: recognition
+[12:21:40.723] [37] [DEBUG] [html    ]       Section[recognition] generated 1298 chars
+[12:21:40.724] [38] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[recognition]
+[12:21:40.725] [39] [DEBUG] [page    ]       Adding shift_section...
+[12:21:40.725] [40] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[shift]
+[12:21:40.726] [41] [INFO ] [section ]       Generating section #2 (shift)
+[12:21:40.726] [42] [DEBUG] [build   ]       Building section wrapper for: shift
+[12:21:40.727] [43] [DEBUG] [build   ]       Calling section_content for: shift
+[12:21:40.729] [44] [DEBUG] [html    ]       section_content[shift] generated 458 chars
+[12:21:40.730] [45] [DEBUG] [build   ]       Section wrapper complete for: shift
+[12:21:40.731] [46] [DEBUG] [html    ]       Section[shift] generated 657 chars
+[12:21:40.731] [47] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[shift]
+[12:21:40.733] [48] [DEBUG] [page    ]       Adding problem_section...
+[12:21:40.734] [49] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[problem]
+[12:21:40.735] [50] [INFO ] [section ]       Generating section #3 (problem)
+[12:21:40.736] [51] [DEBUG] [build   ]       Building section wrapper for: problem
+[12:21:40.736] [52] [DEBUG] [build   ]       Calling section_content for: problem
+[12:21:40.740] [53] [DEBUG] [html    ]       section_content[problem] generated 1737 chars
+[12:21:40.742] [54] [DEBUG] [build   ]       Section wrapper complete for: problem
+[12:21:40.742] [55] [DEBUG] [html    ]       Section[problem] generated 1938 chars
+[12:21:40.743] [56] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[problem]
+[12:21:40.744] [57] [DEBUG] [page    ]       Adding unlock_section...
+[12:21:40.745] [58] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[unlock]
+[12:21:40.746] [59] [INFO ] [section ]       Generating section #4 (unlock)
+[12:21:40.747] [60] [DEBUG] [build   ]       Building section wrapper for: unlock
+[12:21:40.748] [61] [DEBUG] [build   ]       Calling section_content for: unlock
+[12:21:40.750] [62] [DEBUG] [html    ]       section_content[unlock] generated 2191 chars
+[12:21:40.752] [63] [DEBUG] [build   ]       Section wrapper complete for: unlock
+[12:21:40.754] [64] [DEBUG] [html    ]       Section[unlock] generated 2391 chars
+[12:21:40.755] [65] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[unlock]
+[12:21:40.756] [66] [DEBUG] [page    ]       Adding evidence_section...
+[12:21:40.757] [67] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[evidence]
+[12:21:40.757] [68] [INFO ] [section ]       Generating section #5 (evidence)
+[12:21:40.759] [69] [DEBUG] [build   ]       Building section wrapper for: evidence
+[12:21:40.760] [70] [DEBUG] [build   ]       Calling section_content for: evidence
+[12:21:40.769] [71] [DEBUG] [html    ]       section_content[evidence] generated 6504 chars
+[12:21:40.774] [72] [DEBUG] [build   ]       Section wrapper complete for: evidence
+[12:21:40.775] [73] [DEBUG] [html    ]       Section[evidence] generated 6706 chars
+[12:21:40.775] [74] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[evidence]
+[12:21:40.777] [75] [DEBUG] [page    ]       Adding revelation_section...
+[12:21:40.778] [76] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[revelation]
+[12:21:40.779] [77] [INFO ] [section ]       Generating section #6 (revelation)
+[12:21:40.780] [78] [DEBUG] [build   ]       Building section wrapper for: revelation
+[12:21:40.781] [79] [DEBUG] [build   ]       Calling section_content for: revelation
+[12:21:40.783] [80] [DEBUG] [html    ]       section_content[revelation] generated 1054 chars
+[12:21:40.791] [81] [DEBUG] [build   ]       Section wrapper complete for: revelation
+[12:21:40.791] [82] [DEBUG] [html    ]       Section[revelation] generated 1258 chars
+[12:21:40.792] [83] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[revelation]
+[12:21:40.793] [84] [DEBUG] [page    ]       Adding workflow_section...
+[12:21:40.793] [85] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[workflow]
+[12:21:40.794] [86] [INFO ] [section ]       Generating section #7 (workflow)
+[12:21:40.795] [87] [DEBUG] [build   ]       Building section wrapper for: workflow
+[12:21:40.796] [88] [DEBUG] [build   ]       Calling section_content for: workflow
+[12:21:40.800] [89] [DEBUG] [html    ]       section_content[workflow] generated 2494 chars
+[12:21:40.802] [90] [DEBUG] [build   ]       Section wrapper complete for: workflow
+[12:21:40.803] [91] [DEBUG] [html    ]       Section[workflow] generated 2696 chars
+[12:21:40.803] [92] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[workflow]
+[12:21:40.805] [93] [DEBUG] [page    ]       Adding invitation_section...
+[12:21:40.806] [94] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[invitation]
+[12:21:40.806] [95] [INFO ] [section ]       Generating section #8 (invitation)
+[12:21:40.807] [96] [DEBUG] [build   ]       Building section wrapper for: invitation
+[12:21:40.808] [97] [DEBUG] [build   ]       Calling section_content for: invitation
+[12:21:40.811] [98] [DEBUG] [html    ]       section_content[invitation] generated 2078 chars
+[12:21:40.812] [99] [DEBUG] [build   ]       Section wrapper complete for: invitation
+[12:21:40.812] [100] [DEBUG] [html    ]       Section[invitation] generated 2282 chars
+[12:21:40.815] [101] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[invitation]
+[12:21:40.816] [102] [INFO ] [page    ]     All sections added
+[12:21:40.823] [103] [DEBUG] [page    ]     Adding nav overlay...
+[12:21:40.824] [104] [DEBUG] [page    ]     Adding hamburger menu...
+[12:21:40.826] [105] [DEBUG] [html    ]     body_content generated 28152 chars
+[12:21:40.826] [106] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.body_content
+[12:21:40.827] [107] [DEBUG] [html    ]   Building HTML wrapper...
+[12:21:40.828] [108] [DEBUG] [html    ]   Building <head>...
+[12:21:40.830] [109] [DEBUG] [html    ]   HTML wrapper complete
+[12:21:40.836] [110] [INFO ] [page    ]   Full page generated: 32598 bytes
+[12:21:40.837] [111] [TRACE] [exit    ] <<< SSC_LANDING_PAGE.to_html
+[12:32:19.150] [1] [TRACE] [enter   ] >>> SSC_LANDING_PAGE.make
+[12:32:19.151] [2] [INFO ] [page    ]   Creating landing page sections...
+[12:32:19.154] [3] [DEBUG] [page    ]     Creating hero_section...
+[12:32:19.154] [4] [DEBUG] [page    ]     Creating recognition_section...
+[12:32:19.155] [5] [DEBUG] [page    ]     Creating shift_section...
+[12:32:19.156] [6] [DEBUG] [page    ]     Creating problem_section...
+[12:32:19.157] [7] [DEBUG] [page    ]     Creating unlock_section...
+[12:32:19.158] [8] [DEBUG] [page    ]     Creating evidence_section...
+[12:32:19.159] [9] [DEBUG] [page    ]     Creating revelation_section...
+[12:32:19.160] [10] [DEBUG] [page    ]     Creating workflow_section...
+[12:32:19.161] [11] [DEBUG] [page    ]     Creating invitation_section...
+[12:32:19.162] [12] [DEBUG] [page    ]     Creating nav_overlay...
+[12:32:19.163] [13] [DEBUG] [page    ]     Creating hamburger_menu (hidden until scroll)...
+[12:32:19.164] [14] [INFO ] [page    ]   All 9 sections + nav overlay + hamburger menu created
+[12:32:19.165] [15] [TRACE] [exit    ] <<< SSC_LANDING_PAGE.make
+[12:32:19.166] [16] [TRACE] [enter   ] >>> SSC_LANDING_PAGE.to_html
+[12:32:19.167] [17] [INFO ] [page    ]   Generating full HTML page...
+[12:32:19.168] [18] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.body_content
+[12:32:19.170] [19] [DEBUG] [page    ]     Creating scroll snap container...
+[12:32:19.170] [20] [INFO ] [page    ]     Adding 9 sections to page...
+[12:32:19.171] [21] [DEBUG] [page    ]       Adding hero_section...
+[12:32:19.172] [22] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[hero]
+[12:32:19.172] [23] [INFO ] [section ]       Generating section #0 (hero)
+[12:32:19.173] [24] [DEBUG] [build   ]       Building section wrapper for: hero
+[12:32:19.175] [25] [DEBUG] [build   ]       Calling section_content for: hero
+[12:32:19.176] [26] [DEBUG] [html    ]       section_content[hero] generated 954 chars
+[12:32:19.178] [27] [DEBUG] [build   ]       Section wrapper complete for: hero
+[12:32:19.179] [28] [DEBUG] [html    ]       Section[hero] generated 1152 chars
+[12:32:19.179] [29] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[hero]
+[12:32:19.180] [30] [DEBUG] [page    ]       Adding recognition_section...
+[12:32:19.181] [31] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[recognition]
+[12:32:19.268] [32] [INFO ] [section ]       Generating section #1 (recognition)
+[12:32:19.269] [33] [DEBUG] [build   ]       Building section wrapper for: recognition
+[12:32:19.270] [34] [DEBUG] [build   ]       Calling section_content for: recognition
+[12:32:19.272] [35] [DEBUG] [html    ]       section_content[recognition] generated 1093 chars
+[12:32:19.273] [36] [DEBUG] [build   ]       Section wrapper complete for: recognition
+[12:32:19.274] [37] [DEBUG] [html    ]       Section[recognition] generated 1298 chars
+[12:32:19.275] [38] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[recognition]
+[12:32:19.276] [39] [DEBUG] [page    ]       Adding shift_section...
+[12:32:19.277] [40] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[shift]
+[12:32:19.278] [41] [INFO ] [section ]       Generating section #2 (shift)
+[12:32:19.279] [42] [DEBUG] [build   ]       Building section wrapper for: shift
+[12:32:19.281] [43] [DEBUG] [build   ]       Calling section_content for: shift
+[12:32:19.282] [44] [DEBUG] [html    ]       section_content[shift] generated 458 chars
+[12:32:19.283] [45] [DEBUG] [build   ]       Section wrapper complete for: shift
+[12:32:19.284] [46] [DEBUG] [html    ]       Section[shift] generated 657 chars
+[12:32:19.285] [47] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[shift]
+[12:32:19.285] [48] [DEBUG] [page    ]       Adding problem_section...
+[12:32:19.286] [49] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[problem]
+[12:32:19.286] [50] [INFO ] [section ]       Generating section #3 (problem)
+[12:32:19.288] [51] [DEBUG] [build   ]       Building section wrapper for: problem
+[12:32:19.289] [52] [DEBUG] [build   ]       Calling section_content for: problem
+[12:32:19.292] [53] [DEBUG] [html    ]       section_content[problem] generated 1737 chars
+[12:32:19.294] [54] [DEBUG] [build   ]       Section wrapper complete for: problem
+[12:32:19.295] [55] [DEBUG] [html    ]       Section[problem] generated 1938 chars
+[12:32:19.295] [56] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[problem]
+[12:32:19.296] [57] [DEBUG] [page    ]       Adding unlock_section...
+[12:32:19.298] [58] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[unlock]
+[12:32:19.299] [59] [INFO ] [section ]       Generating section #4 (unlock)
+[12:32:19.300] [60] [DEBUG] [build   ]       Building section wrapper for: unlock
+[12:32:19.301] [61] [DEBUG] [build   ]       Calling section_content for: unlock
+[12:32:19.303] [62] [DEBUG] [html    ]       section_content[unlock] generated 2191 chars
+[12:32:19.305] [63] [DEBUG] [build   ]       Section wrapper complete for: unlock
+[12:32:19.313] [64] [DEBUG] [html    ]       Section[unlock] generated 2391 chars
+[12:32:19.314] [65] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[unlock]
+[12:32:19.315] [66] [DEBUG] [page    ]       Adding evidence_section...
+[12:32:19.316] [67] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[evidence]
+[12:32:19.317] [68] [INFO ] [section ]       Generating section #5 (evidence)
+[12:32:19.318] [69] [DEBUG] [build   ]       Building section wrapper for: evidence
+[12:32:19.319] [70] [DEBUG] [build   ]       Calling section_content for: evidence
+[12:32:19.327] [71] [DEBUG] [html    ]       section_content[evidence] generated 6504 chars
+[12:32:19.332] [72] [DEBUG] [build   ]       Section wrapper complete for: evidence
+[12:32:19.333] [73] [DEBUG] [html    ]       Section[evidence] generated 6706 chars
+[12:32:19.333] [74] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[evidence]
+[12:32:19.335] [75] [DEBUG] [page    ]       Adding revelation_section...
+[12:32:19.336] [76] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[revelation]
+[12:32:19.337] [77] [INFO ] [section ]       Generating section #6 (revelation)
+[12:32:19.338] [78] [DEBUG] [build   ]       Building section wrapper for: revelation
+[12:32:19.339] [79] [DEBUG] [build   ]       Calling section_content for: revelation
+[12:32:19.341] [80] [DEBUG] [html    ]       section_content[revelation] generated 1054 chars
+[12:32:19.343] [81] [DEBUG] [build   ]       Section wrapper complete for: revelation
+[12:32:19.343] [82] [DEBUG] [html    ]       Section[revelation] generated 1258 chars
+[12:32:19.344] [83] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[revelation]
+[12:32:19.345] [84] [DEBUG] [page    ]       Adding workflow_section...
+[12:32:19.346] [85] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[workflow]
+[12:32:19.347] [86] [INFO ] [section ]       Generating section #7 (workflow)
+[12:32:19.347] [87] [DEBUG] [build   ]       Building section wrapper for: workflow
+[12:32:19.348] [88] [DEBUG] [build   ]       Calling section_content for: workflow
+[12:32:19.352] [89] [DEBUG] [html    ]       section_content[workflow] generated 2494 chars
+[12:32:19.354] [90] [DEBUG] [build   ]       Section wrapper complete for: workflow
+[12:32:19.355] [91] [DEBUG] [html    ]       Section[workflow] generated 2696 chars
+[12:32:19.357] [92] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[workflow]
+[12:32:19.358] [93] [DEBUG] [page    ]       Adding invitation_section...
+[12:32:19.358] [94] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[invitation]
+[12:32:19.359] [95] [INFO ] [section ]       Generating section #8 (invitation)
+[12:32:19.360] [96] [DEBUG] [build   ]       Building section wrapper for: invitation
+[12:32:19.361] [97] [DEBUG] [build   ]       Calling section_content for: invitation
+[12:32:19.363] [98] [DEBUG] [html    ]       section_content[invitation] generated 2078 chars
+[12:32:19.365] [99] [DEBUG] [build   ]       Section wrapper complete for: invitation
+[12:32:19.366] [100] [DEBUG] [html    ]       Section[invitation] generated 2282 chars
+[12:32:19.367] [101] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[invitation]
+[12:32:19.368] [102] [INFO ] [page    ]     All sections added
+[12:32:19.375] [103] [DEBUG] [page    ]     Adding nav overlay...
+[12:32:19.382] [104] [DEBUG] [page    ]     Adding hamburger menu...
+[12:32:19.383] [105] [DEBUG] [html    ]     body_content generated 28152 chars
+[12:32:19.384] [106] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.body_content
+[12:32:19.385] [107] [DEBUG] [html    ]   Building HTML wrapper...
+[12:32:19.386] [108] [DEBUG] [html    ]   Building <head>...
+[12:32:19.387] [109] [DEBUG] [html    ]   HTML wrapper complete
+[12:32:19.394] [110] [INFO ] [page    ]   Full page generated: 32632 bytes
+[12:32:19.395] [111] [TRACE] [exit    ] <<< SSC_LANDING_PAGE.to_html
+[12:45:03.254] [1] [TRACE] [enter   ] >>> SSC_LANDING_PAGE.make
+[12:45:03.256] [2] [INFO ] [page    ]   Creating landing page sections...
+[12:45:03.259] [3] [DEBUG] [page    ]     Creating hero_section...
+[12:45:03.261] [4] [DEBUG] [page    ]     Creating recognition_section...
+[12:45:03.262] [5] [DEBUG] [page    ]     Creating shift_section...
+[12:45:03.263] [6] [DEBUG] [page    ]     Creating problem_section...
+[12:45:03.264] [7] [DEBUG] [page    ]     Creating unlock_section...
+[12:45:03.264] [8] [DEBUG] [page    ]     Creating evidence_section...
+[12:45:03.265] [9] [DEBUG] [page    ]     Creating revelation_section...
+[12:45:03.266] [10] [DEBUG] [page    ]     Creating workflow_section...
+[12:45:03.267] [11] [DEBUG] [page    ]     Creating invitation_section...
+[12:45:03.268] [12] [DEBUG] [page    ]     Creating nav_overlay...
+[12:45:03.269] [13] [DEBUG] [page    ]     Creating hamburger_menu (hidden until scroll)...
+[12:45:03.270] [14] [INFO ] [page    ]   All 9 sections + nav overlay + hamburger menu created
+[12:45:03.271] [15] [TRACE] [exit    ] <<< SSC_LANDING_PAGE.make
+[12:45:03.271] [16] [TRACE] [enter   ] >>> SSC_LANDING_PAGE.to_html
+[12:45:03.272] [17] [INFO ] [page    ]   Generating full HTML page...
+[12:45:03.274] [18] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.body_content
+[12:45:03.275] [19] [DEBUG] [page    ]     Creating scroll snap container...
+[12:45:03.276] [20] [INFO ] [page    ]     Adding 9 sections to page...
+[12:45:03.277] [21] [DEBUG] [page    ]       Adding hero_section...
+[12:45:03.277] [22] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[hero]
+[12:45:03.279] [23] [INFO ] [section ]       Generating section #0 (hero)
+[12:45:03.280] [24] [DEBUG] [build   ]       Building section wrapper for: hero
+[12:45:03.280] [25] [DEBUG] [build   ]       Calling section_content for: hero
+[12:45:03.282] [26] [DEBUG] [html    ]       section_content[hero] generated 954 chars
+[12:45:03.283] [27] [DEBUG] [build   ]       Section wrapper complete for: hero
+[12:45:03.284] [28] [DEBUG] [html    ]       Section[hero] generated 1152 chars
+[12:45:03.285] [29] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[hero]
+[12:45:03.286] [30] [DEBUG] [page    ]       Adding recognition_section...
+[12:45:03.287] [31] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[recognition]
+[12:45:03.361] [32] [INFO ] [section ]       Generating section #1 (recognition)
+[12:45:03.362] [33] [DEBUG] [build   ]       Building section wrapper for: recognition
+[12:45:03.363] [34] [DEBUG] [build   ]       Calling section_content for: recognition
+[12:45:03.365] [35] [DEBUG] [html    ]       section_content[recognition] generated 1093 chars
+[12:45:03.367] [36] [DEBUG] [build   ]       Section wrapper complete for: recognition
+[12:45:03.368] [37] [DEBUG] [html    ]       Section[recognition] generated 1298 chars
+[12:45:03.368] [38] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[recognition]
+[12:45:03.369] [39] [DEBUG] [page    ]       Adding shift_section...
+[12:45:03.371] [40] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[shift]
+[12:45:03.371] [41] [INFO ] [section ]       Generating section #2 (shift)
+[12:45:03.372] [42] [DEBUG] [build   ]       Building section wrapper for: shift
+[12:45:03.374] [43] [DEBUG] [build   ]       Calling section_content for: shift
+[12:45:03.375] [44] [DEBUG] [html    ]       section_content[shift] generated 458 chars
+[12:45:03.376] [45] [DEBUG] [build   ]       Section wrapper complete for: shift
+[12:45:03.378] [46] [DEBUG] [html    ]       Section[shift] generated 657 chars
+[12:45:03.378] [47] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[shift]
+[12:45:03.379] [48] [DEBUG] [page    ]       Adding problem_section...
+[12:45:03.380] [49] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[problem]
+[12:45:03.380] [50] [INFO ] [section ]       Generating section #3 (problem)
+[12:45:03.381] [51] [DEBUG] [build   ]       Building section wrapper for: problem
+[12:45:03.382] [52] [DEBUG] [build   ]       Calling section_content for: problem
+[12:45:03.385] [53] [DEBUG] [html    ]       section_content[problem] generated 1737 chars
+[12:45:03.387] [54] [DEBUG] [build   ]       Section wrapper complete for: problem
+[12:45:03.388] [55] [DEBUG] [html    ]       Section[problem] generated 1938 chars
+[12:45:03.389] [56] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[problem]
+[12:45:03.390] [57] [DEBUG] [page    ]       Adding unlock_section...
+[12:45:03.390] [58] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[unlock]
+[12:45:03.392] [59] [INFO ] [section ]       Generating section #4 (unlock)
+[12:45:03.393] [60] [DEBUG] [build   ]       Building section wrapper for: unlock
+[12:45:03.394] [61] [DEBUG] [build   ]       Calling section_content for: unlock
+[12:45:03.397] [62] [DEBUG] [html    ]       section_content[unlock] generated 2191 chars
+[12:45:03.399] [63] [DEBUG] [build   ]       Section wrapper complete for: unlock
+[12:45:03.400] [64] [DEBUG] [html    ]       Section[unlock] generated 2391 chars
+[12:45:03.400] [65] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[unlock]
+[12:45:03.403] [66] [DEBUG] [page    ]       Adding evidence_section...
+[12:45:03.403] [67] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[evidence]
+[12:45:03.404] [68] [INFO ] [section ]       Generating section #5 (evidence)
+[12:45:03.405] [69] [DEBUG] [build   ]       Building section wrapper for: evidence
+[12:45:03.406] [70] [DEBUG] [build   ]       Calling section_content for: evidence
+[12:45:03.415] [71] [DEBUG] [html    ]       section_content[evidence] generated 6503 chars
+[12:45:03.422] [72] [DEBUG] [build   ]       Section wrapper complete for: evidence
+[12:45:03.423] [73] [DEBUG] [html    ]       Section[evidence] generated 6705 chars
+[12:45:03.424] [74] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[evidence]
+[12:45:03.427] [75] [DEBUG] [page    ]       Adding revelation_section...
+[12:45:03.428] [76] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[revelation]
+[12:45:03.428] [77] [INFO ] [section ]       Generating section #6 (revelation)
+[12:45:03.429] [78] [DEBUG] [build   ]       Building section wrapper for: revelation
+[12:45:03.429] [79] [DEBUG] [build   ]       Calling section_content for: revelation
+[12:45:03.431] [80] [DEBUG] [html    ]       section_content[revelation] generated 1054 chars
+[12:45:03.433] [81] [DEBUG] [build   ]       Section wrapper complete for: revelation
+[12:45:03.433] [82] [DEBUG] [html    ]       Section[revelation] generated 1258 chars
+[12:45:03.434] [83] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[revelation]
+[12:45:03.435] [84] [DEBUG] [page    ]       Adding workflow_section...
+[12:45:03.436] [85] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[workflow]
+[12:45:03.436] [86] [INFO ] [section ]       Generating section #7 (workflow)
+[12:45:03.437] [87] [DEBUG] [build   ]       Building section wrapper for: workflow
+[12:45:03.438] [88] [DEBUG] [build   ]       Calling section_content for: workflow
+[12:45:03.443] [89] [DEBUG] [html    ]       section_content[workflow] generated 2494 chars
+[12:45:03.445] [90] [DEBUG] [build   ]       Section wrapper complete for: workflow
+[12:45:03.446] [91] [DEBUG] [html    ]       Section[workflow] generated 2696 chars
+[12:45:03.447] [92] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[workflow]
+[12:45:03.448] [93] [DEBUG] [page    ]       Adding invitation_section...
+[12:45:03.449] [94] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[invitation]
+[12:45:03.450] [95] [INFO ] [section ]       Generating section #8 (invitation)
+[12:45:03.450] [96] [DEBUG] [build   ]       Building section wrapper for: invitation
+[12:45:03.451] [97] [DEBUG] [build   ]       Calling section_content for: invitation
+[12:45:03.455] [98] [DEBUG] [html    ]       section_content[invitation] generated 2078 chars
+[12:45:03.457] [99] [DEBUG] [build   ]       Section wrapper complete for: invitation
+[12:45:03.457] [100] [DEBUG] [html    ]       Section[invitation] generated 2282 chars
+[12:45:03.458] [101] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[invitation]
+[12:45:03.460] [102] [INFO ] [page    ]     All sections added
+[12:45:03.467] [103] [DEBUG] [page    ]     Adding nav overlay...
+[12:45:03.468] [104] [DEBUG] [page    ]     Adding hamburger menu...
+[12:45:03.470] [105] [DEBUG] [html    ]     body_content generated 28141 chars
+[12:45:03.470] [106] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.body_content
+[12:45:03.472] [107] [DEBUG] [html    ]   Building HTML wrapper...
+[12:45:03.472] [108] [DEBUG] [html    ]   Building <head>...
+[12:45:03.476] [109] [DEBUG] [html    ]   HTML wrapper complete
+[12:45:03.492] [110] [INFO ] [page    ]   Full page generated: 32621 bytes
+[12:45:03.492] [111] [TRACE] [exit    ] <<< SSC_LANDING_PAGE.to_html
+[13:07:00.427] [1] [TRACE] [enter   ] >>> SSC_LANDING_PAGE.make
+[13:07:00.429] [2] [INFO ] [page    ]   Creating landing page sections...
+[13:07:00.430] [3] [DEBUG] [page    ]     Creating hero_section...
+[13:07:00.430] [4] [DEBUG] [page    ]     Creating recognition_section...
+[13:07:00.432] [5] [DEBUG] [page    ]     Creating shift_section...
+[13:07:00.433] [6] [DEBUG] [page    ]     Creating problem_section...
+[13:07:00.434] [7] [DEBUG] [page    ]     Creating unlock_section...
+[13:07:00.435] [8] [DEBUG] [page    ]     Creating evidence_section...
+[13:07:00.436] [9] [DEBUG] [page    ]     Creating revelation_section...
+[13:07:00.437] [10] [DEBUG] [page    ]     Creating workflow_section...
+[13:07:00.438] [11] [DEBUG] [page    ]     Creating invitation_section...
+[13:07:00.439] [12] [DEBUG] [page    ]     Creating nav_overlay...
+[13:07:00.440] [13] [DEBUG] [page    ]     Creating hamburger_menu (hidden until scroll)...
+[13:07:00.441] [14] [INFO ] [page    ]   All 9 sections + nav overlay + hamburger menu created
+[13:07:00.441] [15] [TRACE] [exit    ] <<< SSC_LANDING_PAGE.make
+[13:07:00.442] [16] [TRACE] [enter   ] >>> SSC_LANDING_PAGE.to_html
+[13:07:00.443] [17] [INFO ] [page    ]   Generating full HTML page...
+[13:07:00.444] [18] [TRACE] [enter   ]   >>> SSC_LANDING_PAGE.body_content
+[13:07:00.445] [19] [DEBUG] [page    ]     Creating scroll snap container...
+[13:07:00.446] [20] [INFO ] [page    ]     Adding 9 sections to page...
+[13:07:00.447] [21] [DEBUG] [page    ]       Adding hero_section...
+[13:07:00.449] [22] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[hero]
+[13:07:00.449] [23] [INFO ] [section ]       Generating section #0 (hero)
+[13:07:00.450] [24] [DEBUG] [build   ]       Building section wrapper for: hero
+[13:07:00.451] [25] [DEBUG] [build   ]       Calling section_content for: hero
+[13:07:00.452] [26] [DEBUG] [html    ]       section_content[hero] generated 954 chars
+[13:07:00.454] [27] [DEBUG] [build   ]       Section wrapper complete for: hero
+[13:07:00.455] [28] [DEBUG] [html    ]       Section[hero] generated 1152 chars
+[13:07:00.456] [29] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[hero]
+[13:07:00.457] [30] [DEBUG] [page    ]       Adding recognition_section...
+[13:07:00.458] [31] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[recognition]
+[13:07:00.459] [32] [INFO ] [section ]       Generating section #1 (recognition)
+[13:07:00.525] [33] [DEBUG] [build   ]       Building section wrapper for: recognition
+[13:07:00.526] [34] [DEBUG] [build   ]       Calling section_content for: recognition
+[13:07:00.528] [35] [DEBUG] [html    ]       section_content[recognition] generated 1093 chars
+[13:07:00.530] [36] [DEBUG] [build   ]       Section wrapper complete for: recognition
+[13:07:00.530] [37] [DEBUG] [html    ]       Section[recognition] generated 1298 chars
+[13:07:00.531] [38] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[recognition]
+[13:07:00.532] [39] [DEBUG] [page    ]       Adding shift_section...
+[13:07:00.533] [40] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[shift]
+[13:07:00.534] [41] [INFO ] [section ]       Generating section #2 (shift)
+[13:07:00.534] [42] [DEBUG] [build   ]       Building section wrapper for: shift
+[13:07:00.535] [43] [DEBUG] [build   ]       Calling section_content for: shift
+[13:07:00.536] [44] [DEBUG] [html    ]       section_content[shift] generated 458 chars
+[13:07:00.537] [45] [DEBUG] [build   ]       Section wrapper complete for: shift
+[13:07:00.538] [46] [DEBUG] [html    ]       Section[shift] generated 657 chars
+[13:07:00.539] [47] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[shift]
+[13:07:00.540] [48] [DEBUG] [page    ]       Adding problem_section...
+[13:07:00.541] [49] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[problem]
+[13:07:00.541] [50] [INFO ] [section ]       Generating section #3 (problem)
+[13:07:00.542] [51] [DEBUG] [build   ]       Building section wrapper for: problem
+[13:07:00.543] [52] [DEBUG] [build   ]       Calling section_content for: problem
+[13:07:00.547] [53] [DEBUG] [html    ]       section_content[problem] generated 1737 chars
+[13:07:00.549] [54] [DEBUG] [build   ]       Section wrapper complete for: problem
+[13:07:00.550] [55] [DEBUG] [html    ]       Section[problem] generated 1938 chars
+[13:07:00.551] [56] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[problem]
+[13:07:00.552] [57] [DEBUG] [page    ]       Adding unlock_section...
+[13:07:00.553] [58] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[unlock]
+[13:07:00.553] [59] [INFO ] [section ]       Generating section #4 (unlock)
+[13:07:00.554] [60] [DEBUG] [build   ]       Building section wrapper for: unlock
+[13:07:00.555] [61] [DEBUG] [build   ]       Calling section_content for: unlock
+[13:07:00.558] [62] [DEBUG] [html    ]       section_content[unlock] generated 2191 chars
+[13:07:00.561] [63] [DEBUG] [build   ]       Section wrapper complete for: unlock
+[13:07:00.562] [64] [DEBUG] [html    ]       Section[unlock] generated 2391 chars
+[13:07:00.563] [65] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[unlock]
+[13:07:00.564] [66] [DEBUG] [page    ]       Adding evidence_section...
+[13:07:00.565] [67] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[evidence]
+[13:07:00.565] [68] [INFO ] [section ]       Generating section #5 (evidence)
+[13:07:00.566] [69] [DEBUG] [build   ]       Building section wrapper for: evidence
+[13:07:00.566] [70] [DEBUG] [build   ]       Calling section_content for: evidence
+[13:07:00.575] [71] [DEBUG] [html    ]       section_content[evidence] generated 6503 chars
+[13:07:00.579] [72] [DEBUG] [build   ]       Section wrapper complete for: evidence
+[13:07:00.580] [73] [DEBUG] [html    ]       Section[evidence] generated 6705 chars
+[13:07:00.581] [74] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[evidence]
+[13:07:00.583] [75] [DEBUG] [page    ]       Adding revelation_section...
+[13:07:00.584] [76] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[revelation]
+[13:07:00.585] [77] [INFO ] [section ]       Generating section #6 (revelation)
+[13:07:00.586] [78] [DEBUG] [build   ]       Building section wrapper for: revelation
+[13:07:00.587] [79] [DEBUG] [build   ]       Calling section_content for: revelation
+[13:07:00.589] [80] [DEBUG] [html    ]       section_content[revelation] generated 1054 chars
+[13:07:00.590] [81] [DEBUG] [build   ]       Section wrapper complete for: revelation
+[13:07:00.591] [82] [DEBUG] [html    ]       Section[revelation] generated 1258 chars
+[13:07:00.593] [83] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[revelation]
+[13:07:00.594] [84] [DEBUG] [page    ]       Adding workflow_section...
+[13:07:00.595] [85] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[workflow]
+[13:07:00.595] [86] [INFO ] [section ]       Generating section #7 (workflow)
+[13:07:00.597] [87] [DEBUG] [build   ]       Building section wrapper for: workflow
+[13:07:00.597] [88] [DEBUG] [build   ]       Calling section_content for: workflow
+[13:07:00.602] [89] [DEBUG] [html    ]       section_content[workflow] generated 2494 chars
+[13:07:00.604] [90] [DEBUG] [build   ]       Section wrapper complete for: workflow
+[13:07:00.605] [91] [DEBUG] [html    ]       Section[workflow] generated 2696 chars
+[13:07:00.607] [92] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[workflow]
+[13:07:00.608] [93] [DEBUG] [page    ]       Adding invitation_section...
+[13:07:00.609] [94] [TRACE] [enter   ]     >>> SSC_SECTION.to_html[invitation]
+[13:07:00.609] [95] [INFO ] [section ]       Generating section #8 (invitation)
+[13:07:00.610] [96] [DEBUG] [build   ]       Building section wrapper for: invitation
+[13:07:00.611] [97] [DEBUG] [build   ]       Calling section_content for: invitation
+[13:07:00.615] [98] [DEBUG] [html    ]       section_content[invitation] generated 2075 chars
+[13:07:00.617] [99] [DEBUG] [build   ]       Section wrapper complete for: invitation
+[13:07:00.617] [100] [DEBUG] [html    ]       Section[invitation] generated 2279 chars
+[13:07:00.618] [101] [TRACE] [exit    ]     <<< SSC_SECTION.to_html[invitation]
+[13:07:00.620] [102] [INFO ] [page    ]     All sections added
+[13:07:00.626] [103] [DEBUG] [page    ]     Adding nav overlay...
+[13:07:00.627] [104] [DEBUG] [page    ]     Adding hamburger menu...
+[13:07:00.629] [105] [DEBUG] [html    ]     body_content generated 28138 chars
+[13:07:00.630] [106] [TRACE] [exit    ]   <<< SSC_LANDING_PAGE.body_content
+[13:07:00.631] [107] [DEBUG] [html    ]   Building HTML wrapper...
+[13:07:00.632] [108] [DEBUG] [html    ]   Building <head>...
+[13:07:00.635] [109] [DEBUG] [html    ]   HTML wrapper complete
+[13:07:00.641] [110] [INFO ] [page    ]   Full page generated: 32618 bytes
+[13:07:00.641] [111] [TRACE] [exit    ] <<< SSC_LANDING_PAGE.to_html

@@ -76,9 +76,9 @@ feature {NONE} -- Content
 			l_paths := alpine.div
 			l_paths.class_ ("grid md:grid-cols-3 gap-8").do_nothing
 
-			l_paths.raw_html (path_card ("I lead a team", "See the business case for contract-verified AI development.", "View Business Case", "/business-case", 1))
-				.raw_html (path_card ("I write code", "Get started with your first contract-verified project today.", "Start Building", "/get-started", 2))
-				.raw_html (path_card ("I'm curious", "Explore the evidence and decide for yourself.", "Explore Evidence", "/portfolio", 3))
+			l_paths.raw_html (path_card ("I lead a team", "See the business case for contract-verified AI development.", "View Business Case", "business-case", 1))
+				.raw_html (path_card ("I write code", "Get started with your first contract-verified project today.", "Start Building", "get-started", 2))
+				.raw_html (path_card ("I'm curious", "Explore the evidence and decide for yourself.", "Explore Evidence", "portfolio", 3))
 				.do_nothing
 
 			l_container.raw_html (l_paths.to_html).do_nothing
