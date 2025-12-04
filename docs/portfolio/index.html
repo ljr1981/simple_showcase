@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Project Portfolio | Simple Showcase</title>
+  <meta name="description" content="Everything built. Everything on GitHub. Everything tested.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<style>
+  .section-divider { border-top: 1px solid rgba(255,255,255,0.1); margin: 3rem 0; }
+  .content-section { margin-bottom: 3rem; }
+  .code-block { background: #1a1a1a; padding: 1.5rem; border-radius: 0.5rem; overflow-x: auto; }
+  .code-block code { color: #8fdf8f; font-family: monospace; font-size: 0.875rem; line-height: 1.6; }
+  .stat-box { background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 0.5rem; text-align: center; }
+  .stat-number { font-size: 2.5rem; font-weight: bold; font-variant-numeric: tabular-nums; }
+  .stat-label { font-size: 0.875rem; opacity: 0.7; }
+  .card { background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 0.5rem; transition: background 0.2s; }
+  .card:hover { background: rgba(255,255,255,0.1); }
+.tooltip-term { position: relative; cursor: help; border-bottom: 1px dotted currentColor; }
+.tooltip-icon { display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; margin-left: 2px; font-size: 10px; font-weight: bold; border: 1px solid currentColor; border-radius: 50%; opacity: 0.6; vertical-align: super; }
+.tooltip-content { visibility: hidden; opacity: 0; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%) translateY(-8px); width: 280px; padding: 12px 16px; background: #1a1a1a; color: #fdfcfa; font-size: 14px; line-height: 1.5; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); z-index: 100; transition: opacity 0.2s, visibility 0.2s; pointer-events: none; }
+.tooltip-content::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 8px solid transparent; border-top-color: #1a1a1a; }
+.tooltip-term:hover .tooltip-content { visibility: visible; opacity: 1; }
+</style>
+</head>
+<body class="bg-[#0c0b0b] text-[#fdfcfa] antialiased min-h-screen">
+<div class="fixed top-4 left-4 z-50" x-data="{ menuOpen: false }">
+  <button @click="menuOpen = !menuOpen" class="w-12 h-12 rounded-full bg-[#0c0b0b]/80 backdrop-blur-sm border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Navigation menu">
+    <div class="flex flex-col gap-1.5">
+      <span class="block w-5 h-0.5 bg-white/80 transition-all" :class="menuOpen ? 'rotate-45 translate-y-2' : ''"></span>
+      <span class="block w-5 h-0.5 bg-white/80 transition-all" :class="menuOpen ? 'opacity-0' : ''"></span>
+      <span class="block w-5 h-0.5 bg-white/80 transition-all" :class="menuOpen ? '-rotate-45 -translate-y-2' : ''"></span>
+    </div>
+  </button>
+  <div x-show="menuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-x-4" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-4" @click.outside="menuOpen = false" class="absolute top-14 left-0 w-72 bg-[#0c0b0b]/95 backdrop-blur-md rounded-lg border border-white/10 shadow-2xl overflow-hidden">
+    <div class="px-4 py-3 border-b border-white/10">
+      <span class="text-sm font-medium opacity-60">Navigate</span>
+    </div>
+    <nav class="py-2 max-h-[70vh] overflow-y-auto">
+      <a href="/" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Home</div>
+        <div class="text-xs opacity-50">Back to landing page</div>
+      </a>
+      <a href="/get-started" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Get Started</div>
+        <div class="text-xs opacity-50">Start building with Eiffel + AI</div>
+      </a>
+      <a href="/portfolio" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Portfolio</div>
+        <div class="text-xs opacity-50">See the project evidence</div>
+      </a>
+      <a href="/design-by-contract" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Design by Contract</div>
+        <div class="text-xs opacity-50">How DBC works</div>
+      </a>
+      <a href="/workflow" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Workflow</div>
+        <div class="text-xs opacity-50">The human-AI collaboration</div>
+      </a>
+      <a href="/analysis" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Analysis</div>
+        <div class="text-xs opacity-50">Competitive analysis</div>
+      </a>
+      <a href="/business-case" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Business Case</div>
+        <div class="text-xs opacity-50">ROI and risk analysis</div>
+      </a>
+      <a href="/why-eiffel" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Why Eiffel</div>
+        <div class="text-xs opacity-50">Language choice explained</div>
+      </a>
+      <a href="/probable-to-provable" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Probable to Provable</div>
+        <div class="text-xs opacity-50">The core framework</div>
+      </a>
+      <a href="/old-way" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">The Old Way</div>
+        <div class="text-xs opacity-50">Traditional approach costs</div>
+      </a>
+      <a href="/ai-changes" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">AI Changes</div>
+        <div class="text-xs opacity-50">What AI actually changes</div>
+      </a>
+    </nav>
+    <div class="px-4 py-3 border-t border-white/10 text-xs opacity-40">
+      <p>Built with Eiffel + AI + DBC</p>
+    </div>
+  </div>
+</div>
+<main class="max-w-4xl mx-auto px-6 py-16">
+<header class="mb-16 pt-8">
+  <p class="text-xs uppercase tracking-widest opacity-60 mb-4">PORTFOLIO</p>
+  <h1 class="text-4xl md:text-5xl font-light mb-6">The Project Portfolio</h1>
+  <p class="text-xl opacity-80 max-w-2xl">Everything built. Everything on GitHub. Everything tested.</p>
+</header>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+<div class="stat-box">
+  <div class="stat-number">12</div>
+  <div class="stat-label">libraries</div>
+</div>
+<div class="stat-box">
+  <div class="stat-number">900+</div>
+  <div class="stat-label">tests</div>
+</div>
+<div class="stat-box">
+  <div class="stat-number">10</div>
+  <div class="stat-label">days</div>
+</div>
+<div class="stat-box">
+  <div class="stat-number">1</div>
+  <div class="stat-label">person</div>
+</div>
+</div>
+<div class="section-divider"></div>
+<h2 class="text-2xl font-medium mb-6">The Libraries</h2>
+<div class="space-y-6">
+<div class="card">
+  <h3 class="font-mono text-lg font-medium mb-2"><a href="https://github.com/ljr1981/simple_json" target="_blank" class="text-blue-400 hover:underline">simple_json ↗</a></h3>
+  <p class="text-sm opacity-70 mb-4">Full JSON parsing and serialization for Eiffel. Type-safe, contract-verified, production-ready.</p>
+  <div class="flex gap-4 text-sm mb-4">
+    <span><span class="opacity-50">Lines:</span> <strong>11,400</strong></span>
+    <span><span class="opacity-50">Tests:</span> <strong>215</strong></span>
+  </div>
+  <ul class="text-sm opacity-80 space-y-1">
+    <li>• Parse JSON from strings or files</li>
+    <li>• Serialize Eiffel objects to JSON</li>
+    <li>• Type-safe accessors</li>
+    <li>• Friction-free helper patterns</li>
+  </ul>
+</div>
+<div class="card">
+  <h3 class="font-mono text-lg font-medium mb-2"><a href="https://github.com/ljr1981/simple_sql" target="_blank" class="text-blue-400 hover:underline">simple_sql ↗</a></h3>
+  <p class="text-sm opacity-70 mb-4">SQLite wrapper with contract safety. Full query building, transactions, and result handling.</p>
+  <div class="flex gap-4 text-sm mb-4">
+    <span><span class="opacity-50">Lines:</span> <strong>17,200</strong></span>
+    <span><span class="opacity-50">Tests:</span> <strong>339</strong></span>
+  </div>
+  <ul class="text-sm opacity-80 space-y-1">
+    <li>• Fluent query builder</li>
+    <li>• Transaction support</li>
+    <li>• Prepared statements</li>
+    <li>• Contract-verified operations</li>
+  </ul>
+</div>
+<div class="card">
+  <h3 class="font-mono text-lg font-medium mb-2"><a href="https://github.com/ljr1981/simple_web" target="_blank" class="text-blue-400 hover:underline">simple_web ↗</a></h3>
+  <p class="text-sm opacity-70 mb-4">HTTP client and server. Request/response handling, routing, middleware.</p>
+  <div class="flex gap-4 text-sm mb-4">
+    <span><span class="opacity-50">Lines:</span> <strong>8,000</strong></span>
+    <span><span class="opacity-50">Tests:</span> <strong>95</strong></span>
+  </div>
+  <ul class="text-sm opacity-80 space-y-1">
+    <li>• HTTP client for API calls</li>
+    <li>• HTTP server with routing</li>
+    <li>• Request/response abstraction</li>
+    <li>• Middleware support</li>
+  </ul>
+</div>
+<div class="card">
+  <h3 class="font-mono text-lg font-medium mb-2"><a href="https://github.com/ljr1981/simple_htmx" target="_blank" class="text-blue-400 hover:underline">simple_htmx ↗</a></h3>
+  <p class="text-sm opacity-70 mb-4">Fluent HTML/HTMX builder. Type-safe element construction.</p>
+  <div class="flex gap-4 text-sm mb-4">
+    <span><span class="opacity-50">Lines:</span> <strong>4,200</strong></span>
+    <span><span class="opacity-50">Tests:</span> <strong>40</strong></span>
+  </div>
+  <ul class="text-sm opacity-80 space-y-1">
+    <li>• Fluent interface design</li>
+    <li>• All HTMX attributes</li>
+    <li>• HTML escaping built-in</li>
+    <li>• Composable elements</li>
+  </ul>
+</div>
+<div class="card">
+  <h3 class="font-mono text-lg font-medium mb-2"><a href="https://github.com/ljr1981/simple_alpine" target="_blank" class="text-blue-400 hover:underline">simple_alpine ↗</a></h3>
+  <p class="text-sm opacity-70 mb-4">Alpine.js directive builder. Type-safe Alpine integration.</p>
+  <div class="flex gap-4 text-sm mb-4">
+    <span><span class="opacity-50">Lines:</span> <strong>3,200</strong></span>
+    <span><span class="opacity-50">Tests:</span> <strong>103</strong></span>
+  </div>
+  <ul class="text-sm opacity-80 space-y-1">
+    <li>• All Alpine.js directives</li>
+    <li>• Layered on simple_htmx</li>
+    <li>• x-data, x-show, x-bind, etc.</li>
+    <li>• Transition support</li>
+  </ul>
+</div>
+<div class="card">
+  <h3 class="font-mono text-lg font-medium mb-2"><a href="https://github.com/ljr1981/eiffel_sqlite_2025" target="_blank" class="text-blue-400 hover:underline">eiffel_sqlite_2025 ↗</a></h3>
+  <p class="text-sm opacity-70 mb-4">Modern SQLite3 wrapper with FTS5 and JSON1 extensions.</p>
+  <div class="flex gap-4 text-sm mb-4">
+    <span><span class="opacity-50">Lines:</span> <strong>25,000</strong></span>
+    <span><span class="opacity-50">Tests:</span> <strong>200</strong></span>
+  </div>
+  <ul class="text-sm opacity-80 space-y-1">
+    <li>• Full-text search (FTS5)</li>
+    <li>• JSON functions (JSON1)</li>
+    <li>• Modern SQLite features</li>
+    <li>• Low-level and high-level APIs</li>
+  </ul>
+</div>
+<div class="card">
+  <h3 class="font-mono text-lg font-medium mb-2"><a href="https://github.com/ljr1981/simple_ci" target="_blank" class="text-blue-400 hover:underline">simple_ci ↗</a></h3>
+  <p class="text-sm opacity-70 mb-4">Homebrew CI tool for Eiffel projects.</p>
+  <div class="flex gap-4 text-sm mb-4">
+    <span><span class="opacity-50">Lines:</span> <strong>1,600</strong></span>
+  </div>
+  <ul class="text-sm opacity-80 space-y-1">
+    <li>• Build automation</li>
+    <li>• Test running</li>
+    <li>• Report generation</li>
+  </ul>
+</div>
+<div class="card">
+  <h3 class="font-mono text-lg font-medium mb-2"><a href="https://github.com/ljr1981/simple_gui_designer" target="_blank" class="text-blue-400 hover:underline">simple_gui_designer ↗</a></h3>
+  <p class="text-sm opacity-70 mb-4">Visual GUI specification designer. (WIP - in-house project, shared publicly)</p>
+  <div class="flex gap-4 text-sm mb-4">
+    <span><span class="opacity-50">Lines:</span> <strong>7,000</strong></span>
+    <span><span class="opacity-50">Tests:</span> <strong>10</strong></span>
+  </div>
+  <ul class="text-sm opacity-80 space-y-1">
+    <li>• Visual layout editor</li>
+    <li>• Code generation</li>
+    <li>• Contract-based specs</li>
+  </ul>
+</div>
+<div class="card">
+  <h3 class="font-mono text-lg font-medium mb-2"><a href="https://github.com/ljr1981/simple_process" target="_blank" class="text-blue-400 hover:underline">simple_process ↗</a></h3>
+  <p class="text-sm opacity-70 mb-4">Process execution helper.</p>
+  <div class="flex gap-4 text-sm mb-4">
+    <span><span class="opacity-50">Lines:</span> <strong>500</strong></span>
+    <span><span class="opacity-50">Tests:</span> <strong>4</strong></span>
+  </div>
+  <ul class="text-sm opacity-80 space-y-1">
+    <li>• Command execution</li>
+    <li>• Output capture</li>
+    <li>• Cross-platform</li>
+  </ul>
+</div>
+<div class="card">
+  <h3 class="font-mono text-lg font-medium mb-2"><a href="https://github.com/ljr1981/simple_randomizer" target="_blank" class="text-blue-400 hover:underline">simple_randomizer ↗</a></h3>
+  <p class="text-sm opacity-70 mb-4">Random data generation.</p>
+  <div class="flex gap-4 text-sm mb-4">
+    <span><span class="opacity-50">Lines:</span> <strong>1,100</strong></span>
+    <span><span class="opacity-50">Tests:</span> <strong>27</strong></span>
+  </div>
+  <ul class="text-sm opacity-80 space-y-1">
+    <li>• Random strings</li>
+    <li>• Random numbers</li>
+    <li>• Test data generation</li>
+  </ul>
+</div>
+<div class="card">
+  <h3 class="font-mono text-lg font-medium mb-2"><a href="https://github.com/ljr1981/simple_ai_client" target="_blank" class="text-blue-400 hover:underline">simple_ai_client ↗</a></h3>
+  <p class="text-sm opacity-70 mb-4">AI API integration.</p>
+  <ul class="text-sm opacity-80 space-y-1">
+    <li>• Claude API support</li>
+    <li>• Message handling</li>
+    <li>• Response parsing</li>
+  </ul>
+</div>
+<div class="card">
+  <h3 class="font-mono text-lg font-medium mb-2"><a href="https://github.com/ljr1981/reference_docs" target="_blank" class="text-blue-400 hover:underline">reference_docs ↗</a></h3>
+  <p class="text-sm opacity-70 mb-4">Living documentation for AI-assisted development.</p>
+  <div class="flex gap-4 text-sm mb-4">
+    <span><span class="opacity-50">Lines:</span> <strong>4,000</strong></span>
+  </div>
+  <ul class="text-sm opacity-80 space-y-1">
+    <li>• Eiffel patterns</li>
+    <li>• Common gotchas</li>
+    <li>• Session management</li>
+  </ul>
+</div>
+</div>
+<div class="section-divider"></div>
+<h2 class="text-2xl font-medium mb-6">Timeline</h2>
+<p class="mb-4 opacity-90 leading-relaxed">A velocity demonstration:</p>
+<div class="space-y-4 mb-8">
+<div class="flex gap-4 items-baseline">
+  <span class="text-sm opacity-50 w-32">Nov 11-14</span>
+  <span class="font-mono">simple_json</span>
+  <span class="text-sm opacity-70">11,400 lines</span>
+</div>
+<div class="flex gap-4 items-baseline">
+  <span class="text-sm opacity-50 w-32">Nov 30 - Dec 1</span>
+  <span class="font-mono">simple_sql</span>
+  <span class="text-sm opacity-70">17,200 lines</span>
+</div>
+<div class="flex gap-4 items-baseline">
+  <span class="text-sm opacity-50 w-32">Dec 2</span>
+  <span class="font-mono">simple_web, simple_process, simple_randomizer</span>
+  <span class="text-sm opacity-70">Multiple libs</span>
+</div>
+<div class="flex gap-4 items-baseline">
+  <span class="text-sm opacity-50 w-32">Dec 2</span>
+  <span class="font-mono">simple_ci</span>
+  <span class="text-sm opacity-70">Build tool</span>
+</div>
+<div class="flex gap-4 items-baseline">
+  <span class="text-sm opacity-50 w-32">Dec 2-3</span>
+  <span class="font-mono">simple_gui_designer (WIP)</span>
+  <span class="text-sm opacity-70">7,000 lines</span>
+</div>
+<div class="flex gap-4 items-baseline">
+  <span class="text-sm opacity-50 w-32">Dec 3</span>
+  <span class="font-mono">simple_htmx</span>
+  <span class="text-sm opacity-70">4,200 lines</span>
+</div>
+<div class="flex gap-4 items-baseline">
+  <span class="text-sm opacity-50 w-32">Dec 3</span>
+  <span class="font-mono">simple_alpine</span>
+  <span class="text-sm opacity-70">3,200 lines</span>
+</div>
+</div>
+<div class="section-divider"></div>
+<h2 class="text-2xl font-medium mb-6">Run the Tests Yourself</h2>
+<p class="mb-4 opacity-90 leading-relaxed">Don't take our word for it. Clone any repo, run the tests.</p>
+<div class="code-block mb-6"><code><pre>git clone https://github.com/ljr1981/simple_json
+cd simple_json
+# Follow README for test commands</pre></code></div>
+<p class="mb-4 opacity-90 leading-relaxed">Every test passes. Every contract verified.</p>
+<footer class="mt-16 pt-8 border-t border-white/10">
+  <div class="flex flex-wrap gap-4 mb-8">
+    <a href="/" class="text-sm opacity-60 hover:opacity-100 transition-opacity">Back to home</a>
+    <a href="/get-started" class="text-sm opacity-60 hover:opacity-100 transition-opacity">Get Started</a>
+    <a href="/business-case" class="text-sm opacity-60 hover:opacity-100 transition-opacity">Business Case</a>
+  </div>
+<div class="text-xs opacity-40 pt-4 border-t border-white/5">
+  <p class="mb-2">This site is built with the approach it describes.</p>
+  <p>No frameworks. No bundlers. No node_modules. Just Eiffel + AI + Design by Contract.</p>
+  <p class="mt-2"><a href="https://github.com/ljr1981/simple_showcase" target="_blank" class="text-blue-400 hover:underline">View the source on GitHub ↗</a></p>
+</div>
+</footer>
+</main>
+</body>
+</html>

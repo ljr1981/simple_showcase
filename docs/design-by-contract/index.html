@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Design by Contract Works | Simple Showcase</title>
+  <meta name="description" content="The code tells you what it guarantees. The runtime enforces those guarantees. Automatically.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+<style>
+  .section-divider { border-top: 1px solid rgba(255,255,255,0.1); margin: 3rem 0; }
+  .content-section { margin-bottom: 3rem; }
+  .code-block { background: #1a1a1a; padding: 1.5rem; border-radius: 0.5rem; overflow-x: auto; }
+  .code-block code { color: #8fdf8f; font-family: monospace; font-size: 0.875rem; line-height: 1.6; }
+  .stat-box { background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 0.5rem; text-align: center; }
+  .stat-number { font-size: 2.5rem; font-weight: bold; font-variant-numeric: tabular-nums; }
+  .stat-label { font-size: 0.875rem; opacity: 0.7; }
+  .card { background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 0.5rem; transition: background 0.2s; }
+  .card:hover { background: rgba(255,255,255,0.1); }
+.tooltip-term { position: relative; cursor: help; border-bottom: 1px dotted currentColor; }
+.tooltip-icon { display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; margin-left: 2px; font-size: 10px; font-weight: bold; border: 1px solid currentColor; border-radius: 50%; opacity: 0.6; vertical-align: super; }
+.tooltip-content { visibility: hidden; opacity: 0; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%) translateY(-8px); width: 280px; padding: 12px 16px; background: #1a1a1a; color: #fdfcfa; font-size: 14px; line-height: 1.5; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.4); z-index: 100; transition: opacity 0.2s, visibility 0.2s; pointer-events: none; }
+.tooltip-content::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 8px solid transparent; border-top-color: #1a1a1a; }
+.tooltip-term:hover .tooltip-content { visibility: visible; opacity: 1; }
+</style>
+</head>
+<body class="bg-[#0c0b0b] text-[#fdfcfa] antialiased min-h-screen">
+<div class="fixed top-4 left-4 z-50" x-data="{ menuOpen: false }">
+  <button @click="menuOpen = !menuOpen" class="w-12 h-12 rounded-full bg-[#0c0b0b]/80 backdrop-blur-sm border border-white/10 flex items-center justify-center hover:bg-white/10 transition-all" aria-label="Navigation menu">
+    <div class="flex flex-col gap-1.5">
+      <span class="block w-5 h-0.5 bg-white/80 transition-all" :class="menuOpen ? 'rotate-45 translate-y-2' : ''"></span>
+      <span class="block w-5 h-0.5 bg-white/80 transition-all" :class="menuOpen ? 'opacity-0' : ''"></span>
+      <span class="block w-5 h-0.5 bg-white/80 transition-all" :class="menuOpen ? '-rotate-45 -translate-y-2' : ''"></span>
+    </div>
+  </button>
+  <div x-show="menuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-x-4" x-transition:enter-end="opacity-100 translate-x-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-x-0" x-transition:leave-end="opacity-0 -translate-x-4" @click.outside="menuOpen = false" class="absolute top-14 left-0 w-72 bg-[#0c0b0b]/95 backdrop-blur-md rounded-lg border border-white/10 shadow-2xl overflow-hidden">
+    <div class="px-4 py-3 border-b border-white/10">
+      <span class="text-sm font-medium opacity-60">Navigate</span>
+    </div>
+    <nav class="py-2 max-h-[70vh] overflow-y-auto">
+      <a href="/" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Home</div>
+        <div class="text-xs opacity-50">Back to landing page</div>
+      </a>
+      <a href="/get-started" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Get Started</div>
+        <div class="text-xs opacity-50">Start building with Eiffel + AI</div>
+      </a>
+      <a href="/portfolio" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Portfolio</div>
+        <div class="text-xs opacity-50">See the project evidence</div>
+      </a>
+      <a href="/design-by-contract" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Design by Contract</div>
+        <div class="text-xs opacity-50">How DBC works</div>
+      </a>
+      <a href="/workflow" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Workflow</div>
+        <div class="text-xs opacity-50">The human-AI collaboration</div>
+      </a>
+      <a href="/analysis" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Analysis</div>
+        <div class="text-xs opacity-50">Competitive analysis</div>
+      </a>
+      <a href="/business-case" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Business Case</div>
+        <div class="text-xs opacity-50">ROI and risk analysis</div>
+      </a>
+      <a href="/why-eiffel" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Why Eiffel</div>
+        <div class="text-xs opacity-50">Language choice explained</div>
+      </a>
+      <a href="/probable-to-provable" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">Probable to Provable</div>
+        <div class="text-xs opacity-50">The core framework</div>
+      </a>
+      <a href="/old-way" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">The Old Way</div>
+        <div class="text-xs opacity-50">Traditional approach costs</div>
+      </a>
+      <a href="/ai-changes" class="block px-4 py-2 hover:bg-white/10 transition-colors group">
+        <div class="font-medium group-hover:text-blue-400 transition-colors">AI Changes</div>
+        <div class="text-xs opacity-50">What AI actually changes</div>
+      </a>
+    </nav>
+    <div class="px-4 py-3 border-t border-white/10 text-xs opacity-40">
+      <p>Built with Eiffel + AI + DBC</p>
+    </div>
+  </div>
+</div>
+<main class="max-w-4xl mx-auto px-6 py-16">
+<header class="mb-16 pt-8">
+  <p class="text-xs uppercase tracking-widest opacity-60 mb-4">DESIGN BY CONTRACT</p>
+  <h1 class="text-4xl md:text-5xl font-light mb-6">How Design by Contract Works</h1>
+  <p class="text-xl opacity-80 max-w-2xl">The code tells you what it guarantees. The runtime enforces those guarantees. Automatically.</p>
+</header>
+<h2 class="text-2xl font-medium mb-6">The Core Idea</h2>
+<p class="mb-4 opacity-90 leading-relaxed">Every feature (method) is a contract between caller and implementation:</p>
+<div class="space-y-4 mb-8">
+<div class="card">
+  <h4 class="font-medium mb-1">PRECONDITIONS (<code>require</code>)</h4>
+  <p class="text-sm opacity-70 mb-2">What must be true before the feature runs</p>
+  <p class="text-sm italic opacity-60">"I require these conditions to do my job."</p>
+</div>
+<div class="card">
+  <h4 class="font-medium mb-1">POSTCONDITIONS (<code>ensure</code>)</h4>
+  <p class="text-sm opacity-70 mb-2">What will be true after the feature runs</p>
+  <p class="text-sm italic opacity-60">"I guarantee these results when I'm done."</p>
+</div>
+<div class="card">
+  <h4 class="font-medium mb-1">INVARIANTS (<code>invariant</code>)</h4>
+  <p class="text-sm opacity-70 mb-2">What's always true about an object</p>
+  <p class="text-sm italic opacity-60">"This is always true about me, before and after every call."</p>
+</div>
+</div>
+<div class="section-divider"></div>
+<h2 class="text-2xl font-medium mb-6">A Real Example</h2>
+<p class="mb-4 opacity-90 leading-relaxed">Let's build a bank account:</p>
+<div class="code-block mb-6"><code><pre>class BANK_ACCOUNT
+
+feature -- Access
+
+    balance: DECIMAL
+        -- Current account balance
+
+feature -- Operations
+
+    withdraw (amount: DECIMAL)
+        -- Withdraw amount from account
+        <span class="text-amber-400">require</span>
+            positive_amount: amount > 0
+            sufficient_funds: amount <= balance
+        <span class="text-blue-400">do</span>
+            balance := balance - amount
+        <span class="text-emerald-400">ensure</span>
+            balance_reduced: balance = old balance - amount
+        <span class="text-blue-400">end</span>
+
+<span class="text-purple-400">invariant</span>
+    non_negative_balance: balance >= 0
+
+end</pre></code></div>
+<p class="mb-4 opacity-90 leading-relaxed">What this guarantees:</p>
+<ul class="list-disc list-inside space-y-2 mb-6 opacity-90">
+  <li>You can't withdraw zero or negative amounts</li>
+  <li>You can't withdraw more than you have</li>
+  <li>After withdrawal, balance is exactly what you expect</li>
+  <li>Balance can never go negative, ever</li>
+</ul>
+<p class="mb-4 opacity-90 leading-relaxed"><strong>Try to violate any of these?</strong> Runtime exception with exact location.</p>
+<div class="section-divider"></div>
+<h2 class="text-2xl font-medium mb-6">What Happens When AI Writes Code</h2>
+<div class="grid md:grid-cols-2 gap-6 mb-8">
+<div class="card">
+  <h4 class="font-medium mb-4 text-red-400">Without Contracts</h4>
+  <ul class="text-sm space-y-2">
+    <li class="opacity-80">• AI writes withdraw function</li>
+    <li class="opacity-80">• Maybe it checks for sufficient funds, maybe not</li>
+    <li class="opacity-80">• Maybe there's a bug in the calculation</li>
+    <li class="opacity-80">• You find out in production. Or you don't.</li>
+  </ul>
+</div>
+<div class="card">
+  <h4 class="font-medium mb-4 text-emerald-400">With Contracts</h4>
+  <ul class="text-sm space-y-2">
+    <li class="opacity-80">• AI writes withdraw function with contracts</li>
+    <li class="opacity-80">• First test run: "POSTCONDITION VIOLATION: balance_reduced"</li>
+    <li class="opacity-80">• Bug found instantly. Exact location. Exact expectation.</li>
+    <li class="opacity-80">• AI fixes it. Contracts pass. Ship with confidence.</li>
+  </ul>
+</div>
+</div>
+<p class="mb-4 opacity-90 leading-relaxed">The contracts are the specification. The runtime is the verifier. AI mistakes don't reach production.</p>
+<div class="section-divider"></div>
+<h2 class="text-2xl font-medium mb-6">Types of Contracts</h2>
+<div class="mb-6">
+  <h4 class="font-medium mb-2">Preconditions (require)</h4>
+  <p class="text-sm opacity-80 mb-3">Guard inputs before execution. The caller's responsibility.</p>
+<div class="code-block mb-6"><code><pre>require
+    positive_amount: amount > 0
+    sufficient_funds: amount <= balance</pre></code></div>
+</div>
+<div class="mb-6">
+  <h4 class="font-medium mb-2">Postconditions (ensure)</h4>
+  <p class="text-sm opacity-80 mb-3">Verify outputs after execution. The feature's promise.</p>
+<div class="code-block mb-6"><code><pre>ensure
+    balance_reduced: balance = old balance - amount
+    non_negative: balance >= 0</pre></code></div>
+</div>
+<div class="mb-6">
+  <h4 class="font-medium mb-2">Class Invariants (invariant)</h4>
+  <p class="text-sm opacity-80 mb-3">Always true for the object. Checked after every public call.</p>
+<div class="code-block mb-6"><code><pre>invariant
+    non_negative_balance: balance >= 0
+    valid_account_number: account_number.count = 10</pre></code></div>
+</div>
+<div class="mb-6">
+  <h4 class="font-medium mb-2">Check Assertions</h4>
+  <p class="text-sm opacity-80 mb-3">Mid-execution checks for debugging and documentation.</p>
+<div class="code-block mb-6"><code><pre>check
+    valid_state: is_initialized
+end</pre></code></div>
+</div>
+<div class="section-divider"></div>
+<h2 class="text-2xl font-medium mb-6">The "old" Keyword</h2>
+<p class="mb-4 opacity-90 leading-relaxed">One of the most powerful features: comparing before and after.</p>
+<div class="code-block mb-6"><code><pre>ensure
+    count_increased: items.count = old items.count + 1</pre></code></div>
+<p class="mb-4 opacity-90 leading-relaxed"><code>old items.count</code> captures the value BEFORE the feature ran. This lets you specify exactly how state should change.</p>
+<div class="section-divider"></div>
+<h2 class="text-2xl font-medium mb-6">Contracts vs. Tests</h2>
+<div class="grid md:grid-cols-2 gap-6 mb-8">
+<div class="card">
+  <h4 class="font-medium mb-2">Tests</h4>
+  <p class="text-sm opacity-70">"Here are some examples that should work."</p>
+  <p class="text-sm opacity-70 mt-2">Check specific cases.</p>
+</div>
+<div class="card">
+  <h4 class="font-medium mb-2">Contracts</h4>
+  <p class="text-sm opacity-70">"Here is what must ALWAYS be true."</p>
+  <p class="text-sm opacity-70 mt-2">Check every execution.</p>
+</div>
+</div>
+<p class="mb-4 opacity-90 leading-relaxed">Tests are valuable. Contracts are comprehensive. Use both. But contracts catch what tests miss.</p>
+<div class="section-divider"></div>
+<h2 class="text-2xl font-medium mb-6">Why This Matters for AI</h2>
+<p class="mb-4 opacity-90 leading-relaxed">AI generates statistically likely code. "Likely" isn't "correct."</p>
+<p class="mb-4 opacity-90 leading-relaxed">Contracts turn "I hope this works" into "This is proven to work."</p>
+<p class="mb-4 opacity-90 leading-relaxed"><strong>That's the unlock.</strong></p>
+<div class="mt-8 flex gap-4">
+<a href="/get-started" class="inline-block px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors">Get Started</a>
+<a href="/portfolio" class="inline-block px-6 py-3 bg-white/10 hover:bg-white/20 rounded-full text-sm transition-colors">See the Evidence</a>
+</div>
+<footer class="mt-16 pt-8 border-t border-white/10">
+  <div class="flex flex-wrap gap-4 mb-8">
+    <a href="/" class="text-sm opacity-60 hover:opacity-100 transition-opacity">Back to home</a>
+    <a href="/probable-to-provable" class="text-sm opacity-60 hover:opacity-100 transition-opacity">Probable to Provable</a>
+    <a href="/workflow" class="text-sm opacity-60 hover:opacity-100 transition-opacity">The Workflow</a>
+  </div>
+<div class="text-xs opacity-40 pt-4 border-t border-white/5">
+  <p class="mb-2">This site is built with the approach it describes.</p>
+  <p>No frameworks. No bundlers. No node_modules. Just Eiffel + AI + Design by Contract.</p>
+  <p class="mt-2"><a href="https://github.com/ljr1981/simple_showcase" target="_blank" class="text-blue-400 hover:underline">View the source on GitHub ↗</a></p>
+</div>
+</footer>
+</main>
+</body>
+</html>

@@ -30,4 +30,7 @@
 	<target name="run_server" extends="simple_showcase">
 		<root class="SSC_SERVER" feature="make"/>
 	</target>
+	<target name="generate_site" extends="simple_showcase">
+		<root class="SSC_SITE_GENERATOR" feature="make"/>
+	</target>
 </system>
