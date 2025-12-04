@@ -1,0 +1,6 @@
+# Eiffel compilation artifacts
+EIFGENs/
+*.lock
+
+# Output directory
+output/
