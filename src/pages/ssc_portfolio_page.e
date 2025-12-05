@@ -123,12 +123,6 @@ feature -- Content
 					"Message handling",
 					"Response parsing"
 				>>))
-			Result.append (library_card ("reference_docs", "Living documentation for AI-assisted development.",
-				"4,000", "", <<
-					"Eiffel patterns",
-					"Common gotchas",
-					"Session management"
-				>>))
 			Result.append ("</div>%N")
 			Result.append (divider)
 

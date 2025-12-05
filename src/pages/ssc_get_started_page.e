@@ -72,14 +72,14 @@ feature -- Content
 			Result.append (divider)
 
 			-- Step 3
-			Result.append (step_section ("3", "Get the Reference Docs",
-				"AI works best with context. Our reference documentation teaches AI the patterns and pitfalls.",
-				"https://github.com/ljr1981/reference_docs", "Clone reference_docs"))
-			Result.append (paragraph ("Key files to have AI read first:"))
+			Result.append (step_section ("3", "Explore the Libraries",
+				"AI works best with context. Browse the library source code to understand Eiffel patterns.",
+				"https://github.com/ljr1981/simple_json", "Start with simple_json"))
+			Result.append (paragraph ("Key things to have AI learn:"))
 			Result.append (bullet_list (<<
-				"<code>CLAUDE_CONTEXT.md</code> — Eiffel fundamentals",
-				"<code>gotchas.md</code> — Common pitfalls and solutions",
-				"<code>patterns.md</code> — Verified working code"
+				"<code>README.md</code> files — Usage examples",
+				"<code>*_test.e</code> files — Working test patterns",
+				"Contract patterns — require/ensure/invariant"
 			>>))
 			Result.append (divider)
 

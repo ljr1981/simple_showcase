@@ -96,7 +96,6 @@ feature {NONE} -- Content
 				.raw_html (project_card ("simple_randomizer", "1,100", "27", "Random data generation", 9))
 				.raw_html (project_card ("simple_ai_client", "", "", "AI API integration", 10))
 				.raw_html (project_card ("eiffel_sqlite_2025", "25,000", "200", "Modern SQLite3 (FTS5, JSON1)", 11))
-				.raw_html (project_card ("reference_docs", "4,000", "", "Living documentation", 12))
 				.do_nothing
 
 			l_container.raw_html (l_grid.to_html).do_nothing
