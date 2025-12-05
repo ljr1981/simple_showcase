@@ -25,7 +25,8 @@ inherit
 
 create
 	make,
-	make_with_config
+	make_with_config,
+	make_for_testing
 
 feature {NONE} -- Initialization
 
@@ -52,6 +53,10 @@ feature {NONE} -- Initialization
 			log_info ("server", "=== Simple Showcase Server Starting ===")
 			log_info ("server", "Mode: " + config.mode)
 
+			-- Initialize database
+			create database.make (config.db_path)
+			log_info ("server", "Database initialized: " + config.db_path)
+
 			create server.make (config.port)
 			log_info ("server", "Server created on port " + config.port.out)
 
@@ -63,10 +68,26 @@ feature {NONE} -- Initialization
 			print ("Mode: " + config.mode + "%N")
 			print ("Open browser to: " + config.base_url + "%N%N")
 
+			-- Analytics middleware (must be first to capture accurate timing)
+			server.use_middleware (create {SSC_ANALYTICS_MIDDLEWARE}.make (database))
+			log_info ("server", "Analytics middleware enabled")
+
 			server.use_logging
 			log_info ("server", "Logging middleware enabled")
 			log_info ("server", "Calling server.start (blocking)...")
 			server.start
+		end
+
+	make_for_testing (a_config_path: STRING)
+			-- Create server for testing WITHOUT starting it (non-blocking).
+			-- Use this in test fixtures to access validation functions.
+		require
+			path_not_empty: not a_config_path.is_empty
+		do
+			create config.make (a_config_path)
+			create database.make (config.db_path)
+			create server.make (config.port)
+			-- Note: Does NOT call register_routes, use_middleware, or server.start
 		end
 
 feature -- Server
@@ -76,6 +97,9 @@ feature -- Server
 
 	config: SSC_CONFIG
 			-- Server configuration
+
+	database: SSC_DATABASE
+			-- SQLite database for analytics, contacts, sessions
 
 feature {NONE} -- Route Registration
 
@@ -344,21 +368,26 @@ feature {NONE} -- Redirect Handlers
 feature {NONE} -- API Handlers
 
 	handle_contact_submit (req: SIMPLE_WEB_SERVER_REQUEST; res: SIMPLE_WEB_SERVER_RESPONSE)
-			-- Handle contact form submission.
-			-- TODO: Add rate limiting for production deployment to prevent spam/DoS.
-			-- Consider: IP-based throttling (e.g., 5 requests per minute per IP)
-			-- or CAPTCHA integration for high-traffic scenarios.
+			-- Handle contact form submission with rate limiting and database storage.
 		local
 			l_json: SIMPLE_JSON
 			l_body: detachable SIMPLE_JSON_VALUE
-			l_name, l_email, l_subject, l_message: STRING
+			l_name, l_email, l_subject, l_message, l_ip: STRING
 			l_body_32: STRING_32
+			l_contact_id: INTEGER_64
 		do
 			log_info ("api", "Contact form submission received")
 			log_debug ("api", "Body length: " + req.body.count.out)
-			-- Note: Not logging full body to avoid exposing user PII in logs
 
-			if req.body.is_empty then
+			-- Extract client IP for rate limiting and logging
+			l_ip := extract_client_ip (req)
+
+			-- Check rate limit (5 submissions per hour per IP)
+			if is_rate_limited (l_ip) then
+				log_info ("api", "Rate limited: " + l_ip)
+				res.set_status (429) -- Too Many Requests
+				res.send_json ("{%"success%": false, %"error%": %"Too many submissions. Please try again later.%"}")
+			elseif req.body.is_empty then
 				log_info ("api", "Empty request body")
 				res.send_json ("{%"success%": false, %"error%": %"Empty request body%"}")
 			else
@@ -368,52 +397,38 @@ feature {NONE} -- API Handlers
 
 				if attached l_body as l_val and then l_val.is_object then
 					if attached l_val.as_object as l_obj then
-						-- Extract form fields
-						if attached l_obj.item ("name") as l_n and then l_n.is_string then
-							l_name := l_n.as_string_32.to_string_8
-						else
-							l_name := ""
-						end
-						if attached l_obj.item ("email") as l_e and then l_e.is_string then
-							l_email := l_e.as_string_32.to_string_8
-						else
-							l_email := ""
-						end
-						if attached l_obj.item ("subject") as l_s and then l_s.is_string then
-							l_subject := l_s.as_string_32.to_string_8
-						else
-							l_subject := "general"
-						end
-						if attached l_obj.item ("message") as l_m and then l_m.is_string then
-							l_message := l_m.as_string_32.to_string_8
-						else
-							l_message := ""
-						end
+						-- Extract and sanitize form fields
+						l_name := extract_and_sanitize_field (l_obj, "name", 100)
+						l_email := extract_and_sanitize_email (l_obj, "email", 254)
+						l_subject := extract_and_sanitize_field (l_obj, "subject", 100)
+						l_message := extract_and_sanitize_field (l_obj, "message", 5000)
 
-						-- Server-side length validation (defense in depth)
-						if l_name.count > 100 then
-							l_name := l_name.substring (1, 100)
-						end
-						if l_email.count > 254 then
-							l_email := l_email.substring (1, 254)
-						end
-						if l_subject.count > 100 then
-							l_subject := l_subject.substring (1, 100)
-						end
-						if l_message.count > 5000 then
-							l_message := l_message.substring (1, 5000)
-						end
-
-						-- Log the submission (minimal info to avoid PII in logs)
-						log_info ("contact", "Submission received, subject: " + l_subject)
-
-						-- Send email notification
-						if send_contact_email (l_name, l_email, l_subject, l_message) then
-							log_info ("contact", "Email sent successfully")
-							res.send_json ("{%"success%": true, %"message%": %"Thank you for your message!%"}")
+						-- Validate required fields
+						if l_name.is_empty or l_email.is_empty or l_message.is_empty then
+							res.send_json ("{%"success%": false, %"error%": %"Name, email, and message are required.%"}")
+						elseif not is_valid_email (l_email) then
+							res.send_json ("{%"success%": false, %"error%": %"Please provide a valid email address.%"}")
 						else
-							log_info ("contact", "Email sending failed, but form data logged")
-							-- Still return success since we logged the message
+							-- Default subject if empty
+							if l_subject.is_empty then
+								l_subject := "general"
+							end
+
+							-- Save to database first (durable storage)
+							l_contact_id := database.save_contact (l_name, l_email, l_subject, l_message, l_ip)
+							log_info ("contact", "Saved to database with ID: " + l_contact_id.out)
+
+							-- Record submission for rate limiting
+							record_submission (l_ip)
+
+							-- Send email notification (best effort)
+							if send_contact_email (l_name, l_email, l_subject, l_message) then
+								log_info ("contact", "Email sent successfully")
+							else
+								log_info ("contact", "Email sending failed, but form data saved to database")
+							end
+
+							-- Always return success if saved to database
 							res.send_json ("{%"success%": true, %"message%": %"Thank you for your message!%"}")
 						end
 					else
@@ -558,14 +573,172 @@ feature {NONE} -- Email
 			Result.replace_substring_all ("'@", "'`@")  -- Escape potential here-string terminator
 		end
 
+feature {NONE} -- Rate Limiting
+
+	submission_tracker: HASH_TABLE [ARRAYED_LIST [INTEGER_64], STRING]
+			-- Track submission timestamps by IP address
+			-- Key: IP address, Value: List of Unix timestamps
+		once
+			create Result.make (100)
+		end
+
+	rate_limit_max_submissions: INTEGER = 5
+			-- Maximum submissions per rate limit window
+
+	rate_limit_window_seconds: INTEGER = 3600
+			-- Rate limit window: 1 hour
+
+	is_rate_limited (a_ip: STRING): BOOLEAN
+			-- Check if IP has exceeded rate limit
+		local
+			l_timestamps: detachable ARRAYED_LIST [INTEGER_64]
+			l_now: INTEGER_64
+			l_cutoff: INTEGER_64
+			l_recent_count: INTEGER
+		do
+			l_now := current_unix_timestamp
+			l_cutoff := l_now - rate_limit_window_seconds
+
+			l_timestamps := submission_tracker.item (a_ip)
+			if attached l_timestamps then
+				-- Count submissions within window
+				across l_timestamps as ts loop
+					if ts > l_cutoff then
+						l_recent_count := l_recent_count + 1
+					end
+				end
+				Result := l_recent_count >= rate_limit_max_submissions
+			end
+		end
+
+	record_submission (a_ip: STRING)
+			-- Record a submission for rate limiting
+		local
+			l_timestamps: ARRAYED_LIST [INTEGER_64]
+			l_now: INTEGER_64
+			l_cutoff: INTEGER_64
+		do
+			l_now := current_unix_timestamp
+			l_cutoff := l_now - rate_limit_window_seconds
+
+			if attached submission_tracker.item (a_ip) as l_existing then
+				-- Prune old entries and add new one
+				from l_existing.start until l_existing.after loop
+					if l_existing.item <= l_cutoff then
+						l_existing.remove
+					else
+						l_existing.forth
+					end
+				end
+				l_existing.extend (l_now)
+			else
+				-- New IP
+				create l_timestamps.make (10)
+				l_timestamps.extend (l_now)
+				submission_tracker.force (l_timestamps, a_ip)
+			end
+		end
+
+	current_unix_timestamp: INTEGER_64
+			-- Current time as Unix timestamp (seconds since epoch)
+		local
+			l_now: DATE_TIME
+			l_epoch: DATE_TIME
+		do
+			create l_now.make_now
+			create l_epoch.make (1970, 1, 1, 0, 0, 0)
+			Result := l_now.definite_duration (l_epoch).seconds_count
+		end
+
+feature -- Form Validation (public for testing)
+
+	extract_and_sanitize_field (a_obj: SIMPLE_JSON_OBJECT; a_field: STRING; a_max_length: INTEGER): STRING
+			-- Extract and sanitize a JSON string field
+		require
+			obj_attached: a_obj /= Void
+			field_not_empty: not a_field.is_empty
+			max_positive: a_max_length > 0
+		do
+			if attached a_obj.item (a_field) as l_val and then l_val.is_string then
+				Result := l_val.as_string_32.to_string_8
+				-- Truncate if needed
+				if Result.count > a_max_length then
+					Result := Result.substring (1, a_max_length)
+				end
+				-- Remove control characters
+				Result := remove_control_chars (Result)
+			else
+				create Result.make_empty
+			end
+		ensure
+			result_attached: Result /= Void
+			within_limit: Result.count <= a_max_length
+		end
+
+	extract_and_sanitize_email (a_obj: SIMPLE_JSON_OBJECT; a_field: STRING; a_max_length: INTEGER): STRING
+			-- Extract and sanitize an email field (more restrictive)
+		require
+			obj_attached: a_obj /= Void
+			field_not_empty: not a_field.is_empty
+			max_positive: a_max_length > 0
+		do
+			Result := extract_and_sanitize_field (a_obj, a_field, a_max_length)
+			Result := sanitize_email_address (Result)
+		ensure
+			result_attached: Result /= Void
+		end
+
+	remove_control_chars (a_string: STRING): STRING
+			-- Remove control characters (0x00-0x1F except tab/newline/CR)
+		local
+			i: INTEGER
+			c: CHARACTER
+		do
+			create Result.make (a_string.count)
+			from i := 1 until i > a_string.count loop
+				c := a_string.item (i)
+				-- Allow printable chars, tab (%T = 9), newline (%N = 10), carriage return (%R = 13)
+				if c.code >= 32 or c.code = 9 or c.code = 10 or c.code = 13 then
+					Result.append_character (c)
+				end
+				i := i + 1
+			end
+		ensure
+			result_attached: Result /= Void
+			no_dangerous_control_chars: not has_dangerous_control_chars (Result)
+			length_not_increased: Result.count <= a_string.count
+		end
+
+	is_valid_email (a_email: STRING): BOOLEAN
+			-- Basic email format validation.
+			-- Checks: length 5-254, has @, has . after @, local part exists, domain exists
+		local
+			l_at_pos, l_dot_pos: INTEGER
+		do
+			if a_email.count >= 5 and a_email.count <= 254 then
+				l_at_pos := a_email.index_of ('@', 1)
+				if l_at_pos > 1 and l_at_pos < a_email.count - 1 then
+					l_dot_pos := a_email.last_index_of ('.', a_email.count)
+					Result := l_dot_pos > l_at_pos + 1 and l_dot_pos < a_email.count
+				end
+			end
+		ensure
+			-- Definition: Result implies all structural requirements met
+			valid_implies_has_at: Result implies a_email.has ('@')
+			valid_implies_has_dot_after_at: Result implies
+				a_email.last_index_of ('.', a_email.count) > a_email.index_of ('@', 1)
+			valid_implies_length_ok: Result implies (a_email.count >= 5 and a_email.count <= 254)
+		end
+
+feature -- Sanitization (exported for testing)
+
 	sanitize_for_email (a_text: STRING): STRING
-			-- Sanitize text to prevent email header injection and command injection
+			-- Sanitize text to prevent email header injection and command injection.
+			-- Removes newlines (header injection) and shell metacharacters.
 		do
 			create Result.make_from_string (a_text)
-			-- Remove newlines (prevent header injection)
 			Result.replace_substring_all ("%N", " ")
 			Result.replace_substring_all ("%R", " ")
-			-- Remove shell metacharacters
 			Result.replace_substring_all ("'", "")
 			Result.replace_substring_all ("%"", "")
 			Result.replace_substring_all ("`", "")
@@ -576,10 +749,22 @@ feature {NONE} -- Email
 			Result.replace_substring_all (";", "")
 			Result.replace_substring_all ("<", "")
 			Result.replace_substring_all (">", "")
+		ensure
+			result_attached: Result /= Void
+			no_newlines: not Result.has ('%N') and not Result.has ('%R')
+			no_shell_single_quote: not Result.has ('%'')
+			no_shell_double_quote: not Result.has ('%"')
+			no_shell_backtick: not Result.has ('`')
+			no_shell_dollar: not Result.has ('$')
+			no_shell_pipe: not Result.has ('|')
+			no_shell_ampersand: not Result.has ('&')
+			no_shell_semicolon: not Result.has (';')
+			no_shell_angle_brackets: not Result.has ('<') and not Result.has ('>')
 		end
 
 	sanitize_email_address (a_email: STRING): STRING
-			-- Sanitize email address - only allow valid email characters
+			-- Sanitize email address - only allow valid email characters.
+			-- Whitelist approach: only alphanumeric, @, ., _, -, +
 		local
 			i: INTEGER
 			c: CHARACTER
@@ -587,12 +772,79 @@ feature {NONE} -- Email
 			create Result.make (a_email.count)
 			from i := 1 until i > a_email.count loop
 				c := a_email.item (i)
-				-- Only allow alphanumeric, @, ., _, -, +
-				if c.is_alpha or c.is_digit or c = '@' or c = '.' or c = '_' or c = '-' or c = '+' then
+				if is_safe_email_char (c) then
 					Result.append_character (c)
 				end
 				i := i + 1
 			end
+		ensure
+			result_attached: Result /= Void
+			only_safe_chars: across Result as ic all is_safe_email_char (ic) end
+			length_not_increased: Result.count <= a_email.count
+		end
+
+feature -- Contract helpers (exported for testing)
+
+	has_dangerous_control_chars (a_string: STRING): BOOLEAN
+			-- Does string contain dangerous control characters (0x00-0x08, 0x0B, 0x0C, 0x0E-0x1F)?
+			-- Allows: tab (9), newline (10), carriage return (13)
+		local
+			i, c: INTEGER
+		do
+			from i := 1 until i > a_string.count or Result loop
+				c := a_string.item (i).code
+				if c >= 0 and c <= 8 then
+					Result := True
+				elseif c = 11 or c = 12 then -- vertical tab, form feed
+					Result := True
+				elseif c >= 14 and c <= 31 then
+					Result := True
+				end
+				i := i + 1
+			end
+		end
+
+	is_safe_email_char (a_char: CHARACTER): BOOLEAN
+			-- Is character safe for email addresses?
+		do
+			Result := a_char.is_alpha or a_char.is_digit or
+				a_char = '@' or a_char = '.' or a_char = '_' or a_char = '-' or a_char = '+'
+		end
+
+feature {NONE} -- IP Extraction
+
+	extract_client_ip (a_request: SIMPLE_WEB_SERVER_REQUEST): STRING
+			-- Extract client IP, checking for proxy headers (Cloudflare)
+		local
+			l_forwarded: detachable STRING_8
+		do
+			-- Check X-Forwarded-For first (Cloudflare/proxy)
+			l_forwarded := a_request.header ("X-Forwarded-For")
+			if attached l_forwarded and then not l_forwarded.is_empty then
+				-- X-Forwarded-For can contain multiple IPs: "client, proxy1, proxy2"
+				if l_forwarded.has (',') then
+					Result := l_forwarded.split (',').first
+					Result.left_adjust
+					Result.right_adjust
+				else
+					Result := l_forwarded
+				end
+			elseif attached a_request.header ("X-Real-IP") as l_real_ip and then not l_real_ip.is_empty then
+				Result := l_real_ip
+			else
+				-- Fall back to direct connection IP
+				if not a_request.is_mock and then attached a_request.wsf_request as l_wsf then
+					if attached l_wsf.remote_addr as l_addr then
+						Result := l_addr.to_string_8
+					else
+						Result := "unknown"
+					end
+				else
+					Result := "unknown"
+				end
+			end
+		ensure
+			result_attached: Result /= Void
 		end
 
 end

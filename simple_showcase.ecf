@@ -19,12 +19,13 @@
 		<library name="simple_web" location="$SIMPLE_WEB\simple_web.ecf"/>
 		<library name="simple_json" location="$SIMPLE_JSON\simple_json.ecf"/>
 		<library name="simple_process" location="$SIMPLE_PROCESS\simple_process.ecf"/>
+		<library name="simple_sql" location="$SIMPLE_SQL\simple_sql.ecf"/>
 		<cluster name="core" location=".\src\core\" recursive="true"/>
 		<cluster name="pages" location=".\src\pages\" recursive="true"/>
 		<cluster name="components" location=".\src\components\" recursive="true"/>
 	</target>
 	<target name="simple_showcase_tests" extends="simple_showcase">
-		<root class="APPLICATION" feature="make"/>
+		<root class="SSC_TEST_APP" feature="make"/>
 		<library name="testing" location="$ISE_LIBRARY\library\testing\testing.ecf"/>
 		<library name="testing_ext" location="$TESTING_EXT\testing_ext.ecf"/>
 		<cluster name="tests" location=".\tests\" recursive="true"/>

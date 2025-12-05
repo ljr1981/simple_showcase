@@ -14,3 +14,7 @@ ssc_server.log
 
 # Sensitive config (use environment variables instead)
 config.production.json
+
+# Local deployment notes (contains IPs, credentials info)
+*.local.txt
+DEPLOYMENT_NOTES.local.txt

@@ -1,0 +1,13 @@
+{
+	"mode": "production",
+	"port": 80,
+	"base_url": "http://141.148.86.105",
+	"contact_email": "rix.larry@gmail.com",
+	"smtp_endpoints": [
+		{"host": "smtp.gmail.com", "port": 465, "protocol": "smtps"},
+		{"host": "smtp.gmail.com", "port": 587, "protocol": "smtp", "ssl_reqd": true}
+	],
+	"db_path": "showcase.db",
+	"log_level": "info",
+	"verbose_logging": false
+}

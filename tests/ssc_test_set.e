@@ -48,7 +48,7 @@ feature -- Test routines
 			l_html := l_section.to_html
 			assert ("has_uplevel", l_html.has_substring ("Uplevel 2024"))
 			assert ("has_veracode", l_html.has_substring ("Veracode 2024"))
-			assert ("has_stats", l_html.has_substring ("41%"))
+			assert ("has_stats", l_html.has_substring ("41%%"))
 		end
 
 	test_unlock_section_has_code_example
