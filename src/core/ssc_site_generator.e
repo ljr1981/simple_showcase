@@ -38,6 +38,7 @@ feature {NONE} -- Initialization
 			print ("Base URL set to: " + base_url + "%N%N")
 
 			create_output_directories
+			update_service_worker_version
 			generate_all_pages
 
 			print ("%N========================================%N")
@@ -237,6 +238,54 @@ feature {NONE} -- File Operations
 			create l_file.make_open_write (a_path)
 			l_file.put_string (a_content)
 			l_file.close
+		end
+
+	update_service_worker_version
+			-- Update service worker cache version to bust old caches
+		local
+			l_file: PLAIN_TEXT_FILE
+			l_content: STRING
+			l_date: DATE_TIME
+			l_version: STRING
+			l_old_version_start, l_old_version_end: INTEGER
+		do
+			print ("Updating service worker version...%N")
+
+			-- Generate version from current timestamp (YYYYMMDDHHMM)
+			create l_date.make_now
+			l_version := l_date.year.out
+			if l_date.month < 10 then l_version.append ("0") end
+			l_version.append (l_date.month.out)
+			if l_date.day < 10 then l_version.append ("0") end
+			l_version.append (l_date.day.out)
+			if l_date.hour < 10 then l_version.append ("0") end
+			l_version.append (l_date.hour.out)
+			if l_date.minute < 10 then l_version.append ("0") end
+			l_version.append (l_date.minute.out)
+
+			-- Read existing sw.js
+			create l_file.make_open_read ("docs/sw.js")
+			create l_content.make (l_file.count)
+			l_file.read_stream (l_file.count)
+			l_content.append (l_file.last_string)
+			l_file.close
+
+			-- Find and replace version
+			l_old_version_start := l_content.substring_index ("const CACHE_VERSION = '", 1)
+			if l_old_version_start > 0 then
+				l_old_version_start := l_old_version_start + 23 -- length of "const CACHE_VERSION = '"
+				l_old_version_end := l_content.index_of ('%'', l_old_version_start)
+				if l_old_version_end > l_old_version_start then
+					l_content.replace_substring (l_version, l_old_version_start, l_old_version_end - 1)
+				end
+			end
+
+			-- Write updated sw.js
+			create l_file.make_open_write ("docs/sw.js")
+			l_file.put_string (l_content)
+			l_file.close
+
+			print ("  [OK] Service worker version: " + l_version + "%N")
 		end
 
 feature {NONE} -- Constants

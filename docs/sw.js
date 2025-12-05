@@ -1,5 +1,7 @@
 // Simple Showcase Service Worker
-const CACHE_NAME = 'ssc-v1';
+// Version updated automatically by site generator
+const CACHE_VERSION = '202512050721';
+const CACHE_NAME = 'ssc-v' + CACHE_VERSION;
 const PAGES = [
   '/simple_showcase/',
   '/simple_showcase/index.html',
