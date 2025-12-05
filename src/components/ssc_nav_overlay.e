@@ -74,13 +74,15 @@ feature -- Generation
 			Result.append ("    <span class=%"text-lg%">&#8595;</span>%N")
 			Result.append ("  </button>%N")
 
-			-- Section indicator dots (clickable)
-			Result.append ("  <div class=%"flex flex-col gap-1.5 mt-2%">%N")
+			-- Section indicator dots (clickable with larger hit area)
+			Result.append ("  <div class=%"flex flex-col items-center mt-2%">%N")
 			across 0 |..| (section_ids.count - 1) as idx loop
 				Result.append ("    <button @click=%"goToSection(" + idx.item.out + ")%" ")
-				Result.append ("class=%"w-2 h-2 rounded-full transition-all cursor-pointer hover:scale-150%" ")
-				Result.append (":class=%"currentSection === " + idx.item.out + " ? 'bg-white scale-125' : 'bg-white/50'%" ")
-				Result.append ("title=%"" + section_ids[idx.item + 1] + "%"></button>%N")
+				Result.append ("class=%"p-2 group cursor-pointer%" ")
+				Result.append ("title=%"" + section_ids[idx.item + 1] + "%">")
+				Result.append ("<span class=%"block w-3 h-3 rounded-full transition-all group-hover:scale-125%" ")
+				Result.append (":class=%"currentSection === " + idx.item.out + " ? 'bg-white scale-110' : 'bg-white/50'%"></span>")
+				Result.append ("</button>%N")
 			end
 			Result.append ("  </div>%N")
 
