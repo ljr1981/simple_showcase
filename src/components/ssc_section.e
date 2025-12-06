@@ -36,12 +36,20 @@ feature -- Access
 			valid_hex: Result.starts_with ("#") and Result.count = 7
 		end
 
-feature -- Factory
+feature -- API Facade
+
+	api: APP_API
+			-- Unified API facade for all library access
+		once
+			create Result.make
+		ensure
+			result_exists: Result /= Void
+		end
 
 	alpine: ALPINE_FACTORY
-			-- Factory for creating Alpine.js elements
-		once
-			create Result
+			-- Factory for creating Alpine.js elements (via APP_API)
+		do
+			Result := api.alpine
 		ensure
 			result_exists: Result /= Void
 		end
