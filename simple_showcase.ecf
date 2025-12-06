@@ -14,6 +14,9 @@
 		</capability>
 		<library name="base" location="$ISE_LIBRARY\library\base\base.ecf"/>
 		<library name="time" location="$ISE_LIBRARY\library\time\time.ecf"/>
+		<!-- Use simple_app_api as the unified API facade -->
+		<library name="simple_app_api" location="$SIMPLE_APP_API\simple_app_api.ecf"/>
+		<!-- Libraries whose types are directly referenced by simple_showcase -->
 		<library name="simple_htmx" location="$SIMPLE_HTMX\simple_htmx.ecf"/>
 		<library name="simple_alpine" location="$SIMPLE_ALPINE\simple_alpine.ecf"/>
 		<library name="simple_web" location="$SIMPLE_WEB\simple_web.ecf"/>
