@@ -68,9 +68,10 @@ feature {NONE} -- Initialization
 			print ("Mode: " + config.mode + "%N")
 			print ("Open browser to: " + config.base_url + "%N%N")
 
-			-- Analytics middleware (must be first to capture accurate timing)
-			server.use_middleware (create {SSC_ANALYTICS_MIDDLEWARE}.make (database))
-			log_info ("server", "Analytics middleware enabled")
+			-- Analytics middleware (DISABLED - threading issue in workbench mode)
+			-- TODO: Fix SQLite thread-safety before re-enabling
+			-- server.use_middleware (create {SSC_ANALYTICS_MIDDLEWARE}.make (database))
+			-- log_info ("server", "Analytics middleware enabled")
 
 			server.use_logging
 			log_info ("server", "Logging middleware enabled")
@@ -124,7 +125,8 @@ feature {NONE} -- Route Registration
 			server.on_get ("/old-way", agent handle_old_way)
 			server.on_get ("/ai-changes", agent handle_ai_changes)
 			server.on_get ("/contact", agent handle_contact)
-			log_debug ("routes", "  Registered 11 sub-page routes")
+			server.on_get ("/full-report", agent handle_full_report)
+			log_debug ("routes", "  Registered 12 sub-page routes")
 
 			-- Redirect .html extensions to clean URLs
 			server.on_get ("/index.html", agent handle_redirect_home)
@@ -139,7 +141,13 @@ feature {NONE} -- Route Registration
 			server.on_get ("/old-way.html", agent handle_redirect_old_way)
 			server.on_get ("/ai-changes.html", agent handle_redirect_ai_changes)
 			server.on_get ("/contact.html", agent handle_redirect_contact)
+			server.on_get ("/full-report.html", agent handle_redirect_full_report)
 			log_debug ("routes", "  Registered .html redirect routes")
+
+			-- Static files
+			server.on_get ("/logo-5.png", agent handle_logo)
+			server.on_get ("/favicon.ico", agent handle_favicon)
+			log_debug ("routes", "  Registered static file routes")
 
 			-- API routes
 			server.on_post ("/api/contact", agent handle_contact_submit)
@@ -213,10 +221,17 @@ feature {NONE} -- Route Handlers
 			-- Serve the competitive analysis page
 		local
 			l_page: SSC_ANALYSIS_PAGE
+			l_html: STRING
 		do
 			log_info ("handler", "Request for /analysis")
+			log_debug ("handler", "  Creating SSC_ANALYSIS_PAGE...")
 			create l_page.make
-			res.send_html (l_page.to_html)
+			log_debug ("handler", "  Calling to_html...")
+			l_html := l_page.to_html
+			log_debug ("handler", "  Generated " + l_html.count.out + " bytes")
+			res.send_html (l_html)
+		ensure
+			-- Contract: handler completed (if we get here, it worked)
 		end
 
 	handle_business_case (req: SIMPLE_WEB_SERVER_REQUEST; res: SIMPLE_WEB_SERVER_RESPONSE)
@@ -277,6 +292,61 @@ feature {NONE} -- Route Handlers
 			log_info ("handler", "Request for /contact")
 			create l_page.make
 			res.send_html (l_page.to_html)
+		end
+
+	handle_full_report (req: SIMPLE_WEB_SERVER_REQUEST; res: SIMPLE_WEB_SERVER_RESPONSE)
+			-- Serve the full competitive analysis report page
+		local
+			l_page: SSC_FULL_REPORT_PAGE
+		do
+			log_info ("handler", "Request for /full-report")
+			create l_page.make
+			res.send_html (l_page.to_html)
+		end
+
+feature {NONE} -- Static File Handlers
+
+	handle_logo (req: SIMPLE_WEB_SERVER_REQUEST; res: SIMPLE_WEB_SERVER_RESPONSE)
+			-- Serve the logo-5.png file
+		do
+			log_info ("static", "Request for /logo-5.png")
+			serve_png_file ("logo-5.png", res)
+		end
+
+	handle_favicon (req: SIMPLE_WEB_SERVER_REQUEST; res: SIMPLE_WEB_SERVER_RESPONSE)
+			-- Serve favicon (using logo-5.png as PNG favicon)
+		do
+			log_info ("static", "Request for /favicon.ico")
+			serve_png_file ("logo-5.png", res)
+		end
+
+	serve_png_file (a_filename: STRING; res: SIMPLE_WEB_SERVER_RESPONSE)
+			-- Serve a PNG file from deploy folder or docs folder
+		local
+			l_file: RAW_FILE
+			l_content: STRING
+			l_paths: ARRAY [STRING]
+			l_found: BOOLEAN
+		do
+			-- Try multiple paths: deploy folder (production), docs folder (dev), current dir
+			l_paths := <<"deploy/" + a_filename, a_filename, "docs/" + a_filename>>
+			across l_paths as l_path until l_found loop
+				create l_file.make_with_name (l_path)
+				if l_file.exists and then l_file.is_readable then
+					l_file.open_read
+					create l_content.make (l_file.count)
+					l_file.read_stream (l_file.count)
+					l_content := l_file.last_string
+					l_file.close
+					res.send_binary (l_content, "image/png")
+					l_found := True
+					log_debug ("static", "Served " + a_filename + " from " + l_path)
+				end
+			end
+			if not l_found then
+				res.send_not_found ("File not found: " + a_filename)
+				log_info ("static", "File not found: " + a_filename)
+			end
 		end
 
 feature {NONE} -- Redirect Handlers
@@ -363,6 +433,13 @@ feature {NONE} -- Redirect Handlers
 		do
 			log_debug ("redirect", "/contact.html -> /contact")
 			res.send_redirect ("/contact")
+		end
+
+	handle_redirect_full_report (req: SIMPLE_WEB_SERVER_REQUEST; res: SIMPLE_WEB_SERVER_RESPONSE)
+			-- Redirect to full-report
+		do
+			log_debug ("redirect", "/full-report.html -> /full-report")
+			res.send_redirect ("/full-report")
 		end
 
 feature {NONE} -- API Handlers

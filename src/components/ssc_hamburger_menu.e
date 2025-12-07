@@ -39,21 +39,21 @@ feature -- Status
 
 feature -- Access
 
-	page_count: INTEGER = 12
+	page_count: INTEGER = 13
 			-- Number of navigation pages
 
 	page_titles: ARRAY [STRING]
 			-- Page titles
 		once
 			Result := <<"Home", "Get Started", "Portfolio", "Design by Contract", "Workflow",
-				"Analysis", "Business Case", "Why Eiffel", "Probable to Provable", "The Old Way", "AI Changes", "Contact">>
+				"Analysis", "Business Case", "Why Eiffel", "Probable to Provable", "The Old Way", "AI Changes", "Contact", "Competitive Analysis">>
 		end
 
 	page_urls: ARRAY [STRING]
 			-- Page URLs (relative for base tag compatibility)
 		once
 			Result := <<".", "get-started", "portfolio", "design-by-contract", "workflow",
-				"analysis", "business-case", "why-eiffel", "probable-to-provable", "old-way", "ai-changes", "contact">>
+				"analysis", "business-case", "why-eiffel", "probable-to-provable", "old-way", "ai-changes", "contact", "full-report">>
 		end
 
 	page_descriptions: ARRAY [STRING]
@@ -62,7 +62,7 @@ feature -- Access
 			Result := <<"Back to landing page", "Start building with Eiffel + AI", "See the project evidence",
 				"How DBC works", "The human-AI collaboration", "Competitive analysis", "ROI and risk analysis",
 				"Language choice explained", "The core framework", "Traditional approach costs", "What AI actually changes",
-				"Get in touch">>
+				"Get in touch", "Full technology assessment">>
 		end
 
 feature -- Generation

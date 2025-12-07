@@ -184,7 +184,7 @@ feature {NONE} -- Content Helpers
 			create Result.make (800)
 			Result.append ("<div class=%"bg-emerald-900/20 border border-emerald-500/30 rounded-lg p-6 mb-8%">%N")
 			Result.append ("  <h4 class=%"font-medium text-emerald-400 mb-4%">Christmas Sprint Highlight</h4>%N")
-			Result.append ("  <p class=%"text-sm opacity-80 mb-4%">14 libraries built in 2 days (planned: 26 days)</p>%N")
+			Result.append ("  <p class=%"text-sm opacity-80 mb-4%">11 libraries built in 3 days (traditional: 5-11 months)</p>%N")
 			Result.append ("  <div class=%"grid grid-cols-3 gap-4 text-center%">%N")
 			Result.append ("    <div><div class=%"text-xl font-bold%">13x</div><div class=%"text-xs opacity-60%">faster</div></div>%N")
 			Result.append ("    <div><div class=%"text-xl font-bold%">~1.5h</div><div class=%"text-xs opacity-60%">per library</div></div>%N")

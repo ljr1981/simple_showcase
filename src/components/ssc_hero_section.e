@@ -74,9 +74,9 @@ feature {NONE} -- Content
 
 			l_stats := alpine.p
 			l_stats.class_ (font_body + " " + font_stats)
-				.raw_html ("<span class=%"text-2xl%">12</span> libraries. ")
-				.raw_html ("<span class=%"text-2xl%">900+</span> tests. ")
-				.raw_html ("<span class=%"text-2xl%">10</span> days. ")
+				.raw_html ("<span class=%"text-2xl%">25</span> libraries. ")
+				.raw_html ("<span class=%"text-2xl%">1,200+</span> tests. ")
+				.raw_html ("<span class=%"text-2xl%">13</span> days. ")
 				.raw_html ("<span class=%"text-2xl%">One</span> person.")
 				.do_nothing
 			l_subhead.raw_html (l_stats.to_html).do_nothing

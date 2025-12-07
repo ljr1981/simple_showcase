@@ -171,7 +171,7 @@ feature {NONE} -- Content Helpers
 			Result.append ("<div class=%"bg-emerald-900/20 border border-emerald-500/30 rounded-lg p-6 mb-8%">%N")
 			Result.append ("  <h3 class=%"text-xl font-medium text-emerald-400 mb-4%">The Christmas Sprint</h3>%N")
 			Result.append ("  <p class=%"mb-4 opacity-90%">December 5-6, 2025: <strong>14 libraries built in 2 days</strong>.</p>%N")
-			Result.append ("  <p class=%"mb-4 opacity-80 text-sm%">Originally planned for 26 days (Dec 5-31). Completed 13x faster than estimated.</p>%N")
+			Result.append ("  <p class=%"mb-4 opacity-80 text-sm%">11 libraries, ~12,850 lines in 3 days. Traditional estimate: 5-11 months. Multiplier: 40-85x.</p>%N")
 			Result.append ("  <div class=%"grid grid-cols-2 md:grid-cols-4 gap-3 mt-4%">%N")
 			Result.append ("    <div class=%"text-center%"><div class=%"text-2xl font-bold%">14</div><div class=%"text-xs opacity-60%">libraries</div></div>%N")
 			Result.append ("    <div class=%"text-center%"><div class=%"text-2xl font-bold%">2</div><div class=%"text-xs opacity-60%">days</div></div>%N")

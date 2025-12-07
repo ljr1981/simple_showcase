@@ -47,12 +47,18 @@ feature -- Generation
 			-- Generate complete HTML page
 		do
 			create Result.make (50000)
+			check valid_doctype: not html_doctype.is_empty end
 			Result.append (html_doctype)
+			check valid_head: not html_head.is_empty end
 			Result.append (html_head)
+			check valid_body: not html_body.is_empty end
 			Result.append (html_body)
 		ensure
 			not_empty: not Result.is_empty
 			is_html: Result.has_substring ("<!DOCTYPE html>")
+			has_head: Result.has_substring ("<head>")
+			has_body: Result.has_substring ("<body")
+			has_title: Result.has_substring (page_title)
 		end
 
 feature {NONE} -- HTML Structure
@@ -70,10 +76,12 @@ feature {NONE} -- HTML Structure
 			Result.append ("  " + base_tag + "%N")
 			Result.append ("  <title>" + page_title + " | Simple Showcase</title>%N")
 			Result.append ("  <meta name=%"description%" content=%"" + page_subtitle + "%">%N")
+			-- Favicon
+			Result.append ("  <link rel=%"icon%" type=%"image/png%" href=%"" + base_url + "/logo-5.png%">%N")
 			-- PWA support
 			Result.append ("  <link rel=%"manifest%" href=%"" + base_url + "/manifest.json%">%N")
 			Result.append ("  <meta name=%"theme-color%" content=%"" + color_primary_dark + "%">%N")
-			Result.append ("  <link rel=%"apple-touch-icon%" href=%"" + base_url + "/icon-192.png%">%N")
+			Result.append ("  <link rel=%"apple-touch-icon%" href=%"" + base_url + "/logo-5.png%">%N")
 			Result.append ("  <script src=%"" + tailwind_cdn + "%"></script>%N")
 			Result.append ("  <script defer src=%"" + alpine_cdn + "%"></script>%N")
 			Result.append (page_styles)
