@@ -7,6 +7,10 @@ note
 		- User agent, referrer
 		- Response code, response time
 
+		Uses per-request database connections to avoid cross-thread
+		SQLite access issues (worker threads from pool cannot safely
+		use connections opened on main thread).
+
 		Must be registered before other middleware to capture accurate timing.
 	]"
 	author: "Larry Rix with Claude (Anthropic)"
@@ -29,20 +33,21 @@ create
 
 feature {NONE} -- Initialization
 
-	make (a_database: SSC_DATABASE)
-			-- Create middleware with database reference
+	make (a_db_path: STRING)
+			-- Create middleware with database path.
+			-- Connection created fresh per-request to avoid threading issues.
 		require
-			database_attached: a_database /= Void
+			path_not_empty: not a_db_path.is_empty
 		do
-			database := a_database
+			db_path := a_db_path
 		ensure
-			database_set: database = a_database
+			db_path_set: db_path = a_db_path
 		end
 
 feature -- Access
 
-	database: SSC_DATABASE
-			-- Database for logging analytics
+	db_path: STRING
+			-- Path to SQLite database file
 
 	name: STRING = "SSC Analytics"
 			-- Middleware name
@@ -50,12 +55,13 @@ feature -- Access
 feature -- Processing
 
 	process (a_request: SIMPLE_WEB_SERVER_REQUEST; a_response: SIMPLE_WEB_SERVER_RESPONSE; a_next: PROCEDURE)
-			-- Log request to database
+			-- Log request to database using per-request connection.
 		local
 			l_start_time: DATE_TIME
 			l_end_time: DATE_TIME
 			l_elapsed_ms: INTEGER
 			l_path, l_method, l_ip, l_user_agent, l_referrer: STRING
+			l_db: SIMPLE_SQL_DATABASE
 		do
 			-- Capture start time
 			create l_start_time.make_now
@@ -74,16 +80,21 @@ feature -- Processing
 			create l_end_time.make_now
 			l_elapsed_ms := milliseconds_between (l_start_time, l_end_time)
 
-			-- Log to database (non-blocking, fire-and-forget)
-			database.log_request (
-				l_path,
-				l_method,
-				l_ip,
-				truncate (l_user_agent, 500),
-				truncate (l_referrer, 500),
-				a_response.status_code,
-				l_elapsed_ms
-			)
+			-- Log to database with fresh per-request connection
+			-- (avoids cross-thread SQLite issues with worker pool)
+			create l_db.make (db_path)
+			if l_db.is_open then
+				l_db.execute_with_args (
+					"INSERT INTO analytics (path, method, ip_address, user_agent, referrer, response_code, response_time_ms) VALUES (?, ?, ?, ?, ?, ?, ?)",
+					<<l_path, l_method, l_ip, truncate (l_user_agent, 500), truncate (l_referrer, 500), a_response.status_code, l_elapsed_ms>>
+				)
+				if l_db.has_error and then attached l_db.last_error_message as l_err then
+					log_info ("analytics", "Failed to log: " + l_err.to_string_8)
+				end
+				l_db.close
+			else
+				log_info ("analytics", "Could not open database: " + db_path)
+			end
 		end
 
 feature {NONE} -- Implementation
@@ -165,6 +176,6 @@ feature {NONE} -- Implementation
 		end
 
 invariant
-	database_attached: database /= Void
+	db_path_not_empty: not db_path.is_empty
 
 end

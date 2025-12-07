@@ -68,10 +68,10 @@ feature {NONE} -- Initialization
 			print ("Mode: " + config.mode + "%N")
 			print ("Open browser to: " + config.base_url + "%N%N")
 
-			-- Analytics middleware (DISABLED - threading issue in workbench mode)
-			-- TODO: Fix SQLite thread-safety before re-enabling
-			-- server.use_middleware (create {SSC_ANALYTICS_MIDDLEWARE}.make (database))
-			-- log_info ("server", "Analytics middleware enabled")
+			-- NOTE: Analytics middleware uses per-request DB connections to avoid
+			-- cross-thread SQLite issues (worker pool threads vs main thread).
+			server.use_middleware (create {SSC_ANALYTICS_MIDDLEWARE}.make (config.db_path))
+			log_info ("server", "Analytics middleware enabled")
 
 			server.use_logging
 			log_info ("server", "Logging middleware enabled")
