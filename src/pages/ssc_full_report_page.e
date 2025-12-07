@@ -107,7 +107,7 @@ feature -- Content
 
 			Result.append ("<h3 class=%"text-lg font-medium mt-6 mb-3%">Where Eiffel Faces Challenges</h3>%N")
 			Result.append (bullet_list (<<
-				"<strong>IDE Options:</strong> EiffelStudio is the primary IDE; no full-featured VS Code or JetBrains support",
+				"<strong>IDE Options:</strong> EiffelStudio is the primary IDE; no full-featured VS Code or JetBrains support " + info_tooltip_vscode,
 				"<strong>Community Resources:</strong> Fewer Stack Overflow answers, tutorials, and blog posts compared to mainstream languages",
 				"<strong>Commercial Perception:</strong> May require justification in enterprise contexts unfamiliar with the language"
 			>>))
@@ -130,10 +130,7 @@ feature -- Content
 
 			-- Architecture
 			Result.append (section_heading ("Resulting Architecture"))
-			Result.append ("<div class=%"flex items-center gap-3 mb-6%">%N")
-			Result.append ("<p class=%"opacity-90%">The 25 libraries organize into a layered architecture:</p>%N")
-			Result.append ("<img src=%"" + base_url + "/logo-5.png%" alt=%"Simple_* Logo%" class=%"w-24 h-24 rounded%">%N")
-			Result.append ("</div>%N")
+			Result.append (paragraph ("The 25 libraries organize into a layered architecture:"))
 			Result.append (architecture_diagram)
 			Result.append (divider)
 
@@ -277,22 +274,22 @@ feature {NONE} -- Content Helpers
 			-- AI effectiveness by language
 		do
 			create Result.make (1200)
-			Result.append ("<div class=%"overflow-x-auto mb-6 rounded-lg border border-white/10%">%N")
+			Result.append ("<div class=%"mb-6 rounded-lg border border-white/10%">%N")
 			Result.append ("<table class=%"w-full text-sm%">%N")
 			Result.append ("<thead><tr class=%"bg-gradient-to-r from-cyan-600/20 to-blue-600/20%">%N")
-			Result.append ("<th class=%"text-left py-3 px-4 font-semibold%">Language</th>%N")
-			Result.append ("<th class=%"text-left py-3 px-4 font-semibold%">Training Data</th>%N")
-			Result.append ("<th class=%"text-left py-3 px-4 font-semibold%">Baseline Accuracy " + info_tooltip_baseline_accuracy + "</th>%N")
-			Result.append ("<th class=%"text-left py-3 px-4 font-semibold text-emerald-300%">With Docs ★</th>%N")
+			Result.append ("<th class=%"text-left py-2 px-3 font-semibold%">Language</th>%N")
+			Result.append ("<th class=%"text-left py-2 px-3 font-semibold%">Data</th>%N")
+			Result.append ("<th class=%"text-left py-2 px-3 font-semibold%">Baseline " + info_tooltip_baseline_accuracy + "</th>%N")
+			Result.append ("<th class=%"text-left py-2 px-3 font-semibold text-emerald-300%">+Docs</th>%N")
 			Result.append ("</tr></thead>%N")
 			Result.append ("<tbody>%N")
-			Result.append ("<tr class=%"border-b border-white/5 hover:bg-white/5 transition-colors%"><td class=%"py-3 px-4%">Python</td><td class=%"py-3 px-4 text-blue-300%">Massive</td><td class=%"py-3 px-4%">95%%+</td><td class=%"py-3 px-4%">97%%+</td></tr>%N")
-			Result.append ("<tr class=%"border-b border-white/5 hover:bg-white/5 transition-colors%"><td class=%"py-3 px-4%">JavaScript</td><td class=%"py-3 px-4 text-blue-300%">Massive</td><td class=%"py-3 px-4%">95%%+</td><td class=%"py-3 px-4%">97%%+</td></tr>%N")
-			Result.append ("<tr class=%"border-b border-white/5 hover:bg-white/5 transition-colors%"><td class=%"py-3 px-4%">Kotlin</td><td class=%"py-3 px-4 text-cyan-300%">Large</td><td class=%"py-3 px-4%">90%%+</td><td class=%"py-3 px-4%">95%%+</td></tr>%N")
-			Result.append ("<tr class=%"border-b border-white/5 hover:bg-white/5 transition-colors%"><td class=%"py-3 px-4%">Rust</td><td class=%"py-3 px-4 text-amber-300%">Medium-Large</td><td class=%"py-3 px-4%">85%%+</td><td class=%"py-3 px-4%">92%%+</td></tr>%N")
-			Result.append ("<tr class=%"bg-gradient-to-r from-emerald-600/20 to-emerald-500/10%"><td class=%"py-3 px-4 font-semibold text-emerald-300%">Eiffel</td><td class=%"py-3 px-4 text-red-300%">Small</td><td class=%"py-3 px-4 text-red-300%">60%%+</td><td class=%"py-3 px-4 text-emerald-300 font-bold%">95%%+ " + info_tooltip_eiffel_accuracy_jump + " ←</td></tr>%N")
+			Result.append ("<tr class=%"border-b border-white/5 hover:bg-white/5%"><td class=%"py-2 px-3%">Python</td><td class=%"py-2 px-3 text-blue-300%">Massive</td><td class=%"py-2 px-3%">95%%+</td><td class=%"py-2 px-3%">97%%+</td></tr>%N")
+			Result.append ("<tr class=%"border-b border-white/5 hover:bg-white/5%"><td class=%"py-2 px-3%">JavaScript</td><td class=%"py-2 px-3 text-blue-300%">Massive</td><td class=%"py-2 px-3%">95%%+</td><td class=%"py-2 px-3%">97%%+</td></tr>%N")
+			Result.append ("<tr class=%"border-b border-white/5 hover:bg-white/5%"><td class=%"py-2 px-3%">Kotlin</td><td class=%"py-2 px-3 text-cyan-300%">Large</td><td class=%"py-2 px-3%">90%%+</td><td class=%"py-2 px-3%">95%%+</td></tr>%N")
+			Result.append ("<tr class=%"border-b border-white/5 hover:bg-white/5%"><td class=%"py-2 px-3%">Rust</td><td class=%"py-2 px-3 text-amber-300%">Med-Lg</td><td class=%"py-2 px-3%">85%%+</td><td class=%"py-2 px-3%">92%%+</td></tr>%N")
+			Result.append ("<tr class=%"bg-gradient-to-r from-emerald-600/20 to-emerald-500/10%"><td class=%"py-2 px-3 font-semibold text-emerald-300%">Eiffel</td><td class=%"py-2 px-3 text-red-300%">Small</td><td class=%"py-2 px-3 text-red-300%">60%%+</td><td class=%"py-2 px-3 text-emerald-300 font-bold%">95%%+ " + info_tooltip_eiffel_accuracy_jump + "</td></tr>%N")
 			Result.append ("</tbody></table>%N")
-			Result.append ("<p class=%"text-xs opacity-60 mt-3 px-4%">★ The key insight: documentation closes the gap. Accuracy estimates based on observed error rates.</p>%N")
+			Result.append ("<p class=%"text-xs opacity-60 mt-3 px-3%">★ Documentation closes the gap. Estimates based on observed error rates.</p>%N")
 			Result.append ("</div>%N")
 		end
 
@@ -432,6 +429,11 @@ feature {NONE} -- Content Helpers
 		do
 			Result := info_tooltip ("EiffelStudio features that remain essential: Interactive Debugger with contract state inspection, BON diagrams, class/feature browsers, AutoTest integration, metrics tools, and documentation generation. These leverage Eiffel's design in ways VS Code extensions cannot replicate.")
 		end
+	info_tooltip_vscode: STRING
+			-- Info tooltip for VS Code integration status
+		do
+			Result := info_tooltip ("VS Code + Eiffel integration is actively being developed by an Eiffel Software engineer in Europe. This will provide a familiar editing experience while EiffelStudio remains available for advanced debugging and analysis.")
+		end
 
 	info_tooltip_ai_bugs: STRING
 			-- Info tooltip for AI-introduced bugs
@@ -447,7 +449,13 @@ feature {NONE} -- Content Helpers
 	info_tooltip_eiffel_accuracy_jump: STRING
 			-- Info tooltip for Eiffel's 60% to 95% accuracy jump
 		do
-			Result := info_tooltip ("Why such a dramatic jump? Documentation gives the AI: (1) Correct syntax patterns and idioms, (2) Design by Contract conventions, (3) Library-specific APIs and signatures, (4) Working examples to learn from. The AI stops guessing and starts following verified patterns. We built extensive docs specifically to enable this—they're as much for Claude as for human developers.")
+			Result := info_tooltip ("Docs provide syntax patterns, DBC conventions, and working examples. The AI stops guessing and follows verified patterns.")
+		end
+
+	info_tooltip_upcoming_libs: STRING
+			-- Info tooltip for upcoming FOUNDATION_API libraries
+		do
+			Result := info_tooltip ("Roadmap: simple_xml (wraps XM_* classes), simple_datetime (wraps DATE/TIME), simple_file (wraps FILE/PATH/DIRECTORY), simple_regex (wraps Gobo PCRE). These create clean facades over powerful but verbose EiffelStudio libraries.")
 		end
 
 	info_tooltip (a_content: STRING): STRING
@@ -522,6 +530,7 @@ feature {NONE} -- Content Helpers
 			Result.append ("    </div>%N")
 			Result.append ("  </div>%N")
 			Result.append ("  <p class=%"text-xs opacity-50 text-center mt-4%">25 libraries organized in layered dependency architecture</p>%N")
+			Result.append ("  <p class=%"text-xs opacity-40 text-center mt-2%">Coming soon to FOUNDATION_API: simple_xml, simple_datetime, simple_file, simple_regex " + info_tooltip_upcoming_libs + "</p>%N")
 			Result.append ("</div>%N")
 		end
 
