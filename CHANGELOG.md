@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Testing config updates, AutoTest fixes, .gitignore cleanup
+- Add SCOOP concurrency capability
+- Migrate to simple_testing library
+- Fix SQLite cross-thread access bug in analytics middleware
+- Add full-report page and regenerate static site
+- Add Competitive Analysis page with accurate Christmas Sprint data
+- Add comprehensive tests for Christmas Sprint content
+- Update showcase for Christmas Sprint completion (v2.0)
+- Refactor to use APP_API facade for library access
+- Add *.rc to gitignore (build artifacts)
+
 ## [1.0.0] - 2025-12-08
 
 ### Added
