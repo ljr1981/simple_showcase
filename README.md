@@ -296,15 +296,15 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## Resources
 
 ### Project Links
-- **Repository**: https://github.com/ljr1981/simple_showcase
-- **Issues**: https://github.com/ljr1981/simple_showcase/issues
+- **Repository**: https://github.com/simple-eiffel/simple_showcase
+- **Issues**: https://github.com/simple-eiffel/simple_showcase/issues
 
 ### Related Projects
-- [simple_json](https://github.com/ljr1981/simple_json) - JSON library
-- [simple_sql](https://github.com/ljr1981/simple_sql) - SQLite wrapper
-- [simple_web](https://github.com/ljr1981/simple_web) - HTTP client/server
-- [simple_htmx](https://github.com/ljr1981/simple_htmx) - HTML builder
-- [simple_alpine](https://github.com/ljr1981/simple_alpine) - Alpine.js integration
+- [simple_json](https://github.com/simple-eiffel/simple_json) - JSON library
+- [simple_sql](https://github.com/simple-eiffel/simple_sql) - SQLite wrapper
+- [simple_web](https://github.com/simple-eiffel/simple_web) - HTTP client/server
+- [simple_htmx](https://github.com/simple-eiffel/simple_htmx) - HTML builder
+- [simple_alpine](https://github.com/simple-eiffel/simple_alpine) - Alpine.js integration
 
 ### Eiffel Resources
 - [Eiffel Software](https://www.eiffel.org/) - Official site
