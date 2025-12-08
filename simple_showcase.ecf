@@ -29,8 +29,7 @@
 	</target>
 	<target name="simple_showcase_tests" extends="simple_showcase">
 		<root class="SSC_TEST_APP" feature="make"/>
-		<library name="testing" location="$ISE_LIBRARY\library\testing\testing.ecf"/>
-		<library name="testing_ext" location="$TESTING_EXT\testing_ext.ecf"/>
+		<library name="simple_testing" location="$SIMPLE_TESTING\simple_testing.ecf"/>
 		<cluster name="tests" location=".\tests\" recursive="true"/>
 	</target>
 	<target name="run_server" extends="simple_showcase">
