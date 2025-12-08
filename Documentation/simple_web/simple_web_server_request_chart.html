@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Simple request wrapper for HTTP server requests. Provides clean API for accessing request data."/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2024-2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_server_request Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="simple_web_server_request_links.html">Relations</a>
+<a class="nav class" href="simple_web_server_request_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_server_request"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../simple_web/simple_web_server_request_chart.html">SIMPLE_WEB_SERVER_REQUEST</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">src</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> 
+		<span class="estring">&quot;Simple request wrapper for HTTP server requests.</span>
+		<span class="estring">Provides clean API for accessing request data.&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_make">make</a><span class="esymbol">,</span> <a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_make_mock">make_mock</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/any_chart.html">ANY</a>
+
+<span class="ekeyword">Queries</span>
+	<span title="`body' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_body">body</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`body_as_json' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_body_as_json">body_as_json</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../simple_json/simple_json_object_chart.html">SIMPLE_JSON_OBJECT</a></span>
+	<span title="`cached_body' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_cached_body">cached_body</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`content_length' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_content_length">content_length</a><span class="esymbol">:</span> <a class="eclass" href="../base/natural_64_chart.html">NATURAL_64</a></span>
+	<span title="`content_type' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_content_type">content_type</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`form_data' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_form_data">form_data</a><span class="esymbol">:</span> <a class="eclass" href="../base/hash_table_chart.html">HASH_TABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_32_chart.html">STRING_32</a><span class="esymbol">,</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a><span class="esymbol">]</span></span>
+	<span title="`form_parameter' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_form_parameter">form_parameter</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`has_path_parameter' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_has_path_parameter">has_path_parameter</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`has_query_parameter' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_has_query_parameter">has_query_parameter</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`header' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_header">header</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`is_delete' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_is_delete">is_delete</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_get' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_is_get">is_get</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_mock' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_is_mock">is_mock</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_patch' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_is_patch">is_patch</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_post' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_is_post">is_post</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_put' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_is_put">is_put</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`method' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_method">method</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`mock_body' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_mock_body">mock_body</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`mock_headers' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_mock_headers">mock_headers</a><span class="esymbol">:</span> <a class="eclass" href="../base/hash_table_chart.html">HASH_TABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">,</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">]</span></span>
+	<span title="`mock_method' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_mock_method">mock_method</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`mock_path' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_mock_path">mock_path</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`path' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_path">path</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`path_parameter' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_path_parameter">path_parameter</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`path_parameters' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_path_parameters">path_parameters</a><span class="esymbol">:</span> <a class="eclass" href="../base/hash_table_chart.html">HASH_TABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_32_chart.html">STRING_32</a><span class="esymbol">,</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a><span class="esymbol">]</span></span>
+	<span title="`query_parameter' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_query_parameter">query_parameter</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`safe_path_parameter' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_safe_path_parameter">safe_path_parameter</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`safe_query_parameter' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_safe_query_parameter">safe_query_parameter</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_max_length</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`wsf_request' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_wsf_request">wsf_request</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">WSF_REQUEST</span></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`set_mock_body' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_set_mock_body">set_mock_body</a> <span class="esymbol">(</span><span class="elocal">a_body</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`set_mock_header' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_request_short.html#f_set_mock_header">set_mock_header</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">,</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+
+<span class="ekeyword">Constraints</span>
+	<span class="etag">wsf request attached or mock</span>
+	<span class="etag">path parameters attached</span>
+	<span class="etag">mock headers attached</span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="simple_web_server_request_links.html">Relations</a>
+<a class="nav class" href="simple_web_server_request_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_server_request"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Sequences of 8-bit characters, accessible through integer indices in a contiguous range. Read-only interface."/>
+<meta name="library" content="Free implementation of ELKS library"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2020, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>readable_string_8 Relations</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="readable_string_8_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="readable_string_8_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="readable_string_8"></span>
+</div></form><pre><span class="ekeyword">deferred</span> <span class="ekeyword">class</span>
+	<a class="eclass" href="../base/readable_string_8_links.html">READABLE_STRING_8</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/readable_indexable_links.html">READABLE_INDEXABLE</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/readable_string_general_links.html">READABLE_STRING_GENERAL</a><span class="echar">*</span>
+
+<span class="ekeyword">Descendants</span>
+	<a class="eclass" href="../base/immutable_string_8_links.html">IMMUTABLE_STRING_8</a>
+	<a class="eclass" href="../base/string_8_links.html">STRING_8</a>
+
+<span class="ekeyword">Clients</span>
+	<span class="neclass">ACCESS_TOKEN_EXTRACTOR</span><span class="echar">*</span>
+	<a class="eclass" href="../base/any_links.html">ANY</a>
+	<span class="neclass">API_BUILDER</span>
+	<span class="neclass">BASE32</span>
+	<span class="neclass">BASE64</span>
+	<span class="neclass">BASE64_ENCODER</span>
+	<span class="neclass">BASE_PROCESS_IMP</span>
+	<span class="neclass">BASE_REQUEST</span>
+	<span class="neclass">BCRYPT</span>
+	<span class="neclass">BYTE_ARRAY_CONVERTER</span>
+	<span class="neclass">BYTE_ARRAY_CONVERTER</span>
+	<span class="neclass">CMS_ACCESS_TOKEN_WEBAPI_AUTH_FILTER</span>
+	<span class="neclass">CMS_ADMIN_INSTALL_HANDLER</span>
+	<span class="neclass">CMS_API</span>
+	<span class="neclass">CMS_AUTHENTICATION_EMAIL_SERVICE_PARAMETERS</span>
+	<span class="neclass">CMS_AUTHENTICATION_MODULE</span>
+	<span class="neclass">CMS_AUTH_MODULE_I</span><span class="echar">*</span>
+	<span class="neclass">CMS_CACHE_BLOCK</span>
+	<span class="neclass">CMS_COMMON_API</span><span class="echar">*</span>
+	<span class="neclass">CMS_CONTENT_BLOCK</span>
+	<span class="neclass">CMS_CORE_MODULE</span>
+	<span class="neclass">CMS_CORE_STORAGE_SQL_I</span><span class="echar">*</span>
+	<span class="neclass">CMS_CUSTOM_RESPONSE_MESSAGE</span>
+	<span class="neclass">CMS_DATA_QUERY_PARAMETERS</span>
+	<span class="neclass">CMS_EDITOR</span><span class="echar">*</span>
+	<span class="neclass">CMS_EDITOR_CKEDITOR</span>
+	<span class="neclass">CMS_ENCODERS</span>
+	<span class="neclass">CMS_FILE_BLOCK</span>
+	<span class="neclass">CMS_FORMAT</span>
+	<span class="neclass">CMS_HOOK_CORE_MANAGER</span>
+	<span class="neclass">CMS_HTML_PAGE</span>
+	<span class="neclass">CMS_LINK</span><span class="echar">*</span>
+	<span class="neclass">CMS_LINK_COMPOSITE</span><span class="echar">*</span>
+	<span class="neclass">CMS_LOCAL_LINK</span>
+	<span class="neclass">CMS_LOGGER</span><span class="echar">*</span>
+	<span class="neclass">CMS_MAINTENANCE_FILTER</span>
+	<span class="neclass">CMS_MENU</span>
+	<span class="neclass">CMS_MENU_BLOCK</span>
+	<span class="neclass">CMS_OAUTH_20_API</span>
+	<span class="neclass">CMS_OAUTH_20_GENERIC_API</span>
+	<span class="neclass">CMS_OAUTH_20_MODULE</span>
+	<span class="neclass">CMS_OAUTH_20_STORAGE_SQL</span>
+	<span class="neclass">CMS_OAUTH_20_WORKFLOW</span>
+	<span class="neclass">CMS_PAGINATION_GENERATOR</span>
+	<span class="neclass">CMS_PARTIAL_CONTENT</span>
+	<span class="neclass">CMS_RESPONSE</span><span class="echar">*</span>
+	<span class="neclass">CMS_RESPONSE_API</span>
+	<span class="neclass">CMS_RESPONSE_I</span><span class="echar">*</span>
+	<span class="neclass">CMS_ROUTER</span>
+	<span class="neclass">CMS_SETUP</span><span class="echar">*</span>
+	<span class="neclass">CMS_SMARTY_TEMPLATE_BLOCK</span>
+	<span class="neclass">CMS_STORAGE_SQL_I</span><span class="echar">*</span>
+	<span class="neclass">CMS_STRING_EXPANDER</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/readable_string_general_links.html">READABLE_STRING_GENERAL</a><span class="esymbol">]</span>
+	<span class="neclass">CMS_THEME</span><span class="echar">*</span>
+	<span class="neclass">CMS_URL_UTILITIES</span><span class="echar">*</span>
+	<span class="neclass">CMS_USER</span>
+	<span class="neclass">CMS_USERS_WEBAPI_HANDLER</span>
+	<span class="neclass">CMS_USER_API</span>
+	<span class="neclass">CMS_USER_ROLE</span>
+	<span class="neclass">CMS_USER_STORAGE_SQL_I</span><span class="echar">*</span>
+	<a class="eclass" href="../time/code_validity_checker_links.html">CODE_VALIDITY_CHECKER</a>
+	<span class="neclass">COMPILER</span>
+	<a class="eclass" href="../base/console_links.html">CONSOLE</a>
+	<span class="neclass">CONTENT_FORMAT</span><span class="echar">*</span>
+	<span class="neclass">CSS_STYLE</span>
+	<span class="neclass">CURL_HTTP_CLIENT_REQUEST</span>
+	<span class="neclass">CURL_HTTP_CLIENT_REQUEST</span>
+	<span class="neclass">CURL_HTTP_CLIENT_SESSION</span>
+	<span class="neclass">CURL_HTTP_CLIENT_SESSION</span>
+	<a class="eclass" href="../time/date_time_code_links.html">DATE_TIME_CODE</a>
+	<a class="eclass" href="../time/date_time_code_string_links.html">DATE_TIME_CODE_STRING</a>
+	<a class="eclass" href="../time/date_time_parser_links.html">DATE_TIME_PARSER</a>
+	<span class="neclass">DIFF_TEXT</span>
+	<span class="neclass">DYNAMIC_API_BASE</span><span class="echar">*</span>
+	<span class="neclass">DYNAMIC_API_LOADER_I</span><span class="echar">*</span>
+	<span class="neclass">DYNAMIC_API_UNAVAILABLE_EXCEPTION</span>
+	<span class="neclass">DYNAMIC_SHARED_API</span><span class="echar">*</span>
+	<span class="neclass">EJSON</span>
+	<span class="neclass">EMAIL</span>
+	<a class="eclass" href="../base/encoding_links.html">ENCODING</a>
+	<span class="neclass">ENCODING_IMP</span>
+	<span class="neclass">EQA_FILE_SYSTEM</span>
+	<span class="neclass">EQA_SYSTEM_EXECUTION_PROCESS</span>
+	<span class="neclass">EQA_SYSTEM_OUTPUT_PROCESSOR</span><span class="echar">*</span>
+	<span class="neclass">EQA_TEST_INVOCATION_EXCEPTION</span>
+	<span class="neclass">EQA_TEST_OUTPUT_BUFFER</span>
+	<span class="neclass">ERROR</span><span class="echar">*</span>
+	<span class="neclass">FCGI_I</span><span class="echar">*</span>
+	<a class="eclass" href="../base/file_links.html">FILE</a><span class="echar">*</span>
+	<span class="neclass">FILE_HANDLE</span>
+	<a class="eclass" href="../time/find_separator_facility_links.html">FIND_SEPARATOR_FACILITY</a>
+	<span class="neclass">FITNESS_AND_QUALITY</span>
+	<span class="neclass">HELPER</span>
+	<a class="eclass" href="../base/hexadecimal_string_to_integer_converter_links.html">HEXADECIMAL_STRING_TO_INTEGER_CONVERTER</a>
+	<span class="neclass">HTML_CONTENT_FILTER</span>
+	<span class="neclass">HTML_ENCODER</span>
+	<span class="neclass">HTTPD_DEBUG_FACILITIES</span><span class="echar">*</span>
+	<span class="neclass">HTTP_ACCEPT_LANGUAGE</span>
+	<span class="neclass">HTTP_ACCEPT_LANGUAGE_UTILITIES</span>
+	<span class="neclass">HTTP_ACCEPT_MEDIA_TYPE_UTILITIES</span>
+	<span class="neclass">HTTP_ACCEPT_VARIANTS</span><span class="echar">*</span>
+	<span class="neclass">HTTP_ANY_ACCEPT</span>
+	<span class="neclass">HTTP_ANY_ACCEPT_HEADER_UTILITIES</span>
+	<span class="neclass">HTTP_AUTHORIZATION</span>
+	<span class="neclass">HTTP_CLIENT_CONSTANTS</span>
+	<span class="neclass">HTTP_CLIENT_CONSTANTS</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST</span><span class="echar">*</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST</span><span class="echar">*</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST_CONTEXT</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST_CONTEXT</span>
+	<span class="neclass">HTTP_CLIENT_RESPONSE</span>
+	<span class="neclass">HTTP_CLIENT_RESPONSE</span>
+	<span class="neclass">HTTP_CLIENT_SESSION</span><span class="echar">*</span>
+	<span class="neclass">HTTP_CLIENT_SESSION</span><span class="echar">*</span>
+	<span class="neclass">HTTP_COOKIE</span>
+	<span class="neclass">HTTP_FILE_EXTENSION_MIME_MAPPING</span>
+	<span class="neclass">HTTP_FORMAT_CONSTANTS</span>
+	<span class="neclass">HTTP_HEADER</span>
+	<span class="neclass">HTTP_HEADER_MODIFIER</span><span class="echar">*</span>
+	<span class="neclass">HTTP_HEADER_UTILITIES</span><span class="echar">*</span>
+	<span class="neclass">HTTP_MEDIA_TYPE</span>
+	<span class="neclass">HTTP_PARAMETER_TABLE</span>
+	<span class="neclass">HTTP_REQUEST_METHODS</span>
+	<span class="neclass">HTTP_STREAM_SOCKET</span>
+	<a class="eclass" href="../base/immutable_string_32_links.html">IMMUTABLE_STRING_32</a>
+	<a class="eclass" href="../base/immutable_string_8_links.html">IMMUTABLE_STRING_8</a>
+	<span class="neclass">INET_ADDRESS_FACTORY</span>
+	<span class="neclass">IRI</span>
+	<span class="neclass">ITP_INTERPRETER</span>
+	<span class="neclass">JSON_CONFIG</span>
+	<span class="neclass">JSON_ENCODER</span>
+	<span class="neclass">JSON_EQUALITY_TESTER</span>
+	<span class="neclass">JSON_NUMBER</span>
+	<span class="neclass">JSON_PARSER</span>
+	<span class="neclass">JSON_STRING</span>
+	<span class="neclass">JWS</span>
+	<span class="neclass">JWT</span><span class="echar">*</span>
+	<span class="neclass">JWT_CLAIMSET</span>
+	<span class="neclass">JWT_DEV_ERROR</span>
+	<span class="neclass">JWT_HEADER</span>
+	<span class="neclass">JWT_LOADER</span>
+	<span class="neclass">JWT_UTILITIES</span>
+	<span class="neclass">KI_CHARACTER_OUTPUT_STREAM</span><span class="echar">*</span>
+	<span class="neclass">KL_BUFFERED_OUTPUT_FILE</span><span class="echar">*</span>
+	<span class="neclass">KL_OUTPUT_FILE</span><span class="echar">*</span>
+	<span class="neclass">KL_STRING_ROUTINES</span>
+	<span class="neclass">LIBCURL_HTTP_CLIENT_REQUEST</span>
+	<span class="neclass">LIBCURL_HTTP_CLIENT_SESSION</span>
+	<span class="neclass">MESSAGE_DIGEST</span><span class="echar">*</span>
+	<span class="neclass">NETWORK_STREAM_SOCKET</span>
+	<span class="neclass">NET_HTTP_CLIENT_REQUEST</span>
+	<span class="neclass">NET_HTTP_CLIENT_SESSION</span>
+	<span class="neclass">NOTIFICATION_EMAIL</span>
+	<span class="neclass">NOTIFICATION_SMTP_MAILER</span>
+	<span class="neclass">NO_HTML_CONTENT_FILTER</span>
+	<span class="neclass">OAUTH_PARAMETER</span>
+	<span class="neclass">OAUTH_PARAMETER_LIST</span>
+	<span class="neclass">OAUTH_REQUEST</span>
+	<span class="neclass">OAUTH_TOKEN</span>
+	<span class="neclass">PATH_URI</span>
+	<span class="neclass">PATTERN_MATCHER</span><span class="echar">*</span>
+	<a class="eclass" href="../base/plain_text_file_links.html">PLAIN_TEXT_FILE</a>
+	<a class="eclass" href="../base/readable_string_8_links.html">READABLE_STRING_8</a><span class="echar">*</span>
+	<span class="neclass">RECAPTCHA_API</span>
+	<span class="neclass">RECAPTCHA_CONFIG</span>
+	<span class="neclass">REGULAR_EXPRESSION</span>
+	<span class="neclass">REGULAR_EXPRESSION_STRING_FACILITIES</span><span class="echar">*</span>
+	<span class="neclass">REQUEST_EXECUTOR</span>
+	<span class="neclass">SECURITY_HTML_CONTENT_FILTER</span>
+	<span class="neclass">SECURITY_PROVIDER</span>
+	<a class="eclass" href="../base/sed_error_factory_links.html">SED_ERROR_FACTORY</a>
+	<a class="eclass" href="../base/sed_reader_writer_links.html">SED_READER_WRITER</a><span class="echar">*</span>
+	<span class="neclass">SERVER_CHARSET_NEGOTIATION</span>
+	<span class="neclass">SERVER_ENCODING_NEGOTIATION</span>
+	<span class="neclass">SERVER_LANGUAGE_NEGOTIATION</span>
+	<span class="neclass">SERVER_MEDIA_TYPE_NEGOTIATION</span>
+	<span class="neclass">SIGNATURE_SERVICE</span><span class="echar">*</span>
+	<a class="eclass" href="../simple_json/simple_json_pretty_printer_links.html">SIMPLE_JSON_PRETTY_PRINTER</a>
+	<a class="eclass" href="../simple_sql/simple_sql_batch_links.html">SIMPLE_SQL_BATCH</a>
+	<a class="eclass" href="../simple_sql/simple_sql_column_info_links.html">SIMPLE_SQL_COLUMN_INFO</a>
+	<a class="eclass" href="../simple_sql/simple_sql_cursor_links.html">SIMPLE_SQL_CURSOR</a>
+	<a class="eclass" href="../simple_sql/simple_sql_database_links.html">SIMPLE_SQL_DATABASE</a>
+	<a class="eclass" href="../simple_sql/simple_sql_delete_builder_links.html">SIMPLE_SQL_DELETE_BUILDER</a>
+	<a class="eclass" href="../simple_sql/simple_sql_eager_loader_links.html">SIMPLE_SQL_EAGER_LOADER</a>
+	<a class="eclass" href="../simple_sql/simple_sql_eager_result_links.html">SIMPLE_SQL_EAGER_RESULT</a>
+	<a class="eclass" href="../simple_sql/simple_sql_export_links.html">SIMPLE_SQL_EXPORT</a>
+	<a class="eclass" href="../simple_sql/simple_sql_foreign_key_info_links.html">SIMPLE_SQL_FOREIGN_KEY_INFO</a>
+	<a class="eclass" href="../simple_sql/simple_sql_fts5_links.html">SIMPLE_SQL_FTS5</a>
+	<a class="eclass" href="../simple_sql/simple_sql_fts5_query_links.html">SIMPLE_SQL_FTS5_QUERY</a>
+	<a class="eclass" href="../simple_sql/simple_sql_import_links.html">SIMPLE_SQL_IMPORT</a>
+	<a class="eclass" href="../simple_sql/simple_sql_index_info_links.html">SIMPLE_SQL_INDEX_INFO</a>
+	<a class="eclass" href="../simple_sql/simple_sql_insert_builder_links.html">SIMPLE_SQL_INSERT_BUILDER</a>
+	<a class="eclass" href="../simple_sql/simple_sql_paginator_links.html">SIMPLE_SQL_PAGINATOR</a>
+	<a class="eclass" href="../simple_sql/simple_sql_prepared_statement_links.html">SIMPLE_SQL_PREPARED_STATEMENT</a>
+	<a class="eclass" href="../simple_sql/simple_sql_query_builder_links.html">SIMPLE_SQL_QUERY_BUILDER</a><span class="echar">*</span>
+	<a class="eclass" href="../simple_sql/simple_sql_query_monitor_links.html">SIMPLE_SQL_QUERY_MONITOR</a>
+	<a class="eclass" href="../simple_sql/simple_sql_raw_expression_links.html">SIMPLE_SQL_RAW_EXPRESSION</a>
+	<a class="eclass" href="../simple_sql/simple_sql_repository_links.html">SIMPLE_SQL_REPOSITORY</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/any_links.html">ANY</a><span class="esymbol">]</span>
+	<a class="eclass" href="../simple_sql/simple_sql_result_links.html">SIMPLE_SQL_RESULT</a>
+	<a class="eclass" href="../simple_sql/simple_sql_result_stream_links.html">SIMPLE_SQL_RESULT_STREAM</a>
+	<a class="eclass" href="../simple_sql/simple_sql_schema_links.html">SIMPLE_SQL_SCHEMA</a>
+	<a class="eclass" href="../simple_sql/simple_sql_select_builder_links.html">SIMPLE_SQL_SELECT_BUILDER</a>
+	<a class="eclass" href="../simple_sql/simple_sql_table_info_links.html">SIMPLE_SQL_TABLE_INFO</a>
+	<a class="eclass" href="../simple_sql/simple_sql_update_builder_links.html">SIMPLE_SQL_UPDATE_BUILDER</a>
+	<a class="eclass" href="../simple_web/simple_web_client_links.html">SIMPLE_WEB_CLIENT</a>
+	<a class="eclass" href="../simple_web/simple_web_server_request_links.html">SIMPLE_WEB_SERVER_REQUEST</a>
+	<a class="eclass" href="../simple_web/simple_web_server_response_links.html">SIMPLE_WEB_SERVER_RESPONSE</a>
+	<span class="neclass">SMTP_PROTOCOL</span>
+	<span class="neclass">SOCKET</span><span class="echar">*</span>
+	<span class="neclass">SQLITE_API</span>
+	<span class="neclass">SQLITE_BINDING_HELPERS</span>
+	<span class="neclass">SQLITE_BIND_ARG</span><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/any_links.html">ANY</a><span class="esymbol">]</span>
+	<span class="neclass">SQLITE_BIND_ARG_MARSHALLER</span>
+	<span class="neclass">SQLITE_DATABASE</span>
+	<span class="neclass">SQLITE_EXCEPTION</span>
+	<span class="neclass">SQLITE_HELPERS</span>
+	<span class="neclass">SQLITE_NULL_ARG</span>
+	<span class="neclass">SQLITE_STATEMENT</span>
+	<span class="neclass">SQLITE_STRING_ARG</span>
+	<a class="eclass" href="../core/ssc_analytics_middleware_links.html">SSC_ANALYTICS_MIDDLEWARE</a>
+	<a class="eclass" href="../core/ssc_server_links.html">SSC_SERVER</a>
+	<span class="neclass">SSL_AEAD_CIPHER_CONTEXT</span>
+	<span class="neclass">SSL_AES</span>
+	<a class="eclass" href="../base/string_8_links.html">STRING_8</a>
+	<a class="eclass" href="../base/string_8_iteration_cursor_links.html">STRING_8_ITERATION_CURSOR</a>
+	<a class="eclass" href="../base/string_8_searcher_links.html">STRING_8_SEARCHER</a>
+	<a class="eclass" href="../base/string_to_integer_convertor_links.html">STRING_TO_INTEGER_CONVERTOR</a>
+	<a class="eclass" href="../base/string_to_real_convertor_links.html">STRING_TO_REAL_CONVERTOR</a>
+	<span class="neclass">TEMPLATE_COMMON</span><span class="echar">*</span>
+	<span class="neclass">TEMPLATE_STRUCTURE_ACTION</span>
+	<span class="neclass">TEMPLATE_STRUCTURE_ITEM</span>
+	<span class="neclass">TEMPLATE_TEXT</span>
+	<span class="neclass">TOKEN_EXTRACTOR_10</span>
+	<span class="neclass">TOKEN_EXTRACTOR_20</span>
+	<span class="neclass">UC_STRING</span>
+	<a class="eclass" href="../base/unicode_conversion_links.html">UNICODE_CONVERSION</a>
+	<span class="neclass">URI</span>
+	<span class="neclass">URI_TEMPLATE</span>
+	<a class="eclass" href="../base/utf_converter_links.html">UTF_CONVERTER</a>
+	<span class="neclass">UT_BASE64_ENCODING_OUTPUT_STREAM</span>
+	<span class="neclass">WEBAPI_RESPONSE</span><span class="echar">*</span>
+	<span class="neclass">WEB_SOCKET</span>
+	<span class="neclass">WEB_SOCKET_FRAME</span>
+	<span class="neclass">WEB_SOCKET_HANDLER</span>
+	<span class="neclass">WEB_SOCKET_WRITER</span><span class="echar">*</span>
+	<span class="neclass">WGI_CGI_ERROR_STREAM</span>
+	<span class="neclass">WGI_CGI_OUTPUT_STREAM</span>
+	<span class="neclass">WGI_HTTPD_REQUEST_HANDLER</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="neclass">WGI_EXECUTION</span> <span class="ekeyword">create</span> <span class="nefeature">make</span> <span class="ekeyword">end</span><span class="esymbol">]</span>
+	<span class="neclass">WGI_LOGGER_RESPONSE</span>
+	<span class="neclass">WGI_OUTPUT_STREAM</span><span class="echar">*</span>
+	<span class="neclass">WGI_REQUEST</span><span class="echar">*</span>
+	<span class="neclass">WGI_REQUEST_CGI_VARIABLES</span>
+	<span class="neclass">WGI_REQUEST_FROM_TABLE</span>
+	<span class="neclass">WGI_RESPONSE</span><span class="echar">*</span>
+	<span class="neclass">WGI_STANDALONE_CONNECTOR</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="neclass">WGI_EXECUTION</span> <span class="ekeyword">create</span> <span class="nefeature">make</span> <span class="ekeyword">end</span><span class="esymbol">]</span>
+	<span class="neclass">WGI_STANDALONE_ERROR_STREAM</span>
+	<span class="neclass">WSF_API_UTILITIES</span><span class="echar">*</span>
+	<span class="neclass">WSF_APPLICATION_X_WWW_FORM_URLENCODED_HANDLER</span>
+	<span class="neclass">WSF_DEBUG_INFORMATION</span>
+	<span class="neclass">WSF_DEFAULT_ROUTER_RESPONSE</span>
+	<span class="neclass">WSF_DOWNLOAD_RESPONSE</span>
+	<span class="neclass">WSF_FILE_RESPONSE</span>
+	<span class="neclass">WSF_FILE_SYSTEM_HANDLER</span>
+	<span class="neclass">WSF_FORM</span>
+	<span class="neclass">WSF_FORMAT_UTILITY</span>
+	<span class="neclass">WSF_FORM_COMPOSITE</span><span class="echar">*</span>
+	<span class="neclass">WSF_FORM_DATA</span>
+	<span class="neclass">WSF_FORM_FIELD</span><span class="echar">*</span>
+	<span class="neclass">WSF_FORM_FIELD_WITH_NUMERIC_ATTRIBUTE</span>
+	<span class="neclass">WSF_FORM_SELECT</span>
+	<span class="neclass">WSF_HTTP_PROTOCOL_VERSION</span>
+	<span class="neclass">WSF_METHOD_HANDLER</span><span class="echar">*</span>
+	<span class="neclass">WSF_METHOD_NOT_ALLOWED_RESPONSE</span>
+	<span class="neclass">WSF_MULTIPART_FORM_DATA_HANDLER</span>
+	<span class="neclass">WSF_PAGE_RESPONSE</span>
+	<span class="neclass">WSF_REDIRECTION_RESPONSE</span>
+	<span class="neclass">WSF_REQUEST</span>
+	<span class="neclass">WSF_REQUEST_METHODS</span>
+	<span class="neclass">WSF_REQUEST_UTILITY</span>
+	<span class="neclass">WSF_RESOURCE_CONTEXT_HANDLER_HELPER</span><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">C</span> <span class="esymbol">-&gt;</span> <span class="neclass">WSF_HANDLER_CONTEXT</span> <span class="ekeyword">create</span> <span class="nefeature">make</span> <span class="ekeyword">end</span><span class="esymbol">]</span>
+	<span class="neclass">WSF_RESOURCE_HANDLER_HELPER</span>
+	<span class="neclass">WSF_RESPONSE</span>
+	<span class="neclass">WSF_ROUTED_SKELETON_EXECUTION</span><span class="echar">*</span>
+	<span class="neclass">WSF_ROUTER</span>
+	<span class="neclass">WSF_ROUTER_SELF_DOCUMENTATION_MESSAGE</span>
+	<span class="neclass">WSF_STANDALONE_SERVICE_LAUNCHER</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="neclass">WSF_EXECUTION</span> <span class="ekeyword">create</span> <span class="nefeature">make</span> <span class="ekeyword">end</span><span class="esymbol">]</span>
+	<span class="neclass">WSF_STARTS_WITH_HANDLER</span><span class="echar">*</span>
+	<span class="neclass">WSF_STARTS_WITH_MAPPING_I</span><span class="echar">*</span>
+	<span class="neclass">WSF_URI_MAPPING_I</span><span class="echar">*</span>
+	<span class="neclass">WSF_URI_TEMPLATE_MAPPING_I</span><span class="echar">*</span>
+	<span class="neclass">WSF_WIDGET_COMPOSITE</span><span class="echar">*</span>
+	<span class="neclass">WSF_WITH_CSS_CLASS</span><span class="echar">*</span>
+	<span class="neclass">WSF_WITH_CSS_ID</span><span class="echar">*</span>
+	<span class="neclass">WSF_WITH_HTML_ATTRIBUTE</span><span class="echar">*</span>
+	<span class="neclass">XML_ENCODER</span>
+
+<span class="ekeyword">Suppliers</span>
+	<a class="eclass" href="../base/boolean_links.html">BOOLEAN</a>
+	<a class="eclass" href="../base/character_8_links.html">CHARACTER_8</a>
+	<a class="eclass" href="../base/c_string_links.html">C_STRING</a>
+	<a class="eclass" href="../base/integer_32_links.html">INTEGER_32</a>
+	<a class="eclass" href="../base/natural_32_links.html">NATURAL_32</a>
+	<a class="eclass" href="../base/platform_links.html">PLATFORM</a>
+	<a class="eclass" href="../base/pointer_links.html">POINTER</a>
+	<a class="eclass" href="../base/readable_string_8_links.html">READABLE_STRING_8</a><span class="echar">*</span>
+	<a class="eclass" href="../base/special_links.html">SPECIAL</a> <span class="esymbol">[</span><span class="egeneric">T</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/string_8_links.html">STRING_8</a>
+	<a class="eclass" href="../base/string_8_iteration_cursor_links.html">STRING_8_ITERATION_CURSOR</a>
+	<a class="eclass" href="../base/string_8_searcher_links.html">STRING_8_SEARCHER</a>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="readable_string_8_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="readable_string_8_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="readable_string_8"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

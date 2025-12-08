@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTAggressive logging helper for Simple Showcase debugging.  TTProvides timestamped, categorized logging with different severity levels. TTOutput goes to both console AND a log file for persistent debugging.  TTLog file location: ssc_server.log (in current working directory)  TTUsage: TTTinherit SSC_LOGGER TTT... TTTlog_info (section, Building hero section) TTTlog_debug (render, HTML output:  + html.count.out +  chars)"/>
+<meta name="author" content="Larry Rix with Claude (Anthropic)"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>ssc_logger Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="ssc_logger_chart.html">Chart</a>
+<a class="nav class" href="ssc_logger_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="ssc_logger"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">		Aggressive logging helper for Simple Showcase debugging.</span>
+		
+		<span class="estring">		Provides timestamped, categorized logging with different severity levels.</span>
+		<span class="estring">		Output goes to both console AND a log file for persistent debugging.</span>
+		
+		<span class="estring">		Log file location: ssc_server.log (in current working directory)</span>
+		
+		<span class="estring">		Usage:</span>
+		<span class="estring">			inherit SSC_LOGGER</span>
+		<span class="estring">			...</span>
+		<span class="estring">			log_info (&quot;section&quot;, &quot;Building hero section&quot;)</span>
+		<span class="estring">			log_debug (&quot;render&quot;, &quot;HTML output: &quot; + html.count.out + &quot; chars&quot;)</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix with Claude (Anthropic)&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../core/ssc_logger_short.html">SSC_LOGGER</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../base/any_short.html#f_default_create">default_create</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Logging</span>
+
+	<a name="f_log_info"></a><a class="efeature" href="../core/ssc_logger_short.html#f_log_info">log_info</a> <span class="esymbol">(</span><span class="elocal">a_category</span><span class="esymbol">,</span> <span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Log informational message.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">category_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_category</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">message_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_message</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+
+	<a name="f_log_debug"></a><a class="efeature" href="../core/ssc_logger_short.html#f_log_debug">log_debug</a> <span class="esymbol">(</span><span class="elocal">a_category</span><span class="esymbol">,</span> <span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Log debug message (verbose).</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">category_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_category</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">message_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_message</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+
+	<a name="f_log_warn"></a><a class="efeature" href="../core/ssc_logger_short.html#f_log_warn">log_warn</a> <span class="esymbol">(</span><span class="elocal">a_category</span><span class="esymbol">,</span> <span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Log warning message.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">category_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_category</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">message_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_message</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+
+	<a name="f_log_error"></a><a class="efeature" href="../core/ssc_logger_short.html#f_log_error">log_error</a> <span class="esymbol">(</span><span class="elocal">a_category</span><span class="esymbol">,</span> <span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Log error message.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">category_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_category</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">message_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_message</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+
+	<a name="f_log_enter"></a><a class="efeature" href="../core/ssc_logger_short.html#f_log_enter">log_enter</a> <span class="esymbol">(</span><span class="elocal">a_feature_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Log entering a feature (for tracing).</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">feature_name_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_feature_name</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">indent_increased</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_logger_short.html#f_indent_level">indent_level</a> <span class="esymbol">=</span> <span class="ekeyword">old</span> <a class="efeature" href="../core/ssc_logger_short.html#f_indent_level">indent_level</a> <a class="esymbol" href="../base/integer_32_short.html#f_plus">+</a> <span class="enumber">1</span>
+
+	<a name="f_log_exit"></a><a class="efeature" href="../core/ssc_logger_short.html#f_log_exit">log_exit</a> <span class="esymbol">(</span><span class="elocal">a_feature_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Log exiting a feature (for tracing).</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">feature_name_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_feature_name</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+
+	<a name="f_log_html_size"></a><a class="efeature" href="../core/ssc_logger_short.html#f_log_html_size">log_html_size</a> <span class="esymbol">(</span><span class="elocal">a_context</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_html</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Log HTML output size for debugging rendering.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">context_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_context</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">html_not_void</span><span class="esymbol">:</span> <span class="elocal">a_html</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Configuration</span>
+
+	<a name="f_debug_enabled"></a><a class="efeature" href="../core/ssc_logger_short.html#f_debug_enabled">Debug_enabled</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is debug-level logging enabled?</span>
+
+	<a name="f_log_file_name"></a><a class="efeature" href="../core/ssc_logger_short.html#f_log_file_name">Log_file_name</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;ssc_server.log&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Name of the log file.</span>
+	
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../core/ssc_logger_short.html">SSC_LOGGER</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="ssc_logger_chart.html">Chart</a>
+<a class="nav class" href="ssc_logger_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="ssc_logger"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

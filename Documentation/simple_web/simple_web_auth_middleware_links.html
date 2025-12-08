@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTAuthentication middleware supporting multiple auth schemes.  TTSupports: TT- Bearer token (JWT or opaque tokens) TT- Basic authentication TT- API key (header or query param)  TTUsage (Bearer token): TTTcreate auth.make_bearer (agent validate_token) TTTserver.use_middleware (auth)  TTUsage (API key): TTTcreate auth.make_api_key (X-API-Key, agent validate_key) TTTserver.use_middleware (auth)  TTThe validator agent receives the token/key and returns True if valid. TTIf validation fails, returns 401 Unauthorized."/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_auth_middleware Relations</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_auth_middleware_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="simple_web_auth_middleware_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_auth_middleware"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../simple_web/simple_web_auth_middleware_links.html">SIMPLE_WEB_AUTH_MIDDLEWARE</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../simple_web/simple_web_middleware_links.html">SIMPLE_WEB_MIDDLEWARE</a><span class="echar">*</span>
+
+<span class="ekeyword">Clients</span>
+	<a class="eclass" href="../simple_web/simple_web_auth_middleware_links.html">SIMPLE_WEB_AUTH_MIDDLEWARE</a>
+
+<span class="ekeyword">Suppliers</span>
+	<a class="eclass" href="../base/arrayed_list_links.html">ARRAYED_LIST</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/arrayed_list_iteration_cursor_links.html">ARRAYED_LIST_ITERATION_CURSOR</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/boolean_links.html">BOOLEAN</a>
+	<a class="eclass" href="../base/function_links.html">FUNCTION</a> <span class="esymbol">[</span><span class="egeneric">OPEN_ARGS</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/tuple_links.html">TUPLE</a> <span class="ekeyword">create</span> <a class="efeature" href="../base/any_short.html#f_default_create">default_create</a> <span class="ekeyword">end</span><span class="esymbol">,</span> <span class="egeneric">RESULT_TYPE</span><span class="esymbol">]</span>
+	<span class="neclass">HTTP_AUTHORIZATION</span>
+	<a class="eclass" href="../base/immutable_string_32_links.html">IMMUTABLE_STRING_32</a>
+	<a class="eclass" href="../base/integer_32_links.html">INTEGER_32</a>
+	<a class="eclass" href="../base/iteration_cursor_links.html">ITERATION_CURSOR</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/procedure_links.html">PROCEDURE</a> <span class="esymbol">[</span><span class="egeneric">OPEN_ARGS</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/tuple_links.html">TUPLE</a> <span class="ekeyword">create</span> <a class="efeature" href="../base/any_short.html#f_default_create">default_create</a> <span class="ekeyword">end</span><span class="esymbol">]</span>
+	<a class="eclass" href="../simple_web/simple_web_auth_middleware_links.html">SIMPLE_WEB_AUTH_MIDDLEWARE</a>
+	<a class="eclass" href="../simple_web/simple_web_server_request_links.html">SIMPLE_WEB_SERVER_REQUEST</a>
+	<a class="eclass" href="../simple_web/simple_web_server_response_links.html">SIMPLE_WEB_SERVER_RESPONSE</a>
+	<a class="eclass" href="../base/string_32_links.html">STRING_32</a>
+	<a class="eclass" href="../base/string_8_links.html">STRING_8</a>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_auth_middleware_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="simple_web_auth_middleware_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_auth_middleware"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

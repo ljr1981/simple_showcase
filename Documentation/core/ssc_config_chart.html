@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTConfiguration loader for Simple Showcase.  TTReads settings from a JSON config file, supporting different TTconfigurations for development vs production environments.  TTUsage: TTTconfig: SSC_CONFIG TTTcreate config.make (config.json) TTTserver.make (config.port)"/>
+<meta name="author" content="Larry Rix with Claude (Anthropic)"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>ssc_config Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="ssc_config_links.html">Relations</a>
+<a class="nav class" href="ssc_config_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="ssc_config"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../core/ssc_config_chart.html">SSC_CONFIG</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <a class="ecluster" href="../core/index.html">core</a>
+	<span class="eitag">description</span><span class="esymbol">:</span> 
+		<span class="estring">&quot;Configuration loader for Simple Showcase.</span>
+		
+		<span class="estring">Reads settings from a JSON config file, supporting different</span>
+		<span class="estring">configurations for development vs production environments.</span>
+		
+		<span class="estring">Usage:</span>
+		<span class="estring">config: SSC_CONFIG</span>
+		<span class="estring">create config.make (%&quot;config.json%&quot;)</span>
+		<span class="estring">server.make (config.port)&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_config_short.html#f_make">make</a><span class="esymbol">,</span> <a class="efeature" href="../core/ssc_config_short.html#f_make_default">make_default</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../core/ssc_logger_chart.html">SSC_LOGGER</a>
+
+<span class="ekeyword">Queries</span>
+	<span title="`base_url' is declared in `Current'"><a class="efeature" href="../core/ssc_config_short.html#f_base_url">base_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`config_path' is declared in `Current'"><a class="efeature" href="../core/ssc_config_short.html#f_config_path">config_path</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`contact_email' is declared in `Current'"><a class="efeature" href="../core/ssc_config_short.html#f_contact_email">contact_email</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`db_path' is declared in `Current'"><a class="efeature" href="../core/ssc_config_short.html#f_db_path">db_path</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`debug_enabled' was declared in SSC_LOGGER"><a class="efeature" href="../core/ssc_logger_short.html#f_debug_enabled">Debug_enabled</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_development' is declared in `Current'"><a class="efeature" href="../core/ssc_config_short.html#f_is_development">is_development</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_loaded' is declared in `Current'"><a class="efeature" href="../core/ssc_config_short.html#f_is_loaded">is_loaded</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`is_production' is declared in `Current'"><a class="efeature" href="../core/ssc_config_short.html#f_is_production">is_production</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`log_file_name' was declared in SSC_LOGGER"><a class="efeature" href="../core/ssc_logger_short.html#f_log_file_name">Log_file_name</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`log_level' is declared in `Current'"><a class="efeature" href="../core/ssc_config_short.html#f_log_level">log_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`mode' is declared in `Current'"><a class="efeature" href="../core/ssc_config_short.html#f_mode">mode</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`port' is declared in `Current'"><a class="efeature" href="../core/ssc_config_short.html#f_port">port</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`smtp_endpoints' is declared in `Current'"><a class="efeature" href="../core/ssc_config_short.html#f_smtp_endpoints">smtp_endpoints</a><span class="esymbol">:</span> <a class="eclass" href="../base/arrayed_list_chart.html">ARRAYED_LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/tuple_chart.html">TUPLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">,</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">,</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">,</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a><span class="esymbol">]</span><span class="esymbol">]</span></span>
+	<span title="`smtp_password' is declared in `Current'"><a class="efeature" href="../core/ssc_config_short.html#f_smtp_password">smtp_password</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`verbose_logging' is declared in `Current'"><a class="efeature" href="../core/ssc_config_short.html#f_verbose_logging">verbose_logging</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`log_debug' was declared in SSC_LOGGER"><a class="efeature" href="../core/ssc_logger_short.html#f_log_debug">log_debug</a> <span class="esymbol">(</span><span class="elocal">a_category</span><span class="esymbol">,</span> <span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`log_enter' was declared in SSC_LOGGER"><a class="efeature" href="../core/ssc_logger_short.html#f_log_enter">log_enter</a> <span class="esymbol">(</span><span class="elocal">a_feature_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`log_error' was declared in SSC_LOGGER"><a class="efeature" href="../core/ssc_logger_short.html#f_log_error">log_error</a> <span class="esymbol">(</span><span class="elocal">a_category</span><span class="esymbol">,</span> <span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`log_exit' was declared in SSC_LOGGER"><a class="efeature" href="../core/ssc_logger_short.html#f_log_exit">log_exit</a> <span class="esymbol">(</span><span class="elocal">a_feature_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`log_html_size' was declared in SSC_LOGGER"><a class="efeature" href="../core/ssc_logger_short.html#f_log_html_size">log_html_size</a> <span class="esymbol">(</span><span class="elocal">a_context</span><span class="esymbol">,</span> <span class="elocal">a_html</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`log_info' was declared in SSC_LOGGER"><a class="efeature" href="../core/ssc_logger_short.html#f_log_info">log_info</a> <span class="esymbol">(</span><span class="elocal">a_category</span><span class="esymbol">,</span> <span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`log_warn' was declared in SSC_LOGGER"><a class="efeature" href="../core/ssc_logger_short.html#f_log_warn">log_warn</a> <span class="esymbol">(</span><span class="elocal">a_category</span><span class="esymbol">,</span> <span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+
+<span class="ekeyword">Constraints</span>
+	<span class="etag">mode not empty</span>
+	<span class="etag">port positive</span>
+	<span class="etag">base url not empty</span>
+	<span class="etag">db path not empty</span>
+	<span class="etag">log level not empty</span>
+	<span class="etag">smtp endpoints exist</span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="ssc_config_links.html">Relations</a>
+<a class="nav class" href="ssc_config_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="ssc_config"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

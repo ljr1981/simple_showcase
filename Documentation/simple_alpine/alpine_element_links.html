@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTDeferred class providing Alpine.js directives for HTML elements.  TTDesigned to be inherited alongside HTMX_ELEMENT descendants, TTgiving elements both HTMX (server) and Alpine (client) capabilities.  TTExample: TTTl_div := create {ALPINE_DIV}.make TTTl_div.x_data ({ open: false }) TTT     .x_show (open) TTT     .x_on_click (open = !open) TTT     .hx_get (/api/data)  -- HTMX still works! TTT     .to_html_8 TTT-- Output: <div x-data={ open: false } x-show=open TTT--         @click=open = !open hx-get=/api/data></div>"/>
+<meta name="author" content="Larry Rix with Claude"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>alpine_element Relations</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="alpine_element_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="alpine_element_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="alpine_element"></span>
+</div></form><pre><span class="ekeyword">deferred</span> <span class="ekeyword">class</span>
+	<a class="eclass" href="../simple_alpine/alpine_element_links.html">ALPINE_ELEMENT</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../simple_htmx/htmx_element_links.html">HTMX_ELEMENT</a><span class="echar">*</span>
+
+<span class="ekeyword">Descendants</span>
+	<a class="eclass" href="../simple_alpine/alpine_a_links.html">ALPINE_A</a>
+	<a class="eclass" href="../simple_alpine/alpine_article_links.html">ALPINE_ARTICLE</a>
+	<a class="eclass" href="../simple_alpine/alpine_aside_links.html">ALPINE_ASIDE</a>
+	<a class="eclass" href="../simple_alpine/alpine_button_links.html">ALPINE_BUTTON</a>
+	<a class="eclass" href="../simple_alpine/alpine_div_links.html">ALPINE_DIV</a>
+	<a class="eclass" href="../simple_alpine/alpine_footer_links.html">ALPINE_FOOTER</a>
+	<a class="eclass" href="../simple_alpine/alpine_form_links.html">ALPINE_FORM</a>
+	<a class="eclass" href="../simple_alpine/alpine_h1_links.html">ALPINE_H1</a>
+	<a class="eclass" href="../simple_alpine/alpine_h2_links.html">ALPINE_H2</a>
+	<a class="eclass" href="../simple_alpine/alpine_h3_links.html">ALPINE_H3</a>
+	<a class="eclass" href="../simple_alpine/alpine_header_links.html">ALPINE_HEADER</a>
+	<a class="eclass" href="../simple_alpine/alpine_img_links.html">ALPINE_IMG</a>
+	<a class="eclass" href="../simple_alpine/alpine_input_links.html">ALPINE_INPUT</a>
+	<a class="eclass" href="../simple_alpine/alpine_label_links.html">ALPINE_LABEL</a>
+	<a class="eclass" href="../simple_alpine/alpine_li_links.html">ALPINE_LI</a>
+	<a class="eclass" href="../simple_alpine/alpine_main_links.html">ALPINE_MAIN</a>
+	<a class="eclass" href="../simple_alpine/alpine_nav_links.html">ALPINE_NAV</a>
+	<a class="eclass" href="../simple_alpine/alpine_ol_links.html">ALPINE_OL</a>
+	<a class="eclass" href="../simple_alpine/alpine_option_links.html">ALPINE_OPTION</a>
+	<a class="eclass" href="../simple_alpine/alpine_p_links.html">ALPINE_P</a>
+	<a class="eclass" href="../simple_alpine/alpine_section_links.html">ALPINE_SECTION</a>
+	<a class="eclass" href="../simple_alpine/alpine_select_links.html">ALPINE_SELECT</a>
+	<a class="eclass" href="../simple_alpine/alpine_span_links.html">ALPINE_SPAN</a>
+	<a class="eclass" href="../simple_alpine/alpine_template_links.html">ALPINE_TEMPLATE</a>
+	<a class="eclass" href="../simple_alpine/alpine_textarea_links.html">ALPINE_TEXTAREA</a>
+	<a class="eclass" href="../simple_alpine/alpine_ul_links.html">ALPINE_UL</a>
+
+<span class="ekeyword">Clients</span>
+	<a class="eclass" href="../simple_alpine/alpine_element_links.html">ALPINE_ELEMENT</a><span class="echar">*</span>
+
+<span class="ekeyword">Suppliers</span>
+	<a class="eclass" href="../simple_alpine/alpine_element_links.html">ALPINE_ELEMENT</a><span class="echar">*</span>
+	<a class="eclass" href="../base/boolean_links.html">BOOLEAN</a>
+	<a class="eclass" href="../base/hash_table_links.html">HASH_TABLE</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">,</span> <span class="egeneric">K</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/hashable_links.html">HASHABLE</a><span class="esymbol">]</span>
+	<a class="eclass" href="../base/integer_32_links.html">INTEGER_32</a>
+	<a class="eclass" href="../base/readable_string_general_links.html">READABLE_STRING_GENERAL</a><span class="echar">*</span>
+	<a class="eclass" href="../base/string_32_links.html">STRING_32</a>
+	<a class="eclass" href="../base/string_8_links.html">STRING_8</a>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="alpine_element_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="alpine_element_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="alpine_element"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

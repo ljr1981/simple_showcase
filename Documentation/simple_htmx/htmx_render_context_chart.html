@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTRender context for HTMX applications.  TTProvides URL/path building for HTMX attributes, eliminating TTthe need to pass spec_id, screen_id, etc. through every method.  TTExample: TTTctx := create {HTMX_RENDER_CONTEXT}.make (/api) TTTctx.resource (specs, my-app).resource (screens, main)  TTT-- Now generate URLs: TTTctx.url                        -- /api/specs/my-app/screens/main TTTctx.url_for (controls)       -- /api/specs/my-app/screens/main/controls TTTctx.url_for_id (controls, btn1)  -- /api/specs/my-app/screens/main/controls/btn1  TTT-- Use in elements: TTThtml.button (Save).hx_post (ctx.url_for (save))"/>
+<meta name="author" content="Claude Code"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>htmx_render_context Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="htmx_render_context_links.html">Relations</a>
+<a class="nav class" href="htmx_render_context_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="htmx_render_context"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../simple_htmx/htmx_render_context_chart.html">HTMX_RENDER_CONTEXT</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">src</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> 
+		<span class="estring">&quot;Render context for HTMX applications.</span>
+		
+		<span class="estring">Provides URL/path building for HTMX attributes, eliminating</span>
+		<span class="estring">the need to pass spec_id, screen_id, etc. through every method.</span>
+		
+		<span class="estring">Example:</span>
+		<span class="estring">ctx := create </span><span class="esymbol">{</span><a class="eclass" href="../simple_htmx/htmx_render_context_chart.html">HTMX_RENDER_CONTEXT</a><span class="esymbol">}</span><span class="edot">.</span><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_make">make</a><span class="estring"> (%&quot;/api%&quot;)</span>
+		<span class="estring">ctx.resource (%&quot;specs%&quot;, %&quot;my-app%&quot;).resource (%&quot;screens%&quot;, %&quot;main%&quot;)</span>
+		
+		<span class="estring">-- Now generate URLs:</span>
+		<span class="estring">ctx.url &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- %&quot;/api/specs/my-app/screens/main%&quot;</span>
+		<span class="estring">ctx.url_for (%&quot;controls%&quot;) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- %&quot;/api/specs/my-app/screens/main/controls%&quot;</span>
+		<span class="estring">ctx.url_for_id (%&quot;controls%&quot;, %&quot;btn1%&quot;) &nbsp;-- %&quot;/api/specs/my-app/screens/main/controls/btn1%&quot;</span>
+		
+		<span class="estring">-- Use in elements:</span>
+		<span class="estring">html.button (%&quot;Save%&quot;).hx_post (ctx.url_for (%&quot;save%&quot;))&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_make">make</a><span class="esymbol">,</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_make_empty">make_empty</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/any_chart.html">ANY</a>
+
+<span class="ekeyword">Queries</span>
+	<span title="`base_path' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_base_path">base_path</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`child' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_child">child</a> <span class="esymbol">(</span><span class="elocal">a_type</span><span class="esymbol">,</span> <span class="elocal">a_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <span class="ekeyword">Current</span><span class="esymbol">]</span> <a class="eclass" href="../simple_htmx/htmx_render_context_chart.html">HTMX_RENDER_CONTEXT</a></span>
+	<span title="`control_url' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_control_url">control_url</a> <span class="esymbol">(</span><span class="elocal">a_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`controls_url' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_controls_url">controls_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`path_segments' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="esymbol">:</span> <a class="eclass" href="../base/arrayed_list_chart.html">ARRAYED_LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/tuple_chart.html">TUPLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_32_chart.html">STRING_32</a><span class="esymbol">,</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a><span class="esymbol">]</span><span class="esymbol">]</span></span>
+	<span title="`properties_url' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_properties_url">properties_url</a> <span class="esymbol">(</span><span class="elocal">a_control_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`resource' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_resource">resource</a> <span class="esymbol">(</span><span class="elocal">a_type</span><span class="esymbol">,</span> <span class="elocal">a_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <span class="ekeyword">Current</span><span class="esymbol">]</span> <a class="eclass" href="../simple_htmx/htmx_render_context_chart.html">HTMX_RENDER_CONTEXT</a></span>
+	<span title="`target_class' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_target_class">target_class</a> <span class="esymbol">(</span><span class="elocal">a_class</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`target_id' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_target_id">target_id</a> <span class="esymbol">(</span><span class="elocal">a_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`twin_context' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_twin_context">twin_context</a><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <span class="ekeyword">Current</span><span class="esymbol">]</span> <a class="eclass" href="../simple_htmx/htmx_render_context_chart.html">HTMX_RENDER_CONTEXT</a></span>
+	<span title="`url' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_url">url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`url_8' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_url_8">url_8</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`url_for' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_url_for">url_for</a> <span class="esymbol">(</span><span class="elocal">a_action</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`url_for_8' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_url_for_8">url_for_8</a> <span class="esymbol">(</span><span class="elocal">a_action</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`url_for_id' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_url_for_id">url_for_id</a> <span class="esymbol">(</span><span class="elocal">a_resource</span><span class="esymbol">,</span> <span class="elocal">a_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_chart.html">STRING_32</a></span>
+	<span title="`url_for_id_8' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_url_for_id_8">url_for_id_8</a> <span class="esymbol">(</span><span class="elocal">a_resource</span><span class="esymbol">,</span> <span class="elocal">a_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`with_control' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_with_control">with_control</a> <span class="esymbol">(</span><span class="elocal">a_control_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <span class="ekeyword">Current</span><span class="esymbol">]</span> <a class="eclass" href="../simple_htmx/htmx_render_context_chart.html">HTMX_RENDER_CONTEXT</a></span>
+	<span title="`with_screen' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_with_screen">with_screen</a> <span class="esymbol">(</span><span class="elocal">a_screen_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <span class="ekeyword">Current</span><span class="esymbol">]</span> <a class="eclass" href="../simple_htmx/htmx_render_context_chart.html">HTMX_RENDER_CONTEXT</a></span>
+	<span title="`with_spec' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_with_spec">with_spec</a> <span class="esymbol">(</span><span class="elocal">a_spec_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="esymbol">[</span><span class="ekeyword">like</span> <span class="ekeyword">Current</span><span class="esymbol">]</span> <a class="eclass" href="../simple_htmx/htmx_render_context_chart.html">HTMX_RENDER_CONTEXT</a></span>
+
+<span class="ekeyword">Constraints</span>
+	<span class="etag">base path attached</span>
+	<span class="etag">segments attached</span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="htmx_render_context_links.html">Relations</a>
+<a class="nav class" href="htmx_render_context_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="htmx_render_context"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

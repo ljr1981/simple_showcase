@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTFactory for creating HTML/HTMX elements.  TTProvides convenient shorthand for element creation.  TTExample: TTThtml: HTMX_FACTORY TTT... TTTl_div := html.div.id (main).class_ (container) TTTl_button := html.button (Save).hx_post (/api/save)"/>
+<meta name="author" content="Claude Code"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>htmx_factory Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="htmx_factory_chart.html">Chart</a>
+<a class="nav class" href="htmx_factory_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="htmx_factory"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">		Factory for creating HTML/HTMX elements.</span>
+		
+		<span class="estring">		Provides convenient shorthand for element creation.</span>
+		
+		<span class="estring">		Example:</span>
+		<span class="estring">			html: HTMX_FACTORY</span>
+		<span class="estring">			...</span>
+		<span class="estring">			l_div := html.div.id (&quot;main&quot;).class_ (&quot;container&quot;)</span>
+		<span class="estring">			l_button := html.button (&quot;Save&quot;).hx_post (&quot;/api/save&quot;)</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Claude Code&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_htmx/htmx_factory_short.html">HTMX_FACTORY</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../base/any_short.html#f_default_create">default_create</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Container Elements</span>
+
+	<a name="f_div"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_div">div</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_div_short.html">HTMX_DIV</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create empty div.</span>
+
+	<a name="f_span"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_span">span</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_span_short.html">HTMX_SPAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create empty span.</span>
+
+	<a name="f_p"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_p">p</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_p_short.html">HTMX_P</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create paragraph.</span>
+
+	<a name="f_p_text"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_p_text">p_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_p_short.html">HTMX_P</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create paragraph with text.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Headings</span>
+
+	<a name="f_h1"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h1">h1</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h1_short.html">HTMX_H1</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h1.</span>
+
+	<a name="f_h1_text"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h1_text">h1_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h1_short.html">HTMX_H1</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h1 with text.</span>
+
+	<a name="f_h2"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h2">h2</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h2_short.html">HTMX_H2</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h2.</span>
+
+	<a name="f_h2_text"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h2_text">h2_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h2_short.html">HTMX_H2</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h2 with text.</span>
+
+	<a name="f_h3"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h3">h3</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h3_short.html">HTMX_H3</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h3.</span>
+
+	<a name="f_h3_text"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h3_text">h3_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h3_short.html">HTMX_H3</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h3 with text.</span>
+
+	<a name="f_h4"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h4">h4</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h4_short.html">HTMX_H4</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h4.</span>
+
+	<a name="f_h4_text"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h4_text">h4_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h4_short.html">HTMX_H4</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h4 with text.</span>
+
+	<a name="f_h5"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h5">h5</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h5_short.html">HTMX_H5</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h5.</span>
+
+	<a name="f_h5_text"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h5_text">h5_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h5_short.html">HTMX_H5</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h5 with text.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Form Elements</span>
+
+	<a name="f_form"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_form">form</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_form_short.html">HTMX_FORM</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create empty form.</span>
+
+	<a name="f_input"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_input">input</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_input_short.html">HTMX_INPUT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create empty input.</span>
+
+	<a name="f_input_text"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_input_text">input_text</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_input_short.html">HTMX_INPUT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create text input with name.</span>
+
+	<a name="f_input_hidden"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_input_hidden">input_hidden</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">,</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_input_short.html">HTMX_INPUT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create hidden input.</span>
+
+	<a name="f_input_number"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_input_number">input_number</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_input_short.html">HTMX_INPUT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create number input with name.</span>
+
+	<a name="f_textarea"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_textarea">textarea</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_textarea_short.html">HTMX_TEXTAREA</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create textarea with name.</span>
+
+	<a name="f_select_"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_select_">select_</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_select_short.html">HTMX_SELECT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create select with name.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Note: named select_ to avoid conflict with Eiffel keyword.</span>
+
+	<a name="f_label"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_label">label</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_label_short.html">HTMX_LABEL</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create empty label.</span>
+
+	<a name="f_label_for"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_label_for">label_for</a> <span class="esymbol">(</span><span class="elocal">a_for_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_label_short.html">HTMX_LABEL</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create label with for attribute.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Buttons</span>
+
+	<a name="f_button"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_button">button</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_button_short.html">HTMX_BUTTON</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create empty button.</span>
+
+	<a name="f_button_text"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_button_text">button_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_button_short.html">HTMX_BUTTON</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create button with text.</span>
+
+	<a name="f_submit_button"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_submit_button">submit_button</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_button_short.html">HTMX_BUTTON</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create submit button.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Links</span>
+
+	<a name="f_a"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_a">a</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_a_short.html">HTMX_A</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create empty anchor.</span>
+
+	<a name="f_link"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_link">link</a> <span class="esymbol">(</span><span class="elocal">a_href</span><span class="esymbol">,</span> <span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_a_short.html">HTMX_A</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create link with href and text.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Images</span>
+
+	<a name="f_img"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_img">img</a> <span class="esymbol">(</span><span class="elocal">a_src</span><span class="esymbol">,</span> <span class="elocal">a_alt</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_img_short.html">HTMX_IMG</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create image with src and alt.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Lists</span>
+
+	<a name="f_ul"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_ul">ul</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_ul_short.html">HTMX_UL</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create unordered list.</span>
+
+	<a name="f_ol"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_ol">ol</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_ol_short.html">HTMX_OL</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create ordered list.</span>
+
+	<a name="f_li"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_li">li</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_li_short.html">HTMX_LI</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create list item.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Tables</span>
+
+	<a name="f_table"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_table">table</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_table_short.html">HTMX_TABLE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create table.</span>
+
+	<a name="f_tr"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_tr">tr</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_tr_short.html">HTMX_TR</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create table row.</span>
+
+	<a name="f_th"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_th">th</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_th_short.html">HTMX_TH</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create table header cell.</span>
+
+	<a name="f_td"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_td">td</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_td_short.html">HTMX_TD</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create table data cell.</span>
+
+	<a name="f_thead"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_thead">thead</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_thead_short.html">HTMX_THEAD</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create thead.</span>
+
+	<a name="f_tbody"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_tbody">tbody</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_tbody_short.html">HTMX_TBODY</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create tbody.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Misc</span>
+
+	<a name="f_br"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_br">br</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_br_short.html">HTMX_BR</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create line break.</span>
+
+	<a name="f_hr"></a><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_hr">hr</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_hr_short.html">HTMX_HR</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create horizontal rule.</span>
+	
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_htmx/htmx_factory_short.html">HTMX_FACTORY</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="htmx_factory_chart.html">Chart</a>
+<a class="nav class" href="htmx_factory_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="htmx_factory"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

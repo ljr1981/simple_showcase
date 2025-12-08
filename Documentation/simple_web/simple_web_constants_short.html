@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Project-wide named constants for SIMPLE_WEB library. Defines HTTP methods, status codes, headers, timeouts, and AI service endpoints."/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2024-2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="source" content="SIMPLE_WEB - High-level Web API Library https://github.com/ljr1981/simple_web"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_constants Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_constants_chart.html">Chart</a>
+<a class="nav class" href="simple_web_constants_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_constants"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Project-wide named constants for SIMPLE_WEB library.</span>
+		<span class="estring">Defines HTTP methods, status codes, headers, timeouts, and AI service endpoints.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_web/simple_web_constants_short.html">SIMPLE_WEB_CONSTANTS</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../base/any_short.html#f_default_create">default_create</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> HTTP Methods</span>
+
+	<a name="f_http_method_get"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_get">Http_method_get</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;GET&quot;
+
+	<a name="f_http_method_post"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_post">Http_method_post</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;POST&quot;
+
+	<a name="f_http_method_put"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_put">Http_method_put</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;PUT&quot;
+
+	<a name="f_http_method_delete"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_delete">Http_method_delete</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;DELETE&quot;
+
+	<a name="f_http_method_patch"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_patch">Http_method_patch</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;PATCH&quot;
+
+	<a name="f_http_method_head"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_head">Http_method_head</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;HEAD&quot;
+
+	<a name="f_http_method_options"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_options">Http_method_options</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;OPTIONS&quot;
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> HTTP Status Codes</span>
+
+	<a name="f_status_ok"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_ok">Status_ok</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">200</span>
+
+	<a name="f_status_created"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_created">Status_created</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">201</span>
+
+	<a name="f_status_accepted"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_accepted">Status_accepted</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">202</span>
+
+	<a name="f_status_no_content"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_no_content">Status_no_content</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">204</span>
+
+	<a name="f_status_bad_request"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_bad_request">Status_bad_request</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">400</span>
+
+	<a name="f_status_unauthorized"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_unauthorized">Status_unauthorized</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">401</span>
+
+	<a name="f_status_forbidden"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_forbidden">Status_forbidden</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">403</span>
+
+	<a name="f_status_not_found"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_not_found">Status_not_found</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">404</span>
+
+	<a name="f_status_method_not_allowed"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_method_not_allowed">Status_method_not_allowed</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">405</span>
+
+	<a name="f_status_request_timeout"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_request_timeout">Status_request_timeout</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">408</span>
+
+	<a name="f_status_too_many_requests"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_too_many_requests">Status_too_many_requests</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">429</span>
+
+	<a name="f_status_internal_server_error"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_internal_server_error">Status_internal_server_error</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">500</span>
+
+	<a name="f_status_bad_gateway"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_bad_gateway">Status_bad_gateway</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">502</span>
+
+	<a name="f_status_service_unavailable"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_service_unavailable">Status_service_unavailable</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">503</span>
+
+	<a name="f_status_gateway_timeout"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_gateway_timeout">Status_gateway_timeout</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">504</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Common Headers</span>
+
+	<a name="f_header_content_type"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_content_type">Header_content_type</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;Content-Type&quot;
+
+	<a name="f_header_authorization"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_authorization">Header_authorization</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;Authorization&quot;
+
+	<a name="f_header_accept"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_accept">Header_accept</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;Accept&quot;
+
+	<a name="f_header_user_agent"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_user_agent">Header_user_agent</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;User-Agent&quot;
+
+	<a name="f_header_content_length"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_content_length">Header_content_length</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;Content-Length&quot;
+
+	<a name="f_content_type_json"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_content_type_json">Content_type_json</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;application/json&quot;
+
+	<a name="f_content_type_form"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_content_type_form">Content_type_form</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;application/x-www-form-urlencoded&quot;
+
+	<a name="f_content_type_text"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_content_type_text">Content_type_text</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;text/plain&quot;
+
+	<a name="f_content_type_html"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_content_type_html">Content_type_html</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;text/html&quot;
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Authentication</span>
+
+	<a name="f_auth_bearer_prefix"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_auth_bearer_prefix">Auth_bearer_prefix</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;Bearer &quot;
+
+	<a name="f_auth_api_key_prefix"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_auth_api_key_prefix">Auth_api_key_prefix</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;x-api-key: &quot;
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> AI Service Endpoints</span>
+
+	<a name="f_claude_api_base_url"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_claude_api_base_url">Claude_api_base_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;https://api.anthropic.com/v1&quot;
+
+	<a name="f_claude_messages_endpoint"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_claude_messages_endpoint">Claude_messages_endpoint</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;/messages&quot;
+
+	<a name="f_claude_api_version_header"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_claude_api_version_header">Claude_api_version_header</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;anthropic-version&quot;
+
+	<a name="f_claude_api_version"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_claude_api_version">Claude_api_version</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;2023-06-01&quot;
+
+	<a name="f_openai_api_base_url"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_openai_api_base_url">Openai_api_base_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;https://api.openai.com/v1&quot;
+
+	<a name="f_openai_chat_endpoint"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_openai_chat_endpoint">Openai_chat_endpoint</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;/chat/completions&quot;
+
+	<a name="f_openai_completions_endpoint"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_openai_completions_endpoint">Openai_completions_endpoint</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;/completions&quot;
+
+	<a name="f_gemini_api_base_url"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_gemini_api_base_url">Gemini_api_base_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;https://generativelanguage.googleapis.com/v1beta&quot;
+
+	<a name="f_gemini_generate_endpoint"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_gemini_generate_endpoint">Gemini_generate_endpoint</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;/models/gemini-pro:generateContent&quot;
+
+	<a name="f_ollama_default_base_url"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_ollama_default_base_url">Ollama_default_base_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;http://localhost:11434&quot;
+
+	<a name="f_ollama_generate_endpoint"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_ollama_generate_endpoint">Ollama_generate_endpoint</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;/api/generate&quot;
+
+	<a name="f_ollama_chat_endpoint"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_ollama_chat_endpoint">Ollama_chat_endpoint</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;/api/chat&quot;
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Timeouts (milliseconds)</span>
+
+	<a name="f_default_timeout_ms"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_default_timeout_ms">Default_timeout_ms</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">30000</span>
+			<span class="ecomment">--</span><span class="ecomment"> 30 seconds default timeout</span>
+
+	<a name="f_ai_request_timeout_ms"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_ai_request_timeout_ms">Ai_request_timeout_ms</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">120000</span>
+			<span class="ecomment">--</span><span class="ecomment"> 2 minutes for AI requests (can be slow)</span>
+
+	<a name="f_connection_timeout_ms"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_connection_timeout_ms">Connection_timeout_ms</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">10000</span>
+			<span class="ecomment">--</span><span class="ecomment"> 10 seconds for establishing connection</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Limits</span>
+
+	<a name="f_max_retries"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_max_retries">Max_retries</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">3</span>
+			<span class="ecomment">--</span><span class="ecomment"> Maximum retry attempts for failed requests</span>
+
+	<a name="f_default_max_tokens"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_default_max_tokens">Default_max_tokens</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a> <span class="esymbol">=</span> <span class="enumber">4096</span>
+			<span class="ecomment">--</span><span class="ecomment"> Default maximum tokens for AI responses</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> User Agent</span>
+
+	<a name="f_default_user_agent"></a><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_default_user_agent">Default_user_agent</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;SIMPLE_WEB/1.0.0 Eiffel&quot;
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;Copyright (c) 2024-2025, Larry Rix&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;MIT License&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">SIMPLE_WEB - High-level Web API Library</span>
+		<a class="estring" href="https://github.com/ljr1981/simple_web">https://github.com/ljr1981/simple_web</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_web/simple_web_constants_short.html">SIMPLE_WEB_CONSTANTS</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_constants_chart.html">Chart</a>
+<a class="nav class" href="simple_web_constants_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_constants"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

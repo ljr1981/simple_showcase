@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTCORS (Cross-Origin Resource Sharing) middleware.  TTHandles: TT- Access-Control-Allow-Origin header TT- Preflight OPTIONS requests TT- Configurable allowed methods and headers  TTUsage (allow all origins): TTTserver.use_middleware (create {SIMPLE_WEB_CORS_MIDDLEWARE})  TTUsage (specific origins): TTTcreate cors.make_with_origins (<<https://example.com, https://app.example.com>>) TTTserver.use_middleware (cors)"/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_cors_middleware Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="simple_web_cors_middleware_links.html">Relations</a>
+<a class="nav class" href="simple_web_cors_middleware_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_cors_middleware"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../simple_web/simple_web_cors_middleware_chart.html">SIMPLE_WEB_CORS_MIDDLEWARE</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">src</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> 
+		<span class="estring">&quot;CORS (Cross-Origin Resource Sharing) middleware.</span>
+		
+		<span class="estring">Handles:</span>
+		<span class="estring">- Access-Control-Allow-Origin header</span>
+		<span class="estring">- Preflight OPTIONS requests</span>
+		<span class="estring">- Configurable allowed methods and headers</span>
+		
+		<span class="estring">Usage (allow all origins):</span>
+		<span class="estring">server.use_middleware (create </span><span class="esymbol">{</span><a class="eclass" href="../simple_web/simple_web_cors_middleware_chart.html">SIMPLE_WEB_CORS_MIDDLEWARE</a><span class="esymbol">}</span><span class="estring">)</span>
+		
+		<span class="estring">Usage (specific origins):</span>
+		<span class="estring">create cors.make_with_origins (&lt;&lt;%&quot;</span><a class="estring" href="https://example.com%">https://example.com%</a><span class="estring">&quot;, %&quot;</span><a class="estring" href="https://app.example.com%">https://app.example.com%</a><span class="estring">&quot;&gt;&gt;)</span>
+		<span class="estring">server.use_middleware (cors)&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_cors_middleware_short.html#f_make">make</a><span class="esymbol">,</span> <a class="efeature" href="../simple_web/simple_web_cors_middleware_short.html#f_make_with_origin">make_with_origin</a><span class="esymbol">,</span> <a class="efeature" href="../simple_web/simple_web_cors_middleware_short.html#f_make_with_origins">make_with_origins</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../simple_web/simple_web_middleware_chart.html">SIMPLE_WEB_MIDDLEWARE</a><span class="echar">*</span>
+
+<span class="ekeyword">Queries</span>
+	<span title="`allow_all_origins' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_cors_middleware_short.html#f_allow_all_origins">allow_all_origins</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`allowed_headers' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_cors_middleware_short.html#f_allowed_headers">allowed_headers</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`allowed_methods' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_cors_middleware_short.html#f_allowed_methods">allowed_methods</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`allowed_origins' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_cors_middleware_short.html#f_allowed_origins">allowed_origins</a><span class="esymbol">:</span> <a class="eclass" href="../base/arrayed_list_chart.html">ARRAYED_LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">]</span></span>
+	<span title="`max_age' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_cors_middleware_short.html#f_max_age">max_age</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`name' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_cors_middleware_short.html#f_name">Name</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`process' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_cors_middleware_short.html#f_process">process</a> <span class="esymbol">(</span><span class="elocal">a_request</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_server_request_chart.html">SIMPLE_WEB_SERVER_REQUEST</a><span class="esymbol">;</span> <span class="elocal">a_response</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_server_response_chart.html">SIMPLE_WEB_SERVER_RESPONSE</a><span class="esymbol">;</span> <span class="elocal">a_next</span><span class="esymbol">:</span> <a class="eclass" href="../base/procedure_chart.html">PROCEDURE</a><span class="esymbol">)</span></span>
+	<span title="`set_allowed_headers' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_cors_middleware_short.html#f_set_allowed_headers">set_allowed_headers</a> <span class="esymbol">(</span><span class="elocal">a_headers</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`set_allowed_methods' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_cors_middleware_short.html#f_set_allowed_methods">set_allowed_methods</a> <span class="esymbol">(</span><span class="elocal">a_methods</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`set_max_age' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_cors_middleware_short.html#f_set_max_age">set_max_age</a> <span class="esymbol">(</span><span class="elocal">a_seconds</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span></span>
+
+<span class="ekeyword">Constraints</span>
+	<span class="etag">allowed origins attached</span>
+	<span class="etag">allowed methods attached</span>
+	<span class="etag">allowed headers attached</span>
+	<span class="etag">max age non negative</span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="simple_web_cors_middleware_links.html">Relations</a>
+<a class="nav class" href="simple_web_cors_middleware_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_cors_middleware"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

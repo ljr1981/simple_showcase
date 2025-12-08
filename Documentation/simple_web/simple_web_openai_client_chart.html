@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Client for OpenAI API (ChatGPT). Provides clean interface for ChatGPT interactions."/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2024-2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="source" content="SIMPLE_WEB - High-level Web API Library https://github.com/ljr1981/simple_web"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_openai_client Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="simple_web_openai_client_links.html">Relations</a>
+<a class="nav class" href="simple_web_openai_client_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_openai_client"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../simple_web/simple_web_openai_client_chart.html">SIMPLE_WEB_OPENAI_CLIENT</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">src</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> 
+		<span class="estring">&quot;Client for OpenAI API (ChatGPT).</span>
+		<span class="estring">Provides clean interface for ChatGPT interactions.&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_make">make</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../simple_web/simple_web_constants_chart.html">SIMPLE_WEB_CONSTANTS</a>
+
+<span class="ekeyword">Queries</span>
+	<span title="`ai_request_timeout_ms' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_ai_request_timeout_ms">Ai_request_timeout_ms</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`api_key' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_api_key">api_key</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`auth_api_key_prefix' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_auth_api_key_prefix">Auth_api_key_prefix</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`auth_bearer_prefix' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_auth_bearer_prefix">Auth_bearer_prefix</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`claude_api_base_url' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_claude_api_base_url">Claude_api_base_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`claude_api_version' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_claude_api_version">Claude_api_version</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`claude_api_version_header' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_claude_api_version_header">Claude_api_version_header</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`claude_messages_endpoint' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_claude_messages_endpoint">Claude_messages_endpoint</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`connection_timeout_ms' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_connection_timeout_ms">Connection_timeout_ms</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`content_type_form' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_content_type_form">Content_type_form</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`content_type_html' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_content_type_html">Content_type_html</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`content_type_json' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_content_type_json">Content_type_json</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`content_type_text' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_content_type_text">Content_type_text</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`default_max_tokens' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_default_max_tokens">Default_max_tokens</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`default_timeout_ms' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_default_timeout_ms">Default_timeout_ms</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`default_user_agent' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_default_user_agent">Default_user_agent</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`gemini_api_base_url' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_gemini_api_base_url">Gemini_api_base_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`gemini_generate_endpoint' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_gemini_generate_endpoint">Gemini_generate_endpoint</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`header_accept' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_accept">Header_accept</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`header_authorization' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_authorization">Header_authorization</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`header_content_length' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_content_length">Header_content_length</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`header_content_type' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_content_type">Header_content_type</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`header_user_agent' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_user_agent">Header_user_agent</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`http_method_delete' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_delete">Http_method_delete</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`http_method_get' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_get">Http_method_get</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`http_method_head' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_head">Http_method_head</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`http_method_options' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_options">Http_method_options</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`http_method_patch' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_patch">Http_method_patch</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`http_method_post' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_post">Http_method_post</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`http_method_put' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_put">Http_method_put</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`max_retries' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_max_retries">Max_retries</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`max_tokens' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_max_tokens">max_tokens</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`model' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_model">model</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`ollama_chat_endpoint' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_ollama_chat_endpoint">Ollama_chat_endpoint</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`ollama_default_base_url' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_ollama_default_base_url">Ollama_default_base_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`ollama_generate_endpoint' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_ollama_generate_endpoint">Ollama_generate_endpoint</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`openai_api_base_url' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_openai_api_base_url">Openai_api_base_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`openai_chat_endpoint' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_openai_chat_endpoint">Openai_chat_endpoint</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`openai_completions_endpoint' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_openai_completions_endpoint">Openai_completions_endpoint</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`send_message' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_send_message">send_message</a> <span class="esymbol">(</span><span class="elocal">a_user_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`status_accepted' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_accepted">Status_accepted</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_bad_gateway' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_bad_gateway">Status_bad_gateway</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_bad_request' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_bad_request">Status_bad_request</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_created' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_created">Status_created</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_forbidden' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_forbidden">Status_forbidden</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_gateway_timeout' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_gateway_timeout">Status_gateway_timeout</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_internal_server_error' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_internal_server_error">Status_internal_server_error</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_method_not_allowed' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_method_not_allowed">Status_method_not_allowed</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_no_content' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_no_content">Status_no_content</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_not_found' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_not_found">Status_not_found</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_ok' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_ok">Status_ok</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_request_timeout' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_request_timeout">Status_request_timeout</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_service_unavailable' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_service_unavailable">Status_service_unavailable</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_too_many_requests' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_too_many_requests">Status_too_many_requests</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`status_unauthorized' was declared in SIMPLE_WEB_CONSTANTS"><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_status_unauthorized">Status_unauthorized</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`set_max_tokens' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_set_max_tokens">set_max_tokens</a> <span class="esymbol">(</span><span class="elocal">a_max</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span></span>
+	<span title="`set_model' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_set_model">set_model</a> <span class="esymbol">(</span><span class="elocal">a_model</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+
+<span class="ekeyword">Constraints</span>
+	<span class="etag">api key attached</span>
+	<span class="etag">client attached</span>
+	<span class="etag">model attached</span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="simple_web_openai_client_links.html">Relations</a>
+<a class="nav class" href="simple_web_openai_client_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_openai_client"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

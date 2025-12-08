@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Shared constants and utilities for Simple Showcase"/>
+<meta name="author" content="Larry Rix with Claude (Anthropic)"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>ssc_shared Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="ssc_shared_chart.html">Chart</a>
+<a class="nav class" href="ssc_shared_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="ssc_shared"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Shared constants and utilities for Simple Showcase&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix with Claude (Anthropic)&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../core/ssc_shared_short.html">SSC_SHARED</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../base/any_short.html#f_default_create">default_create</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Color Palette</span>
+
+	<a name="f_color_primary_dark"></a><a class="efeature" href="../core/ssc_shared_short.html#f_color_primary_dark">Color_primary_dark</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;#0c0b0b&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Deep charcoal - main background</span>
+
+	<a name="f_color_primary_light"></a><a class="efeature" href="../core/ssc_shared_short.html#f_color_primary_light">Color_primary_light</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;#fdfcfa&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Off-white - primary text</span>
+
+	<a name="f_color_accent_calm"></a><a class="efeature" href="../core/ssc_shared_short.html#f_color_accent_calm">Color_accent_calm</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;#0d4f4f&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Deep teal - unlock/solution sections</span>
+
+	<a name="f_color_accent_warning"></a><a class="efeature" href="../core/ssc_shared_short.html#f_color_accent_warning">Color_accent_warning</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;#4f2d0d&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Deep amber - problem sections</span>
+
+	<a name="f_color_accent_energy"></a><a class="efeature" href="../core/ssc_shared_short.html#f_color_accent_energy">Color_accent_energy</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;#2d0d4f&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Deep purple - shift/excitement sections</span>
+
+	<a name="f_color_accent_evidence"></a><a class="efeature" href="../core/ssc_shared_short.html#f_color_accent_evidence">Color_accent_evidence</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;#0d1a4f&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Deep navy - evidence/proof sections</span>
+
+	<a name="f_color_code_bg"></a><a class="efeature" href="../core/ssc_shared_short.html#f_color_code_bg">Color_code_bg</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;#1a1a1a&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Near-black - code blocks</span>
+
+	<a name="f_color_code_text"></a><a class="efeature" href="../core/ssc_shared_short.html#f_color_code_text">Color_code_text</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;#8fdf8f&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Soft green - code syntax</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Typography Classes</span>
+
+	<a name="f_font_hero_headline"></a><a class="efeature" href="../core/ssc_shared_short.html#f_font_hero_headline">Font_hero_headline</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;text-4xl sm:text-5xl md:text-[6vw] lg:text-[8vw] font-light tracking-[-0.02em] leading-tight&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Responsive hero headline: 4xl on mobile, scales up to 8vw on desktop</span>
+
+	<a name="f_font_section_headline"></a><a class="efeature" href="../core/ssc_shared_short.html#f_font_section_headline">Font_section_headline</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;text-2xl sm:text-3xl md:text-4xl font-medium leading-snug&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Responsive section headline: capped at 4xl with snug line-height for constrained containers</span>
+
+	<a name="f_font_body"></a><a class="efeature" href="../core/ssc_shared_short.html#f_font_body">Font_body</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;text-base sm:text-lg leading-relaxed&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Responsive body text: base on mobile, lg on larger screens</span>
+
+	<a name="f_font_section_label"></a><a class="efeature" href="../core/ssc_shared_short.html#f_font_section_label">Font_section_label</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;text-xs uppercase tracking-widest opacity-60&quot;
+
+	<a name="f_font_code"></a><a class="efeature" href="../core/ssc_shared_short.html#f_font_code">Font_code</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;font-mono text-xs sm:text-sm leading-relaxed&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Responsive code: smaller on mobile</span>
+
+	<a name="f_font_stats"></a><a class="efeature" href="../core/ssc_shared_short.html#f_font_stats">Font_stats</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;font-bold tabular-nums&quot;
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Animation Classes</span>
+
+	<a name="f_anim_text_reveal"></a><a class="efeature" href="../core/ssc_shared_short.html#f_anim_text_reveal">Anim_text_reveal</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;transition-all duration-700 ease-out&quot;
+
+	<a name="f_anim_card_entrance"></a><a class="efeature" href="../core/ssc_shared_short.html#f_anim_card_entrance">Anim_card_entrance</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;transition-all duration-500 ease-out&quot;
+
+	<a name="f_anim_hover"></a><a class="efeature" href="../core/ssc_shared_short.html#f_anim_hover">Anim_hover</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;transition-all duration-200 ease&quot;
+
+	<a name="f_anim_scroll_indicator"></a><a class="efeature" href="../core/ssc_shared_short.html#f_anim_scroll_indicator">Anim_scroll_indicator</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;animate-bounce&quot;
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Common Classes</span>
+
+	<a name="f_section_full_viewport"></a><a class="efeature" href="../core/ssc_shared_short.html#f_section_full_viewport">Section_full_viewport</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;min-h-screen w-full snap-start flex flex-col justify-center items-center px-4 sm:px-6 md:px-8&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Responsive padding: tighter on mobile</span>
+
+	<a name="f_container_centered"></a><a class="efeature" href="../core/ssc_shared_short.html#f_container_centered">Container_centered</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;max-w-4xl mx-auto text-center px-4 sm:px-0&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Centered container with mobile padding</span>
+
+	<a name="f_container_wide"></a><a class="efeature" href="../core/ssc_shared_short.html#f_container_wide">Container_wide</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;max-w-6xl mx-auto px-4 sm:px-0&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Wide container with mobile padding</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Base URL (for GitHub Pages)</span>
+
+	<a name="f_base_url"></a><a class="efeature" href="../core/ssc_shared_short.html#f_base_url">base_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Base URL path - empty for localhost, &quot;/simple_showcase&quot; for GitHub Pages</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set via shared_base_url cell</span>
+
+	<a name="f_shared_base_url"></a><a class="efeature" href="../core/ssc_shared_short.html#f_shared_base_url">Shared_base_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/cell_short.html">CELL</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Shared base URL cell - set once for all pages</span>
+			<span class="ecomment">--</span><span class="ecomment"> Default is empty (for local development)</span>
+
+	<a name="f_set_base_url_for_github_pages"></a><a class="efeature" href="../core/ssc_shared_short.html#f_set_base_url_for_github_pages">set_base_url_for_github_pages</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set base URL for GitHub Pages deployment</span>
+
+	<a name="f_base_tag"></a><a class="efeature" href="../core/ssc_shared_short.html#f_base_tag">base_tag</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> HTML base tag for proper link resolution</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> CDN URLs</span>
+
+	<a name="f_tailwind_cdn"></a><a class="efeature" href="../core/ssc_shared_short.html#f_tailwind_cdn">Tailwind_cdn</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;https://cdn.tailwindcss.com&quot;
+
+	<a name="f_alpine_cdn"></a><a class="efeature" href="../core/ssc_shared_short.html#f_alpine_cdn">Alpine_cdn</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js&quot;
+
+	<a name="f_alpine_intersect_cdn"></a><a class="efeature" href="../core/ssc_shared_short.html#f_alpine_intersect_cdn">Alpine_intersect_cdn</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js&quot;
+
+	<a name="f_alpine_collapse_cdn"></a><a class="efeature" href="../core/ssc_shared_short.html#f_alpine_collapse_cdn">Alpine_collapse_cdn</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js&quot;
+
+	<a name="f_lenis_cdn"></a><a class="efeature" href="../core/ssc_shared_short.html#f_lenis_cdn">Lenis_cdn</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js&quot;
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">valid_primary_dark</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_shared_short.html#f_color_primary_dark">Color_primary_dark</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;#&quot;<span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../core/ssc_shared_short.html#f_color_primary_dark">Color_primary_dark</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="enumber">7</span>
+	<span class="etag">valid_primary_light</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_shared_short.html#f_color_primary_light">Color_primary_light</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;#&quot;<span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../core/ssc_shared_short.html#f_color_primary_light">Color_primary_light</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="enumber">7</span>
+	<span class="etag">valid_accent_calm</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_shared_short.html#f_color_accent_calm">Color_accent_calm</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;#&quot;<span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../core/ssc_shared_short.html#f_color_accent_calm">Color_accent_calm</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="enumber">7</span>
+	<span class="etag">valid_accent_warning</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_shared_short.html#f_color_accent_warning">Color_accent_warning</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;#&quot;<span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../core/ssc_shared_short.html#f_color_accent_warning">Color_accent_warning</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="enumber">7</span>
+	<span class="etag">valid_accent_energy</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_shared_short.html#f_color_accent_energy">Color_accent_energy</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;#&quot;<span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../core/ssc_shared_short.html#f_color_accent_energy">Color_accent_energy</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="enumber">7</span>
+	<span class="etag">valid_accent_evidence</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_shared_short.html#f_color_accent_evidence">Color_accent_evidence</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;#&quot;<span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../core/ssc_shared_short.html#f_color_accent_evidence">Color_accent_evidence</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="enumber">7</span>
+	<span class="etag">valid_code_bg</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_shared_short.html#f_color_code_bg">Color_code_bg</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;#&quot;<span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../core/ssc_shared_short.html#f_color_code_bg">Color_code_bg</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="enumber">7</span>
+	<span class="etag">valid_code_text</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_shared_short.html#f_color_code_text">Color_code_text</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;#&quot;<span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../core/ssc_shared_short.html#f_color_code_text">Color_code_text</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="enumber">7</span>
+	<span class="etag">tailwind_https</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_shared_short.html#f_tailwind_cdn">Tailwind_cdn</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;https://&quot;<span class="esymbol">)</span>
+	<span class="etag">alpine_https</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_shared_short.html#f_alpine_cdn">Alpine_cdn</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;https://&quot;<span class="esymbol">)</span>
+	<span class="etag">alpine_intersect_https</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_shared_short.html#f_alpine_intersect_cdn">Alpine_intersect_cdn</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;https://&quot;<span class="esymbol">)</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../core/ssc_shared_short.html">SSC_SHARED</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="ssc_shared_chart.html">Chart</a>
+<a class="nav class" href="ssc_shared_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="ssc_shared"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTRender context for HTMX applications.  TTProvides URL/path building for HTMX attributes, eliminating TTthe need to pass spec_id, screen_id, etc. through every method.  TTExample: TTTctx := create {HTMX_RENDER_CONTEXT}.make (/api) TTTctx.resource (specs, my-app).resource (screens, main)  TTT-- Now generate URLs: TTTctx.url                        -- /api/specs/my-app/screens/main TTTctx.url_for (controls)       -- /api/specs/my-app/screens/main/controls TTTctx.url_for_id (controls, btn1)  -- /api/specs/my-app/screens/main/controls/btn1  TTT-- Use in elements: TTThtml.button (Save).hx_post (ctx.url_for (save))"/>
+<meta name="author" content="Claude Code"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>htmx_render_context Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="htmx_render_context_chart.html">Chart</a>
+<a class="nav class" href="htmx_render_context_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="htmx_render_context"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">		Render context for HTMX applications.</span>
+		
+		<span class="estring">		Provides URL/path building for HTMX attributes, eliminating</span>
+		<span class="estring">		the need to pass spec_id, screen_id, etc. through every method.</span>
+		
+		<span class="estring">		Example:</span>
+		<span class="estring">			ctx := create </span><span class="esymbol">{</span><a class="eclass" href="../simple_htmx/htmx_render_context_short.html">HTMX_RENDER_CONTEXT</a><span class="esymbol">}</span><span class="edot">.</span><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_make">make</a><span class="estring"> (&quot;/api&quot;)</span>
+		<span class="estring">			ctx.resource (&quot;specs&quot;, &quot;my-app&quot;).resource (&quot;screens&quot;, &quot;main&quot;)</span>
+		
+		<span class="estring">			-- Now generate URLs:</span>
+		<span class="estring">			ctx.url &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- &quot;/api/specs/my-app/screens/main&quot;</span>
+		<span class="estring">			ctx.url_for (&quot;controls&quot;) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- &quot;/api/specs/my-app/screens/main/controls&quot;</span>
+		<span class="estring">			ctx.url_for_id (&quot;controls&quot;, &quot;btn1&quot;) &nbsp;-- &quot;/api/specs/my-app/screens/main/controls/btn1&quot;</span>
+		
+		<span class="estring">			-- Use in elements:</span>
+		<span class="estring">			html.button (&quot;Save&quot;).hx_post (ctx.url_for (&quot;save&quot;))</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Claude Code&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_htmx/htmx_render_context_short.html">HTMX_RENDER_CONTEXT</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_make">make</a><span class="esymbol">,</span>
+	<a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_make_empty">make_empty</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_base_path"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_base_path">base_path</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Base API path (e.g., &quot;/api&quot;).</span>
+
+	<a name="f_path_segments"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="esymbol">:</span> <a class="eclass" href="../base/arrayed_list_short.html">ARRAYED_LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">resource_type</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a><span class="esymbol">;</span> <span class="elocal">resource_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a><span class="esymbol">]</span><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Accumulated path segments.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Path Building (fluent)</span>
+
+	<a name="f_resource"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_resource">resource</a> <span class="esymbol">(</span><span class="elocal">a_type</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add a resource segment (e.g., &quot;specs&quot;, &quot;my-app&quot;).</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">fluent_result</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="ekeyword">Current</span>
+			<span class="etag">segment_added</span><span class="esymbol">:</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="ekeyword">old</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <a class="esymbol" href="../base/integer_32_short.html#f_plus">+</a> <span class="enumber">1</span>
+
+	<a name="f_with_spec"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_with_spec">with_spec</a> <span class="esymbol">(</span><span class="elocal">a_spec_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add specs/</span><span class="ecomment">{</span><span class="ecomment">ID</span><span class="ecomment">}</span><span class="ecomment"> segment.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">fluent_result</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="ekeyword">Current</span>
+			<span class="etag">segment_added</span><span class="esymbol">:</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="ekeyword">old</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <a class="esymbol" href="../base/integer_32_short.html#f_plus">+</a> <span class="enumber">1</span>
+
+	<a name="f_with_screen"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_with_screen">with_screen</a> <span class="esymbol">(</span><span class="elocal">a_screen_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add screens/</span><span class="ecomment">{</span><span class="ecomment">ID</span><span class="ecomment">}</span><span class="ecomment"> segment.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">fluent_result</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="ekeyword">Current</span>
+			<span class="etag">segment_added</span><span class="esymbol">:</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="ekeyword">old</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <a class="esymbol" href="../base/integer_32_short.html#f_plus">+</a> <span class="enumber">1</span>
+
+	<a name="f_with_control"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_with_control">with_control</a> <span class="esymbol">(</span><span class="elocal">a_control_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add controls/</span><span class="ecomment">{</span><span class="ecomment">ID</span><span class="ecomment">}</span><span class="ecomment"> segment.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">fluent_result</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="ekeyword">Current</span>
+			<span class="etag">segment_added</span><span class="esymbol">:</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="ekeyword">old</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <a class="esymbol" href="../base/integer_32_short.html#f_plus">+</a> <span class="enumber">1</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> URL Generation</span>
+
+	<a name="f_url"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_url">url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Generate full URL from accumulated segments.</span>
+
+	<a name="f_url_8"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_url_8">url_8</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Generate full URL as STRING_8.</span>
+
+	<a name="f_url_for"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_url_for">url_for</a> <span class="esymbol">(</span><span class="elocal">a_action</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Generate URL with additional action/endpoint.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">ends_with_action</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_ends_with">ends_with</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_action</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_to_string_32">to_string_32</a><span class="esymbol">)</span>
+
+	<a name="f_url_for_8"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_url_for_8">url_for_8</a> <span class="esymbol">(</span><span class="elocal">a_action</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Generate URL with action as STRING_8.</span>
+
+	<a name="f_url_for_id"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_url_for_id">url_for_id</a> <span class="esymbol">(</span><span class="elocal">a_resource</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Generate URL with resource type and ID.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">ends_with_id</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_ends_with">ends_with</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_id</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_to_string_32">to_string_32</a><span class="esymbol">)</span>
+
+	<a name="f_url_for_id_8"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_url_for_id_8">url_for_id_8</a> <span class="esymbol">(</span><span class="elocal">a_resource</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Generate URL with resource and ID as STRING_8.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Convenience for Common Patterns</span>
+
+	<a name="f_controls_url"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_controls_url">controls_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> URL for controls collection.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">ends_with_controls</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_ends_with">ends_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;controls&quot;<span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_as_string_32">as_string_32</a><span class="esymbol">)</span>
+
+	<a name="f_control_url"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_control_url">control_url</a> <span class="esymbol">(</span><span class="elocal">a_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> URL for specific control.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">ends_with_id</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_ends_with">ends_with</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_id</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_to_string_32">to_string_32</a><span class="esymbol">)</span>
+
+	<a name="f_properties_url"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_properties_url">properties_url</a> <span class="esymbol">(</span><span class="elocal">a_control_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> URL for control properties (common HTMX pattern).</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">ends_with_id</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_ends_with">ends_with</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_control_id</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_to_string_32">to_string_32</a><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Duplication</span>
+
+	<a name="f_twin_context"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_twin_context">twin_context</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Create a copy of this context for branching.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_different</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Current</span>
+			<span class="etag">same_base_path</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_base_path">base_path</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_base_path">base_path</a><span class="esymbol">)</span>
+			<span class="etag">same_segment_count</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <span class="esymbol">=</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a>
+
+	<a name="f_child"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_child">child</a> <span class="esymbol">(</span><span class="elocal">a_type</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Create child context with additional segment (doesn't modify Current).</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_different</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Current</span>
+			<span class="etag">current_unchanged</span><span class="esymbol">:</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="ekeyword">old</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a>
+			<span class="etag">child_has_more</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <span class="esymbol">=</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <a class="esymbol" href="../base/integer_32_short.html#f_plus">+</a> <span class="enumber">1</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Target Selectors</span>
+
+	<a name="f_target_id"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_target_id">target_id</a> <span class="esymbol">(</span><span class="elocal">a_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Generate CSS ID selector (#id).</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">starts_with_hash</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/string_32_short.html#f_item">item</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="enumber">1</span><span class="esymbol">)</span> <span class="esymbol">=</span> <span class="echar">'#'</span><span class="edot">.</span><a class="efeature" href="../base/character_8_short.html#f_to_character_32">to_character_32</a>
+			<span class="etag">correct_length</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="elocal">a_id</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_count">count</a> <a class="esymbol" href="../base/integer_32_short.html#f_plus">+</a> <span class="enumber">1</span>
+
+	<a name="f_target_class"></a><a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_target_class">target_class</a> <span class="esymbol">(</span><span class="elocal">a_class</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Generate CSS class selector (.class).</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">starts_with_dot</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/string_32_short.html#f_item">item</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="enumber">1</span><span class="esymbol">)</span> <span class="esymbol">=</span> <span class="echar">'.'</span><span class="edot">.</span><a class="efeature" href="../base/character_8_short.html#f_to_character_32">to_character_32</a>
+			<span class="etag">correct_length</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="elocal">a_class</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_count">count</a> <a class="esymbol" href="../base/integer_32_short.html#f_plus">+</a> <span class="enumber">1</span>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">base_path_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_base_path">base_path</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	<span class="etag">segments_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_htmx/htmx_render_context_short.html#f_path_segments">path_segments</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_htmx/htmx_render_context_short.html">HTMX_RENDER_CONTEXT</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="htmx_render_context_chart.html">Chart</a>
+<a class="nav class" href="htmx_render_context_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="htmx_render_context"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

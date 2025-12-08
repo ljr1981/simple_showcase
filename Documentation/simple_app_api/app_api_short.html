@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Unified facade for building Eiffel applications"/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>app_api Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="app_api_chart.html">Chart</a>
+<a class="nav class" href="app_api_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="app_api"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Unified facade for building Eiffel applications&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_app_api/app_api_short.html">APP_API</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../simple_app_api/app_api_short.html#f_make">make</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Web Server</span>
+
+	<a name="f_new_web_client"></a><a class="efeature" href="../simple_app_api/app_api_short.html#f_new_web_client">new_web_client</a><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_client_short.html">SIMPLE_WEB_CLIENT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create new web client for HTTP requests.</span>
+
+	<a name="f_new_get_request"></a><a class="efeature" href="../simple_app_api/app_api_short.html#f_new_get_request">new_get_request</a> <span class="esymbol">(</span><span class="elocal">a_url</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_request_short.html">SIMPLE_WEB_REQUEST</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create new GET request for </span><span class="equoted">a_url</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">url_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_url</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">method_is_get</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../simple_web/simple_web_request_short.html#f_method">method</a> <span class="esymbol">~</span> <a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_get">Http_method_get</a>
+			<span class="etag">url_set</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../simple_web/simple_web_request_short.html#f_url">url</a> <span class="esymbol">~</span> <span class="elocal">a_url</span>
+
+	<a name="f_new_post_request"></a><a class="efeature" href="../simple_app_api/app_api_short.html#f_new_post_request">new_post_request</a> <span class="esymbol">(</span><span class="elocal">a_url</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_request_short.html">SIMPLE_WEB_REQUEST</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create new POST request for </span><span class="equoted">a_url</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">url_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_url</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">method_is_post</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../simple_web/simple_web_request_short.html#f_method">method</a> <span class="esymbol">~</span> <a class="efeature" href="../simple_web/simple_web_constants_short.html#f_http_method_post">Http_method_post</a>
+			<span class="etag">url_set</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../simple_web/simple_web_request_short.html#f_url">url</a> <span class="esymbol">~</span> <span class="elocal">a_url</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Alpine.js Components</span>
+
+	<a name="f_new_alpine_factory"></a><a class="efeature" href="../simple_app_api/app_api_short.html#f_new_alpine_factory">new_alpine_factory</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_factory_short.html">ALPINE_FACTORY</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create new Alpine.js element factory.</span>
+
+	<a name="f_alpine"></a><a class="efeature" href="../simple_app_api/app_api_short.html#f_alpine">Alpine</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_factory_short.html">ALPINE_FACTORY</a>
+			<span class="ecomment">--</span><span class="ecomment"> Direct access to Alpine.js factory.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Layer Access</span>
+
+	<a name="f_service"></a><a class="efeature" href="../simple_app_api/app_api_short.html#f_service">Service</a><span class="esymbol">:</span> <span class="neclass">SERVICE_API</span>
+			<span class="ecomment">--</span><span class="ecomment"> Access to service layer features ONLY.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Returns isolated instance - only service features visible.</span>
+
+	<a name="f_foundation"></a><a class="efeature" href="../simple_app_api/app_api_short.html#f_foundation">Foundation</a><span class="esymbol">:</span> <span class="neclass">FOUNDATION_API</span>
+			<span class="ecomment">--</span><span class="ecomment"> Access to foundation layer features ONLY.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Returns isolated instance - only foundation features visible.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Direct Access (Singleton Instances)</span>
+
+	<a name="f_web_client"></a><a class="efeature" href="../simple_app_api/app_api_short.html#f_web_client">Web_client</a><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_client_short.html">SIMPLE_WEB_CLIENT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Direct access to web client.</span>
+	
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_app_api/app_api_short.html">APP_API</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="app_api_chart.html">Chart</a>
+<a class="nav class" href="app_api_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="app_api"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

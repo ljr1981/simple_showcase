@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Shared router singleton for SIMPLE_WEB_SERVER. Holds routes and middleware pipeline that are accessed by execution instances."/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2024-2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_server_router Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_server_router_chart.html">Chart</a>
+<a class="nav class" href="simple_web_server_router_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_server_router"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Shared router singleton for SIMPLE_WEB_SERVER.</span>
+		<span class="estring">Holds routes and middleware pipeline that are accessed by execution instances.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_web/simple_web_server_router_short.html">SIMPLE_WEB_SERVER_ROUTER</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../base/any_short.html#f_default_create">default_create</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_routes"></a><a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_routes">Routes</a><span class="esymbol">:</span> <a class="eclass" href="../base/arrayed_list_short.html">ARRAYED_LIST</a> <span class="esymbol">[</span><a class="eclass" href="../simple_web/simple_web_server_route_short.html">SIMPLE_WEB_SERVER_ROUTE</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Registered routes (shared across entire process).</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_middleware_pipeline"></a><a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_middleware_pipeline">Middleware_pipeline</a><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_middleware_pipeline_short.html">SIMPLE_WEB_MIDDLEWARE_PIPELINE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Middleware pipeline (shared across entire process).</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Route Registration</span>
+
+	<a name="f_add_route"></a><a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_add_route">add_route</a> <span class="esymbol">(</span><span class="elocal">a_route</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_server_route_short.html">SIMPLE_WEB_SERVER_ROUTE</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add a route.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">route_attached</span><span class="esymbol">:</span> <span class="elocal">a_route</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">route_added</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_routes">Routes</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_route</span><span class="esymbol">)</span>
+			<span class="etag">count_increased</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_routes">Routes</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="ekeyword">old</span> <a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_routes">Routes</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_count">count</a> <a class="esymbol" href="../base/integer_32_short.html#f_plus">+</a> <span class="enumber">1</span>
+
+	<a name="f_clear_routes"></a><a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_clear_routes">clear_routes</a>
+			<span class="ecomment">--</span><span class="ecomment"> Remove all routes.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">routes_empty</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_routes">Routes</a><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Middleware</span>
+
+	<a name="f_add_middleware"></a><a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_add_middleware">add_middleware</a> <span class="esymbol">(</span><span class="elocal">a_middleware</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_middleware_short.html">SIMPLE_WEB_MIDDLEWARE</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add middleware to pipeline.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">middleware_attached</span><span class="esymbol">:</span> <span class="elocal">a_middleware</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">middleware_added</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_middleware_pipeline">Middleware_pipeline</a><span class="edot">.</span><a class="efeature" href="../simple_web/simple_web_middleware_pipeline_short.html#f_count">count</a> <span class="esymbol">=</span> <span class="ekeyword">old</span> <a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_middleware_pipeline">Middleware_pipeline</a><span class="edot">.</span><a class="efeature" href="../simple_web/simple_web_middleware_pipeline_short.html#f_count">count</a> <a class="esymbol" href="../base/integer_32_short.html#f_plus">+</a> <span class="enumber">1</span>
+
+	<a name="f_clear_middleware"></a><a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_clear_middleware">clear_middleware</a>
+			<span class="ecomment">--</span><span class="ecomment"> Remove all middleware.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">middleware_empty</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_middleware_pipeline">Middleware_pipeline</a><span class="edot">.</span><a class="efeature" href="../simple_web/simple_web_middleware_pipeline_short.html#f_is_empty">is_empty</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Matching</span>
+
+	<a name="f_find_route"></a><a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_find_route">find_route</a> <span class="esymbol">(</span><span class="elocal">a_method</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_path</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../simple_web/simple_web_server_route_short.html">SIMPLE_WEB_SERVER_ROUTE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Find route matching </span><span class="equoted">a_method</span><span class="ecomment"> and </span><span class="equoted">a_path</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">method_attached</span><span class="esymbol">:</span> <span class="elocal">a_method</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">path_attached</span><span class="esymbol">:</span> <span class="elocal">a_path</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">found_matches</span><span class="esymbol">:</span> <span class="ekeyword">attached</span> <span class="ekeyword">Result</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../simple_web/simple_web_server_route_short.html#f_matches">matches</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_method</span><span class="esymbol">,</span> <span class="elocal">a_path</span><span class="esymbol">)</span>
+			<span class="etag">found_in_routes</span><span class="esymbol">:</span> <span class="ekeyword">attached</span> <span class="ekeyword">Result</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="efeature" href="../simple_web/simple_web_server_router_short.html#f_routes">Routes</a><span class="edot">.</span><a class="efeature" href="../base/arrayed_list_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="ekeyword">Result</span><span class="esymbol">)</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;Copyright (c) 2024-2025, Larry Rix&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;MIT License&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_web/simple_web_server_router_short.html">SIMPLE_WEB_SERVER_ROUTER</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_server_router_chart.html">Chart</a>
+<a class="nav class" href="simple_web_server_router_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_server_router"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

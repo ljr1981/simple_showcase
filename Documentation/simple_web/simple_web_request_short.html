@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Fluent request builder for HTTP requests. Provides chainable methods for constructing requests."/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2024-2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="source" content="SIMPLE_WEB - High-level Web API Library https://github.com/ljr1981/simple_web"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_request Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_request_chart.html">Chart</a>
+<a class="nav class" href="simple_web_request_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_request"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Fluent request builder for HTTP requests.</span>
+		<span class="estring">Provides chainable methods for constructing requests.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_web/simple_web_request_short.html">SIMPLE_WEB_REQUEST</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../simple_web/simple_web_request_short.html#f_make_get">make_get</a><span class="esymbol">,</span>
+	<a class="efeature" href="../simple_web/simple_web_request_short.html#f_make_post">make_post</a><span class="esymbol">,</span>
+	<a class="efeature" href="../simple_web/simple_web_request_short.html#f_make_put">make_put</a><span class="esymbol">,</span>
+	<a class="efeature" href="../simple_web/simple_web_request_short.html#f_make_delete">make_delete</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_method"></a><a class="efeature" href="../simple_web/simple_web_request_short.html#f_method">method</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> HTTP method (GET, POST, etc.)</span>
+
+	<a name="f_url"></a><a class="efeature" href="../simple_web/simple_web_request_short.html#f_url">url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Request URL</span>
+
+	<a name="f_body"></a><a class="efeature" href="../simple_web/simple_web_request_short.html#f_body">body</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Request body content</span>
+
+	<a name="f_headers"></a><a class="efeature" href="../simple_web/simple_web_request_short.html#f_headers">headers</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_table_short.html">STRING_TABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Request headers (name -&gt; value)</span>
+
+	<a name="f_timeout_ms"></a><a class="efeature" href="../simple_web/simple_web_request_short.html#f_timeout_ms">timeout_ms</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Request timeout in milliseconds</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element Change: Headers</span>
+
+	<a name="f_with_header"></a><a class="efeature" href="../simple_web/simple_web_request_short.html#f_with_header">with_header</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">,</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_request_short.html">SIMPLE_WEB_REQUEST</a>
+			<span class="ecomment">--</span><span class="ecomment"> Add header (returns self for chaining)</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">name_attached</span><span class="esymbol">:</span> <span class="elocal">a_name</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">name_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">value_attached</span><span class="esymbol">:</span> <span class="elocal">a_value</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">returns_self</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="ekeyword">Current</span>
+			<span class="etag">header_added</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_headers">headers</a><span class="edot">.</span><a class="efeature" href="../base/hash_table_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">)</span>
+
+	<a name="f_with_content_type"></a><a class="efeature" href="../simple_web/simple_web_request_short.html#f_with_content_type">with_content_type</a> <span class="esymbol">(</span><span class="elocal">a_content_type</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_request_short.html">SIMPLE_WEB_REQUEST</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set Content-Type header</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">type_attached</span><span class="esymbol">:</span> <span class="elocal">a_content_type</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">returns_self</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="ekeyword">Current</span>
+			<span class="etag">content_type_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_headers">headers</a><span class="edot">.</span><a class="efeature" href="../base/hash_table_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_content_type">Header_content_type</a><span class="esymbol">)</span>
+
+	<a name="f_with_json_content_type"></a><a class="efeature" href="../simple_web/simple_web_request_short.html#f_with_json_content_type">with_json_content_type</a><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_request_short.html">SIMPLE_WEB_REQUEST</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set Content-Type to application/json</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">returns_self</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="ekeyword">Current</span>
+			<span class="etag">json_content_type_set</span><span class="esymbol">:</span> <span class="ekeyword">attached</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_headers">headers</a><span class="edot">.</span><a class="efeature" href="../base/hash_table_short.html#f_item">item</a><span class="esymbol"> </span><span class="esymbol">(</span><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_content_type">Header_content_type</a><span class="esymbol">)</span> <span class="ekeyword">as</span> v <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <span class="elocal">v</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_content_type_json">Content_type_json</a><span class="esymbol">)</span>
+
+	<a name="f_with_bearer_token"></a><a class="efeature" href="../simple_web/simple_web_request_short.html#f_with_bearer_token">with_bearer_token</a> <span class="esymbol">(</span><span class="elocal">a_token</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_request_short.html">SIMPLE_WEB_REQUEST</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set Authorization header with Bearer token</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">token_attached</span><span class="esymbol">:</span> <span class="elocal">a_token</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">token_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_token</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">returns_self</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="ekeyword">Current</span>
+			<span class="etag">authorization_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_headers">headers</a><span class="edot">.</span><a class="efeature" href="../base/hash_table_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_authorization">Header_authorization</a><span class="esymbol">)</span>
+
+	<a name="f_with_api_key"></a><a class="efeature" href="../simple_web/simple_web_request_short.html#f_with_api_key">with_api_key</a> <span class="esymbol">(</span><span class="elocal">a_key</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_request_short.html">SIMPLE_WEB_REQUEST</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set x-api-key header</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">key_attached</span><span class="esymbol">:</span> <span class="elocal">a_key</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">key_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_key</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">returns_self</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="ekeyword">Current</span>
+			<span class="etag">api_key_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_headers">headers</a><span class="edot">.</span><a class="efeature" href="../base/hash_table_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;x-api-key&quot;<span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element Change: Body</span>
+
+	<a name="f_with_body"></a><a class="efeature" href="../simple_web/simple_web_request_short.html#f_with_body">with_body</a> <span class="esymbol">(</span><span class="elocal">a_body</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_request_short.html">SIMPLE_WEB_REQUEST</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set request body (returns self for chaining)</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">body_attached</span><span class="esymbol">:</span> <span class="elocal">a_body</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">returns_self</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="ekeyword">Current</span>
+			<span class="etag">body_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_body">body</a> <span class="esymbol">=</span> <span class="elocal">a_body</span>
+
+	<a name="f_with_json_body"></a><a class="efeature" href="../simple_web/simple_web_request_short.html#f_with_json_body">with_json_body</a> <span class="esymbol">(</span><span class="elocal">a_json</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_request_short.html">SIMPLE_WEB_REQUEST</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set JSON body and content type</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">json_attached</span><span class="esymbol">:</span> <span class="elocal">a_json</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">returns_self</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="ekeyword">Current</span>
+			<span class="etag">body_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_body">body</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_json</span><span class="esymbol">)</span>
+			<span class="etag">json_content_type_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_headers">headers</a><span class="edot">.</span><a class="efeature" href="../base/hash_table_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><a class="efeature" href="../simple_web/simple_web_constants_short.html#f_header_content_type">Header_content_type</a><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element Change: Timeout</span>
+
+	<a name="f_with_timeout"></a><a class="efeature" href="../simple_web/simple_web_request_short.html#f_with_timeout">with_timeout</a> <span class="esymbol">(</span><span class="elocal">a_timeout_ms</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_request_short.html">SIMPLE_WEB_REQUEST</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set request timeout</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">timeout_positive</span><span class="esymbol">:</span> <span class="elocal">a_timeout_ms</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">returns_self</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="ekeyword">Current</span>
+			<span class="etag">timeout_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_timeout_ms">timeout_ms</a> <span class="esymbol">=</span> <span class="elocal">a_timeout_ms</span>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">method_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_method">method</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	<span class="etag">url_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_url">url</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	<span class="etag">body_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_body">body</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	<span class="etag">headers_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_headers">headers</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	<span class="etag">timeout_positive</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_request_short.html#f_timeout_ms">timeout_ms</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;Copyright (c) 2024-2025, Larry Rix&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;MIT License&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">SIMPLE_WEB - High-level Web API Library</span>
+		<a class="estring" href="https://github.com/ljr1981/simple_web">https://github.com/ljr1981/simple_web</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_web/simple_web_request_short.html">SIMPLE_WEB_REQUEST</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_request_chart.html">Chart</a>
+<a class="nav class" href="simple_web_request_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_request"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTInput sanitization utilities for HTTP server security.  TTProvides methods to sanitize user input and prevent common attacks: TT- HTML/XSS sanitization TT- SQL injection prevention (basic escaping) TT- Path traversal prevention TT- Header injection prevention  TTUsage: TTTsanitizer: SIMPLE_WEB_SANITIZER TTT... TTTl_safe_name := sanitizer.sanitize_html (user_input) TTTl_safe_param := sanitizer.sanitize_path_parameter (raw_param)"/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_sanitizer Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_sanitizer_chart.html">Chart</a>
+<a class="nav class" href="simple_web_sanitizer_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_sanitizer"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">		Input sanitization utilities for HTTP server security.</span>
+		
+		<span class="estring">		Provides methods to sanitize user input and prevent common attacks:</span>
+		<span class="estring">		- HTML/XSS sanitization</span>
+		<span class="estring">		- SQL injection prevention (basic escaping)</span>
+		<span class="estring">		- Path traversal prevention</span>
+		<span class="estring">		- Header injection prevention</span>
+		
+		<span class="estring">		Usage:</span>
+		<span class="estring">			sanitizer: SIMPLE_WEB_SANITIZER</span>
+		<span class="estring">			...</span>
+		<span class="estring">			l_safe_name := sanitizer.sanitize_html (user_input)</span>
+		<span class="estring">			l_safe_param := sanitizer.sanitize_path_parameter (raw_param)</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_web/simple_web_sanitizer_short.html">SIMPLE_WEB_SANITIZER</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../base/any_short.html#f_default_create">default_create</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> HTML Sanitization</span>
+
+	<a name="f_sanitize_html"></a><a class="efeature" href="../simple_web/simple_web_sanitizer_short.html#f_sanitize_html">sanitize_html</a> <span class="esymbol">(</span><span class="elocal">a_input</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Escape HTML special characters to prevent XSS.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Converts: &lt; &gt; &#38; &quot; ' to HTML entities.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">input_attached</span><span class="esymbol">:</span> <span class="elocal">a_input</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">no_html_tags</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'&lt;'</span><span class="edot">.</span><a class="efeature" href="../base/character_8_short.html#f_to_character_32">to_character_32</a><span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'&gt;'</span><span class="edot">.</span><a class="efeature" href="../base/character_8_short.html#f_to_character_32">to_character_32</a><span class="esymbol">)</span>
+
+	<a name="f_strip_html_tags"></a><a class="efeature" href="../simple_web/simple_web_sanitizer_short.html#f_strip_html_tags">strip_html_tags</a> <span class="esymbol">(</span><span class="elocal">a_input</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Remove all HTML tags from input.</span>
+			<span class="ecomment">--</span><span class="ecomment"> More aggressive than sanitize_html - strips rather than escapes.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">input_attached</span><span class="esymbol">:</span> <span class="elocal">a_input</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">no_tags</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'&lt;'</span><span class="edot">.</span><a class="efeature" href="../base/character_8_short.html#f_to_character_32">to_character_32</a><span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'&gt;'</span><span class="edot">.</span><a class="efeature" href="../base/character_8_short.html#f_to_character_32">to_character_32</a><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Path Parameter Sanitization</span>
+
+	<a name="f_sanitize_path_parameter"></a><a class="efeature" href="../simple_web/simple_web_sanitizer_short.html#f_sanitize_path_parameter">sanitize_path_parameter</a> <span class="esymbol">(</span><span class="elocal">a_input</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Sanitize path parameter to prevent path traversal attacks.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Removes: .. / \ null bytes and other dangerous characters.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">input_attached</span><span class="esymbol">:</span> <span class="elocal">a_input</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">no_traversal</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;..&quot;<span class="esymbol">)</span>
+			<span class="etag">no_slashes</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'/'</span><span class="edot">.</span><a class="efeature" href="../base/character_8_short.html#f_to_character_32">to_character_32</a><span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'\'</span><span class="edot">.</span><a class="efeature" href="../base/character_8_short.html#f_to_character_32">to_character_32</a><span class="esymbol">)</span>
+
+	<a name="f_is_safe_path_parameter"></a><a class="efeature" href="../simple_web/simple_web_sanitizer_short.html#f_is_safe_path_parameter">is_safe_path_parameter</a> <span class="esymbol">(</span><span class="elocal">a_input</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is </span><span class="equoted">a_input</span><span class="ecomment"> a safe path parameter (no dangerous characters)?</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">input_attached</span><span class="esymbol">:</span> <span class="elocal">a_input</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Header Sanitization</span>
+
+	<a name="f_sanitize_header_value"></a><a class="efeature" href="../simple_web/simple_web_sanitizer_short.html#f_sanitize_header_value">sanitize_header_value</a> <span class="esymbol">(</span><span class="elocal">a_input</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Sanitize header value to prevent header injection.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Removes CR, LF, and null bytes.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">input_attached</span><span class="esymbol">:</span> <span class="elocal">a_input</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">no_crlf</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'%R'</span><span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'%N'</span><span class="esymbol">)</span>
+
+	<a name="f_is_safe_header_value"></a><a class="efeature" href="../simple_web/simple_web_sanitizer_short.html#f_is_safe_header_value">is_safe_header_value</a> <span class="esymbol">(</span><span class="elocal">a_input</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is </span><span class="equoted">a_input</span><span class="ecomment"> safe for use as a header value?</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">input_attached</span><span class="esymbol">:</span> <span class="elocal">a_input</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> SQL Sanitization (Basic)</span>
+
+	<a name="f_escape_sql_string"></a><a class="efeature" href="../simple_web/simple_web_sanitizer_short.html#f_escape_sql_string">escape_sql_string</a> <span class="esymbol">(</span><span class="elocal">a_input</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Escape single quotes for SQL strings.</span>
+			<span class="ecomment">--</span><span class="ecomment"> NOTE: Prefer parameterized queries over string escaping.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">input_attached</span><span class="esymbol">:</span> <span class="elocal">a_input</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> JSON Sanitization</span>
+
+	<a name="f_sanitize_json_string"></a><a class="efeature" href="../simple_web/simple_web_sanitizer_short.html#f_sanitize_json_string">sanitize_json_string</a> <span class="esymbol">(</span><span class="elocal">a_input</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Escape special characters for JSON string values.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">input_attached</span><span class="esymbol">:</span> <span class="elocal">a_input</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Length Validation</span>
+
+	<a name="f_truncate"></a><a class="efeature" href="../simple_web/simple_web_sanitizer_short.html#f_truncate">truncate</a> <span class="esymbol">(</span><span class="elocal">a_input</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_max_length</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Return </span><span class="equoted">a_input</span><span class="ecomment"> truncated to </span><span class="equoted">a_max_length</span><span class="ecomment"> characters.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">input_attached</span><span class="esymbol">:</span> <span class="elocal">a_input</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">positive_length</span><span class="esymbol">:</span> <span class="elocal">a_max_length</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">length_limited</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_less_equal">&lt;=</a> <span class="elocal">a_max_length</span>
+
+	<a name="f_is_within_length"></a><a class="efeature" href="../simple_web/simple_web_sanitizer_short.html#f_is_within_length">is_within_length</a> <span class="esymbol">(</span><span class="elocal">a_input</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_max_length</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is </span><span class="equoted">a_input</span><span class="ecomment"> within allowed length?</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">input_attached</span><span class="esymbol">:</span> <span class="elocal">a_input</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">positive_length</span><span class="esymbol">:</span> <span class="elocal">a_max_length</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Combined Sanitization</span>
+
+	<a name="f_sanitize_user_input"></a><a class="efeature" href="../simple_web/simple_web_sanitizer_short.html#f_sanitize_user_input">sanitize_user_input</a> <span class="esymbol">(</span><span class="elocal">a_input</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">;</span> <span class="elocal">a_max_length</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_32_short.html">STRING_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Apply common sanitization: HTML escape and length limit.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Suitable for general text input from users.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">input_attached</span><span class="esymbol">:</span> <span class="elocal">a_input</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">positive_length</span><span class="esymbol">:</span> <span class="elocal">a_max_length</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">length_limited</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_32_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_less_equal">&lt;=</a> <span class="elocal">a_max_length</span> <a class="esymbol" href="../base/integer_32_short.html#f_plus">+</a> <span class="enumber">20</span>
+	
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;Copyright (c) 2025, Larry Rix&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;MIT License&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_web/simple_web_sanitizer_short.html">SIMPLE_WEB_SANITIZER</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_sanitizer_chart.html">Chart</a>
+<a class="nav class" href="simple_web_sanitizer_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_sanitizer"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

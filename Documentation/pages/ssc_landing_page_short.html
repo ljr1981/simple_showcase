@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Landing page with all 8 sections"/>
+<meta name="author" content="Larry Rix with Claude (Anthropic)"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>ssc_landing_page Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="ssc_landing_page_chart.html">Chart</a>
+<a class="nav class" href="ssc_landing_page_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="ssc_landing_page"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;Landing page with all 8 sections&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix with Claude (Anthropic)&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../pages/ssc_landing_page_short.html">SSC_LANDING_PAGE</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../pages/ssc_landing_page_short.html#f_make">make</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_title"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_title">Title</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;Simple Showcase&quot;
+
+	<a name="f_description"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_description">Description</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;25 libraries. 1,200+ tests. 13 days. One person. AI-assisted, contract-verified development.&quot;
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Sections</span>
+
+	<a name="f_hero_section"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_hero_section">hero_section</a><span class="esymbol">:</span> <a class="eclass" href="../components/ssc_hero_section_short.html">SSC_HERO_SECTION</a>
+
+	<a name="f_recognition_section"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_recognition_section">recognition_section</a><span class="esymbol">:</span> <a class="eclass" href="../components/ssc_recognition_section_short.html">SSC_RECOGNITION_SECTION</a>
+
+	<a name="f_shift_section"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_shift_section">shift_section</a><span class="esymbol">:</span> <a class="eclass" href="../components/ssc_shift_section_short.html">SSC_SHIFT_SECTION</a>
+
+	<a name="f_problem_section"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_problem_section">problem_section</a><span class="esymbol">:</span> <a class="eclass" href="../components/ssc_problem_section_short.html">SSC_PROBLEM_SECTION</a>
+
+	<a name="f_unlock_section"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_unlock_section">unlock_section</a><span class="esymbol">:</span> <a class="eclass" href="../components/ssc_unlock_section_short.html">SSC_UNLOCK_SECTION</a>
+
+	<a name="f_evidence_section"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_evidence_section">evidence_section</a><span class="esymbol">:</span> <a class="eclass" href="../components/ssc_evidence_section_short.html">SSC_EVIDENCE_SECTION</a>
+
+	<a name="f_revelation_section"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_revelation_section">revelation_section</a><span class="esymbol">:</span> <a class="eclass" href="../components/ssc_revelation_section_short.html">SSC_REVELATION_SECTION</a>
+
+	<a name="f_workflow_section"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_workflow_section">workflow_section</a><span class="esymbol">:</span> <a class="eclass" href="../components/ssc_workflow_section_short.html">SSC_WORKFLOW_SECTION</a>
+
+	<a name="f_invitation_section"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_invitation_section">invitation_section</a><span class="esymbol">:</span> <a class="eclass" href="../components/ssc_invitation_section_short.html">SSC_INVITATION_SECTION</a>
+
+	<a name="f_nav_overlay"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_nav_overlay">nav_overlay</a><span class="esymbol">:</span> <a class="eclass" href="../components/ssc_nav_overlay_short.html">SSC_NAV_OVERLAY</a>
+
+	<a name="f_hamburger_menu"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_hamburger_menu">hamburger_menu</a><span class="esymbol">:</span> <a class="eclass" href="../components/ssc_hamburger_menu_short.html">SSC_HAMBURGER_MENU</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Generation</span>
+
+	<a name="f_to_html"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_to_html">to_html</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Generate complete HTML page</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">is_html</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;&lt;!DOCTYPE html&gt;&quot;<span class="esymbol">)</span>
+			<span class="etag">has_all_sections</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;hero&quot;<span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;invitation&quot;<span class="esymbol">)</span>
+
+	<a name="f_body_content"></a><a class="efeature" href="../pages/ssc_landing_page_short.html#f_body_content">body_content</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Generate all sections</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">has_scroll_container</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;snap-container&quot;<span class="esymbol">)</span>
+			<span class="etag">has_nav_overlay</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;navOverlay&quot;<span class="esymbol">)</span>
+	
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../pages/ssc_landing_page_short.html">SSC_LANDING_PAGE</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="ssc_landing_page_chart.html">Chart</a>
+<a class="nav class" href="ssc_landing_page_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="ssc_landing_page"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

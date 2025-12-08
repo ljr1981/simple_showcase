@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Client for OpenAI API (ChatGPT). Provides clean interface for ChatGPT interactions."/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2024-2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="source" content="SIMPLE_WEB - High-level Web API Library https://github.com/ljr1981/simple_web"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_openai_client Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_openai_client_chart.html">Chart</a>
+<a class="nav class" href="simple_web_openai_client_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_openai_client"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Client for OpenAI API (ChatGPT).</span>
+		<span class="estring">Provides clean interface for ChatGPT interactions.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_web/simple_web_openai_client_short.html">SIMPLE_WEB_OPENAI_CLIENT</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_make">make</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_api_key"></a><a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_api_key">api_key</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> OpenAI API key</span>
+
+	<a name="f_model"></a><a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_model">model</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Model to use (gpt-4, gpt-3.5-turbo, etc.)</span>
+
+	<a name="f_max_tokens"></a><a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_max_tokens">max_tokens</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Maximum tokens in response</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Settings</span>
+
+	<a name="f_set_model"></a><a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_set_model">set_model</a> <span class="esymbol">(</span><span class="elocal">a_model</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set model</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">model_attached</span><span class="esymbol">:</span> <span class="elocal">a_model</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">model_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_model</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">model_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_model">model</a> <span class="esymbol">=</span> <span class="elocal">a_model</span>
+
+	<a name="f_set_max_tokens"></a><a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_set_max_tokens">set_max_tokens</a> <span class="esymbol">(</span><span class="elocal">a_max</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set maximum tokens</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">max_positive</span><span class="esymbol">:</span> <span class="elocal">a_max</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">max_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_max_tokens">max_tokens</a> <span class="esymbol">=</span> <span class="elocal">a_max</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Operations</span>
+
+	<a name="f_send_message"></a><a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_send_message">send_message</a> <span class="esymbol">(</span><span class="elocal">a_user_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Send message and return response</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">message_attached</span><span class="esymbol">:</span> <span class="elocal">a_user_message</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">message_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_user_message</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">api_key_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_api_key">api_key</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	<span class="etag">client_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_client">client</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	<span class="etag">model_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_openai_client_short.html#f_model">model</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;Copyright (c) 2024-2025, Larry Rix&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;MIT License&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">SIMPLE_WEB - High-level Web API Library</span>
+		<a class="estring" href="https://github.com/ljr1981/simple_web">https://github.com/ljr1981/simple_web</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_web/simple_web_openai_client_short.html">SIMPLE_WEB_OPENAI_CLIENT</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_openai_client_chart.html">Chart</a>
+<a class="nav class" href="simple_web_openai_client_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_openai_client"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Simple response wrapper for HTTP server responses. Provides clean API for sending responses back to clients."/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2024-2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_server_response Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="simple_web_server_response_links.html">Relations</a>
+<a class="nav class" href="simple_web_server_response_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_server_response"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../simple_web/simple_web_server_response_chart.html">SIMPLE_WEB_SERVER_RESPONSE</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">src</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> 
+		<span class="estring">&quot;Simple response wrapper for HTTP server responses.</span>
+		<span class="estring">Provides clean API for sending responses back to clients.&quot;</span>
+	<span class="eitag">create</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_make">make</a><span class="esymbol">,</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_make_mock">make_mock</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/any_chart.html">ANY</a>
+
+<span class="ekeyword">Queries</span>
+	<span title="`is_mock' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_is_mock">is_mock</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_chart.html">BOOLEAN</a></span>
+	<span title="`mock_body' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_mock_body">mock_body</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a></span>
+	<span title="`mock_headers' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_mock_headers">mock_headers</a><span class="esymbol">:</span> <a class="eclass" href="../base/hash_table_chart.html">HASH_TABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">,</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">]</span></span>
+	<span title="`status_code' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a></span>
+	<span title="`wsf_response' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_wsf_response">wsf_response</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">WSF_RESPONSE</span></span>
+
+<span class="ekeyword">Commands</span>
+	<span title="`send_bad_request' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_bad_request">send_bad_request</a> <span class="esymbol">(</span><span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`send_binary' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_binary">send_binary</a> <span class="esymbol">(</span><span class="elocal">a_content</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_content_type</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`send_empty' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_empty">send_empty</a></span>
+	<span title="`send_error' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_error">send_error</a> <span class="esymbol">(</span><span class="elocal">a_status</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">;</span> <span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`send_html' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_html">send_html</a> <span class="esymbol">(</span><span class="elocal">a_html</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`send_json' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_json">send_json</a> <span class="esymbol">(</span><span class="elocal">a_json</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`send_json_array' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_json_array">send_json_array</a> <span class="esymbol">(</span><span class="elocal">a_array</span><span class="esymbol">:</span> <a class="eclass" href="../simple_json/simple_json_array_chart.html">SIMPLE_JSON_ARRAY</a><span class="esymbol">)</span></span>
+	<span title="`send_json_object' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_json_object">send_json_object</a> <span class="esymbol">(</span><span class="elocal">a_object</span><span class="esymbol">:</span> <a class="eclass" href="../simple_json/simple_json_object_chart.html">SIMPLE_JSON_OBJECT</a><span class="esymbol">)</span></span>
+	<span title="`send_not_found' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_not_found">send_not_found</a> <span class="esymbol">(</span><span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`send_redirect' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_redirect">send_redirect</a> <span class="esymbol">(</span><span class="elocal">a_url</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`send_server_error' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_server_error">send_server_error</a> <span class="esymbol">(</span><span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`send_text' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_text">send_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_chart.html">READABLE_STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`set_bad_request' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_bad_request">set_bad_request</a></span>
+	<span title="`set_created' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_created">set_created</a></span>
+	<span title="`set_forbidden' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_forbidden">set_forbidden</a></span>
+	<span title="`set_header' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_header">set_header</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">,</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_chart.html">STRING_8</a><span class="esymbol">)</span></span>
+	<span title="`set_internal_server_error' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_internal_server_error">set_internal_server_error</a></span>
+	<span title="`set_no_content' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_no_content">set_no_content</a></span>
+	<span title="`set_not_found' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_not_found">set_not_found</a></span>
+	<span title="`set_ok' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_ok">set_ok</a></span>
+	<span title="`set_status' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_status">set_status</a> <span class="esymbol">(</span><span class="elocal">a_code</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_chart.html">INTEGER_32</a><span class="esymbol">)</span></span>
+	<span title="`set_unauthorized' is declared in `Current'"><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_unauthorized">set_unauthorized</a></span>
+
+<span class="ekeyword">Constraints</span>
+	<span class="etag">wsf response attached or mock</span>
+	<span class="etag">valid status code</span>
+	<span class="etag">mock headers attached</span>
+	<span class="etag">mock body attached</span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="simple_web_server_response_links.html">Relations</a>
+<a class="nav class" href="simple_web_server_response_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_server_response"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

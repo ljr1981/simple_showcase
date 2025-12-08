@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTAuthentication middleware supporting multiple auth schemes.  TTSupports: TT- Bearer token (JWT or opaque tokens) TT- Basic authentication TT- API key (header or query param)  TTUsage (Bearer token): TTTcreate auth.make_bearer (agent validate_token) TTTserver.use_middleware (auth)  TTUsage (API key): TTTcreate auth.make_api_key (X-API-Key, agent validate_key) TTTserver.use_middleware (auth)  TTThe validator agent receives the token/key and returns True if valid. TTIf validation fails, returns 401 Unauthorized."/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_auth_middleware Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_auth_middleware_chart.html">Chart</a>
+<a class="nav class" href="simple_web_auth_middleware_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_auth_middleware"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">		Authentication middleware supporting multiple auth schemes.</span>
+		
+		<span class="estring">		Supports:</span>
+		<span class="estring">		- Bearer token (JWT or opaque tokens)</span>
+		<span class="estring">		- Basic authentication</span>
+		<span class="estring">		- API key (header or query param)</span>
+		
+		<span class="estring">		Usage (Bearer token):</span>
+		<span class="estring">			create auth.make_bearer (agent validate_token)</span>
+		<span class="estring">			server.use_middleware (auth)</span>
+		
+		<span class="estring">		Usage (API key):</span>
+		<span class="estring">			create auth.make_api_key (&quot;X-API-Key&quot;, agent validate_key)</span>
+		<span class="estring">			server.use_middleware (auth)</span>
+		
+		<span class="estring">		The validator agent receives the token/key and returns True if valid.</span>
+		<span class="estring">		If validation fails, returns 401 Unauthorized.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_web/simple_web_auth_middleware_short.html">SIMPLE_WEB_AUTH_MIDDLEWARE</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../simple_web/simple_web_auth_middleware_short.html#f_make_bearer">make_bearer</a><span class="esymbol">,</span>
+	<a class="efeature" href="../simple_web/simple_web_auth_middleware_short.html#f_make_basic">make_basic</a><span class="esymbol">,</span>
+	<a class="efeature" href="../simple_web/simple_web_auth_middleware_short.html#f_make_api_key">make_api_key</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_name"></a><a class="efeature" href="../simple_web/simple_web_auth_middleware_short.html#f_name">Name</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;auth&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Middleware name.</span>
+
+	<a name="f_auth_scheme"></a><a class="efeature" href="../simple_web/simple_web_auth_middleware_short.html#f_auth_scheme">auth_scheme</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Current authentication scheme.</span>
+
+	<a name="f_api_key_header"></a><a class="efeature" href="../simple_web/simple_web_auth_middleware_short.html#f_api_key_header">api_key_header</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Header name for API key auth.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Configuration</span>
+
+	<a name="f_excluded_paths"></a><a class="efeature" href="../simple_web/simple_web_auth_middleware_short.html#f_excluded_paths">excluded_paths</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/arrayed_list_short.html">ARRAYED_LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Paths that don't require authentication.</span>
+
+	<a name="f_exclude_path"></a><a class="efeature" href="../simple_web/simple_web_auth_middleware_short.html#f_exclude_path">exclude_path</a> <span class="esymbol">(</span><span class="elocal">a_path</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add </span><span class="equoted">a_path</span><span class="ecomment"> to exclusion list (no auth required).</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">path_attached</span><span class="esymbol">:</span> <span class="elocal">a_path</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Processing</span>
+
+	<a name="f_process"></a><a class="efeature" href="../simple_web/simple_web_auth_middleware_short.html#f_process">process</a> <span class="esymbol">(</span><span class="elocal">a_request</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_server_request_short.html">SIMPLE_WEB_SERVER_REQUEST</a><span class="esymbol">;</span> <span class="elocal">a_response</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_server_response_short.html">SIMPLE_WEB_SERVER_RESPONSE</a><span class="esymbol">;</span> <span class="elocal">a_next</span><span class="esymbol">:</span> <a class="eclass" href="../base/procedure_short.html">PROCEDURE</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Validate authentication, continue or return 401.</span>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">api_key_header_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_auth_middleware_short.html#f_api_key_header">api_key_header</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	<span class="etag">valid_scheme</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_auth_middleware_short.html#f_auth_scheme">auth_scheme</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater_equal">&gt;=</a> <span class="enumber">1</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../simple_web/simple_web_auth_middleware_short.html#f_auth_scheme">auth_scheme</a> <a class="esymbol" href="../base/comparable_short.html#f_is_less_equal">&lt;=</a> <span class="enumber">3</span>
+
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;Copyright (c) 2025, Larry Rix&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;MIT License&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_web/simple_web_auth_middleware_short.html">SIMPLE_WEB_AUTH_MIDDLEWARE</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_auth_middleware_chart.html">Chart</a>
+<a class="nav class" href="simple_web_auth_middleware_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_auth_middleware"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

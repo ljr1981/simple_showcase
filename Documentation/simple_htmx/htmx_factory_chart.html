@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTFactory for creating HTML/HTMX elements.  TTProvides convenient shorthand for element creation.  TTExample: TTThtml: HTMX_FACTORY TTT... TTTl_div := html.div.id (main).class_ (container) TTTl_button := html.button (Save).hx_post (/api/save)"/>
+<meta name="author" content="Claude Code"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>htmx_factory Chart</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="htmx_factory_links.html">Relations</a>
+<a class="nav class" href="htmx_factory_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="htmx_factory"></span>
+</div></form><pre><span class="ekeyword">class</span>
+	<a class="eclass" href="../simple_htmx/htmx_factory_chart.html">HTMX_FACTORY</a>
+
+<span class="ekeyword">General</span>
+	<span class="eitag">cluster</span><span class="esymbol">:</span> <span class="necluster">src</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> 
+		<span class="estring">&quot;Factory for creating HTML/HTMX elements.</span>
+		
+		<span class="estring">Provides convenient shorthand for element creation.</span>
+		
+		<span class="estring">Example:</span>
+		<span class="estring">html: HTMX_FACTORY</span>
+		<span class="estring">...</span>
+		<span class="estring">l_div := html.div.id (%&quot;main%&quot;).class_ (%&quot;container%&quot;)</span>
+		<span class="estring">l_button := html.button (%&quot;Save%&quot;).hx_post (%&quot;/api/save%&quot;)&quot;</span>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/any_chart.html">ANY</a>
+
+<span class="ekeyword">Queries</span>
+	<span title="`a' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_a">a</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_a_chart.html">HTMX_A</a></span>
+	<span title="`br' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_br">br</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_br_chart.html">HTMX_BR</a></span>
+	<span title="`button' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_button">button</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_button_chart.html">HTMX_BUTTON</a></span>
+	<span title="`button_text' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_button_text">button_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_button_chart.html">HTMX_BUTTON</a></span>
+	<span title="`div' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_div">div</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_div_chart.html">HTMX_DIV</a></span>
+	<span title="`form' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_form">form</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_form_chart.html">HTMX_FORM</a></span>
+	<span title="`h1' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h1">h1</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h1_chart.html">HTMX_H1</a></span>
+	<span title="`h1_text' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h1_text">h1_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h1_chart.html">HTMX_H1</a></span>
+	<span title="`h2' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h2">h2</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h2_chart.html">HTMX_H2</a></span>
+	<span title="`h2_text' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h2_text">h2_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h2_chart.html">HTMX_H2</a></span>
+	<span title="`h3' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h3">h3</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h3_chart.html">HTMX_H3</a></span>
+	<span title="`h3_text' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h3_text">h3_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h3_chart.html">HTMX_H3</a></span>
+	<span title="`h4' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h4">h4</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h4_chart.html">HTMX_H4</a></span>
+	<span title="`h4_text' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h4_text">h4_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h4_chart.html">HTMX_H4</a></span>
+	<span title="`h5' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h5">h5</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h5_chart.html">HTMX_H5</a></span>
+	<span title="`h5_text' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_h5_text">h5_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_h5_chart.html">HTMX_H5</a></span>
+	<span title="`hr' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_hr">hr</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_hr_chart.html">HTMX_HR</a></span>
+	<span title="`img' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_img">img</a> <span class="esymbol">(</span><span class="elocal">a_src</span><span class="esymbol">,</span> <span class="elocal">a_alt</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_img_chart.html">HTMX_IMG</a></span>
+	<span title="`input' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_input">input</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_input_chart.html">HTMX_INPUT</a></span>
+	<span title="`input_hidden' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_input_hidden">input_hidden</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">,</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_input_chart.html">HTMX_INPUT</a></span>
+	<span title="`input_number' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_input_number">input_number</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_input_chart.html">HTMX_INPUT</a></span>
+	<span title="`input_text' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_input_text">input_text</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_input_chart.html">HTMX_INPUT</a></span>
+	<span title="`label' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_label">label</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_label_chart.html">HTMX_LABEL</a></span>
+	<span title="`label_for' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_label_for">label_for</a> <span class="esymbol">(</span><span class="elocal">a_for_id</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_label_chart.html">HTMX_LABEL</a></span>
+	<span title="`li' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_li">li</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_li_chart.html">HTMX_LI</a></span>
+	<span title="`link' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_link">link</a> <span class="esymbol">(</span><span class="elocal">a_href</span><span class="esymbol">,</span> <span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_a_chart.html">HTMX_A</a></span>
+	<span title="`ol' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_ol">ol</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_ol_chart.html">HTMX_OL</a></span>
+	<span title="`p' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_p">p</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_p_chart.html">HTMX_P</a></span>
+	<span title="`p_text' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_p_text">p_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_p_chart.html">HTMX_P</a></span>
+	<span title="`select_' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_select_">select_</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_select_chart.html">HTMX_SELECT</a></span>
+	<span title="`span' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_span">span</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_span_chart.html">HTMX_SPAN</a></span>
+	<span title="`submit_button' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_submit_button">submit_button</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_button_chart.html">HTMX_BUTTON</a></span>
+	<span title="`table' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_table">table</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_table_chart.html">HTMX_TABLE</a></span>
+	<span title="`tbody' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_tbody">tbody</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_tbody_chart.html">HTMX_TBODY</a></span>
+	<span title="`td' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_td">td</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_td_chart.html">HTMX_TD</a></span>
+	<span title="`textarea' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_textarea">textarea</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_chart.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_textarea_chart.html">HTMX_TEXTAREA</a></span>
+	<span title="`th' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_th">th</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_th_chart.html">HTMX_TH</a></span>
+	<span title="`thead' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_thead">thead</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_thead_chart.html">HTMX_THEAD</a></span>
+	<span title="`tr' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_tr">tr</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_tr_chart.html">HTMX_TR</a></span>
+	<span title="`ul' is declared in `Current'"><a class="efeature" href="../simple_htmx/htmx_factory_short.html#f_ul">ul</a><span class="esymbol">:</span> <a class="eclass" href="../simple_htmx/htmx_ul_chart.html">HTMX_UL</a></span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<span class="nav class selected">Chart</span>
+<a class="nav class" href="htmx_factory_links.html">Relations</a>
+<a class="nav class" href="htmx_factory_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="htmx_factory"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

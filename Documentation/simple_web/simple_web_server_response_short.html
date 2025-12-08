@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Simple response wrapper for HTTP server responses. Provides clean API for sending responses back to clients."/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2024-2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_server_response Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_server_response_chart.html">Chart</a>
+<a class="nav class" href="simple_web_server_response_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_server_response"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">Simple response wrapper for HTTP server responses.</span>
+		<span class="estring">Provides clean API for sending responses back to clients.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_web/simple_web_server_response_short.html">SIMPLE_WEB_SERVER_RESPONSE</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_make">make</a><span class="esymbol">,</span>
+	<a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_make_mock">make_mock</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_status_code"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> HTTP status code to send.</span>
+
+	<a name="f_wsf_response"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_wsf_response">wsf_response</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <span class="neclass">WSF_RESPONSE</span>
+			<span class="ecomment">--</span><span class="ecomment"> Underlying WSF response (Void in mock mode).</span>
+
+	<a name="f_is_mock"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_is_mock">is_mock</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is this a mock response for testing?</span>
+
+	<a name="f_mock_headers"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_mock_headers">mock_headers</a><span class="esymbol">:</span> <a class="eclass" href="../base/hash_table_short.html">HASH_TABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">,</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Headers set in mock mode (for testing verification).</span>
+
+	<a name="f_mock_body"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_mock_body">mock_body</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Body content set in mock mode (for testing verification).</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status Setting</span>
+
+	<a name="f_set_status"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_status">set_status</a> <span class="esymbol">(</span><span class="elocal">a_code</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set HTTP status code.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">valid_code</span><span class="esymbol">:</span> <span class="elocal">a_code</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater_equal">&gt;=</a> <span class="enumber">100</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <span class="elocal">a_code</span> <a class="esymbol" href="../base/integer_32_short.html#f_is_less">&lt;</a> <span class="enumber">600</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="elocal">a_code</span>
+
+	<a name="f_set_ok"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_ok">set_ok</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set status to 200 OK.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_ok</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="enumber">200</span>
+
+	<a name="f_set_created"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_created">set_created</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set status to 201 Created.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_created</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="enumber">201</span>
+
+	<a name="f_set_no_content"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_no_content">set_no_content</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set status to 204 No Content.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_no_content</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="enumber">204</span>
+
+	<a name="f_set_bad_request"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_bad_request">set_bad_request</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set status to 400 Bad Request.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_bad_request</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="enumber">400</span>
+
+	<a name="f_set_unauthorized"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_unauthorized">set_unauthorized</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set status to 401 Unauthorized.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_unauthorized</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="enumber">401</span>
+
+	<a name="f_set_forbidden"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_forbidden">set_forbidden</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set status to 403 Forbidden.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_forbidden</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="enumber">403</span>
+
+	<a name="f_set_not_found"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_not_found">set_not_found</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set status to 404 Not Found.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_not_found</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="enumber">404</span>
+
+	<a name="f_set_internal_server_error"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_internal_server_error">set_internal_server_error</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set status to 500 Internal Server Error.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_error</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="enumber">500</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Response Sending</span>
+
+	<a name="f_send_text"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_text">send_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send plain text response.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">text_attached</span><span class="esymbol">:</span> <span class="elocal">a_text</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">mock_body_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_is_mock">is_mock</a> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_mock_body">mock_body</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_text</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_to_string_8">to_string_8</a><span class="esymbol">)</span>
+
+	<a name="f_send_html"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_html">send_html</a> <span class="esymbol">(</span><span class="elocal">a_html</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send HTML response.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">html_attached</span><span class="esymbol">:</span> <span class="elocal">a_html</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">mock_body_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_is_mock">is_mock</a> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_mock_body">mock_body</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_html</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_to_string_8">to_string_8</a><span class="esymbol">)</span>
+
+	<a name="f_send_json"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_json">send_json</a> <span class="esymbol">(</span><span class="elocal">a_json</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send JSON response.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">json_attached</span><span class="esymbol">:</span> <span class="elocal">a_json</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">mock_body_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_is_mock">is_mock</a> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_mock_body">mock_body</a><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_same_string">same_string</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_json</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_to_string_8">to_string_8</a><span class="esymbol">)</span>
+
+	<a name="f_send_json_object"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_json_object">send_json_object</a> <span class="esymbol">(</span><span class="elocal">a_object</span><span class="esymbol">:</span> <a class="eclass" href="../simple_json/simple_json_object_short.html">SIMPLE_JSON_OBJECT</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send SIMPLE_JSON_OBJECT as JSON response.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">object_attached</span><span class="esymbol">:</span> <span class="elocal">a_object</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_send_json_array"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_json_array">send_json_array</a> <span class="esymbol">(</span><span class="elocal">a_array</span><span class="esymbol">:</span> <a class="eclass" href="../simple_json/simple_json_array_short.html">SIMPLE_JSON_ARRAY</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send SIMPLE_JSON_ARRAY as JSON response.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">array_attached</span><span class="esymbol">:</span> <span class="elocal">a_array</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_send_empty"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_empty">send_empty</a>
+			<span class="ecomment">--</span><span class="ecomment"> Send empty response (typically with 204 No Content).</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">mock_body_empty</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_is_mock">is_mock</a> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_mock_body">mock_body</a><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+
+	<a name="f_send_redirect"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_redirect">send_redirect</a> <span class="esymbol">(</span><span class="elocal">a_url</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send redirect response to </span><span class="equoted">a_url</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">url_attached</span><span class="esymbol">:</span> <span class="elocal">a_url</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">redirect_status</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="enumber">302</span> <a class="ekeyword" href="../base/boolean_short.html#f_disjuncted">or</a> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="ekeyword">old</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a>
+			<span class="etag">mock_location_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_is_mock">is_mock</a> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_mock_headers">mock_headers</a><span class="edot">.</span><a class="efeature" href="../base/hash_table_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;Location&quot;<span class="esymbol">)</span>
+
+	<a name="f_send_error"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_error">send_error</a> <span class="esymbol">(</span><span class="elocal">a_status</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">;</span> <span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send error response with </span><span class="equoted">a_status</span><span class="ecomment"> code and JSON error </span><span class="equoted">a_message</span><span class="ecomment">.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Convenience method combining set_status + send_json for error responses.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">valid_status</span><span class="esymbol">:</span> <span class="elocal">a_status</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater_equal">&gt;=</a> <span class="enumber">400</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <span class="elocal">a_status</span> <a class="esymbol" href="../base/integer_32_short.html#f_is_less">&lt;</a> <span class="enumber">600</span>
+			<span class="etag">message_attached</span><span class="esymbol">:</span> <span class="elocal">a_message</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="elocal">a_status</span>
+
+	<a name="f_send_bad_request"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_bad_request">send_bad_request</a> <span class="esymbol">(</span><span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send 400 Bad Request with error message.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">message_attached</span><span class="esymbol">:</span> <span class="elocal">a_message</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="enumber">400</span>
+
+	<a name="f_send_not_found"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_not_found">send_not_found</a> <span class="esymbol">(</span><span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send 404 Not Found with error message.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">message_attached</span><span class="esymbol">:</span> <span class="elocal">a_message</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="enumber">404</span>
+
+	<a name="f_send_binary"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_binary">send_binary</a> <span class="esymbol">(</span><span class="elocal">a_content</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_content_type</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send binary content (images, files, etc.) with specified content type.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">content_attached</span><span class="esymbol">:</span> <span class="elocal">a_content</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">content_type_attached</span><span class="esymbol">:</span> <span class="elocal">a_content_type</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_send_server_error"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_send_server_error">send_server_error</a> <span class="esymbol">(</span><span class="elocal">a_message</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_8_short.html">READABLE_STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Send 500 Internal Server Error with error message.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">message_attached</span><span class="esymbol">:</span> <span class="elocal">a_message</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">status_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="enumber">500</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Header Setting</span>
+
+	<a name="f_set_header"></a><a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_set_header">set_header</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set HTTP header.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">name_attached</span><span class="esymbol">:</span> <span class="elocal">a_name</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">value_attached</span><span class="esymbol">:</span> <span class="elocal">a_value</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">mock_header_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_is_mock">is_mock</a> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_mock_headers">mock_headers</a><span class="edot">.</span><a class="efeature" href="../base/hash_table_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">)</span>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">wsf_response_attached_or_mock</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_is_mock">is_mock</a> <a class="ekeyword" href="../base/boolean_short.html#f_disjuncted">or</a> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_wsf_response">wsf_response</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	<span class="etag">valid_status_code</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater_equal">&gt;=</a> <span class="enumber">100</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_status_code">status_code</a> <a class="esymbol" href="../base/integer_32_short.html#f_is_less">&lt;</a> <span class="enumber">600</span>
+	<span class="etag">mock_headers_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_mock_headers">mock_headers</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	<span class="etag">mock_body_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_response_short.html#f_mock_body">mock_body</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;Copyright (c) 2024-2025, Larry Rix&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;MIT License&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_web/simple_web_server_response_short.html">SIMPLE_WEB_SERVER_RESPONSE</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_server_response_chart.html">Chart</a>
+<a class="nav class" href="simple_web_server_response_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_server_response"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

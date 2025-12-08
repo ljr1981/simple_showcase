@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTSimple Showcase HTTP Server.  TTServes the SSC website using simple_web's HTTP server. TTAll pages are generated dynamically from Eiffel classes.  TTUsage: TTTRun the executable, then browse to configured URL. TTTDefault: http://localhost:8080  TTConfiguration: TTTReads from config.json in current directory. TTTUse config.production.json for deployment."/>
+<meta name="author" content="Larry Rix with Claude (Anthropic)"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>ssc_server Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="ssc_server_chart.html">Chart</a>
+<a class="nav class" href="ssc_server_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="ssc_server"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">		Simple Showcase HTTP Server.</span>
+		
+		<span class="estring">		Serves the SSC website using simple_web's HTTP server.</span>
+		<span class="estring">		All pages are generated dynamically from Eiffel classes.</span>
+		
+		<span class="estring">		Usage:</span>
+		<span class="estring">			Run the executable, then browse to configured URL.</span>
+		<span class="estring">			Default: </span><a class="estring" href="http://localhost:8080">http://localhost:8080</a>
+		
+		<span class="estring">		Configuration:</span>
+		<span class="estring">			Reads from config.json in current directory.</span>
+		<span class="estring">			Use config.production.json for deployment.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix with Claude (Anthropic)&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../core/ssc_server_short.html">SSC_SERVER</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../core/ssc_server_short.html#f_make">make</a><span class="esymbol">,</span>
+	<a class="efeature" href="../core/ssc_server_short.html#f_make_with_config">make_with_config</a><span class="esymbol">,</span>
+	<a class="efeature" href="../core/ssc_server_short.html#f_make_for_testing">make_for_testing</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Server</span>
+
+	<a name="f_server"></a><a class="efeature" href="../core/ssc_server_short.html#f_server">server</a><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_server_short.html">SIMPLE_WEB_SERVER</a>
+			<span class="ecomment">--</span><span class="ecomment"> HTTP server instance</span>
+
+	<a name="f_config"></a><a class="efeature" href="../core/ssc_server_short.html#f_config">config</a><span class="esymbol">:</span> <a class="eclass" href="../core/ssc_config_short.html">SSC_CONFIG</a>
+			<span class="ecomment">--</span><span class="ecomment"> Server configuration</span>
+
+	<a name="f_database"></a><a class="efeature" href="../core/ssc_server_short.html#f_database">database</a><span class="esymbol">:</span> <a class="eclass" href="../core/ssc_database_short.html">SSC_DATABASE</a>
+			<span class="ecomment">--</span><span class="ecomment"> SQLite database for analytics, contacts, sessions</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Form Validation (public for testing)</span>
+
+	<a name="f_extract_and_sanitize_field"></a><a class="efeature" href="../core/ssc_server_short.html#f_extract_and_sanitize_field">extract_and_sanitize_field</a> <span class="esymbol">(</span><span class="elocal">a_obj</span><span class="esymbol">:</span> <a class="eclass" href="../simple_json/simple_json_object_short.html">SIMPLE_JSON_OBJECT</a><span class="esymbol">;</span> <span class="elocal">a_field</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_max_length</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Extract and sanitize a JSON string field</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">obj_attached</span><span class="esymbol">:</span> <span class="elocal">a_obj</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">field_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_field</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">max_positive</span><span class="esymbol">:</span> <span class="elocal">a_max_length</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">within_limit</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_less_equal">&lt;=</a> <span class="elocal">a_max_length</span>
+
+	<a name="f_extract_and_sanitize_email"></a><a class="efeature" href="../core/ssc_server_short.html#f_extract_and_sanitize_email">extract_and_sanitize_email</a> <span class="esymbol">(</span><span class="elocal">a_obj</span><span class="esymbol">:</span> <a class="eclass" href="../simple_json/simple_json_object_short.html">SIMPLE_JSON_OBJECT</a><span class="esymbol">;</span> <span class="elocal">a_field</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_max_length</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Extract and sanitize an email field (more restrictive)</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">obj_attached</span><span class="esymbol">:</span> <span class="elocal">a_obj</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">field_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_field</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">max_positive</span><span class="esymbol">:</span> <span class="elocal">a_max_length</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_remove_control_chars"></a><a class="efeature" href="../core/ssc_server_short.html#f_remove_control_chars">remove_control_chars</a> <span class="esymbol">(</span><span class="elocal">a_string</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Remove control characters (0x00-0x1F except tab/newline/CR)</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">no_dangerous_control_chars</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../core/ssc_server_short.html#f_has_dangerous_control_chars">has_dangerous_control_chars</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="ekeyword">Result</span><span class="esymbol">)</span>
+			<span class="etag">length_not_increased</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_less_equal">&lt;=</a> <span class="elocal">a_string</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a>
+
+	<a name="f_is_valid_email"></a><a class="efeature" href="../core/ssc_server_short.html#f_is_valid_email">is_valid_email</a> <span class="esymbol">(</span><span class="elocal">a_email</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Basic email format validation.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Checks: length 5-254, has @, has . after @, local part exists, domain exists</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">valid_implies_has_at</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <span class="elocal">a_email</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'@'</span><span class="esymbol">)</span>
+			<span class="etag">valid_implies_has_dot_after_at</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <span class="elocal">a_email</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_last_index_of">last_index_of</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'.'</span><span class="esymbol">,</span> <span class="elocal">a_email</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a><span class="esymbol">)</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="elocal">a_email</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_index_of">index_of</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'@'</span><span class="esymbol">,</span> <span class="enumber">1</span><span class="esymbol">)</span>
+			<span class="etag">valid_implies_length_ok</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <a class="ekeyword" href="../base/boolean_short.html#f_implication">implies</a> <span class="esymbol">(</span><span class="elocal">a_email</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater_equal">&gt;=</a> <span class="enumber">5</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <span class="elocal">a_email</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_less_equal">&lt;=</a> <span class="enumber">254</span><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Sanitization (exported for testing)</span>
+
+	<a name="f_sanitize_for_email"></a><a class="efeature" href="../core/ssc_server_short.html#f_sanitize_for_email">sanitize_for_email</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Sanitize text to prevent email header injection and command injection.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Removes newlines (header injection) and shell metacharacters.</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">no_newlines</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'%N'</span><span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'%R'</span><span class="esymbol">)</span>
+			<span class="etag">no_shell_single_quote</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'%''</span><span class="esymbol">)</span>
+			<span class="etag">no_shell_double_quote</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'&quot;'</span><span class="esymbol">)</span>
+			<span class="etag">no_shell_backtick</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'`'</span><span class="esymbol">)</span>
+			<span class="etag">no_shell_dollar</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'$'</span><span class="esymbol">)</span>
+			<span class="etag">no_shell_pipe</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'|'</span><span class="esymbol">)</span>
+			<span class="etag">no_shell_ampersand</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'&#38;'</span><span class="esymbol">)</span>
+			<span class="etag">no_shell_semicolon</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">';'</span><span class="esymbol">)</span>
+			<span class="etag">no_shell_angle_brackets</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'&lt;'</span><span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_has">has</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="echar">'&gt;'</span><span class="esymbol">)</span>
+
+	<a name="f_sanitize_email_address"></a><a class="efeature" href="../core/ssc_server_short.html#f_sanitize_email_address">sanitize_email_address</a> <span class="esymbol">(</span><span class="elocal">a_email</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Sanitize email address - only allow valid email characters.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Whitelist approach: only alphanumeric, @, ., _, -, +</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_attached</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">only_safe_chars</span><span class="esymbol">:</span> <span class="ekeyword">across</span>
+					<span class="ekeyword">Result</span> <span class="ekeyword">as</span> ic
+				<span class="ekeyword">all</span>
+					<a class="efeature" href="../core/ssc_server_short.html#f_is_safe_email_char">is_safe_email_char</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">ic</span><span class="esymbol">)</span>
+				<span class="ekeyword">end</span>
+			<span class="etag">length_not_increased</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_less_equal">&lt;=</a> <span class="elocal">a_email</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_count">count</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Contract helpers (exported for testing)</span>
+
+	<a name="f_has_dangerous_control_chars"></a><a class="efeature" href="../core/ssc_server_short.html#f_has_dangerous_control_chars">has_dangerous_control_chars</a> <span class="esymbol">(</span><span class="elocal">a_string</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Does string contain dangerous control characters (0x00-0x08, 0x0B, 0x0C, 0x0E-0x1F)?</span>
+			<span class="ecomment">--</span><span class="ecomment"> Allows: tab (9), newline (10), carriage return (13)</span>
+
+	<a name="f_is_safe_email_char"></a><a class="efeature" href="../core/ssc_server_short.html#f_is_safe_email_char">is_safe_email_char</a> <span class="esymbol">(</span><span class="elocal">a_char</span><span class="esymbol">:</span> <a class="eclass" href="../base/character_8_short.html">CHARACTER_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is character safe for email addresses?</span>
+	
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../core/ssc_server_short.html">SSC_SERVER</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="ssc_server_chart.html">Chart</a>
+<a class="nav class" href="ssc_server_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="ssc_server"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

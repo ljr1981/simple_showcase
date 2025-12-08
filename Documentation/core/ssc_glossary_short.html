@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTGlossary tooltips for technical terms.  TTProvides hover-reveal definitions for terms that may be unfamiliar TTto developers who haven't encountered Design by Contract or Eiffel.  TTUsage: TTTinherit SSC_GLOSSARY TTT... TTTtext (This uses  + term_design_by_contract +  for verification.)"/>
+<meta name="author" content="Larry Rix with Claude (Anthropic)"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>ssc_glossary Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="ssc_glossary_chart.html">Chart</a>
+<a class="nav class" href="ssc_glossary_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="ssc_glossary"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">		Glossary tooltips for technical terms.</span>
+		
+		<span class="estring">		Provides hover-reveal definitions for terms that may be unfamiliar</span>
+		<span class="estring">		to developers who haven't encountered Design by Contract or Eiffel.</span>
+		
+		<span class="estring">		Usage:</span>
+		<span class="estring">			inherit SSC_GLOSSARY</span>
+		<span class="estring">			...</span>
+		<span class="estring">			text (&quot;This uses &quot; + term_design_by_contract + &quot; for verification.&quot;)</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix with Claude (Anthropic)&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../core/ssc_glossary_short.html">SSC_GLOSSARY</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../base/any_short.html#f_default_create">default_create</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Term Tooltips</span>
+
+	<a name="f_term_design_by_contract"></a><a class="efeature" href="../core/ssc_glossary_short.html#f_term_design_by_contract">term_design_by_contract</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Design by Contract&quot; with tooltip</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">has_term</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;Design by Contract&quot;<span class="esymbol">)</span>
+
+	<a name="f_term_precondition"></a><a class="efeature" href="../core/ssc_glossary_short.html#f_term_precondition">term_precondition</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Precondition&quot; with tooltip</span>
+
+	<a name="f_term_preconditions"></a><a class="efeature" href="../core/ssc_glossary_short.html#f_term_preconditions">term_preconditions</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Preconditions&quot; with tooltip</span>
+
+	<a name="f_term_postcondition"></a><a class="efeature" href="../core/ssc_glossary_short.html#f_term_postcondition">term_postcondition</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Postcondition&quot; with tooltip</span>
+
+	<a name="f_term_postconditions"></a><a class="efeature" href="../core/ssc_glossary_short.html#f_term_postconditions">term_postconditions</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Postconditions&quot; with tooltip</span>
+
+	<a name="f_term_invariant"></a><a class="efeature" href="../core/ssc_glossary_short.html#f_term_invariant">term_invariant</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Invariant&quot; with tooltip</span>
+
+	<a name="f_term_invariants"></a><a class="efeature" href="../core/ssc_glossary_short.html#f_term_invariants">term_invariants</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Invariants&quot; with tooltip</span>
+
+	<a name="f_term_contract"></a><a class="efeature" href="../core/ssc_glossary_short.html#f_term_contract">term_contract</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Contract&quot; with tooltip</span>
+
+	<a name="f_term_contracts"></a><a class="efeature" href="../core/ssc_glossary_short.html#f_term_contracts">term_contracts</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Contracts&quot; with tooltip</span>
+
+	<a name="f_term_eiffel"></a><a class="efeature" href="../core/ssc_glossary_short.html#f_term_eiffel">term_eiffel</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Eiffel&quot; with tooltip</span>
+
+	<a name="f_term_contract_violation"></a><a class="efeature" href="../core/ssc_glossary_short.html#f_term_contract_violation">term_contract_violation</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> &quot;Contract violation&quot; with tooltip</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Tooltip Generation</span>
+
+	<a name="f_tooltip"></a><a class="efeature" href="../core/ssc_glossary_short.html#f_tooltip">tooltip</a> <span class="esymbol">(</span><span class="elocal">a_term</span><span class="esymbol">,</span> <span class="elocal">a_definition</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Generate HTML for a term with hover tooltip</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">term_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_term</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">definition_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_definition</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">has_term</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_term</span><span class="esymbol">)</span>
+			<span class="etag">has_definition</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_definition</span><span class="esymbol">)</span>
+			<span class="etag">has_tooltip_structure</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;tooltip-term&quot;<span class="esymbol">)</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;tooltip-content&quot;<span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> CSS (to be included in page head)</span>
+
+	<a name="f_tooltip_css"></a><a class="efeature" href="../core/ssc_glossary_short.html#f_tooltip_css">tooltip_css</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> CSS styles for tooltips</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">has_tooltip_term_style</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;.tooltip-term&quot;<span class="esymbol">)</span>
+			<span class="etag">has_tooltip_content_style</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;.tooltip-content&quot;<span class="esymbol">)</span>
+			<span class="etag">has_hover_behavior</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;:hover&quot;<span class="esymbol">)</span>
+	
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../core/ssc_glossary_short.html">SSC_GLOSSARY</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="ssc_glossary_chart.html">Chart</a>
+<a class="nav class" href="ssc_glossary_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="ssc_glossary"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

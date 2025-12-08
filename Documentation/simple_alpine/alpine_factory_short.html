@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTFactory class for creating Alpine elements and common expression patterns.  TTProvides: TT1. Element creation shortcuts (div, button, input, etc.) TT2. Expression builders (toggle, ternary, etc.) TT3. Pre-built component patterns (dark mode, dropdown, modal, etc.)  TTExample: TTTalpine: ALPINE_FACTORY TTT... TTTl_btn := alpine.button_text (Toggle) TTT         .x_data ({ open: false }) TTT         .x_on_click (alpine.toggle (open))"/>
+<meta name="author" content="Larry Rix with Claude"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>alpine_factory Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="alpine_factory_chart.html">Chart</a>
+<a class="nav class" href="alpine_factory_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="alpine_factory"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">		Factory class for creating Alpine elements and common expression patterns.</span>
+		
+		<span class="estring">		Provides:</span>
+		<span class="estring">		1. Element creation shortcuts (div, button, input, etc.)</span>
+		<span class="estring">		2. Expression builders (toggle, ternary, etc.)</span>
+		<span class="estring">		3. Pre-built component patterns (dark mode, dropdown, modal, etc.)</span>
+		
+		<span class="estring">		Example:</span>
+		<span class="estring">			alpine: ALPINE_FACTORY</span>
+		<span class="estring">			...</span>
+		<span class="estring">			l_btn := alpine.button_text (&quot;Toggle&quot;)</span>
+		<span class="estring">			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.x_data (&quot;{ open: false }&quot;)</span>
+		<span class="estring">			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.x_on_click (alpine.toggle (&quot;open&quot;))</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix with Claude&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_alpine/alpine_factory_short.html">ALPINE_FACTORY</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../base/any_short.html#f_default_create">default_create</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element Creation: Containers</span>
+
+	<a name="f_div"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_div">div</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_div_short.html">ALPINE_DIV</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create a div element.</span>
+
+	<a name="f_span"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_span">span</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_span_short.html">ALPINE_SPAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create a span element.</span>
+
+	<a name="f_section"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_section">section</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_section_short.html">ALPINE_SECTION</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create a section element.</span>
+
+	<a name="f_nav"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_nav">nav</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_nav_short.html">ALPINE_NAV</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create a nav element.</span>
+
+	<a name="f_header"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_header">header</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_header_short.html">ALPINE_HEADER</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create a header element.</span>
+
+	<a name="f_footer"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_footer">footer</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_footer_short.html">ALPINE_FOOTER</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create a footer element.</span>
+
+	<a name="f_main"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_main">main</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_main_short.html">ALPINE_MAIN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create a main element.</span>
+
+	<a name="f_aside"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_aside">aside</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_aside_short.html">ALPINE_ASIDE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create an aside element.</span>
+
+	<a name="f_article"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_article">article</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_article_short.html">ALPINE_ARTICLE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create an article element.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element Creation: Headings</span>
+
+	<a name="f_h1"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_h1">h1</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_h1_short.html">ALPINE_H1</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h1 element.</span>
+
+	<a name="f_h1_text"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_h1_text">h1_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_h1_short.html">ALPINE_H1</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h1 with text.</span>
+
+	<a name="f_h2"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_h2">h2</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_h2_short.html">ALPINE_H2</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h2 element.</span>
+
+	<a name="f_h2_text"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_h2_text">h2_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_h2_short.html">ALPINE_H2</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h2 with text.</span>
+
+	<a name="f_h3"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_h3">h3</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_h3_short.html">ALPINE_H3</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h3 element.</span>
+
+	<a name="f_h3_text"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_h3_text">h3_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_h3_short.html">ALPINE_H3</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create h3 with text.</span>
+
+	<a name="f_p"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_p">p</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_p_short.html">ALPINE_P</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create paragraph element.</span>
+
+	<a name="f_p_text"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_p_text">p_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_p_short.html">ALPINE_P</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create paragraph with text.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element Creation: Forms</span>
+
+	<a name="f_form"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_form">form</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_form_short.html">ALPINE_FORM</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create form element.</span>
+
+	<a name="f_button"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_button">button</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_button_short.html">ALPINE_BUTTON</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create button element.</span>
+
+	<a name="f_button_text"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_button_text">button_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_button_short.html">ALPINE_BUTTON</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create button with text.</span>
+
+	<a name="f_button_submit"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_button_submit">button_submit</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_button_short.html">ALPINE_BUTTON</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create submit button.</span>
+
+	<a name="f_input"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_input">input</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_input_short.html">ALPINE_INPUT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create input element.</span>
+
+	<a name="f_input_text"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_input_text">input_text</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_input_short.html">ALPINE_INPUT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create text input with name.</span>
+
+	<a name="f_input_hidden"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_input_hidden">input_hidden</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">,</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_input_short.html">ALPINE_INPUT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create hidden input.</span>
+
+	<a name="f_input_checkbox"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_input_checkbox">input_checkbox</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_input_short.html">ALPINE_INPUT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create checkbox input.</span>
+
+	<a name="f_input_radio"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_input_radio">input_radio</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_input_short.html">ALPINE_INPUT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create radio input.</span>
+
+	<a name="f_input_number"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_input_number">input_number</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_input_short.html">ALPINE_INPUT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create number input.</span>
+
+	<a name="f_input_email"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_input_email">input_email</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_input_short.html">ALPINE_INPUT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create email input.</span>
+
+	<a name="f_input_password"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_input_password">input_password</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_input_short.html">ALPINE_INPUT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create password input.</span>
+
+	<a name="f_textarea"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_textarea">textarea</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_textarea_short.html">ALPINE_TEXTAREA</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create textarea with name.</span>
+
+	<a name="f_select_"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_select_">select_</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_select_short.html">ALPINE_SELECT</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create select with name.</span>
+
+	<a name="f_option"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_option">option</a> <span class="esymbol">(</span><span class="elocal">a_value</span><span class="esymbol">,</span> <span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_option_short.html">ALPINE_OPTION</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create option with value and text.</span>
+
+	<a name="f_label"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_label">label</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_label_short.html">ALPINE_LABEL</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create label with text.</span>
+
+	<a name="f_label_for"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_label_for">label_for</a> <span class="esymbol">(</span><span class="elocal">a_for</span><span class="esymbol">,</span> <span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_label_short.html">ALPINE_LABEL</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create label with for attribute and text.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element Creation: Links and Media</span>
+
+	<a name="f_a_link"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_a_link">a_link</a> <span class="esymbol">(</span><span class="elocal">a_href</span><span class="esymbol">,</span> <span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_a_short.html">ALPINE_A</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create anchor with href and text.</span>
+
+	<a name="f_img"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_img">img</a> <span class="esymbol">(</span><span class="elocal">a_src</span><span class="esymbol">,</span> <span class="elocal">a_alt</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_img_short.html">ALPINE_IMG</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create image with src and alt.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element Creation: Lists</span>
+
+	<a name="f_ul"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_ul">ul</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_ul_short.html">ALPINE_UL</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create unordered list.</span>
+
+	<a name="f_ol"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_ol">ol</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_ol_short.html">ALPINE_OL</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create ordered list.</span>
+
+	<a name="f_li"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_li">li</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_li_short.html">ALPINE_LI</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create list item.</span>
+
+	<a name="f_li_text"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_li_text">li_text</a> <span class="esymbol">(</span><span class="elocal">a_text</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_li_short.html">ALPINE_LI</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create list item with text.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element Creation: Template</span>
+
+	<a name="f_template"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_template">template</a><span class="esymbol">:</span> <a class="eclass" href="../simple_alpine/alpine_template_short.html">ALPINE_TEMPLATE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Create template element (for x-if, x-for).</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Expression Builders: Toggle</span>
+
+	<a name="f_toggle"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_toggle">toggle</a> <span class="esymbol">(</span><span class="elocal">a_property</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Generate toggle expression.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Example: toggle (&quot;open&quot;) Ã¢ÂÂ &quot;open = !open&quot;</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">property_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_property</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_property</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_property</span><span class="esymbol">)</span>
+			<span class="etag">contains_negation</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;!&quot;<span class="esymbol">)</span>
+
+	<a name="f_set_true"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_set_true">set_true</a> <span class="esymbol">(</span><span class="elocal">a_property</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set property to true.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">property_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_property</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_true</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;true&quot;<span class="esymbol">)</span>
+
+	<a name="f_set_false"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_set_false">set_false</a> <span class="esymbol">(</span><span class="elocal">a_property</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set property to false.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">property_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_property</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_false</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;false&quot;<span class="esymbol">)</span>
+
+	<a name="f_set_value"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_set_value">set_value</a> <span class="esymbol">(</span><span class="elocal">a_property</span><span class="esymbol">,</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Set property to value.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">property_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_property</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_property</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_property</span><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Expression Builders: Conditionals</span>
+
+	<a name="f_ternary"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_ternary">ternary</a> <span class="esymbol">(</span><span class="elocal">a_condition</span><span class="esymbol">,</span> <span class="elocal">a_true_value</span><span class="esymbol">,</span> <span class="elocal">a_false_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Generate ternary expression.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Example: ternary (&quot;open&quot;, &quot;'block'&quot;, &quot;'none'&quot;) Ã¢ÂÂ &quot;open ? 'block' : 'none'&quot;</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">condition_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_condition</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">has_question_mark</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;?&quot;<span class="esymbol">)</span>
+			<span class="etag">has_colon</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;:&quot;<span class="esymbol">)</span>
+
+	<a name="f_if_else"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_if_else">if_else</a> <span class="esymbol">(</span><span class="elocal">a_condition</span><span class="esymbol">,</span> <span class="elocal">a_true_value</span><span class="esymbol">,</span> <span class="elocal">a_false_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Alias for ternary.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">condition_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_condition</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Expression Builders: Class Binding</span>
+
+	<a name="f_class_if"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_class_if">class_if</a> <span class="esymbol">(</span><span class="elocal">a_class</span><span class="esymbol">,</span> <span class="elocal">a_condition</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Conditional class object.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Example: class_if (&quot;active&quot;, &quot;isActive&quot;) Ã¢ÂÂ &quot;{ 'active': isActive }&quot;</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">class_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_class</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">condition_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_condition</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">starts_with_brace</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;{ &quot;<span class="esymbol">)</span>
+			<span class="etag">ends_with_brace</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_ends_with">ends_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot; }&quot;<span class="esymbol">)</span>
+			<span class="etag">contains_class</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_class</span><span class="esymbol">)</span>
+
+	<a name="f_class_multi"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_class_multi">class_multi</a> <span class="esymbol">(</span><span class="elocal">a_bindings</span><span class="esymbol">:</span> <a class="eclass" href="../base/array_short.html">ARRAY</a> <span class="esymbol">[</span><a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">class_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">condition</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">]</span><span class="esymbol">]</span><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Multiple conditional classes.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Example: class_multi (&lt;&lt;[&quot;active&quot;, &quot;isActive&quot;], [&quot;hidden&quot;, &quot;!isVisible&quot;]&gt;&gt;)</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ã¢ÂÂ &quot;{ 'active': isActive, 'hidden': !isVisible }&quot;</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">bindings_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_bindings</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">starts_with_brace</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;{ &quot;<span class="esymbol">)</span>
+			<span class="etag">ends_with_brace</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_ends_with">ends_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot; }&quot;<span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Expression Builders: Data Object</span>
+
+	<a name="f_data_bool"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_data_bool">data_bool</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Boolean property.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">name_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_name</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">)</span>
+			<span class="etag">contains_colon</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;:&quot;<span class="esymbol">)</span>
+
+	<a name="f_data_string"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_data_string">data_string</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">,</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> String property.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">name_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_name</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">)</span>
+			<span class="etag">contains_quotes</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;'&quot;<span class="esymbol">)</span>
+
+	<a name="f_data_int"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_data_int">data_int</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Integer property.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">name_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_name</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">)</span>
+
+	<a name="f_data_null"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_data_null">data_null</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Null property.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">name_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_null</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;null&quot;<span class="esymbol">)</span>
+
+	<a name="f_data_array"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_data_array">data_array</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_values</span><span class="esymbol">:</span> <a class="eclass" href="../base/array_short.html">ARRAY</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">]</span><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Array property.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">name_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_name</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">)</span>
+
+	<a name="f_data_object"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_data_object">data_object</a> <span class="esymbol">(</span><span class="elocal">a_properties</span><span class="esymbol">:</span> <a class="eclass" href="../base/array_short.html">ARRAY</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">]</span><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Combine properties into x-data object.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Example: data_object (&lt;&lt;data_bool (&quot;open&quot;, false), data_int (&quot;count&quot;, 0)&gt;&gt;)</span>
+			<span class="ecomment">--</span><span class="ecomment"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ã¢ÂÂ &quot;{ open: false, count: 0 }&quot;</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">properties_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_properties</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">starts_with_brace</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;{ &quot;<span class="esymbol">)</span>
+			<span class="etag">ends_with_brace</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_ends_with">ends_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot; }&quot;<span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Magic Property Helpers</span>
+
+	<a name="f_el"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_el">El</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;$el&quot;
+			<span class="ecomment">--</span><span class="ecomment"> Reference to current element.</span>
+
+	<a name="f_refs"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_refs">refs</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Reference to named element.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">name_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">starts_with_refs</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;$refs.&quot;<span class="esymbol">)</span>
+
+	<a name="f_store"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_store">store</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Reference to global store.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">name_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">starts_with_store</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;$store.&quot;<span class="esymbol">)</span>
+
+	<a name="f_dispatch"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_dispatch">dispatch</a> <span class="esymbol">(</span><span class="elocal">a_event</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Dispatch custom event.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">event_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_event</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">starts_with_dispatch</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;$dispatch(&quot;<span class="esymbol">)</span>
+
+	<a name="f_dispatch_with_data"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_dispatch_with_data">dispatch_with_data</a> <span class="esymbol">(</span><span class="elocal">a_event</span><span class="esymbol">,</span> <span class="elocal">a_data</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Dispatch event with data.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">event_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_event</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">starts_with_dispatch</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;$dispatch(&quot;<span class="esymbol">)</span>
+			<span class="etag">contains_event</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_event</span><span class="esymbol">)</span>
+
+	<a name="f_next_tick"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_next_tick">next_tick</a> <span class="esymbol">(</span><span class="elocal">a_expression</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Run expression after DOM update.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">expression_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_expression</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">starts_with_nexttick</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;$nextTick(&quot;<span class="esymbol">)</span>
+
+	<a name="f_watch"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_watch">watch</a> <span class="esymbol">(</span><span class="elocal">a_property</span><span class="esymbol">,</span> <span class="elocal">a_callback</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Watch property for changes.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">property_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_property</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">callback_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_callback</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">starts_with_watch</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_8_short.html#f_starts_with">starts_with</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;$watch(&quot;<span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Pre-built Patterns: Dark Mode</span>
+
+	<a name="f_dark_mode_data"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_dark_mode_data">dark_mode_data</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Simple dark mode x-data.</span>
+			<span class="ecomment">--</span><span class="ecomment"> For complex localStorage logic, use x-init separately.</span>
+
+	<a name="f_dark_mode_init"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_dark_mode_init">dark_mode_init</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Standard dark mode x-init.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Checks localStorage on load and sets initial document class.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Note: Avoids arrow functions (=&gt;) due to HTML escaping in attributes.</span>
+
+	<a name="f_dark_mode_watch"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_dark_mode_watch">dark_mode_watch</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression for x-effect to persist dark mode AND update document class.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Use with x_effect() instead of in x-init.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Sets dark class on documentElement and persists to localStorage.</span>
+
+	<a name="f_dark_mode_toggle_expression"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_dark_mode_toggle_expression">dark_mode_toggle_expression</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to toggle dark mode.</span>
+
+	<a name="f_dark_mode_icon_expression"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_dark_mode_icon_expression">dark_mode_icon_expression</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Ternary for showing sun/moon icon.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Note: Uses text instead of emojis for encoding compatibility.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Pre-built Patterns: Dropdown</span>
+
+	<a name="f_dropdown_data"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_dropdown_data">dropdown_data</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Standard dropdown x-data.</span>
+
+	<a name="f_dropdown_close"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_dropdown_close">dropdown_close</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to close dropdown.</span>
+
+	<a name="f_dropdown_toggle"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_dropdown_toggle">dropdown_toggle</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to toggle dropdown.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Pre-built Patterns: Modal</span>
+
+	<a name="f_modal_data"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_modal_data">modal_data</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Standard modal x-data.</span>
+
+	<a name="f_modal_open"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_modal_open">modal_open</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to open modal.</span>
+
+	<a name="f_modal_close"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_modal_close">modal_close</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to close modal.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Pre-built Patterns: Accordion</span>
+
+	<a name="f_accordion_data"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_accordion_data">accordion_data</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Standard accordion x-data (single open).</span>
+
+	<a name="f_accordion_toggle"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_accordion_toggle">accordion_toggle</a> <span class="esymbol">(</span><span class="elocal">a_index</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to toggle accordion item.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">non_negative_index</span><span class="esymbol">:</span> <span class="elocal">a_index</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater_equal">&gt;=</a> <span class="enumber">0</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_activeindex</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;activeIndex&quot;<span class="esymbol">)</span>
+
+	<a name="f_accordion_is_open"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_accordion_is_open">accordion_is_open</a> <span class="esymbol">(</span><span class="elocal">a_index</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to check if accordion item is open.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">non_negative_index</span><span class="esymbol">:</span> <span class="elocal">a_index</span> <a class="esymbol" href="../base/comparable_short.html#f_is_greater_equal">&gt;=</a> <span class="enumber">0</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_activeindex</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span>&quot;activeIndex&quot;<span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Pre-built Patterns: Tabs</span>
+
+	<a name="f_tabs_data"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_tabs_data">tabs_data</a> <span class="esymbol">(</span><span class="elocal">a_default_tab</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Standard tabs x-data.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">tab_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_default_tab</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_tab</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_default_tab</span><span class="esymbol">)</span>
+
+	<a name="f_tabs_select"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_tabs_select">tabs_select</a> <span class="esymbol">(</span><span class="elocal">a_tab</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to select a tab.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">tab_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_tab</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_tab</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_tab</span><span class="esymbol">)</span>
+
+	<a name="f_tabs_is_active"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_tabs_is_active">tabs_is_active</a> <span class="esymbol">(</span><span class="elocal">a_tab</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to check if tab is active.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">tab_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_tab</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">result_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">contains_tab</span><span class="esymbol">:</span> <span class="ekeyword">Result</span><span class="edot">.</span><a class="efeature" href="../base/readable_string_general_short.html#f_has_substring">has_substring</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_tab</span><span class="esymbol">)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Pre-built Patterns: Counter</span>
+
+	<a name="f_counter_data"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_counter_data">counter_data</a> <span class="esymbol">(</span><span class="elocal">a_initial</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Counter x-data with initial value.</span>
+
+	<a name="f_counter_increment"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_counter_increment">counter_increment</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to increment counter.</span>
+
+	<a name="f_counter_decrement"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_counter_decrement">counter_decrement</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to decrement counter.</span>
+
+	<a name="f_counter_reset"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_counter_reset">counter_reset</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to reset counter.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Pre-built Patterns: Loading State</span>
+
+	<a name="f_loading_data"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_loading_data">loading_data</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Loading state x-data.</span>
+
+	<a name="f_loading_start"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_loading_start">loading_start</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to start loading.</span>
+
+	<a name="f_loading_stop"></a><a class="efeature" href="../simple_alpine/alpine_factory_short.html#f_loading_stop">loading_stop</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Expression to stop loading.</span>
+	
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_alpine/alpine_factory_short.html">ALPINE_FACTORY</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="alpine_factory_chart.html">Chart</a>
+<a class="nav class" href="alpine_factory_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="alpine_factory"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="High-level wrapper for HTTP responses. Provides clean access to status, headers, and body content."/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2024-2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="source" content="SIMPLE_WEB - High-level Web API Library https://github.com/ljr1981/simple_web"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_response Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_response_chart.html">Chart</a>
+<a class="nav class" href="simple_web_response_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_response"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">High-level wrapper for HTTP responses.</span>
+		<span class="estring">Provides clean access to status, headers, and body content.</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_web/simple_web_response_short.html">SIMPLE_WEB_RESPONSE</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../simple_web/simple_web_response_short.html#f_make">make</a><span class="esymbol">,</span>
+	<a class="efeature" href="../simple_web/simple_web_response_short.html#f_make_with_body">make_with_body</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_status_code"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_status_code">status_code</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> HTTP status code</span>
+
+	<a name="f_body"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_body">body</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Response body content</span>
+
+	<a name="f_headers"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_headers">headers</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_table_short.html">STRING_TABLE</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> Response headers (name -&gt; value)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status Report</span>
+
+	<a name="f_is_success"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_is_success">is_success</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is response successful (2xx status)?</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">definition</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="esymbol">(</span><a class="efeature" href="../simple_web/simple_web_response_short.html#f_status_code">status_code</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater_equal">&gt;=</a> <span class="enumber">200</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../simple_web/simple_web_response_short.html#f_status_code">status_code</a> <a class="esymbol" href="../base/integer_32_short.html#f_is_less">&lt;</a> <span class="enumber">300</span><span class="esymbol">)</span>
+
+	<a name="f_is_ok"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_is_ok">is_ok</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is status 200 OK?</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">definition</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="esymbol">(</span><a class="efeature" href="../simple_web/simple_web_response_short.html#f_status_code">status_code</a> <span class="esymbol">=</span> <span class="enumber">200</span><span class="esymbol">)</span>
+
+	<a name="f_is_client_error"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_is_client_error">is_client_error</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is client error (4xx status)?</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">definition</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="esymbol">(</span><a class="efeature" href="../simple_web/simple_web_response_short.html#f_status_code">status_code</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater_equal">&gt;=</a> <span class="enumber">400</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../simple_web/simple_web_response_short.html#f_status_code">status_code</a> <a class="esymbol" href="../base/integer_32_short.html#f_is_less">&lt;</a> <span class="enumber">500</span><span class="esymbol">)</span>
+
+	<a name="f_is_server_error"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_is_server_error">is_server_error</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is server error (5xx status)?</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">definition</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="esymbol">(</span><a class="efeature" href="../simple_web/simple_web_response_short.html#f_status_code">status_code</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater_equal">&gt;=</a> <span class="enumber">500</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../simple_web/simple_web_response_short.html#f_status_code">status_code</a> <a class="esymbol" href="../base/integer_32_short.html#f_is_less">&lt;</a> <span class="enumber">600</span><span class="esymbol">)</span>
+
+	<a name="f_is_error"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_is_error">is_error</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Is this an error response (4xx or 5xx)?</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">definition</span><span class="esymbol">:</span> <span class="ekeyword">Result</span> <span class="esymbol">=</span> <span class="esymbol">(</span><a class="efeature" href="../simple_web/simple_web_response_short.html#f_is_client_error">is_client_error</a> <a class="ekeyword" href="../base/boolean_short.html#f_disjuncted">or</a> <a class="efeature" href="../simple_web/simple_web_response_short.html#f_is_server_error">is_server_error</a><span class="esymbol">)</span>
+
+	<a name="f_error_message"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_error_message">error_message</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Extract error message from JSON body if present.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Looks for {&quot;error&quot;: &quot;message&quot;} pattern.</span>
+
+	<a name="f_has_header"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_has_header">has_header</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Does response have header with given name?</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">name_attached</span><span class="esymbol">:</span> <span class="elocal">a_name</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Element Change</span>
+
+	<a name="f_set_body"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_set_body">set_body</a> <span class="esymbol">(</span><span class="elocal">a_body</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set response body</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">body_attached</span><span class="esymbol">:</span> <span class="elocal">a_body</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">body_set</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_response_short.html#f_body">body</a> <span class="esymbol">=</span> <span class="elocal">a_body</span>
+
+	<a name="f_add_header"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_add_header">add_header</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">,</span> <span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add header to response</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">name_attached</span><span class="esymbol">:</span> <span class="elocal">a_name</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">name_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <span class="elocal">a_name</span><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+			<span class="etag">value_attached</span><span class="esymbol">:</span> <span class="elocal">a_value</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+		<span class="ekeyword">ensure</span>
+			<span class="etag">header_added</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_response_short.html#f_has_header">has_header</a><span class="esymbol"> </span><span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">)</span>
+
+	<a name="f_header"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_header">header</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Get header value by name</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">name_attached</span><span class="esymbol">:</span> <span class="elocal">a_name</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Conversion</span>
+
+	<a name="f_body_as_json"></a><a class="efeature" href="../simple_web/simple_web_response_short.html#f_body_as_json">body_as_json</a><span class="esymbol">:</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../simple_json/simple_json_value_short.html">SIMPLE_JSON_VALUE</a>
+			<span class="ecomment">--</span><span class="ecomment"> Parse body as JSON</span>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">status_positive</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_response_short.html#f_status_code">status_code</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+	<span class="etag">body_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_response_short.html#f_body">body</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	<span class="etag">headers_attached</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_response_short.html#f_headers">headers</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;Copyright (c) 2024-2025, Larry Rix&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;MIT License&quot;</span>
+	<span class="eitag">source</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">SIMPLE_WEB - High-level Web API Library</span>
+		<a class="estring" href="https://github.com/ljr1981/simple_web">https://github.com/ljr1981/simple_web</a>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_web/simple_web_response_short.html">SIMPLE_WEB_RESPONSE</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_response_chart.html">Chart</a>
+<a class="nav class" href="simple_web_response_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_response"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

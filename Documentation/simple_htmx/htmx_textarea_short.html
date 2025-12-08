@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="HTML textarea element with HTMX support."/>
+<meta name="author" content="Claude Code"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>htmx_textarea Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="htmx_textarea_chart.html">Chart</a>
+<a class="nav class" href="htmx_textarea_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="htmx_textarea"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;HTML textarea element with HTMX support.&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Claude Code&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_htmx/htmx_textarea_short.html">HTMX_TEXTAREA</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../simple_htmx/htmx_element_short.html#f_make">make</a><span class="esymbol">,</span>
+	<a class="efeature" href="../simple_htmx/htmx_textarea_short.html#f_make_with_name">make_with_name</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_tag_name"></a><a class="efeature" href="../simple_htmx/htmx_textarea_short.html#f_tag_name">Tag_name</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;textarea&quot;
+			<span class="ecomment">--</span><span class="ecomment"> HTML tag name (div, span, button, etc.)</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Textarea Attributes (fluent)</span>
+
+	<a name="f_name"></a><a class="efeature" href="../simple_htmx/htmx_textarea_short.html#f_name">name</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set textarea name.</span>
+
+	<a name="f_rows"></a><a class="efeature" href="../simple_htmx/htmx_textarea_short.html#f_rows">rows</a> <span class="esymbol">(</span><span class="elocal">a_rows</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set number of visible rows.</span>
+
+	<a name="f_cols"></a><a class="efeature" href="../simple_htmx/htmx_textarea_short.html#f_cols">cols</a> <span class="esymbol">(</span><span class="elocal">a_cols</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set number of visible columns.</span>
+
+	<a name="f_placeholder"></a><a class="efeature" href="../simple_htmx/htmx_textarea_short.html#f_placeholder">placeholder</a> <span class="esymbol">(</span><span class="elocal">a_placeholder</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set placeholder text.</span>
+
+	<a name="f_required"></a><a class="efeature" href="../simple_htmx/htmx_textarea_short.html#f_required">required</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Mark as required.</span>
+
+	<a name="f_readonly"></a><a class="efeature" href="../simple_htmx/htmx_textarea_short.html#f_readonly">readonly</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Make read-only.</span>
+	
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_htmx/htmx_textarea_short.html">HTMX_TEXTAREA</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="htmx_textarea_chart.html">Chart</a>
+<a class="nav class" href="htmx_textarea_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="htmx_textarea"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

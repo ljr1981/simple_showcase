@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="Sequential files, viewed as persistent sequences of characters"/>
+<meta name="library" content="Free implementation of ELKS library"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2020, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>file Relations</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="file_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="file_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="file"></span>
+</div></form><pre><span class="ekeyword">deferred</span> <span class="ekeyword">class</span>
+	<a class="eclass" href="../base/file_links.html">FILE</a>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/io_medium_links.html">IO_MEDIUM</a><span class="echar">*</span>
+	<a class="eclass" href="../base/native_string_handler_links.html">NATIVE_STRING_HANDLER</a>
+	<a class="eclass" href="../base/sequence_links.html">SEQUENCE</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/unbounded_links.html">UNBOUNDED</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+
+<span class="ekeyword">Descendants</span>
+	<a class="eclass" href="../base/plain_text_file_links.html">PLAIN_TEXT_FILE</a>
+	<a class="eclass" href="../base/raw_file_links.html">RAW_FILE</a>
+
+<span class="ekeyword">Clients</span>
+	<span class="neclass">CMS_AUTHENTICATION_EMAIL_SERVICE_PARAMETERS</span>
+	<span class="neclass">CMS_DEFAULT_SETUP</span>
+	<span class="neclass">CMS_FILE_CACHE</span><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/any_links.html">ANY</a><span class="esymbol">]</span>
+	<span class="neclass">CMS_FILE_STRING_8_CACHE</span>
+	<span class="neclass">CURL_EASY_EXTERNALS_I</span><span class="echar">*</span>
+	<span class="neclass">CURL_HTTP_CLIENT_REQUEST</span>
+	<span class="neclass">CURL_HTTP_CLIENT_REQUEST</span>
+	<span class="neclass">EQA_FILE_SYSTEM</span>
+	<span class="neclass">EQA_SYSTEM_EXECUTION_PROCESS</span>
+	<span class="neclass">FCGI_I</span><span class="echar">*</span>
+	<span class="neclass">FCGI_IMP</span><span class="echar">*</span>
+	<a class="eclass" href="../base/file_links.html">FILE</a><span class="echar">*</span>
+	<a class="eclass" href="../base/file_iteration_cursor_links.html">FILE_ITERATION_CURSOR</a>
+	<span class="neclass">FILE_OUTPUT_ERROR_VISITOR</span>
+	<span class="neclass">HTTPD_SERVER_I</span><span class="echar">*</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST_CONTEXT</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST_CONTEXT</span>
+	<span class="neclass">I18N_FILE</span><span class="echar">*</span>
+	<span class="neclass">I18N_MO_FILE</span>
+	<span class="neclass">JSON_FILE_SERIALIZATION_VISITOR</span>
+	<span class="neclass">JSON_PRETTY_FILE_VISITOR</span>
+	<span class="neclass">JSON_STREAM_FILE_EXPANDED_WRITER</span>
+	<span class="neclass">JSON_STREAM_FILE_WRITER</span>
+	<span class="neclass">LIBCURL_CUSTOM_FUNCTION</span>
+	<span class="neclass">LIBCURL_HTTP_CLIENT_REQUEST</span>
+	<span class="neclass">LIBCURL_UPLOAD_FILE_READ_FUNCTION</span>
+	<span class="neclass">MEDIUM_TEXT_WRITER</span>
+	<span class="neclass">NET_HTTP_CLIENT_REQUEST</span>
+	<span class="neclass">NOTIFICATION_EMAIL_FILE_STORAGE</span>
+	<span class="neclass">UTF8_READER_WRITER</span>
+	<span class="neclass">WEL_FILE_TIME</span>
+	<span class="neclass">WGI_INPUT_STREAM</span><span class="echar">*</span>
+	<span class="neclass">WGI_LOGGER_RESPONSE</span>
+	<span class="neclass">WGI_OUTPUT_STREAM</span><span class="echar">*</span>
+	<span class="neclass">WGI_RESPONSE</span><span class="echar">*</span>
+	<span class="neclass">WGI_STANDALONE_ERROR_STREAM</span>
+	<span class="neclass">WSF_DEBUG_FILTER</span>
+	<span class="neclass">WSF_FILE_SYSTEM_HANDLER</span>
+	<span class="neclass">WSF_FILE_UTILITIES</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/file_links.html">FILE</a> <span class="ekeyword">create</span> <a class="efeature" href="../base/file_short.html#f_make_with_path">make_with_path</a> <span class="ekeyword">end</span><span class="esymbol">]</span>
+	<span class="neclass">WSF_LOGGING_FILTER</span>
+	<span class="neclass">WSF_REQUEST</span>
+	<span class="neclass">WSF_RESPONSE</span>
+
+<span class="ekeyword">Suppliers</span>
+	<a class="eclass" href="../base/boolean_links.html">BOOLEAN</a>
+	<a class="eclass" href="../base/character_8_links.html">CHARACTER_8</a>
+	<a class="eclass" href="../base/c_string_links.html">C_STRING</a>
+	<a class="eclass" href="../base/file_links.html">FILE</a><span class="echar">*</span>
+	<a class="eclass" href="../base/file_info_links.html">FILE_INFO</a>
+	<a class="eclass" href="../base/file_iteration_cursor_links.html">FILE_ITERATION_CURSOR</a>
+	<a class="eclass" href="../base/integer_32_links.html">INTEGER_32</a>
+	<a class="eclass" href="../base/managed_pointer_links.html">MANAGED_POINTER</a>
+	<a class="eclass" href="../base/mismatch_corrector_links.html">MISMATCH_CORRECTOR</a>
+	<a class="eclass" href="../base/mismatch_information_links.html">MISMATCH_INFORMATION</a>
+	<a class="eclass" href="../base/path_links.html">PATH</a>
+	<a class="eclass" href="../base/platform_links.html">PLATFORM</a>
+	<a class="eclass" href="../base/pointer_links.html">POINTER</a>
+	<a class="eclass" href="../base/readable_string_8_links.html">READABLE_STRING_8</a><span class="echar">*</span>
+	<a class="eclass" href="../base/readable_string_general_links.html">READABLE_STRING_GENERAL</a><span class="echar">*</span>
+	<a class="eclass" href="../base/string_32_links.html">STRING_32</a>
+	<a class="eclass" href="../base/string_8_links.html">STRING_8</a>
+	<a class="eclass" href="../base/typed_pointer_links.html">TYPED_POINTER</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="file_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="file_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="file"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>

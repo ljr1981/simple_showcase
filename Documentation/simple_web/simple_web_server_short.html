@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTSimple HTTP server with clean routing API.  TTExample usage: TTTcreate server.make (8080) TTTserver.on_get (/, agent handle_root) TTTserver.on_get (/api/users, agent handle_users) TTTserver.on_get (/api/users/{id}, agent handle_user) TTTserver.on_post (/api/users, agent create_user) TTTserver.start"/>
+<meta name="author" content="Larry Rix"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 2024-2025, Larry Rix"/>
+<meta name="license" content="MIT License"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>simple_web_server Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_server_chart.html">Chart</a>
+<a class="nav class" href="simple_web_server_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_server"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">		Simple HTTP server with clean routing API.</span>
+		
+		<span class="estring">		Example usage:</span>
+		<span class="estring">			create server.make (8080)</span>
+		<span class="estring">			server.on_get (&quot;/&quot;, agent handle_root)</span>
+		<span class="estring">			server.on_get (&quot;/api/users&quot;, agent handle_users)</span>
+		<span class="estring">			server.on_get (&quot;/api/users/</span><span class="estring">{</span><span class="estring">ID</span><span class="estring">}</span><span class="estring">&quot;, agent handle_user)</span>
+		<span class="estring">			server.on_post (&quot;/api/users&quot;, agent create_user)</span>
+		<span class="estring">			server.start</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_web/simple_web_server_short.html">SIMPLE_WEB_SERVER</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../simple_web/simple_web_server_short.html#f_make">make</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_port"></a><a class="efeature" href="../simple_web/simple_web_server_short.html#f_port">port</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> Port number server listens on.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Route Registration</span>
+
+	<a name="f_on_get"></a><a class="efeature" href="../simple_web/simple_web_server_short.html#f_on_get">on_get</a> <span class="esymbol">(</span><span class="elocal">a_pattern</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_handler</span><span class="esymbol">:</span> <a class="eclass" href="../base/procedure_short.html">PROCEDURE</a> <span class="esymbol">[</span><a class="eclass" href="../simple_web/simple_web_server_request_short.html">SIMPLE_WEB_SERVER_REQUEST</a><span class="esymbol">,</span> <a class="eclass" href="../simple_web/simple_web_server_response_short.html">SIMPLE_WEB_SERVER_RESPONSE</a><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Register GET handler for </span><span class="equoted">a_pattern</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">pattern_attached</span><span class="esymbol">:</span> <span class="elocal">a_pattern</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">handler_attached</span><span class="esymbol">:</span> <span class="elocal">a_handler</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_on_post"></a><a class="efeature" href="../simple_web/simple_web_server_short.html#f_on_post">on_post</a> <span class="esymbol">(</span><span class="elocal">a_pattern</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_handler</span><span class="esymbol">:</span> <a class="eclass" href="../base/procedure_short.html">PROCEDURE</a> <span class="esymbol">[</span><a class="eclass" href="../simple_web/simple_web_server_request_short.html">SIMPLE_WEB_SERVER_REQUEST</a><span class="esymbol">,</span> <a class="eclass" href="../simple_web/simple_web_server_response_short.html">SIMPLE_WEB_SERVER_RESPONSE</a><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Register POST handler for </span><span class="equoted">a_pattern</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">pattern_attached</span><span class="esymbol">:</span> <span class="elocal">a_pattern</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">handler_attached</span><span class="esymbol">:</span> <span class="elocal">a_handler</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_on_put"></a><a class="efeature" href="../simple_web/simple_web_server_short.html#f_on_put">on_put</a> <span class="esymbol">(</span><span class="elocal">a_pattern</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_handler</span><span class="esymbol">:</span> <a class="eclass" href="../base/procedure_short.html">PROCEDURE</a> <span class="esymbol">[</span><a class="eclass" href="../simple_web/simple_web_server_request_short.html">SIMPLE_WEB_SERVER_REQUEST</a><span class="esymbol">,</span> <a class="eclass" href="../simple_web/simple_web_server_response_short.html">SIMPLE_WEB_SERVER_RESPONSE</a><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Register PUT handler for </span><span class="equoted">a_pattern</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">pattern_attached</span><span class="esymbol">:</span> <span class="elocal">a_pattern</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">handler_attached</span><span class="esymbol">:</span> <span class="elocal">a_handler</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_on_delete"></a><a class="efeature" href="../simple_web/simple_web_server_short.html#f_on_delete">on_delete</a> <span class="esymbol">(</span><span class="elocal">a_pattern</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_handler</span><span class="esymbol">:</span> <a class="eclass" href="../base/procedure_short.html">PROCEDURE</a> <span class="esymbol">[</span><a class="eclass" href="../simple_web/simple_web_server_request_short.html">SIMPLE_WEB_SERVER_REQUEST</a><span class="esymbol">,</span> <a class="eclass" href="../simple_web/simple_web_server_response_short.html">SIMPLE_WEB_SERVER_RESPONSE</a><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Register DELETE handler for </span><span class="equoted">a_pattern</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">pattern_attached</span><span class="esymbol">:</span> <span class="elocal">a_pattern</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">handler_attached</span><span class="esymbol">:</span> <span class="elocal">a_handler</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_on_patch"></a><a class="efeature" href="../simple_web/simple_web_server_short.html#f_on_patch">on_patch</a> <span class="esymbol">(</span><span class="elocal">a_pattern</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_handler</span><span class="esymbol">:</span> <a class="eclass" href="../base/procedure_short.html">PROCEDURE</a> <span class="esymbol">[</span><a class="eclass" href="../simple_web/simple_web_server_request_short.html">SIMPLE_WEB_SERVER_REQUEST</a><span class="esymbol">,</span> <a class="eclass" href="../simple_web/simple_web_server_response_short.html">SIMPLE_WEB_SERVER_RESPONSE</a><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Register PATCH handler for </span><span class="equoted">a_pattern</span><span class="ecomment">.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">pattern_attached</span><span class="esymbol">:</span> <span class="elocal">a_pattern</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">handler_attached</span><span class="esymbol">:</span> <span class="elocal">a_handler</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_on"></a><a class="efeature" href="../simple_web/simple_web_server_short.html#f_on">on</a> <span class="esymbol">(</span><span class="elocal">a_method</span><span class="esymbol">,</span> <span class="elocal">a_pattern</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">a_handler</span><span class="esymbol">:</span> <a class="eclass" href="../base/procedure_short.html">PROCEDURE</a> <span class="esymbol">[</span><a class="eclass" href="../simple_web/simple_web_server_request_short.html">SIMPLE_WEB_SERVER_REQUEST</a><span class="esymbol">,</span> <a class="eclass" href="../simple_web/simple_web_server_response_short.html">SIMPLE_WEB_SERVER_RESPONSE</a><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Register handler for any HTTP method.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">method_attached</span><span class="esymbol">:</span> <span class="elocal">a_method</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">pattern_attached</span><span class="esymbol">:</span> <span class="elocal">a_pattern</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">handler_attached</span><span class="esymbol">:</span> <span class="elocal">a_handler</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Middleware</span>
+
+	<a name="f_use_middleware"></a><a class="efeature" href="../simple_web/simple_web_server_short.html#f_use_middleware">use_middleware</a> <span class="esymbol">(</span><span class="elocal">a_middleware</span><span class="esymbol">:</span> <a class="eclass" href="../simple_web/simple_web_middleware_short.html">SIMPLE_WEB_MIDDLEWARE</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add middleware to the processing pipeline.</span>
+			<span class="ecomment">--</span><span class="ecomment"> Middleware runs in registration order before route handlers.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">middleware_attached</span><span class="esymbol">:</span> <span class="elocal">a_middleware</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+
+	<a name="f_use_logging"></a><a class="efeature" href="../simple_web/simple_web_server_short.html#f_use_logging">use_logging</a>
+			<span class="ecomment">--</span><span class="ecomment"> Add logging middleware (convenience method).</span>
+
+	<a name="f_use_cors"></a><a class="efeature" href="../simple_web/simple_web_server_short.html#f_use_cors">use_cors</a>
+			<span class="ecomment">--</span><span class="ecomment"> Add CORS middleware allowing all origins (convenience method).</span>
+
+	<a name="f_use_cors_for"></a><a class="efeature" href="../simple_web/simple_web_server_short.html#f_use_cors_for">use_cors_for</a> <span class="esymbol">(</span><span class="elocal">a_origins</span><span class="esymbol">:</span> <a class="eclass" href="../base/array_short.html">ARRAY</a> <span class="esymbol">[</span><a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">]</span><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Add CORS middleware for specific origins.</span>
+		<span class="ekeyword">require</span>
+			<span class="etag">origins_attached</span><span class="esymbol">:</span> <span class="elocal">a_origins</span> <span class="esymbol">/=</span> <span class="ekeyword">Void</span>
+			<span class="etag">origins_not_empty</span><span class="esymbol">:</span> <span class="elocal">a_origins</span><span class="edot">.</span><a class="efeature" href="../base/array_short.html#f_count">count</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Server Control</span>
+
+	<a name="f_start"></a><a class="efeature" href="../simple_web/simple_web_server_short.html#f_start">start</a>
+			<span class="ecomment">--</span><span class="ecomment"> Start the server (blocking).</span>
+
+	<a name="f_set_verbose"></a><a class="efeature" href="../simple_web/simple_web_server_short.html#f_set_verbose">set_verbose</a> <span class="esymbol">(</span><span class="elocal">a_verbose</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a><span class="esymbol">)</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set verbose mode for debugging.</span>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">port_valid</span><span class="esymbol">:</span> <a class="efeature" href="../simple_web/simple_web_server_short.html#f_port">port</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted">and</a> <a class="efeature" href="../simple_web/simple_web_server_short.html#f_port">port</a> <a class="esymbol" href="../base/integer_32_short.html#f_is_less">&lt;</a> <span class="enumber">65536</span>
+
+<span class="ekeyword">note</span>
+	<span class="eitag">copyright</span><span class="esymbol">:</span> <span class="estring">&quot;Copyright (c) 2024-2025, Larry Rix&quot;</span>
+	<span class="eitag">license</span><span class="esymbol">:</span> <span class="estring">&quot;MIT License&quot;</span>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_web/simple_web_server_short.html">SIMPLE_WEB_SERVER</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="simple_web_server_chart.html">Chart</a>
+<a class="nav class" href="simple_web_server_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="simple_web_server"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

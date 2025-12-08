@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="HTML input element with HTMX support."/>
+<meta name="author" content="Claude Code"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>htmx_input Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="htmx_input_chart.html">Chart</a>
+<a class="nav class" href="htmx_input_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="htmx_input"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;HTML input element with HTMX support.&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Claude Code&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../simple_htmx/htmx_input_short.html">HTMX_INPUT</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../simple_htmx/htmx_element_short.html#f_make">make</a><span class="esymbol">,</span>
+	<a class="efeature" href="../simple_htmx/htmx_input_short.html#f_make_text">make_text</a><span class="esymbol">,</span>
+	<a class="efeature" href="../simple_htmx/htmx_input_short.html#f_make_hidden">make_hidden</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_tag_name"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_tag_name">Tag_name</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a> <span class="esymbol">=</span> &quot;input&quot;
+			<span class="ecomment">--</span><span class="ecomment"> HTML tag name (div, span, button, etc.)</span>
+
+	<a name="f_is_void_element"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_is_void_element">Is_void_element</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a> <span class="esymbol">=</span> <span class="ekeyword">True</span>
+			<span class="ecomment">--</span><span class="ecomment"> Is this a void element (no closing tag)?</span>
+			<span class="ecomment">--</span><span class="ecomment"> Examples: input, br, hr, img, meta, link</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Input Attributes (fluent)</span>
+
+	<a name="f_name"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_name">name</a> <span class="esymbol">(</span><span class="elocal">a_name</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set input name.</span>
+
+	<a name="f_value"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_value">value</a> <span class="esymbol">(</span><span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set input value.</span>
+
+	<a name="f_placeholder"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_placeholder">placeholder</a> <span class="esymbol">(</span><span class="elocal">a_placeholder</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set placeholder text.</span>
+
+	<a name="f_required"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_required">required</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Mark as required.</span>
+
+	<a name="f_readonly"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_readonly">readonly</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Make read-only.</span>
+
+	<a name="f_autofocus"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_autofocus">autofocus</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set autofocus.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Input Types (fluent)</span>
+
+	<a name="f_type_text"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_type_text">type_text</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set type to text.</span>
+
+	<a name="f_type_password"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_type_password">type_password</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set type to password.</span>
+
+	<a name="f_type_email"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_type_email">type_email</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set type to email.</span>
+
+	<a name="f_type_number"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_type_number">type_number</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set type to number.</span>
+
+	<a name="f_type_hidden"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_type_hidden">type_hidden</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set type to hidden.</span>
+
+	<a name="f_type_checkbox"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_type_checkbox">type_checkbox</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set type to checkbox.</span>
+
+	<a name="f_type_radio"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_type_radio">type_radio</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set type to radio.</span>
+
+	<a name="f_type_file"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_type_file">type_file</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set type to file.</span>
+
+	<a name="f_type_date"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_type_date">type_date</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set type to date.</span>
+
+	<a name="f_type_submit"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_type_submit">type_submit</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set type to submit.</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Validation Attributes (fluent)</span>
+
+	<a name="f_min"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_min">min</a> <span class="esymbol">(</span><span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set minimum value.</span>
+
+	<a name="f_max"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_max">max</a> <span class="esymbol">(</span><span class="elocal">a_value</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set maximum value.</span>
+
+	<a name="f_minlength"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_minlength">minlength</a> <span class="esymbol">(</span><span class="elocal">a_length</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set minimum length.</span>
+
+	<a name="f_maxlength"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_maxlength">maxlength</a> <span class="esymbol">(</span><span class="elocal">a_length</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set maximum length.</span>
+
+	<a name="f_pattern"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_pattern">pattern</a> <span class="esymbol">(</span><span class="elocal">a_regex</span><span class="esymbol">:</span> <a class="eclass" href="../base/readable_string_general_short.html">READABLE_STRING_GENERAL</a><span class="esymbol">)</span><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Set validation pattern (regex).</span>
+
+	<a name="f_checked"></a><a class="efeature" href="../simple_htmx/htmx_input_short.html#f_checked">checked</a><span class="esymbol">:</span> <span class="ekeyword">like</span> <span class="ekeyword">Current</span>
+			<span class="ecomment">--</span><span class="ecomment"> Mark checkbox/radio as checked.</span>
+	
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../simple_htmx/htmx_input_short.html">HTMX_INPUT</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="htmx_input_chart.html">Chart</a>
+<a class="nav class" href="htmx_input_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="htmx_input"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

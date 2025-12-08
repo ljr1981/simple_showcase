@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="TTConfiguration loader for Simple Showcase.  TTReads settings from a JSON config file, supporting different TTconfigurations for development vs production environments.  TTUsage: TTTconfig: SSC_CONFIG TTTcreate config.make (config.json) TTTserver.make (config.port)"/>
+<meta name="author" content="Larry Rix with Claude (Anthropic)"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>ssc_config Contracts</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="ssc_config_chart.html">Chart</a>
+<a class="nav class" href="ssc_config_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="ssc_config"></span>
+</div></form><pre><span class="ekeyword">note</span>
+	<span class="eitag">description</span><span class="esymbol">:</span> <span class="estring">&quot;</span><span class="estring">[</span>
+		<span class="estring">		Configuration loader for Simple Showcase.</span>
+		
+		<span class="estring">		Reads settings from a JSON config file, supporting different</span>
+		<span class="estring">		configurations for development vs production environments.</span>
+		
+		<span class="estring">		Usage:</span>
+		<span class="estring">			config: SSC_CONFIG</span>
+		<span class="estring">			create config.make (&quot;config.json&quot;)</span>
+		<span class="estring">			server.make (config.port)</span>
+	<span class="estring">]</span><span class="estring">&quot;</span>
+	<span class="eitag">author</span><span class="esymbol">:</span> <span class="estring">&quot;Larry Rix with Claude (Anthropic)&quot;</span>
+	<span class="eitag">date</span><span class="esymbol">:</span> <span class="estring">&quot;$Date$&quot;</span>
+	<span class="eitag">revision</span><span class="esymbol">:</span> <span class="estring">&quot;$Revision$&quot;</span>
+
+<span class="ekeyword">class</span> <span class="ekeyword">interface</span>
+	<a class="eclass" href="../core/ssc_config_short.html">SSC_CONFIG</a>
+
+<span class="ekeyword">create</span> 
+	<a class="efeature" href="../core/ssc_config_short.html#f_make">make</a><span class="esymbol">,</span>
+	<a class="efeature" href="../core/ssc_config_short.html#f_make_default">make_default</a>
+
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Access</span>
+
+	<a name="f_config_path"></a><a class="efeature" href="../core/ssc_config_short.html#f_config_path">config_path</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Path to the configuration file</span>
+
+	<a name="f_is_loaded"></a><a class="efeature" href="../core/ssc_config_short.html#f_is_loaded">is_loaded</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Was configuration successfully loaded from file?</span>
+
+	<a name="f_mode"></a><a class="efeature" href="../core/ssc_config_short.html#f_mode">mode</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Running mode: &quot;development&quot; or &quot;production&quot;</span>
+
+	<a name="f_port"></a><a class="efeature" href="../core/ssc_config_short.html#f_port">port</a><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a>
+			<span class="ecomment">--</span><span class="ecomment"> HTTP server port</span>
+
+	<a name="f_base_url"></a><a class="efeature" href="../core/ssc_config_short.html#f_base_url">base_url</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Base URL for the site (used in generated links)</span>
+
+	<a name="f_contact_email"></a><a class="efeature" href="../core/ssc_config_short.html#f_contact_email">contact_email</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Email address for contact form submissions</span>
+
+	<a name="f_smtp_password"></a><a class="efeature" href="../core/ssc_config_short.html#f_smtp_password">smtp_password</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Gmail app password for sending emails</span>
+
+	<a name="f_smtp_endpoints"></a><a class="efeature" href="../core/ssc_config_short.html#f_smtp_endpoints">smtp_endpoints</a><span class="esymbol">:</span> <a class="eclass" href="../base/arrayed_list_short.html">ARRAYED_LIST</a> <span class="esymbol">[</span><a class="eclass" href="../base/tuple_short.html">TUPLE</a> <span class="esymbol">[</span><span class="elocal">host</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">port</span><span class="esymbol">:</span> <a class="eclass" href="../base/integer_32_short.html">INTEGER_32</a><span class="esymbol">;</span> <span class="elocal">protocol</span><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a><span class="esymbol">;</span> <span class="elocal">ssl_reqd</span><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a><span class="esymbol">]</span><span class="esymbol">]</span>
+			<span class="ecomment">--</span><span class="ecomment"> List of SMTP endpoints to try in order</span>
+
+	<a name="f_db_path"></a><a class="efeature" href="../core/ssc_config_short.html#f_db_path">db_path</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Path to SQLite database file</span>
+
+	<a name="f_log_level"></a><a class="efeature" href="../core/ssc_config_short.html#f_log_level">log_level</a><span class="esymbol">:</span> <a class="eclass" href="../base/string_8_short.html">STRING_8</a>
+			<span class="ecomment">--</span><span class="ecomment"> Logging level: &quot;debug&quot;, &quot;info&quot;, &quot;warn&quot;, &quot;error&quot;</span>
+
+	<a name="f_verbose_logging"></a><a class="efeature" href="../core/ssc_config_short.html#f_verbose_logging">verbose_logging</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Enable verbose console output?</span>
+	
+<span class="ekeyword">feature</span> <span class="ecomment">--</span><span class="ecomment"> Status</span>
+
+	<a name="f_is_development"></a><a class="efeature" href="../core/ssc_config_short.html#f_is_development">is_development</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Are we running in development mode?</span>
+
+	<a name="f_is_production"></a><a class="efeature" href="../core/ssc_config_short.html#f_is_production">is_production</a><span class="esymbol">:</span> <a class="eclass" href="../base/boolean_short.html">BOOLEAN</a>
+			<span class="ecomment">--</span><span class="ecomment"> Are we running in production mode?</span>
+	
+<span class="ekeyword">invariant</span>
+	<span class="etag">mode_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../core/ssc_config_short.html#f_mode">mode</a><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+	<span class="etag">port_positive</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_config_short.html#f_port">port</a> <a class="esymbol" href="../base/comparable_short.html#f_is_greater">&gt;</a> <span class="enumber">0</span>
+	<span class="etag">base_url_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../core/ssc_config_short.html#f_base_url">base_url</a><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+	<span class="etag">db_path_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../core/ssc_config_short.html#f_db_path">db_path</a><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+	<span class="etag">log_level_not_empty</span><span class="esymbol">:</span> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../core/ssc_config_short.html#f_log_level">log_level</a><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+	<span class="etag">smtp_endpoints_exist</span><span class="esymbol">:</span> <a class="efeature" href="../core/ssc_config_short.html#f_smtp_endpoints">smtp_endpoints</a> <span class="esymbol">/=</span> <span class="ekeyword">Void</span> <a class="ekeyword" href="../base/boolean_short.html#f_conjuncted_semistrict">and then</a> <a class="ekeyword" href="../base/boolean_short.html#f_negated">not</a> <a class="efeature" href="../core/ssc_config_short.html#f_smtp_endpoints">smtp_endpoints</a><span class="edot">.</span><a class="efeature" href="../base/finite_short.html#f_is_empty">is_empty</a>
+
+<span class="ekeyword">end</span> <span class="ecomment">--</span> <span class="ecomment">class </span><a class="eclass" href="../core/ssc_config_short.html">SSC_CONFIG</a></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="ssc_config_chart.html">Chart</a>
+<a class="nav class" href="ssc_config_links.html">Relations</a>
+<span class="nav class selected">Contracts</span>
+<span class="nav class goto">Go to: <input name="c" value="ssc_config"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
+

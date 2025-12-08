@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="generator" content="ISE EiffelStudio version 25.02.9.8732 - win64">
+<meta name="description" content="External iteration cursor used by `across...loop...end'."/>
+<meta name="library" content="Free implementation of ELKS library"/>
+<meta name="legal" content="See notice at end of class."/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="copyright" content="Copyright (c) 1984-2012, Eiffel Software and others"/>
+<meta name="license" content="Eiffel Forum License v2 (see http://www.eiffel.com/licensing/forum.txt)"/>
+<meta name="source" content="Eiffel Software 5949 Hollister Ave., Goleta, CA 93117 USA Telephone 805-685-1006, Fax 805-685-6869 Website http://www.eiffel.com Customer support http://support.eiffel.com"/>
+<meta name="keywords" content="Eiffel class"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<title>iteration_cursor Relations</title>
+<link rel="stylesheet" href="../default.css" type="text/css">
+<script type="text/javascript" src="../goto.html"></script>
+</head>
+<body>
+<pre></pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="iteration_cursor_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="iteration_cursor_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="iteration_cursor"></span>
+</div></form><pre><span class="ekeyword">deferred</span> <span class="ekeyword">class</span>
+	<a class="eclass" href="../base/iteration_cursor_links.html">ITERATION_CURSOR</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+
+<span class="ekeyword">Ancestors</span>
+	<a class="eclass" href="../base/any_links.html">ANY</a>
+
+<span class="ekeyword">Descendants</span>
+	<a class="eclass" href="../base/arrayed_queue_iteration_cursor_links.html">ARRAYED_QUEUE_ITERATION_CURSOR</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">DS_LINEAR_CURSOR</span><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/empty_iteration_cursor_links.html">EMPTY_ITERATION_CURSOR</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/fibonacci_links.html">FIBONACCI</a>
+	<a class="eclass" href="../base/file_iteration_cursor_links.html">FILE_ITERATION_CURSOR</a>
+	<a class="eclass" href="../base/heap_priority_queue_iteration_cursor_links.html">HEAP_PRIORITY_QUEUE_ITERATION_CURSOR</a> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/comparable_links.html">COMPARABLE</a><span class="esymbol">]</span>
+	<a class="eclass" href="../base/indexable_iteration_cursor_links.html">INDEXABLE_ITERATION_CURSOR</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/primes_links.html">PRIMES</a>
+	<a class="eclass" href="../base/random_links.html">RANDOM</a>
+	<a class="eclass" href="../base/repeatable_links.html">REPEATABLE</a><span class="echar">*</span>
+	<span class="neclass">SEARCH_TABLE_ITERATION_CURSOR</span> <span class="esymbol">[</span><span class="egeneric">K</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/hashable_links.html">HASHABLE</a><span class="esymbol">]</span>
+	<span class="neclass">SIMPLE_DATE_RANGE_CURSOR</span>
+	<a class="eclass" href="../simple_json/simple_json_stream_cursor_links.html">SIMPLE_JSON_STREAM_CURSOR</a>
+	<a class="eclass" href="../simple_sql/simple_sql_cursor_iterator_links.html">SIMPLE_SQL_CURSOR_ITERATOR</a>
+	<span class="neclass">SQLITE_STATEMENT_ITERATION_CURSOR</span>
+	<a class="eclass" href="../base/string_iteration_cursor_links.html">STRING_ITERATION_CURSOR</a>
+	<a class="eclass" href="../base/table_iteration_cursor_links.html">TABLE_ITERATION_CURSOR</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">,</span> <span class="egeneric">K</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/tree_iteration_cursor_links.html">TREE_ITERATION_CURSOR</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">WSF_WIDGET_TABLE_ITERATION_CURSOR</span>
+
+<span class="ekeyword">Clients</span>
+	<a class="eclass" href="../base/action_sequence_links.html">ACTION_SEQUENCE</a> <span class="esymbol">[</span><span class="egeneric">EVENT_DATA</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/tuple_links.html">TUPLE</a> <span class="ekeyword">create</span> <a class="efeature" href="../base/any_short.html#f_default_create">default_create</a> <span class="ekeyword">end</span><span class="esymbol">]</span>
+	<span class="neclass">AES</span>
+	<a class="eclass" href="../base/array_links.html">ARRAY</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/arrayed_circular_links.html">ARRAYED_CIRCULAR</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/arrayed_list_links.html">ARRAYED_LIST</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/arrayed_set_links.html">ARRAYED_SET</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/arrayed_stack_links.html">ARRAYED_STACK</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">ARRAY_JSON_DESERIALIZER</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/any_links.html">ANY</a><span class="esymbol">]</span>
+	<span class="neclass">BASE_PROCESS</span><span class="echar">*</span>
+	<span class="neclass">BASE_PROCESS_IMP</span>
+	<span class="neclass">BASE_REQUEST</span>
+	<a class="eclass" href="../base/binary_search_tree_set_links.html">BINARY_SEARCH_TREE_SET</a> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/comparable_links.html">COMPARABLE</a><span class="esymbol">]</span>
+	<a class="eclass" href="../base/bool_string_links.html">BOOL_STRING</a>
+	<span class="neclass">BYTE_ARRAY_CONVERTER</span>
+	<span class="neclass">BYTE_ARRAY_CONVERTER</span>
+	<span class="neclass">CMS_ADMIN_INSTALL_HANDLER</span>
+	<span class="neclass">CMS_API</span>
+	<span class="neclass">CMS_API_EXPORT_IMP</span><span class="echar">*</span>
+	<span class="neclass">CMS_API_IMPORT_IMP</span><span class="echar">*</span>
+	<span class="neclass">CMS_AUTHENTICATION_API</span>
+	<span class="neclass">CMS_AUTHENTICATION_MODULE</span>
+	<span class="neclass">CMS_AUTHENTICATION_MODULE_ADMINISTRATION</span>
+	<span class="neclass">CMS_CONTENT_TYPE</span><span class="echar">*</span>
+	<span class="neclass">CMS_CORE_MODULE</span>
+	<span class="neclass">CMS_CORE_STORAGE_SQL_I</span><span class="echar">*</span>
+	<span class="neclass">CMS_ENCODERS</span>
+	<span class="neclass">CMS_EXECUTION</span><span class="echar">*</span>
+	<span class="neclass">CMS_FILE_SYSTEM_UTILITIES</span>
+	<span class="neclass">CMS_FORM</span>
+	<span class="neclass">CMS_FORMAT</span>
+	<span class="neclass">CMS_FORMATS</span>
+	<span class="neclass">CMS_HOOK_BLOCK</span><span class="echar">*</span>
+	<span class="neclass">CMS_HOOK_BLOCK_HELPER</span><span class="echar">*</span>
+	<span class="neclass">CMS_HOOK_CORE_MANAGER</span>
+	<span class="neclass">CMS_HOOK_MANAGER</span>
+	<span class="neclass">CMS_HTML_PAGE</span>
+	<span class="neclass">CMS_LINK_COMPOSITE</span><span class="echar">*</span>
+	<span class="neclass">CMS_MENU</span>
+	<span class="neclass">CMS_MENU_SYSTEM</span>
+	<span class="neclass">CMS_MODULE_COLLECTION</span>
+	<span class="neclass">CMS_OAUTH_20_MODULE</span>
+	<span class="neclass">CMS_OAUTH_20_MODULE_ADMINISTRATION</span>
+	<span class="neclass">CMS_PAGINATION_GENERATOR</span>
+	<span class="neclass">CMS_RESPONSE</span><span class="echar">*</span>
+	<span class="neclass">CMS_RESPONSE_METADATA</span>
+	<span class="neclass">CMS_ROOT_WEBAPI_HANDLER</span>
+	<span class="neclass">CMS_SETUP</span><span class="echar">*</span>
+	<span class="neclass">CMS_SMARTY_TEMPLATE_BLOCK</span>
+	<span class="neclass">CMS_SMARTY_TEMPLATE_TEXT</span>
+	<span class="neclass">CMS_STORAGE_SQL_I</span><span class="echar">*</span>
+	<span class="neclass">CMS_THEME</span><span class="echar">*</span>
+	<span class="neclass">CMS_THEME_INFORMATION</span>
+	<span class="neclass">CMS_URL_UTILITIES</span><span class="echar">*</span>
+	<span class="neclass">CMS_USERS_WEBAPI_HANDLER</span>
+	<span class="neclass">CMS_USER_API</span>
+	<span class="neclass">CMS_USER_PROFILE</span>
+	<span class="neclass">CMS_USER_PROFILE_STORAGE_SQL</span>
+	<span class="neclass">CMS_USER_ROLE</span>
+	<span class="neclass">CMS_USER_STORAGE_I</span><span class="echar">*</span>
+	<span class="neclass">CMS_USER_STORAGE_SQL_I</span><span class="echar">*</span>
+	<span class="neclass">CMS_WEBAPI_HANDLER</span><span class="echar">*</span>
+	<span class="neclass">CONTENT_FORMAT</span><span class="echar">*</span>
+	<span class="neclass">CSS_STYLE</span>
+	<span class="neclass">CSS_TEXT</span>
+	<span class="neclass">CURL_HTTP_CLIENT_REQUEST</span>
+	<span class="neclass">CURL_HTTP_CLIENT_REQUEST</span>
+	<span class="neclass">DIRECTORY_ITERATOR</span><span class="echar">*</span>
+	<a class="eclass" href="../base/dynamic_chain_links.html">DYNAMIC_CHAIN</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">EJSON</span>
+	<span class="neclass">ERROR_GROUP</span>
+	<span class="neclass">ERROR_HANDLER</span>
+	<span class="neclass">ERROR_ITERATOR</span>
+	<span class="neclass">EVENT_TYPE</span> <span class="esymbol">[</span><span class="egeneric">EVENT_DATA</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/tuple_links.html">TUPLE</a><span class="esymbol">]</span>
+	<a class="eclass" href="../base/fixed_list_links.html">FIXED_LIST</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">FORBIDDEN_ERROR_CMS_RESPONSE</span>
+	<span class="neclass">FOUNDATION_API</span>
+	<a class="eclass" href="../base/hash_table_links.html">HASH_TABLE</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">,</span> <span class="egeneric">K</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/hashable_links.html">HASHABLE</a><span class="esymbol">]</span>
+	<span class="neclass">HEADER</span>
+	<span class="neclass">HEADER_EXTRACTOR_10</span>
+	<a class="eclass" href="../base/heap_priority_queue_links.html">HEAP_PRIORITY_QUEUE</a> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/comparable_links.html">COMPARABLE</a><span class="esymbol">]</span>
+	<span class="neclass">HELPER</span>
+	<span class="neclass">HMAC_SHA1_SIGNATURE_SERVICE</span>
+	<span class="neclass">HTML_CONTENT_FILTER</span>
+	<a class="eclass" href="../simple_htmx/htmx_element_links.html">HTMX_ELEMENT</a><span class="echar">*</span>
+	<a class="eclass" href="../simple_htmx/htmx_render_context_links.html">HTMX_RENDER_CONTEXT</a>
+	<span class="neclass">HTTP_ACCEPT_LANGUAGE_UTILITIES</span>
+	<span class="neclass">HTTP_ACCEPT_MEDIA_TYPE_UTILITIES</span>
+	<span class="neclass">HTTP_ANY_ACCEPT_HEADER_UTILITIES</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST</span><span class="echar">*</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST</span><span class="echar">*</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST_CONTEXT</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST_CONTEXT</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST_FORM_PARAMETERS</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST_FORM_PARAMETERS</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST_PARAMETERS</span><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="neclass">HTTP_CLIENT_REQUEST_PARAMETER</span><span class="esymbol">]</span>
+	<span class="neclass">HTTP_CLIENT_REQUEST_PARAMETERS</span><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="neclass">HTTP_CLIENT_REQUEST_PARAMETER</span><span class="esymbol">]</span>
+	<span class="neclass">HTTP_CLIENT_RESPONSE</span>
+	<span class="neclass">HTTP_CLIENT_RESPONSE</span>
+	<span class="neclass">HTTP_COOKIE</span>
+	<span class="neclass">HTTP_FILE_EXTENSION_MIME_MAPPING</span>
+	<span class="neclass">HTTP_HEADER</span>
+	<span class="neclass">HTTP_HEADER_MODIFIER</span><span class="echar">*</span>
+	<span class="neclass">HTTP_MEDIA_TYPE</span>
+	<span class="neclass">I18N_NLS_LCID_TOOLS</span>
+	<span class="neclass">INI_CONFIG</span>
+	<a class="eclass" href="../base/integer_16_ref_links.html">INTEGER_16_REF</a>
+	<a class="eclass" href="../base/integer_32_ref_links.html">INTEGER_32_REF</a>
+	<a class="eclass" href="../base/integer_64_ref_links.html">INTEGER_64_REF</a>
+	<a class="eclass" href="../base/integer_8_ref_links.html">INTEGER_8_REF</a>
+	<a class="eclass" href="../base/interactive_list_links.html">INTERACTIVE_LIST</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">IRI</span>
+	<span class="neclass">ITERABLE_JSON_SERIALIZER</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/any_links.html">ANY</a><span class="esymbol">]</span>
+	<a class="eclass" href="../base/iteration_cursor_links.html">ITERATION_CURSOR</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">JSON_ARRAY</span>
+	<span class="neclass">JSON_CONFIG</span>
+	<span class="neclass">JSON_DESERIALIZER_CONTEXT</span>
+	<span class="neclass">JSON_ENCODER</span>
+	<span class="neclass">JSON_EQUALITY_TESTER</span>
+	<span class="neclass">JSON_HASH_TABLE_CONVERTER</span>
+	<span class="neclass">JSON_ITERATOR</span>
+	<span class="neclass">JSON_LIST_CONVERTER</span><span class="echar">*</span>
+	<span class="neclass">JSON_OBJECT</span>
+	<span class="neclass">JSON_PARSER</span>
+	<span class="neclass">JSON_PATH</span>
+	<span class="neclass">JSON_PRETTY_FILE_VISITOR</span>
+	<span class="neclass">JSON_PRETTY_STRING_VISITOR</span>
+	<span class="neclass">JSON_REFLECTOR_DESERIALIZER</span>
+	<span class="neclass">JSON_REFLECTOR_SERIALIZER</span>
+	<span class="neclass">JSON_SERIALIZER_CONTEXT</span>
+	<span class="neclass">JSON_SERIALIZER_REFERENCE_COLLECTION</span>
+	<span class="neclass">JSON_SMART_REFLECTOR_DESERIALIZER</span>
+	<span class="neclass">JSON_WEBAPI_RESPONSE</span>
+	<span class="neclass">JWS</span>
+	<span class="neclass">JWT</span><span class="echar">*</span>
+	<span class="neclass">JWT_CLAIMSET</span>
+	<span class="neclass">KI_CHARACTER_BUFFER</span><span class="echar">*</span>
+	<span class="neclass">KI_DIRECTORY</span><span class="echar">*</span>
+	<span class="neclass">KI_FILE_SYSTEM</span><span class="echar">*</span>
+	<span class="neclass">KL_ARGUMENTS</span>
+	<span class="neclass">KL_ARRAY_ROUTINES</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">KL_SPECIAL_ROUTINES</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">KL_STRING_ROUTINES</span>
+	<span class="neclass">LIBCURL_HTTP_CLIENT_REQUEST</span>
+	<a class="eclass" href="../base/linked_circular_links.html">LINKED_CIRCULAR</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/linked_list_links.html">LINKED_LIST</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/linked_queue_links.html">LINKED_QUEUE</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/linked_set_links.html">LINKED_SET</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<a class="eclass" href="../base/linked_stack_links.html">LINKED_STACK</a> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">LIST_JSON_DESERIALIZER</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/any_links.html">ANY</a><span class="esymbol">]</span>
+	<span class="neclass">MESSAGE_DIGEST</span><span class="echar">*</span>
+	<a class="eclass" href="../base/native_string_links.html">NATIVE_STRING</a>
+	<a class="eclass" href="../base/natural_16_ref_links.html">NATURAL_16_REF</a>
+	<a class="eclass" href="../base/natural_32_ref_links.html">NATURAL_32_REF</a>
+	<a class="eclass" href="../base/natural_64_ref_links.html">NATURAL_64_REF</a>
+	<a class="eclass" href="../base/natural_8_ref_links.html">NATURAL_8_REF</a>
+	<span class="neclass">NET_HTTP_CLIENT_REQUEST</span>
+	<span class="neclass">NOTIFICATION_CHAIN_MAILER</span>
+	<span class="neclass">NOTIFICATION_EMAIL</span>
+	<span class="neclass">NOTIFICATION_EXTERNAL_MAILER</span>
+	<span class="neclass">NOTIFICATION_MAILER</span><span class="echar">*</span>
+	<span class="neclass">NOTIFICATION_SMTP_MAILER</span>
+	<span class="neclass">OAUTH_10_SERVICE</span>
+	<span class="neclass">OAUTH_PARAMETER_LIST</span>
+	<span class="neclass">OUTPUT_ERROR_VISITOR</span><span class="echar">*</span>
+	<a class="eclass" href="../base/part_sorted_set_links.html">PART_SORTED_SET</a> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/part_comparable_links.html">PART_COMPARABLE</a><span class="esymbol">]</span>
+	<a class="eclass" href="../base/path_links.html">PATH</a>
+	<span class="neclass">PERCENT_ENCODER</span>
+	<span class="neclass">PROCESS_MISC_IMP</span><span class="echar">*</span>
+	<span class="neclass">PROCESS_MISC_IMP</span><span class="echar">*</span>
+	<span class="neclass">RECAPTCHA_API</span>
+	<a class="eclass" href="../base/reflector_links.html">REFLECTOR</a>
+	<span class="neclass">RT_DBG_CALL_RECORD</span>
+	<span class="neclass">RX_CHARACTER_SET</span>
+	<span class="neclass">RX_PATTERN_MATCHER</span><span class="echar">*</span>
+	<span class="neclass">RX_REGULAR_EXPRESSION</span><span class="echar">*</span>
+	<span class="neclass">SEARCH_TABLE</span> <span class="esymbol">[</span><span class="egeneric">H</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/hashable_links.html">HASHABLE</a><span class="esymbol">]</span>
+	<span class="neclass">SECURITY_HTML_CONTENT_FILTER</span>
+	<span class="neclass">SECURITY_PROVIDER</span>
+	<span class="neclass">SIGNATURE_BUILDER</span><span class="echar">*</span>
+	<span class="neclass">SIMPLE_CORS</span>
+	<span class="neclass">SIMPLE_CSV</span>
+	<span class="neclass">SIMPLE_DURATION</span>
+	<span class="neclass">SIMPLE_HASH</span>
+	<a class="eclass" href="../simple_json/simple_json_links.html">SIMPLE_JSON</a>
+	<a class="eclass" href="../simple_json/simple_json_array_links.html">SIMPLE_JSON_ARRAY</a>
+	<a class="eclass" href="../simple_json/simple_json_merge_patch_links.html">SIMPLE_JSON_MERGE_PATCH</a>
+	<a class="eclass" href="../simple_json/simple_json_object_links.html">SIMPLE_JSON_OBJECT</a>
+	<a class="eclass" href="../simple_json/simple_json_patch_links.html">SIMPLE_JSON_PATCH</a>
+	<a class="eclass" href="../simple_json/simple_json_pointer_links.html">SIMPLE_JSON_POINTER</a>
+	<a class="eclass" href="../simple_json/simple_json_schema_validation_result_links.html">SIMPLE_JSON_SCHEMA_VALIDATION_RESULT</a>
+	<a class="eclass" href="../simple_json/simple_json_schema_validator_links.html">SIMPLE_JSON_SCHEMA_VALIDATOR</a>
+	<a class="eclass" href="../simple_json/simple_json_stream_links.html">SIMPLE_JSON_STREAM</a>
+	<span class="neclass">SIMPLE_JWT</span>
+	<span class="neclass">SIMPLE_RANDOMIZER</span>
+	<span class="neclass">SIMPLE_RATE_LIMITER</span>
+	<span class="neclass">SIMPLE_REGEX</span>
+	<span class="neclass">SIMPLE_REGEX_MATCH_LIST</span>
+	<a class="eclass" href="../simple_sql/simple_sql_backup_links.html">SIMPLE_SQL_BACKUP</a>
+	<a class="eclass" href="../simple_sql/simple_sql_batch_links.html">SIMPLE_SQL_BATCH</a>
+	<a class="eclass" href="../simple_sql/simple_sql_database_links.html">SIMPLE_SQL_DATABASE</a>
+	<a class="eclass" href="../simple_sql/simple_sql_eager_loader_links.html">SIMPLE_SQL_EAGER_LOADER</a>
+	<a class="eclass" href="../simple_sql/simple_sql_eager_result_links.html">SIMPLE_SQL_EAGER_RESULT</a>
+	<a class="eclass" href="../simple_sql/simple_sql_export_links.html">SIMPLE_SQL_EXPORT</a>
+	<a class="eclass" href="../simple_sql/simple_sql_fts5_links.html">SIMPLE_SQL_FTS5</a>
+	<a class="eclass" href="../simple_sql/simple_sql_fts5_query_links.html">SIMPLE_SQL_FTS5_QUERY</a>
+	<a class="eclass" href="../simple_sql/simple_sql_import_links.html">SIMPLE_SQL_IMPORT</a>
+	<a class="eclass" href="../simple_sql/simple_sql_migration_runner_links.html">SIMPLE_SQL_MIGRATION_RUNNER</a>
+	<a class="eclass" href="../simple_sql/simple_sql_paginator_links.html">SIMPLE_SQL_PAGINATOR</a>
+	<a class="eclass" href="../simple_sql/simple_sql_query_monitor_links.html">SIMPLE_SQL_QUERY_MONITOR</a>
+	<a class="eclass" href="../simple_sql/simple_sql_repository_links.html">SIMPLE_SQL_REPOSITORY</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/any_links.html">ANY</a><span class="esymbol">]</span>
+	<a class="eclass" href="../simple_sql/simple_sql_schema_links.html">SIMPLE_SQL_SCHEMA</a>
+	<a class="eclass" href="../simple_sql/simple_sql_select_builder_links.html">SIMPLE_SQL_SELECT_BUILDER</a>
+	<a class="eclass" href="../simple_sql/simple_sql_similarity_links.html">SIMPLE_SQL_SIMILARITY</a>
+	<a class="eclass" href="../simple_sql/simple_sql_table_info_links.html">SIMPLE_SQL_TABLE_INFO</a>
+	<a class="eclass" href="../simple_sql/simple_sql_vector_links.html">SIMPLE_SQL_VECTOR</a>
+	<a class="eclass" href="../simple_sql/simple_sql_vector_store_links.html">SIMPLE_SQL_VECTOR_STORE</a>
+	<span class="neclass">SIMPLE_TEMPLATE</span>
+	<span class="neclass">SIMPLE_UUID</span>
+	<span class="neclass">SIMPLE_VALIDATOR</span>
+	<a class="eclass" href="../simple_web/simple_web_auth_middleware_links.html">SIMPLE_WEB_AUTH_MIDDLEWARE</a>
+	<a class="eclass" href="../simple_web/simple_web_client_links.html">SIMPLE_WEB_CLIENT</a>
+	<a class="eclass" href="../simple_web/simple_web_cors_middleware_links.html">SIMPLE_WEB_CORS_MIDDLEWARE</a>
+	<a class="eclass" href="../simple_web/simple_web_hybrid_client_links.html">SIMPLE_WEB_HYBRID_CLIENT</a>
+	<a class="eclass" href="../simple_web/simple_web_ollama_client_links.html">SIMPLE_WEB_OLLAMA_CLIENT</a>
+	<a class="eclass" href="../simple_web/simple_web_server_request_links.html">SIMPLE_WEB_SERVER_REQUEST</a>
+	<span class="neclass">SIMPLE_XML_DOCUMENT</span>
+	<span class="neclass">SIMPLE_XML_ELEMENT</span>
+	<span class="neclass">SMARTY_CMS_PAGE_TEMPLATE</span>
+	<span class="neclass">SMARTY_CMS_THEME</span>
+	<span class="neclass">SMTP_PROTOCOL</span>
+	<span class="neclass">SQLITE_BINDING_HELPERS</span>
+	<span class="neclass">SQLITE_BIND_ARG_MARSHALLER</span>
+	<a class="eclass" href="../pages/ssc_ai_changes_page_links.html">SSC_AI_CHANGES_PAGE</a>
+	<a class="eclass" href="../pages/ssc_business_case_page_links.html">SSC_BUSINESS_CASE_PAGE</a>
+	<a class="eclass" href="../core/ssc_database_links.html">SSC_DATABASE</a>
+	<a class="eclass" href="../pages/ssc_dbc_page_links.html">SSC_DBC_PAGE</a>
+	<a class="eclass" href="../components/ssc_nav_overlay_links.html">SSC_NAV_OVERLAY</a>
+	<a class="eclass" href="../pages/ssc_old_way_page_links.html">SSC_OLD_WAY_PAGE</a>
+	<a class="eclass" href="../core/ssc_server_links.html">SSC_SERVER</a>
+	<a class="eclass" href="../core/ssc_site_generator_links.html">SSC_SITE_GENERATOR</a>
+	<a class="eclass" href="../core/ssc_sub_page_links.html">SSC_SUB_PAGE</a><span class="echar">*</span>
+	<a class="eclass" href="../pages/ssc_why_eiffel_page_links.html">SSC_WHY_EIFFEL_PAGE</a>
+	<a class="eclass" href="../pages/ssc_workflow_page_links.html">SSC_WORKFLOW_PAGE</a>
+	<span class="neclass">SSL_RSA</span>
+	<span class="neclass">STRING_EXTRACTOR_10</span>
+	<a class="eclass" href="../base/subset_links.html">SUBSET</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+	<span class="neclass">TABLE_ITERABLE_JSON_SERIALIZER</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/any_links.html">ANY</a><span class="esymbol">,</span> <span class="egeneric">K</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/readable_string_general_links.html">READABLE_STRING_GENERAL</a><span class="esymbol">]</span>
+	<span class="neclass">TABLE_JSON_DESERIALIZER</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/any_links.html">ANY</a><span class="esymbol">]</span>
+	<span class="neclass">TEMPLATE_CONTEXT</span>
+	<span class="neclass">TEMPLATE_STRUCTURE_ACTION</span>
+	<span class="neclass">TEMPLATE_STRUCTURE_ACTION_FOREACH</span>
+	<span class="neclass">TEMPLATE_STRUCTURE_ACTION_GENERIC</span>
+	<span class="neclass">TEMPLATE_STRUCTURE_ITEM</span>
+	<span class="neclass">TEMPLATE_TEXT</span>
+	<span class="neclass">TEST_SET_BASE</span><span class="echar">*</span>
+	<span class="neclass">TRANSFER_MANAGER_BUILDER_IMPL</span>
+	<a class="eclass" href="../base/tuple_links.html">TUPLE</a>
+	<a class="eclass" href="../base/two_way_sorted_set_links.html">TWO_WAY_SORTED_SET</a> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <a class="eclass" href="../base/comparable_links.html">COMPARABLE</a><span class="esymbol">]</span>
+	<span class="neclass">UC_UTF8_ROUTINES</span>
+	<span class="neclass">URI</span>
+	<a class="eclass" href="../base/utf_converter_links.html">UTF_CONVERTER</a>
+	<span class="neclass">VALIDATION_RESULT</span>
+	<span class="neclass">WEB_SOCKET_HANDLER</span>
+	<span class="neclass">WGI_HTTPD_REQUEST_HANDLER</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="neclass">WGI_EXECUTION</span> <span class="ekeyword">create</span> <span class="nefeature">make</span> <span class="ekeyword">end</span><span class="esymbol">]</span>
+	<span class="neclass">WGI_REQUEST_CGI_VARIABLES</span>
+	<span class="neclass">WSF_API_OPTIONS</span>
+	<span class="neclass">WSF_API_UTILITIES</span><span class="echar">*</span>
+	<span class="neclass">WSF_CGI_HANDLER</span>
+	<span class="neclass">WSF_DEBUG_FILTER</span>
+	<span class="neclass">WSF_DEBUG_HANDLER</span>
+	<span class="neclass">WSF_DEBUG_INFORMATION</span>
+	<span class="neclass">WSF_DEFAULT_ROUTER_RESPONSE</span>
+	<span class="neclass">WSF_FILE_SYSTEM_HANDLER</span>
+	<span class="neclass">WSF_FILTERED</span><span class="echar">*</span>
+	<span class="neclass">WSF_FORM</span>
+	<span class="neclass">WSF_FORM_COMPOSITE</span><span class="echar">*</span>
+	<span class="neclass">WSF_FORM_DATA</span>
+	<span class="neclass">WSF_FORM_FIELD_SET</span>
+	<span class="neclass">WSF_FORM_SELECT</span>
+	<span class="neclass">WSF_FORM_SELECTABLE_INPUT</span><span class="echar">*</span>
+	<span class="neclass">WSF_HANDLER_HELPER</span>
+	<span class="neclass">WSF_HTML_PAGE_RESPONSE</span>
+	<span class="neclass">WSF_METHOD_NOT_ALLOWED_RESPONSE</span>
+	<span class="neclass">WSF_MULTIPLE_STRING</span>
+	<span class="neclass">WSF_REQUEST</span>
+	<span class="neclass">WSF_REQUEST_METHODS</span>
+	<span class="neclass">WSF_RESPONSE</span>
+	<span class="neclass">WSF_ROUTER</span>
+	<span class="neclass">WSF_ROUTER_ITEM</span>
+	<span class="neclass">WSF_ROUTER_ITERATOR</span>
+	<span class="neclass">WSF_ROUTER_MAPPING_DOCUMENTATION</span>
+	<span class="neclass">WSF_ROUTER_SELF_DOCUMENTATION_MESSAGE</span>
+	<span class="neclass">WSF_ROUTING_EXTENSION_CONDITION</span>
+	<span class="neclass">WSF_SELF_DOCUMENTED_AGENT_HANDLER</span><span class="echar">*</span>
+	<span class="neclass">WSF_SELF_DOCUMENTED_EXECUTE_AGENT_HANDLER</span>
+	<span class="neclass">WSF_SELF_DOCUMENTED_STARTS_WITH_AGENT_HANDLER</span>
+	<span class="neclass">WSF_SELF_DOCUMENTED_URI_AGENT_HANDLER</span>
+	<span class="neclass">WSF_SELF_DOCUMENTED_URI_TEMPLATE_AGENT_HANDLER</span>
+	<span class="neclass">WSF_SERVICE_LAUNCHER_OPTIONS</span>
+	<span class="neclass">WSF_STANDALONE_SERVICE_LAUNCHER</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="neclass">WSF_EXECUTION</span> <span class="ekeyword">create</span> <span class="nefeature">make</span> <span class="ekeyword">end</span><span class="esymbol">]</span>
+	<span class="neclass">WSF_TABLE</span>
+	<span class="neclass">WSF_VALUE_ITERATOR</span>
+	<span class="neclass">WSF_WIDGET_AGENT_TABLE</span> <span class="esymbol">[</span><span class="egeneric">G</span> <span class="esymbol">-&gt;</span> <span class="ekeyword">detachable</span> <a class="eclass" href="../base/any_links.html">ANY</a><span class="esymbol">]</span>
+	<span class="neclass">WSF_WIDGET_COMPOSITE</span><span class="echar">*</span>
+	<span class="neclass">WSF_WIDGET_DIV</span>
+	<span class="neclass">WSF_WIDGET_TABLE</span>
+	<span class="neclass">WSF_WIDGET_TABLE_ITEM</span>
+	<span class="neclass">WSF_WIDGET_TABLE_ROW</span>
+	<span class="neclass">WSF_WITH_CSS_CLASS</span><span class="echar">*</span>
+	<span class="neclass">WSF_WITH_HTML_ATTRIBUTE</span><span class="echar">*</span>
+	<span class="neclass">WS_HANDSHAKE</span>
+
+<span class="ekeyword">Suppliers</span>
+	<a class="eclass" href="../base/boolean_links.html">BOOLEAN</a>
+	<a class="eclass" href="../base/iteration_cursor_links.html">ITERATION_CURSOR</a><span class="echar">*</span> <span class="esymbol">[</span><span class="egeneric">G</span><span class="esymbol">]</span>
+
+</pre><form class="nav" onsubmit="go_to('../',this.c.value);return false;">
+<div class="nav">
+<a class="nav hierarchy" href="../class_list.html">Classes</a>
+<a class="nav hierarchy" href="../cluster_list.html">Clusters</a>
+<a class="nav hierarchy" href="../cluster_hierarchy.html">Cluster hierarchy</a>
+<a class="nav class" href="iteration_cursor_chart.html">Chart</a>
+<span class="nav class selected">Relations</span>
+<a class="nav class" href="iteration_cursor_short.html">Contracts</a>
+<span class="nav class goto">Go to: <input name="c" value="iteration_cursor"></span>
+</div></form><pre></pre>
+<p style="text-align:center;">Generated by <a href="http://www.eiffel.com">ISE EiffelStudio</a></p>
+</body>
+</html>
