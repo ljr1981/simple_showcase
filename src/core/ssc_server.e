@@ -470,7 +470,7 @@ feature {NONE} -- API Handlers
 			else
 				create l_json
 				create l_body_32.make_from_string (req.body)
-				l_body := l_json.parse (l_body_32)
+				l_body := l_json.decode_payload (l_body_32)
 
 				if attached l_body as l_val and then l_val.is_object then
 					if attached l_val.as_object as l_obj then
@@ -625,7 +625,7 @@ feature {NONE} -- Email
 			log_debug ("email", "Executing curl to " + l_url)
 
 			create l_process
-			l_output := l_process.output_of_command (l_cmd, Void)
+			l_output := l_process.shell_output (l_cmd, Void)
 
 			log_debug ("email", "Output length: " + l_output.count.out)
 			if not l_output.is_empty then
